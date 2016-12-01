@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "es2015",
+    "react",
+    "stage-0"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-react-inline-elements",
+    "transform-react-constant-elements"
+  ],
+  "ignore": [
+    "build",
+    "node_modules"
+  ],
+  "env": {
+    "development": {
+      "presets": ["react-hmre"]
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "test": {
+    "link": "http://some.url/"
+  },
+  "home": {
+    "name": "Home",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/readme.md",
+    "home": true
+  },
+  "setup": {
+    "name": "Setup",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/setup.md"
+  },
+  "jsAPI": {
+    "name": "JS API",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/js-api.md"
+  },
+  "pageWithoutLink": {
+    "name": "Page without link",
+    "child": {
+      "nestedPageNoLink": {
+        "name": "Page 1",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/json-api.md"
+      }
+    }
+  },
+  "morePages": {
+    "name": "More pages",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/benefits.md",
+    "child": {
+      "page1": {
+        "name": "Page 1",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/json-api.md"
+      },
+      "page2": {
+        "name": "Page 2",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/setup.md"
+      },
+      "page3": {
+        "name": "Page 3",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/benefits.md",
+        "child": {
+          "nestedPage": {
+            "name": "Nested page",
+            "link": "https://some.com/"
+          }
+        }
+      }
+    }
+  },
+  "otherPage": {
+    "name": "Other page",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/setup.md"
+  }
+}
