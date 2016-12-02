@@ -11,6 +11,7 @@ export default {
     padding: 5,
     borderLeft: vars.border(vars.backgroundLine),
     borderRight: vars.border(vars.backgroundLine),
+
     // Static content
     '& h1, & h2': {
       fontSize: 4.2,
@@ -54,6 +55,7 @@ export default {
   hidden: {
     display: 'none',
   },
+
   // Change layout and spacings on smaller screens
   '@media (max-width: 1320px)': {
     content: {
@@ -70,7 +72,6 @@ export default {
         marginLeft: -2,
         fontSize: 3.2,
         lineHeight: 4.2,
-
       },
       '& h3, & h4': {
         margin: [2, 0],

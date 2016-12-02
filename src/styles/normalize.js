@@ -1,4 +1,4 @@
-/*
+/**
  * JSS port of normalize.css. Inspired by:
  * https://github.com/necolas/normalize.css
  *

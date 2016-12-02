@@ -1,7 +1,7 @@
 import normalize from './normalize'
 import vars from './vars'
 
-/*
+/**
  * Global stylesheet that merges together base styles and normalize
  */
 export default {
@@ -28,6 +28,7 @@ export default {
   '*, *::before, *::after': {
     boxSizing: 'border-box',
   },
+
   // Link styles
   a: {
     fontWeight: 'bold',
@@ -37,10 +38,12 @@ export default {
       textDecoration: 'none'
     }
   },
+
   // Paragraphs
   p: {
     margin: [0, 0, 2],
   },
+
   // Headings
   'h1, h2, h3, h4': {
     margin: [0, 0, 4],
@@ -59,6 +62,7 @@ export default {
     fontSize: 2,
     marginBottom: 2,
   },
+
   // Lists
   'ul, ol': {
     margin: [2, 0],
@@ -70,6 +74,7 @@ export default {
   li: {
     padding: [0.5, 0]
   },
+
   // Divider
   hr: {
     margin: [4, 0],
@@ -79,6 +84,7 @@ export default {
     display: 'block',
     boxShadow: [['50vh', 0, 0, 0, vars.backgroundLine], ['-50vh', 0, 0, 0, vars.backgroundLine]], // Make them go outside
   },
+
   // Tables
   table: {
     borderCollapse: 'collapse',
@@ -101,11 +107,13 @@ export default {
       borderLeft: 'none',
     }
   },
+
   // Svg tag
   svg: {
     display: 'inline-block',
     verticalAlign: 'middle',
   },
+
   // Main container styles
   '#root': {
     height: '100%',

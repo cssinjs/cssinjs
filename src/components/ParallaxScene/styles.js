@@ -16,6 +16,7 @@ export default {
     background: vars.themeColor,
     userSelect: 'none',
     zIndex: 10,
+
     // Center radial gradient
     '&::before': {
       content: '""',
@@ -28,6 +29,7 @@ export default {
       zIndex: 2,
       background: 'radial-gradient(ellipse closest-side, rgba(255,255,255,0.5), rgba(255,255,255,0))',
     },
+
     // Horizontal line
     '&::after': {
       content: '""',
@@ -71,6 +73,7 @@ export default {
     transformStyle: 'preserve-3d',
     transform: 'translateZ(0)',
   },
+
   // Scroll to widget
   scrollTo: {
     position: 'absolute',
@@ -80,6 +83,7 @@ export default {
     zIndex: 10,
     textAlign: 'center'
   },
+
   // Background rings
   ring: {
     position: 'absolute',
@@ -105,7 +109,6 @@ export default {
     top: -17,
     width: 110,
     height: 110,
-    // transformOrigin: ['45%', '50%'],
     transformOrigin: '45%',
     animationDirection: 'alternate',
     animationDuration: '45s',
@@ -128,6 +131,7 @@ export default {
     height: 175,
     animationDuration: '40s',
   },
+
   // Logo
   logo: {
     position: 'relative',
@@ -161,6 +165,7 @@ export default {
     opacity: 0.1,
     textShadow: [`0 0 20px ${textColor}`, `0 0 20px ${textColor}`, `0 0 20px ${textColor}`]
   },
+
   // Decrease size of main logo for small screens
   '@media (max-width: 750px)': {
     target: {
@@ -175,6 +180,7 @@ export default {
       display: 'none',
     }
   },
+
   // Keyframes for rotating animation
   '@keyframes parallaxRotate': {
     from: {

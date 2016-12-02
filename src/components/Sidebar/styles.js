@@ -24,15 +24,17 @@ export default {
     borderBottom: vars.border(vars.sidebarBorder),
     background: vars.sidebarBg,
   },
+
   // Active state for menu
   menuActive: {
     composes: '$menu',
-
   },
+
   // Toggle widget
   toggle: {
     display: 'none',
   },
+
   // Decrease spaces for small screens
   '@media (max-height: 800px)': {
     logo: {
@@ -42,6 +44,7 @@ export default {
       padding: [0, 2, 2]
     }
   },
+
   // For small screens (mobile, portrait mode for iPad) - change completely layout
   '@media (max-width: 768px)': {
     container: {

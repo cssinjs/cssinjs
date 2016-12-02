@@ -15,6 +15,7 @@ export default {
       timingFunction: 'ease-in-out',
     },
   },
+
   // Active state
   toggleActive: {
     composes: '$toggle',

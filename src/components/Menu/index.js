@@ -1,9 +1,5 @@
 import React from 'react'
-
 import MenuItem from '../MenuItem'
-
-import jssPreset from '../../helpers/jssPreset'
-import styles from './styles'
 
 // Import directly config with site structure
 import pages from '../../pages'
@@ -14,8 +10,6 @@ class Menu extends React.Component {
   }
 
   render() {
-    const {classes} = this.props.sheet
-
     const renderItem = (name, link, realLink, index, isHomepage, haveChildren, children) => {
       if (typeof children === 'object') {
         return (
@@ -68,11 +62,11 @@ class Menu extends React.Component {
     }
 
     return (
-      <div className={classes.container}>
+      <div>
         {buildMenu(pages)}
       </div>
     )
   }
 }
 
-export default jssPreset(styles)(Menu)
+export default Menu

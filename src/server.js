@@ -37,6 +37,7 @@ export default function render() {
           { /* renderToString(<Router history={browserHistory} routes={routes} />) */ }
           { /* <Router history={browserHistory} routes={routes} /> */ }
         </div>
+        <script src="vendor.bundle.js" charSet="UTF-8" />
         <script src="bundle.js" charSet="UTF-8" />
       </body>
     </html>

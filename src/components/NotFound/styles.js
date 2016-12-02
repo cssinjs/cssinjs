@@ -16,6 +16,7 @@ export default {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+
     // Center radial gradient
     '&::before': {
       content: '""',
@@ -28,6 +29,7 @@ export default {
       zIndex: 2,
       background: 'radial-gradient(ellipse closest-side, rgba(255,255,255,0.5), rgba(255,255,255,0))',
     },
+
     // Horizontal line
     '&::after': {
       content: '""',
@@ -49,6 +51,7 @@ export default {
     flexDirection: 'column',
     borderLeft: vars.border(backgroundLineColor),
     borderRight: vars.border(backgroundLineColor),
+
     // Vertical line
     '&::after': {
       content: '""',

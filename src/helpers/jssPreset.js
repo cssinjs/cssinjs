@@ -1,4 +1,4 @@
-/*
+/**
  * JSS preset module.
  * Used to simplify development. Exports pure JSS instance and react-jss instance (by default)
  */
@@ -62,12 +62,12 @@ jssSheet.use(compose(composeOptions))
 
 const injectSheet = createInjectSheet(jssSheet)
 
-/*
+/**
  * Default export - for client application where react is connected.
  */
 export default injectSheet
 
-/*
+/**
  * This export serves for ONLY ssr rendering.
  * In our case is used only 1 time - when rendering base styles
  */

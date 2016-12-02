@@ -28,6 +28,7 @@ export default {
   icon: {
     fill: vars.textColor,
   },
+
   // Animation for SVG dot
   '@keyframes mouseMove': {
     '0%': {

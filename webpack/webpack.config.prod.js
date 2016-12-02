@@ -2,12 +2,16 @@
 
 var webpack = require('webpack');
 var path = require('path');
+var vendor = require('./vendor');
 var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
-  entry: [
-    path.join(__dirname, '..', 'src', 'client.js'),
-  ],
+  entry: {
+    app: [
+      path.join(__dirname, '..', 'src', 'client.js'),
+    ],
+    vendor: vendor
+  },
 
   output: {
     path: path.join(__dirname, '..'), // Place all results in root folder
@@ -31,6 +35,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')

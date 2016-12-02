@@ -4,6 +4,7 @@ export default {
   container: {
 
   },
+
   // Main content
   content: {
     opacity: 0,
@@ -15,6 +16,7 @@ export default {
     opacity: 1,
     visibility: 'visible',
   },
+
   // Loader
   loader: {
     position: 'absolute',

@@ -2,11 +2,15 @@
 
 var webpack = require('webpack');
 var path = require('path');
+var vendor = require('./vendor');
 
 module.exports = {
-  entry: [
-    path.join(__dirname, '..', 'src', 'client.js'),
-  ],
+  entry: {
+    app: [
+      path.join(__dirname, '..', 'src', 'client.js'),
+    ],
+    vendor: vendor
+  },
 
   output: {
     path: path.join(__dirname, '..'), // Place all results in root folder
@@ -30,6 +34,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.optimize.OccurenceOrderPlugin(), // Webpack 1.0
     // new webpack.optimize.OccurrenceOrderPlugin(), // Webpack 2.0 fixed this mispelling
     new webpack.HotModuleReplacementPlugin(),

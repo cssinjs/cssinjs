@@ -35,6 +35,7 @@ export default {
       position: 'static',
     },
   },
+
   // Decrease sidebar size on iPads
   '@media (max-width: 1024px)': {
     sidebar: {
@@ -44,6 +45,7 @@ export default {
       marginLeft: 26
     },
   },
+
   // For small screens (mobile, portrait mode for iPad) - change completely layout
   '@media (max-width: 768px)': {
     sidebar: {
