@@ -56,7 +56,7 @@ export default {
     marginBottom: 2,
   },
   h4: {
-    fontSize: 2.4,
+    fontSize: 2,
     marginBottom: 2,
   },
   // Lists

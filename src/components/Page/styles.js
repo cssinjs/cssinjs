@@ -47,8 +47,9 @@ export default {
       }
     },
     '& h4': {
-
-    }
+      margin: [3, 0],
+      paddingTop: 3,
+    },
   },
   hidden: {
     display: 'none',
@@ -66,7 +67,14 @@ export default {
     content: {
       padding: [3, 2],
       '& h1, & h2': {
-        marginLeft: -2
+        marginLeft: -2,
+        fontSize: 3.2,
+        lineHeight: 4.2,
+
+      },
+      '& h3, & h4': {
+        margin: [2, 0],
+        paddingTop: 2,
       }
     }
   }

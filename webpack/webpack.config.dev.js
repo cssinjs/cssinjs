@@ -24,7 +24,8 @@ module.exports = {
       { test: /\.jpg$/, loader: "url-loader?limit=100000" },
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.gif$/, loader: "url-loader?limit=100000" },
-      { test: /\.jpg$/, loader: "file-loader" }
+      { test: /\.jpg$/, loader: "file-loader" },
+      { test: /\.css/, loader: 'style-loader!css-loader' }
     ]
   },
 

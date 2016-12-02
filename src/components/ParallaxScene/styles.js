@@ -162,11 +162,6 @@ export default {
     textShadow: [`0 0 20px ${textColor}`, `0 0 20px ${textColor}`, `0 0 20px ${textColor}`]
   },
   // Decrease size of main logo for small screens
-  '@media (max-width: 768px)': {
-    container: {
-      marginTop: -8,
-    }
-  },
   '@media (max-width: 750px)': {
     target: {
       transform: 'translate(-50%, -50%) scale(0.5)',

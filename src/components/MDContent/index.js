@@ -2,6 +2,12 @@ import React from 'react'
 import 'whatwg-fetch' // eslint-disable-line
 import marked from 'marked'
 
+import Prism from 'prismjs'
+import 'prismjs/themes/prism.css'
+import 'prismjs/components/prism-css.min.js'
+import 'prismjs/components/prism-javascript.min.js'
+import 'prismjs/components/prism-bash.min.js'
+
 import Loader from '../Loader'
 
 import {invert as invertPages} from '../../helpers/pagesActions'
@@ -76,17 +82,9 @@ class MDContent extends React.Component {
       .then(this.checkStatus)
       .then(response => response.text())
       .then(text => {
-
-
-
-        // TODO: Not just setState. Process in some way loaded text...
-
-        // TODO: Avoid XSS attack. Seek for script tag and remove them all
-
         this.setState({
           loadedContent: text
         })
-
       })
       .catch((error) => {
         // eslint-disable-next-line
@@ -106,9 +104,12 @@ class MDContent extends React.Component {
     let htmlContent = document.createElement('div')
     htmlContent.innerHTML = textContent
 
-    console.log('>>>>>>>>>>>>>>>>>>>>>')
+    // Highlight all code blocks
+    htmlContent.querySelectorAll('code').forEach((block) => {
+      Prism.highlightElement(block)
+    })
 
-
+    // Replace external links with internal ones
 
 
     return {__html: htmlContent.outerHTML }
@@ -130,12 +131,7 @@ class MDContent extends React.Component {
         <div
           className={this.state.loadedContent ? classes.contentLoaded : classes.content}
           dangerouslySetInnerHTML={this.createMarkup()}
-        >
-          {/*
-              TODO: Use dangerouslySetInnerHTML
-              https://facebook.github.io/react/docs/dom-elements.html
-          */}
-        </div>
+        />
       </div>
     )
   }
