@@ -42,33 +42,4 @@ export default function render() {
       </body>
     </html>
   )}`
-
-
-  // return '<!doctype html>\n' + renderToString(
-  //   <html lang="en">
-  //     <head>
-  //       <title>{config.head.title}</title>
-  //       <meta name="description" content={config.head.description} />
-  //       <meta charSet="utf-8" />
-  //       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-  //       <meta httpEquiv="Content-Language" content="en" />
-  //       <meta name="viewport" content="width=device-width, initial-scale=1" />
-  //       <link rel="shortcut icon" href="/static/favicon.ico" />
-  //       <style type="text/css" id="base-styles">
-  //         {baseSheet.toString()}
-  //       </style>
-  //       <style type="text/css" id="server-side-styles">
-  //         {jss.sheets.toString()}
-  //       </style>
-  //     </head>
-  //     <body>
-  //       <div id="root">
-  //         { /* renderToString(<Router history={browserHistory} routes={routes} />) */ }
-  //         { /* <Router history={browserHistory} routes={routes} /> */ }
-  //       </div>
-  //       <script src="vendor.bundle.js" charSet="UTF-8" />
-  //       <script src="bundle.js" charSet="UTF-8" />
-  //     </body>
-  //   </html>
-  // )
 }
