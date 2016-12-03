@@ -44,7 +44,6 @@ export default function render() {
   )}`
 
 
-
   // return '<!doctype html>\n' + renderToString(
   //   <html lang="en">
   //     <head>
