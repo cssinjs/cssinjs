@@ -23,8 +23,8 @@ const App = (data) => {
   // Check if is homepage - and pass params to child components
   if (typeof data.location.state === 'undefined') data.location.state = {}
   if (data.location.pathname === homeLink) {
-    data.location.state = {};
-    data.location.state.isHomepage = true;
+    data.location.state = {}
+    data.location.state.isHomepage = true
   }
 
   return (

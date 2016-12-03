@@ -33,6 +33,12 @@ export default {
   // Toggle widget
   toggle: {
     display: 'none',
+    // Remove default button styles
+    background: 0,
+    border: 0,
+    padding: 0,
+    outline: 0,
+    boxShadow: 'none',
   },
 
   // Decrease spaces for small screens

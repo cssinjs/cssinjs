@@ -43,7 +43,7 @@ class ParallaxScene extends React.Component {
 
     const tiltx = dy / cy
     const tilty = -(dx / cx)
-    const radius = Math.sqrt(Math.pow(tiltx, 2) + Math.pow(tilty, 2))
+    const radius = Math.sqrt((tiltx ** 2) + (tilty ** 2))
     const degree = radius * 25
 
     this.setState({tiltx, tilty, degree})
@@ -90,8 +90,7 @@ class ParallaxScene extends React.Component {
           </Motion>
         </div>
         <div className={classes.scrollTo}>
-          <ScrollLink
-            to="mainContent" smooth duration={500}>
+          <ScrollLink to="mainContent" smooth duration={500}>
             <ScrollWidget />
           </ScrollLink>
         </div>

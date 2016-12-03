@@ -1,4 +1,3 @@
-import color from 'color'
 import vars from '../../styles/vars'
 
 const animationSpeed = '3s'

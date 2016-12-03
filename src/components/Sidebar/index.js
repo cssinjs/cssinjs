@@ -8,6 +8,8 @@ import Menu from '../Menu'
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
+import config from '../../config'
+
 class Sidebar extends React.Component {
   static propTypes = {
     sheet: React.PropTypes.object
@@ -20,8 +22,11 @@ class Sidebar extends React.Component {
     }
   }
 
-  // Just a trick. On menu click component recieve new props
-  // If there is any new prop - just close menu (because props change only if we navigate through application)
+  /**
+   * Just a trick. On menu click component recieve new props
+   * If there is any new prop - just close menu
+   * (because props change only if we navigate through application)
+   */
   componentWillReceiveProps() {
     this.setState({
       isActiveMenu: false
@@ -42,13 +47,12 @@ class Sidebar extends React.Component {
           <Logo type="white" />
         </div>
         <div className={classes.counter}>
-          { /* TODO: Move REPO param in separated config */ }
-          <GithubWidget repo="cssinjs/jss" />
+          <GithubWidget repo={config.site.repo} />
         </div>
-        <div className={classes.toggle} onClick={toggleMenu}>
+        <button className={classes.toggle} onClick={toggleMenu}>
           <MenuToggleWidget active={this.state.isActiveMenu} />
-        </div>
-        <div className={ this.state.isActiveMenu ? classes.menuActive :classes.menu}>
+        </button>
+        <div className={this.state.isActiveMenu ? classes.menuActive : classes.menu}>
           <Menu />
         </div>
       </div>

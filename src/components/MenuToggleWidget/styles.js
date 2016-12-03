@@ -21,7 +21,7 @@ export default {
     composes: '$toggle',
     '& $barFirst': {
       top: '50%',
-      marginTop: -barWeight/2,
+      marginTop: -barWeight / 2,
       transform: 'rotate(135deg)',
     },
     '& $barSecond': {
@@ -30,7 +30,7 @@ export default {
     },
     '& $barThird': {
       bottom: '50%',
-      marginBottom: -barWeight/2,
+      marginBottom: -barWeight / 2,
       transform: 'rotate(-135deg)',
     }
   },
@@ -55,7 +55,7 @@ export default {
   barSecond: {
     composes: '$bar',
     top: '50%',
-    marginTop: -barWeight/2
+    marginTop: -barWeight / 2
   },
   barThird: {
     composes: '$bar',

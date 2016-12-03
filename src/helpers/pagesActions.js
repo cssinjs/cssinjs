@@ -6,11 +6,11 @@ import pages from '../pages'
  * @returns {Object} Flattened pages object
  */
 export const flattenPages = (list = pages) => {
-  let result = {}
-  const iterate = (list) => {
-    for (const entry in list) {
-      if (list[entry].link) result[entry] = list[entry].link
-      if (list[entry].child) iterate(list[entry].child)
+  const result = {}
+  const iterate = (listItems) => {
+    for (const entry in listItems) {
+      if (listItems[entry].link) result[entry] = listItems[entry].link
+      if (listItems[entry].child) iterate(listItems[entry].child)
     }
   }
   iterate(list)
@@ -24,10 +24,10 @@ export const flattenPages = (list = pages) => {
  */
 export const getHomeLink = (list = pages) => {
   let link = ''
-  const iterate = (list) => {
-    for (const entry in list) {
-      if (list[entry].home) link = `/${entry}`
-      if (list[entry].child) iterate(list[entry].child)
+  const iterate = (listItems) => {
+    for (const entry in listItems) {
+      if (listItems[entry].home) link = `/${entry}`
+      if (listItems[entry].child) iterate(listItems[entry].child)
     }
     return link
   }
@@ -40,9 +40,9 @@ export const getHomeLink = (list = pages) => {
  * @returns {Object} Swapped object
  */
 export const invert = (obj) => {
-  let result = {}
+  const result = {}
   for (const prop in obj) {
-    if (obj.hasOwnProperty(prop)) {
+    if ({}.hasOwnProperty.call(obj, prop)) {
       result[obj[prop]] = prop
     }
   }

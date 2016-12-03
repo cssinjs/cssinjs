@@ -14,10 +14,10 @@ const NotFound = ({sheet}) => {
     <div className={classes.container}>
       <div className={classes.inner}>
         <div className={classes.text}>
-          The page you are looking for can't be found.
+          {'The page you are looking for can\'t be found.'}
         </div>
         <h1 className={classes.title}>
-          404
+          {'404'}
         </h1>
       </div>
     </div>

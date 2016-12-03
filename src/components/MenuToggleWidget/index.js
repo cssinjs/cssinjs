@@ -7,7 +7,7 @@ const MenuToggleWidget = ({active, sheet}) => {
   const {classes} = sheet
 
   return (
-    <div className={active ? classes.toggleActive : classes.toggle }>
+    <div className={active ? classes.toggleActive : classes.toggle}>
       <span className={classes.barFirst} />
       <span className={classes.barSecond} />
       <span className={classes.barThird} />

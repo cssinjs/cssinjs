@@ -53,6 +53,18 @@ class MDContent extends React.Component {
   }
 
   /**
+   * Helper function for check XHR response status
+   */
+  static checkStatus(response) {
+    if (response.status >= 200 && response.status < 300) {
+      return response
+    }
+    const error = new Error(response.statusText)
+    error.response = response
+    throw error
+  }
+
+  /**
    * Class constructor
    * @param {Object} props
    */
@@ -65,23 +77,12 @@ class MDContent extends React.Component {
     this.links = invertPages(this.props.linksReference)
   }
 
-  /**
-   * Helper function for check XHR response status
-   */
-  checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response
-    }
-    const error = new Error(response.statusText)
-    error.response = response
-    throw error
-  }
 
   componentDidMount() {
     fetch(this.props.url)
       .then(this.checkStatus)
       .then(response => response.text())
-      .then(text => {
+      .then((text) => {
         this.setState({
           loadedContent: text
         })
@@ -92,16 +93,12 @@ class MDContent extends React.Component {
       })
   }
 
-  componentWillUnmount() {
-    // TODO: If go out - stop loading
-  }
-
   createMarkup() {
     // First of all - convert markdown to pure HTML markup string
     const textContent = marked(this.state.loadedContent)
 
     // Convert string to real HTML markup
-    let htmlContent = document.createElement('div')
+    const htmlContent = document.createElement('div')
     htmlContent.innerHTML = textContent
 
     // Highlight all code blocks
@@ -111,8 +108,7 @@ class MDContent extends React.Component {
 
     // Replace external links with internal ones
 
-
-    return {__html: htmlContent.outerHTML }
+    return {__html: htmlContent.outerHTML}
   }
 
   /**
@@ -121,12 +117,10 @@ class MDContent extends React.Component {
   render() {
     const {classes} = this.props.sheet
 
-    const convertedContent = marked(this.state.loadedContent)
-
     return (
       <div className={classes.container}>
         <div className={this.state.loadedContent ? classes.loaded : classes.loader}>
-          <Loader playing={this.state.loadedContent ? true : false} />
+          <Loader playing={this.state.loadedContent} />
         </div>
         <div
           className={this.state.loadedContent ? classes.contentLoaded : classes.content}

@@ -44,15 +44,30 @@ class Menu extends React.Component {
       for (const item in pagesList) {
         const name = pagesList[item].name ? pagesList[item].name : ''
         const realLink = pagesList[item].link ? pagesList[item].link : ''
-        const isHomepage = pagesList[item].home ? true : false
+        const isHomepage = pagesList[item].home
         let menuItem
 
         if (name) {
           if (pagesList[item].child) {
-            menuItem = renderItem(name, item, realLink, index, isHomepage, true, buildMenu(pagesList[item].child))
+            menuItem = renderItem(
+              name,
+              item,
+              realLink,
+              index,
+              isHomepage,
+              true,
+              buildMenu(pagesList[item].child)
+            )
           }
           else {
-            menuItem = renderItem(name, item, realLink, index, isHomepage, false)
+            menuItem = renderItem(
+              name,
+              item,
+              realLink,
+              index,
+              isHomepage,
+              false
+            )
           }
           menu.push(menuItem)
           index++

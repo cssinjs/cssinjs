@@ -83,10 +83,11 @@ class MenuItem extends React.Component {
             {this.props.name}
           </Link>
         )
-
       }
       return (
-        <div className={this.state.isChildVisible ? classes.linkActive : classes.link}>{this.props.name}</div>
+        <div className={this.state.isChildVisible ? classes.linkActive : classes.link}>
+          {this.props.name}
+        </div>
       )
     }
 

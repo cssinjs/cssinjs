@@ -16,6 +16,7 @@ import styles from './styles'
 class Page extends React.Component {
   static propTypes = {
     sheet: React.PropTypes.object,
+    params: React.PropTypes.object,
     isHomepage: React.PropTypes.bool
   }
 
@@ -46,7 +47,7 @@ class Page extends React.Component {
 
     return (
       <div className={classes.container}>
-        {this.props.isHomepage ? <ParallaxScene/> : <span className={classes.hidden} /> }
+        {this.props.isHomepage ? <ParallaxScene /> : <span className={classes.hidden} />}
         <div className={classes.content} id="mainContent">
           <MDContent
             url={this.pages[currentPage]}
