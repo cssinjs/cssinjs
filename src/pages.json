@@ -38,6 +38,10 @@
     "name": "Performance",
     "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/performance.md"
   },
+  "reactJss": {
+    "name": "React JSS",
+    "link": "https://raw.githubusercontent.com/cssinjs/react-jss/master/README.md"
+  },
   "plugins": {
     "name": "JSS Plugins",
     "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/plugins.md",
