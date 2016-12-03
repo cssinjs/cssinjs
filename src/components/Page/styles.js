@@ -31,7 +31,7 @@ export default {
         marginTop: 0,
       },
     },
-    '& h3, & h4': {
+    '& h3': {
       margin: [4, 0],
       paddingTop: 4,
       position: 'relative',
@@ -48,8 +48,7 @@ export default {
       }
     },
     '& h4': {
-      margin: [3, 0],
-      paddingTop: 3,
+      margin: [3, 0]
     },
   },
   hidden: {

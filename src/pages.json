@@ -1,55 +1,105 @@
 {
-  "test": {
-    "link": "http://some.url/"
-  },
   "home": {
     "name": "Home",
     "link": "https://raw.githubusercontent.com/cssinjs/jss/master/readme.md",
     "home": true
   },
+  "liveExamples": {
+    "name": "Live Examples",
+    "type": "external",
+    "link": "http://cssinjs.github.io/examples/index.html"
+  },
+  "playground": {
+    "name": "JSS Playground",
+    "type": "external",
+    "link": "http://cssinjs.github.io/repl/"
+  },
+  "benefits": {
+    "name": "Benefits",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/benefits.md"
+  },
   "setup": {
     "name": "Setup",
     "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/setup.md"
   },
+  "jsonAPI": {
+    "name": "JSON API (JSS Syntax)",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/json-api.md"
+  },
   "jsAPI": {
-    "name": "JS API",
+    "name": "JavaScript API",
     "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/js-api.md"
   },
-  "pageWithoutLink": {
-    "name": "Page without link",
-    "child": {
-      "nestedPageNoLink": {
-        "name": "Page 1",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/json-api.md"
-      }
-    }
+  "ssr": {
+    "name": "Server-side rendering",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/ssr.md"
   },
-  "morePages": {
-    "name": "More pages",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/benefits.md",
+  "performance": {
+    "name": "Performance",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/performance.md"
+  },
+  "plugins": {
+    "name": "JSS Plugins",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/plugins.md",
     "child": {
-      "page1": {
-        "name": "Page 1",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/json-api.md"
+      "jssPresetDefault": {
+        "name": "jss-preset-default",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-preset-default/master/readme.md"
       },
-      "page2": {
-        "name": "Page 2",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/setup.md"
+      "jssExtend": {
+        "name": "jss-extend",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-extend/master/readme.md"
       },
-      "page3": {
-        "name": "Page 3",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/benefits.md",
+      "jssNested": {
+        "name": "jss-nested",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-nested/master/readme.md"
+      },
+      "jssCamelCase": {
+        "name": "jss-camel-case",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-camel-case/master/readme.md"
+      },
+      "jssDefaultUnit": {
+        "name": "jss-default-unit",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-default-unit/master/readme.md"
+      },
+      "jssExpand": {
+        "name": "jss-expand",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-expand/master/readme.md",
         "child": {
-          "nestedPage": {
-            "name": "Nested page",
-            "link": "https://some.com/"
+          "jssExpandFullDoc": {
+            "name": "Full documentation",
+            "link": "https://raw.githubusercontent.com/cssinjs/jss-expand/master/docs/index.md"
           }
         }
+      },
+      "jssVendorPrefixer": {
+        "name": "jss-vendor-prefixer",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-vendor-prefixer/master/readme.md"
+      },
+      "jssPropsSort": {
+        "name": "jss-props-sort",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-props-sort/master/readme.md"
+      },
+      "jssCompose": {
+        "name": "jss-compose",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-compose/master/readme.md"
+      },
+      "jssIsolate": {
+        "name": "jss-isolate",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-isolate/master/readme.md"
       }
     }
   },
-  "otherPage": {
-    "name": "Other page",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/setup.md"
+  "externalProjects": {
+    "name": "External Projects",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/external-projects.md"
+  },
+  "cliForJss": {
+    "name": "CLI for JSS",
+    "link": "https://raw.githubusercontent.com/cssinjs/cli/master/readme.md"
+  },
+  "contributing": {
+    "name": "Contributing",
+    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/contributing.md"
   }
 }

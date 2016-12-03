@@ -19,7 +19,10 @@ const Loader = ({playing, sheet}) => {
 
 Loader.propTypes = {
   sheet: React.PropTypes.object,
-  playing: React.PropTypes.bool
+  playing: React.PropTypes.oneOfType([
+    React.PropTypes.bool,
+    React.PropTypes.string
+  ])
 }
 
 export default jssPreset(styles)(Loader)
