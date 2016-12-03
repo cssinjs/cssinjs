@@ -10,16 +10,18 @@ class Menu extends React.Component {
   }
 
   render() {
-    const renderItem = (name, link, realLink, index, isHomepage, haveChildren, children) => {
+    const renderItem = (data) => {
+      const children = data.children
       if (typeof children === 'object') {
         return (
           <MenuItem
-            name={name}
-            link={link}
-            realLink={realLink}
-            haveChildren={haveChildren}
-            home={isHomepage}
-            key={index}
+            name={data.name}
+            link={data.link}
+            realLink={data.realLink}
+            haveChildren={data.haveChildren}
+            home={data.isHomepage}
+            external={data.isExternal}
+            key={data.index}
           >
             {children}
           </MenuItem>
@@ -27,12 +29,13 @@ class Menu extends React.Component {
       }
       return (
         <MenuItem
-          name={name}
-          link={link}
-          realLink={realLink}
-          haveChildren={haveChildren}
-          home={isHomepage}
-          key={index}
+          name={data.name}
+          link={data.link}
+          realLink={data.realLink}
+          haveChildren={data.haveChildren}
+          home={data.isHomepage}
+          external={data.isExternal}
+          key={data.index}
         />
       )
     }
@@ -45,29 +48,32 @@ class Menu extends React.Component {
         const name = pagesList[item].name ? pagesList[item].name : ''
         const realLink = pagesList[item].link ? pagesList[item].link : ''
         const isHomepage = pagesList[item].home
+        const isExternal = pagesList[item].external
         let menuItem
 
         if (name) {
           if (pagesList[item].child) {
-            menuItem = renderItem(
+            menuItem = renderItem({
               name,
-              item,
               realLink,
               index,
               isHomepage,
-              true,
-              buildMenu(pagesList[item].child)
-            )
+              isExternal,
+              haveChildren: true,
+              children: buildMenu(pagesList[item].child),
+              link: item
+            })
           }
           else {
-            menuItem = renderItem(
+            menuItem = renderItem({
               name,
-              item,
               realLink,
               index,
               isHomepage,
-              false
-            )
+              isExternal,
+              haveChildren: false,
+              link: item
+            })
           }
           menu.push(menuItem)
           index++

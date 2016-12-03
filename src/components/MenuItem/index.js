@@ -15,6 +15,7 @@ class MenuItem extends React.Component {
     realLink: React.PropTypes.string,
     haveChildren: React.PropTypes.bool,
     home: React.PropTypes.bool,
+    external: React.PropTypes.bool
   }
 
   constructor(props) {
@@ -69,6 +70,20 @@ class MenuItem extends React.Component {
     // Create layout for link
     const renderLink = () => {
       if (this.props.realLink) {
+        if (this.props.external) {
+          // External link
+          return (
+            <a
+              className={this.state.isChildVisible ? classes.linkActive : classes.link}
+              href={this.props.realLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {this.props.name}
+            </a>
+          )
+        }
+        // Internal router link
         return (
           <Link
             className={this.state.isChildVisible ? classes.linkActive : classes.link}

@@ -6,13 +6,13 @@
   },
   "liveExamples": {
     "name": "Live Examples",
-    "type": "external",
-    "link": "http://cssinjs.github.io/examples/index.html"
+    "link": "http://cssinjs.github.io/examples/index.html",
+    "external": true
   },
   "playground": {
     "name": "JSS Playground",
-    "type": "external",
-    "link": "http://cssinjs.github.io/repl/"
+    "link": "http://cssinjs.github.io/repl/",
+    "external": true
   },
   "benefits": {
     "name": "Benefits",
