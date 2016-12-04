@@ -2,6 +2,8 @@
 
 Landing page for JSS. Build with webpack, react, jss and some other cool things :)
 
+[Current link](https://typical000.github.io/jss-landing/)
+
 #### TODO:
 
 - Change links url like `href="./performance.md"` to absolute path in all repos, connected with this landing page.
