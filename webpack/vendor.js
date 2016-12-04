@@ -1,4 +1,5 @@
 module.exports = [
+  'babel-polyfill', // Need to support "transform-react-inline-elements" and keep app work in IE
   'color',
   'react',
   'react-dom',

@@ -3,6 +3,11 @@ import React from 'react'
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
+/**
+ * Toggle item for menu
+ * @param {boolean} is opened now or not
+ * @param {Object} JSS sheet object
+ */
 const MenuToggleWidget = ({active, sheet}) => {
   const {classes} = sheet
 

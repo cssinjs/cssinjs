@@ -11,7 +11,6 @@ import styles from './styles'
  * Main application wrapper component.
  * All pages render starts here
  */
-
 const App = (data) => {
   const {children, location, sheet} = data
   const {classes} = sheet

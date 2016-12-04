@@ -52,13 +52,13 @@ const expandOptions = {}
 const composeOptions = {}
 
 const jssSheet = createJss()
+jssSheet.use(compose(composeOptions))
 jssSheet.use(extend(extendOptions))
 jssSheet.use(nested(nestedOptions))
 jssSheet.use(camelCase(camelCaseOptions))
 jssSheet.use(defaultUnit(defaultUnitOptions))
 jssSheet.use(vendorPrefixer(vendorPrefixedOptions))
 jssSheet.use(expand(expandOptions))
-jssSheet.use(compose(composeOptions))
 
 const injectSheet = createInjectSheet(jssSheet)
 

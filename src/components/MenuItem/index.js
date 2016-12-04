@@ -1,11 +1,14 @@
 import React from 'react'
 import Isvg from 'react-inlinesvg'
-
-import {Link} from 'react-router'
+import Link from 'react-router/lib/Link'
 
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
+/**
+ * Single menu item component
+ * @extends React.Component
+ */
 class MenuItem extends React.Component {
   static propTypes = {
     sheet: React.PropTypes.object,
@@ -18,27 +21,41 @@ class MenuItem extends React.Component {
     external: React.PropTypes.bool
   }
 
+  /**
+   * Class constructor
+   * @param {Object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
       isChildVisible: false
     }
+
+    this.handleChildrenToggle = this.handleChildrenToggle.bind(this)
   }
 
+  /**
+   * Click Handler. Opens/Closes child menu
+   */
+  handleChildrenToggle() {
+    this.setState({
+      isChildVisible: !this.state.isChildVisible
+    })
+  }
+
+  /**
+   * React component render
+   */
   render() {
     const {classes} = this.props.sheet
 
-    const toggleChildren = () => {
-      this.setState({
-        isChildVisible: !this.state.isChildVisible
-      })
-    }
-
-    // Render toggle item for children content
+    /**
+     * Render toggle item for children content
+     */
     const renderItemToggler = () => {
       if (this.props.haveChildren) {
         return (
-          <button className={classes.icons} onClick={toggleChildren}>
+          <button className={classes.icons} onClick={this.handleChildrenToggle}>
             <Isvg
               src={'static/images/arrow.svg'}
               className={this.state.isChildVisible ? classes.iconArrowHidden : classes.iconArrow}
@@ -53,7 +70,9 @@ class MenuItem extends React.Component {
       return <span />
     }
 
-    // Render children inside link
+    /**
+     * Render children inside link
+     */
     const renderChildren = () => {
       if (this.props.haveChildren) {
         return (
@@ -67,14 +86,28 @@ class MenuItem extends React.Component {
       return <span />
     }
 
-    // Create layout for link
+    /**
+     * Detects wich link class need to be added
+     */
+    const setLinkClass = () => {
+      if (this.state.isChildVisible) {
+        if (this.props.haveChildren) return classes.linkActive
+        return classes.linkActiveNoChildren
+      }
+      if (this.props.haveChildren) return classes.link
+      return classes.linkNoChildren
+    }
+
+    /**
+     * Create layout for link
+     */
     const renderLink = () => {
       if (this.props.realLink) {
         if (this.props.external) {
           // External link
           return (
             <a
-              className={this.state.isChildVisible ? classes.linkActive : classes.link}
+              className={setLinkClass()}
               href={this.props.realLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -86,7 +119,7 @@ class MenuItem extends React.Component {
         // Internal router link
         return (
           <Link
-            className={this.state.isChildVisible ? classes.linkActive : classes.link}
+            className={setLinkClass()}
             activeClassName={classes.linkActive}
             to={{
               pathname: this.props.link,
@@ -100,13 +133,15 @@ class MenuItem extends React.Component {
         )
       }
       return (
-        <div className={this.state.isChildVisible ? classes.linkActive : classes.link}>
+        <div className={setLinkClass()}>
           {this.props.name}
         </div>
       )
     }
 
-    // Render main layout
+    /**
+     * Render main layout
+     */
     return (
       <div className={classes.container}>
         <div className={classes.item}>

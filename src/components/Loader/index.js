@@ -4,9 +4,10 @@ import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
 /**
- * Custom loader
+ * Custom loader component
+ * @param {boolean} is animation playing now or not
+ * @param {Object} JSS sheet object
  */
-
 const Loader = ({playing, sheet}) => {
   const {classes} = sheet
 

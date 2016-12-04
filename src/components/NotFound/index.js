@@ -5,8 +5,8 @@ import styles from './styles'
 
 /**
  * Not found page content
+ * @param {Object} JSS sheet object
  */
-
 const NotFound = ({sheet}) => {
   const {classes} = sheet
 

@@ -24,8 +24,10 @@ export default {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    '-ms-flex-pack': 'center', // justify-content fix for IE10
     width: '50%',
     padding: 0.5,
+    maxHeight: 5, // Fix for IE10
     '&:first-child': {
       borderLeft: 'none',
     }
@@ -36,9 +38,11 @@ export default {
   icon: {
     lineHeight: 'normal',
     marginRight: 0.8,
-    marginTop: -0.5, // Fix for wring browser alignment
+    marginTop: -0.3, // Fix for wring browser alignment
     width: 1.5,
-    height: 'auto',
+    '& svg': {
+      width: 1.5,
+    },
   },
   iconStar: {
     extend: 'icon',

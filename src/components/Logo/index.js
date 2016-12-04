@@ -1,15 +1,14 @@
 import React from 'react'
-
-import {Link} from 'react-router'
+import Link from 'react-router/lib/Link'
 
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
 /**
  * Basic component for displaying site logo
- * Recieves 'type' prop, that modifies final URL of logo
+ * @param {string} 'white' or 'black' string
+ * @param {Object} JSS sheet object
  */
-
 const Logo = ({type, sheet}) => {
   const {classes} = sheet
   let logoUrl

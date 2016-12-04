@@ -5,16 +5,23 @@ import GithubWidget from '../GithubWidget'
 import MenuToggleWidget from '../MenuToggleWidget'
 import Menu from '../Menu'
 
+import config from '../../config'
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
-import config from '../../config'
-
+/**
+ * Sidebar component class
+ * @extends React.Component
+ */
 class Sidebar extends React.Component {
   static propTypes = {
     sheet: React.PropTypes.object
   }
 
+  /**
+   * Class constructor
+   * @param {Object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
@@ -33,6 +40,9 @@ class Sidebar extends React.Component {
     })
   }
 
+  /**
+   * React component render
+   */
   render() {
     const {classes} = this.props.sheet
     const toggleMenu = () => {
@@ -61,38 +71,3 @@ class Sidebar extends React.Component {
 }
 
 export default jssPreset(styles)(Sidebar)
-
-
-//--------------------------------------------------------------
-// const Sidebar = ({sheet}) => {
-//   const {classes} = sheet
-
-//   const toggleMenu = () => {
-//     this.setState({
-//       isActiveMenu: !this.state.isActiveMenu
-//     })
-//   }
-
-//   return (
-//     <div className={classes.container}>
-//       <div className={classes.logo}>
-//         <Logo type="white" />
-//       </div>
-//       <div className={classes.counter}>
-//         <GithubWidget repo="cssinjs/jss" />
-//       </div>
-//       <div className={classes.toggle}>
-//         <MenuToggleWidget onClick={toggleMenu} active={this.state.isActiveMenu} />
-//       </div>
-//       <div className={classes.menu}>
-//         <Menu />
-//       </div>
-//     </div>
-//   )
-// }
-
-// Sidebar.propTypes = {
-//   sheet: React.PropTypes.object
-// }
-
-// export default jssPreset(styles)(Sidebar)

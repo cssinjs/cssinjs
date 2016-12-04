@@ -4,17 +4,13 @@
   "description": "JSS landing page",
   "author": "Pavel Davydov",
   "license": "MIT",
-  "config": {
-    "port": 3000
-  },
   "scripts": {
     "dev-server": "cross-env NODE_ENV=development PORT=3000 node ./webpack/webpack-dev-server.js",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.config.dev",
     "build:prod": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod",
-    "server:dev": "cross-env NODE_ENV=development node ./bin/build > ./index.html",
-    "server:prod": "cross-env NODE_ENV=production node ./bin/build > ./index.html",
-    "all:dev": "npm run build:dev && npm run server:dev",
-    "all:prod": "npm run build:prod && npm run server:prod",
+    "server": "cross-env NODE_ENV=production node ./bin/build > ./index.html",
+    "all:dev": "npm run build:dev && npm run server",
+    "all:prod": "npm run build:prod && npm run server",
     "svg": "svgo -i static/images",
     "lint": "eslint ./src",
     "lint:staged": "lint-staged"
@@ -26,6 +22,7 @@
     "babel-plugin-transform-react-constant-elements": "^6.9.1",
     "babel-plugin-transform-react-inline-elements": "^6.8.0",
     "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-react-hmre": "^1.1.1",
@@ -42,6 +39,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.7.1",
     "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
     "lint-staged": "^3.2.1",
     "pre-commit": "^1.1.3",

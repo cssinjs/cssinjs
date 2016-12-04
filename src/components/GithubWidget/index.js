@@ -6,18 +6,6 @@ import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
 /*
- * Helper function for check XHR response status
- */
-const checkStatus = (response) => {
-  if (response.status >= 200 && response.status < 300) {
-    return response
-  }
-  const error = new Error(response.statusText)
-  error.response = response
-  throw error
-}
-
-/*
  * Helper function for adding commas to number
  * @param {number} original number
  * @return {string} stringlifyed number with commas
@@ -32,6 +20,18 @@ class GithubWidget extends React.Component {
   static propTypes = {
     sheet: React.PropTypes.object,
     repo: React.PropTypes.string
+  }
+
+  /**
+   * Helper function for check XHR response status
+   */
+  static checkStatus(response) {
+    if (response.status >= 200 && response.status < 300) {
+      return response
+    }
+    const error = new Error(response.statusText)
+    error.response = response
+    throw error
   }
 
   /**
@@ -51,7 +51,7 @@ class GithubWidget extends React.Component {
   componentDidMount() {
     // Fetch stars count through GitHub API
     fetch(this.apiRepo)
-      .then(checkStatus)
+      .then(this.checkStatus)
       .then(response => response.json())
       .then((data) => {
         this.setState({
@@ -64,6 +64,9 @@ class GithubWidget extends React.Component {
       })
   }
 
+  /**
+   * React component render
+   */
   render() {
     const {classes} = this.props.sheet
 

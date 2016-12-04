@@ -1,7 +1,6 @@
 import React from 'react'
 import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
-
 import ScrollWidget from '../ScrollWidget'
 
 import jssPreset from '../../helpers/jssPreset'
@@ -9,13 +8,17 @@ import styles from './styles'
 
 /**
  * Main presentation block for site. Here is drawed animated logo on mouse move
+ * @extends React.Component
  */
-
 class ParallaxScene extends React.Component {
   static propTypes = {
     sheet: React.PropTypes.object
   }
 
+  /**
+   * Class constructor
+   * @param {Object} props
+   */
   constructor(props) {
     super(props)
     this.state = {
@@ -35,6 +38,9 @@ class ParallaxScene extends React.Component {
     window.removeEventListener('mousemove', this.handleMouseMove)
   }
 
+  /**
+   * Mouse move handler, redraws site logo inside rendered scene
+   */
   handleMouseMove({pageX: x, pageY: y}) {
     const cx = Math.ceil(document.body.clientWidth / 2)
     const cy = Math.ceil(document.body.clientHeight / 2)
@@ -49,6 +55,9 @@ class ParallaxScene extends React.Component {
     this.setState({tiltx, tilty, degree})
   }
 
+  /**
+   * React component render
+   */
   render() {
     const {classes} = this.props.sheet
     const {tiltx, tilty, degree} = this.state

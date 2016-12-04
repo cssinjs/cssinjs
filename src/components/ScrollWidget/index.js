@@ -6,8 +6,8 @@ import styles from './styles'
 
 /**
  * Scroll widget
+ * @param {Object} JSS sheet object
  */
-
 const ScrollWidget = ({sheet}) => {
   const {classes} = sheet
 

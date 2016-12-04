@@ -1,15 +1,33 @@
 import React from 'react'
 import MenuItem from '../MenuItem'
 
-// Import directly config with site structure
 import pages from '../../pages'
 
+/**
+ * Menu builder component
+ * @extends React.Component
+ */
 class Menu extends React.Component {
   static propTypes = {
     sheet: React.PropTypes.object
   }
 
+  /**
+   * React component render
+   */
   render() {
+    /**
+     * Single item render hepler
+     * @param {Object} data Collection of data that need to be rendered
+     * @param {string} data.name Name, that will be displayed on menu item
+     * @param {string} data.link Internal router link
+     * @param {string} data.realLink Real external links from where data will be fetched
+     * @param {boolean} data.haveChildren Have child menus or not
+     * @param {Object} data.children Collection of childrens
+     * @param {boolean} data.home Is current link a homepage
+     * @param {boolean} data.external Is current link go to external resources
+     * @param {number} data.key Just unique number
+     */
     const renderItem = (data) => {
       const children = data.children
       if (typeof children === 'object') {
@@ -40,6 +58,10 @@ class Menu extends React.Component {
       )
     }
 
+    /**
+     * Recursive method for building entire menu with childrens
+     * @param {Object} Site structure (currently contained in pages.json)
+     */
     const buildMenu = (pagesList) => {
       const menu = []
       let index = 0

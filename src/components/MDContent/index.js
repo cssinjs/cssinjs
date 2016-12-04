@@ -48,7 +48,8 @@ class MDContent extends React.Component {
    * @returns {HTMLElement} processed markup
    */
   static processCode(content) {
-    content.querySelectorAll('code').forEach((block) => {
+    // Because nodeList doesn't support forEach
+    [...content.querySelectorAll('code')].forEach((block) => {
       Prism.highlightElement(block)
     })
     return content
@@ -108,7 +109,8 @@ class MDContent extends React.Component {
    * @returns {HTMLElement} processed markup
    */
   processLinks(content) {
-    content.querySelectorAll('a').forEach((link) => {
+    // Because nodeList doesn't support forEach
+    [...content.querySelectorAll('a')].forEach((link) => {
       // Convert github link to RAW format and compare with internal pages structure
       let href = link.getAttribute('href')
       let endingAnchor = ''
@@ -161,7 +163,7 @@ class MDContent extends React.Component {
 
   /**
    * Create markup using MD syntax as input
-   * @param {String} markdown syntax string that need to be converted
+   * @param {string} markdown syntax string that need to be converted
    * @returns {Object} html, that can be appended to DOM
    */
   createMarkup(mdText) {

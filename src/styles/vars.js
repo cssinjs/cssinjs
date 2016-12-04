@@ -24,10 +24,7 @@ export default {
 
   sidebarBg: color(base.dark).hexString(),
   sidebarBgActive: color(base.dark).darken(0.2).hexString(),
-  // sidebarBgNested: color(base.dark).darken(0.1).hexString(),
   sidebarColor: color(base.light).hexString(),
-  // sidebarBorder: color(base.dark).lighten(0.55).hexString(),
-  // sidebarBorder: color(base.light).opaquer(0.1).rgbaString(),
   sidebarBorder: color(base.light).alpha(0.15).rgbaString(),
   sidebarShadow: color(base.dark).darken(0.4).hexString(),
 

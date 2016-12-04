@@ -10,6 +10,8 @@ export default {
       backgroundColor: vars.sidebarBgActive,
     }
   },
+
+  // Links
   link: {
     color: vars.sidebarColor,
     padding: [1.5, 6, 1.5, 2.5],
@@ -24,6 +26,15 @@ export default {
   linkActive: {
     composes: '$link',
     backgroundColor: vars.sidebarBgActive,
+  },
+
+  // Links without childrens
+  linkNoChildren: {
+    composes: '$link',
+    paddingRight: 2.5
+  },
+  linkActiveNoChildren: {
+    composes: ['$linkNoChildren', '$linkActive']
   },
 
   icons: {

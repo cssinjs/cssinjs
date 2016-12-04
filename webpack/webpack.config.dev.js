@@ -3,6 +3,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var vendor = require('./vendor');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -29,12 +30,19 @@ module.exports = {
       { test: /\.png$/, loader: "url-loader?limit=100000" },
       { test: /\.gif$/, loader: "url-loader?limit=100000" },
       { test: /\.jpg$/, loader: "file-loader" },
-      { test: /\.css/, loader: 'style-loader!css-loader' }
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')} // When migrate to Webpack 2.0 read this: https://github.com/webpack/extract-text-webpack-plugin/issues/215
     ]
   },
 
   plugins: [
+    new ExtractTextPlugin("vendor.styles.css"),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
+    }),
+
     new webpack.optimize.OccurenceOrderPlugin(), // Webpack 1.0
     // new webpack.optimize.OccurrenceOrderPlugin(), // Webpack 2.0 fixed this mispelling
     new webpack.HotModuleReplacementPlugin(),
