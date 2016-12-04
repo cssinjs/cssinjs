@@ -5,6 +5,7 @@ export default {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    overflowY: 'auto',
   },
   logo: {
     textAlign: 'center',
@@ -18,8 +19,6 @@ export default {
   },
   menu: {
     transition: vars.transition(),
-    overflowY: 'auto',
-    overflowX: 'hidden',
     borderTop: vars.border(vars.sidebarShadow),
     borderBottom: vars.border(vars.sidebarBorder),
     background: vars.sidebarBg,
@@ -59,6 +58,7 @@ export default {
       justifyContent: 'space-between',
       flexDirection: 'row',
       padding: 2,
+      overflow: 'visible',
     },
     logo: {
       padding: 0,
@@ -66,7 +66,8 @@ export default {
     },
     menu: {
       position: 'fixed',
-      // top: '100%',
+      overflowY: 'auto',
+      overflowX: 'hidden',
       top: 8,
       left: 0,
       right: 0,
@@ -74,7 +75,6 @@ export default {
       transform: 'translateX(100%)'
     },
     menuActive: {
-    //   composes: '$menu',
       transform: 'translateX(0)',
     },
     toggle: {
@@ -86,10 +86,5 @@ export default {
       lineHeight: 3,
       fontSize: 1.4,
     },
-  },
-  '@media (max-width: 400px)': {
-    logo: {
-
-    }
   }
 }
