@@ -20,7 +20,7 @@ export const flattenPages = (list = pages) => {
 /**
  * Get link from page, where 'home' property is set true. Get only first one
  * @param {Object} Object of pages (by default - provided by pages.json)
- * @returns {String} Link to homepage
+ * @returns {string} Link to homepage
  */
 export const getHomeLink = (list = pages) => {
   let link = ''
@@ -39,7 +39,7 @@ export const getHomeLink = (list = pages) => {
  * @param {Object} original object
  * @returns {Object} Swapped object
  */
-export const invert = (obj) => {
+export const getInvertedPages = (obj) => {
   const result = {}
   for (const prop in obj) {
     if ({}.hasOwnProperty.call(obj, prop)) {
@@ -49,4 +49,22 @@ export const invert = (obj) => {
   return result
 }
 
-export default {flattenPages, getHomeLink, invert}
+
+/**
+ * Get list of external pages
+ * @param {Object} original object
+ * @returns {Object} list of external pages
+ */
+export const getExternalPages = (list = pages) => {
+  const result = {}
+  const iterate = (listItems) => {
+    for (const entry in listItems) {
+      if (listItems[entry].external) result[entry] = true
+      if (listItems[entry].child) iterate(listItems[entry].child)
+    }
+  }
+  iterate(list)
+  return result
+}
+
+export default {flattenPages, getHomeLink, getInvertedPages, getInvertedPages}

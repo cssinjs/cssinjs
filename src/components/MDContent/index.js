@@ -11,7 +11,7 @@ import 'prismjs/components/prism-bash.min.js'
 
 import Loader from '../Loader'
 
-import {invert as invertPages} from '../../helpers/pagesActions'
+import {getInvertedPages, getExternalPages} from '../../helpers/pagesActions'
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
@@ -65,7 +65,8 @@ class MDContent extends React.Component {
       loadedContent: '',
     }
 
-    this.links = invertPages(this.props.linksReference)
+    this.links = getInvertedPages(this.props.linksReference)
+    this.externalLinks = getExternalPages()
   }
 
   componentDidMount() {
@@ -146,6 +147,12 @@ class MDContent extends React.Component {
         const startUrl = this.props.url.substring(0, this.props.url.lastIndexOf('/'))
         const endUrl = href.substr(1)
         href = startUrl + endUrl
+      }
+
+      // Link is inside internal structure but set external
+      if(this.externalLinks[this.links[href]]) {
+        link.setAttribute('target', '_blank')
+        return
       }
 
       // If is in internal structure - change url to fit it
