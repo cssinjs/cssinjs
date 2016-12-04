@@ -141,6 +141,13 @@ class MDContent extends React.Component {
         }
       }
 
+      // Internal navigation inside repo
+      if (href.startsWith('./')) {
+        const startUrl = this.props.url.substring(0, this.props.url.lastIndexOf('/'))
+        const endUrl = href.substr(1)
+        href = startUrl + endUrl
+      }
+
       // If is in internal structure - change url to fit it
       if (this.links[href]) {
         link.setAttribute('href', `#/${this.links[href]}`)
