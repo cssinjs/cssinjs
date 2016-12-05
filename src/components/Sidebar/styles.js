@@ -6,6 +6,7 @@ export default {
     display: 'flex',
     flexDirection: 'column',
     overflowY: 'auto',
+    overflowX: 'hidden',
   },
   logo: {
     textAlign: 'center',
