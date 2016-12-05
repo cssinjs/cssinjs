@@ -3,12 +3,14 @@ import {renderToString} from 'react-dom/server'
 
 import jss from 'jss'
 import {jssSheet} from './helpers/jssPreset'
+import jssNormalize from 'jss-normalize'
 import baseStyles from './styles/baseStyles'
 
 import config from './config'
 
 export default function render() {
   const baseSheet = jssSheet.createStyleSheet(baseStyles, {named: false})
+  const normalize = jssSheet.createStyleSheet(jssNormalize, {named: false})
 
   return `<!doctype html>\n${renderToString(
     <html lang="en">
@@ -20,6 +22,9 @@ export default function render() {
         <meta httpEquiv="Content-Language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="./static/favicon.ico" />
+        <style type="text/css" id="normalize-styles">
+          {normalize.toString()}
+        </style>
         <style type="text/css" id="base-styles">
           {baseSheet.toString()}
         </style>

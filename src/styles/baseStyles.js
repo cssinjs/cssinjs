@@ -1,21 +1,16 @@
-import normalize from './normalize'
 import vars from './vars'
 
 /**
  * Global stylesheet that merges together base styles and normalize
  */
 export default {
-  ...normalize,
-
   '@import': 'https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i',
 
   html: {
-    ...normalize.html,
     fontSize: '62.5%',
     height: '100%',
   },
   body: {
-    ...normalize.body,
     background: vars.pageBackground,
     color: vars.color,
     height: '100%',

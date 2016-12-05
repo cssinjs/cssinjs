@@ -12,7 +12,8 @@
     "all:dev": "npm run build:dev && npm run server",
     "all:prod": "npm run build:prod && npm run server",
     "svg": "svgo -i static/images",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "start": "npm run lint && npm run all:prod"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -54,6 +55,7 @@
     "jss-expand": "^1.6.0",
     "jss-extend": "^2.0.6",
     "jss-nested": "^2.5.0",
+    "jss-normalize": "^1.0.1",
     "jss-vendor-prefixer": "^3.0.3",
     "marked": "^0.3.6",
     "prismjs": "^1.5.1",
