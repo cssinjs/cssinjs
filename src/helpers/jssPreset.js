@@ -1,23 +1,13 @@
 /**
- * JSS preset module.
+ * JSS preset helper
  * Used to simplify development. Exports pure JSS instance and react-jss instance (by default)
  */
 
 import {create as createJss} from 'jss'
 import {create as createInjectSheet} from 'react-jss'
+import preset from 'jss-preset-default'
 
-import vendorPrefixer from 'jss-vendor-prefixer'
-import camelCase from 'jss-camel-case'
-import defaultUnit from 'jss-default-unit'
-import extend from 'jss-extend'
-import expand from 'jss-expand'
-import nested from 'jss-nested'
-import compose from 'jss-compose'
-
-const extendOptions = {}
-const nestedOptions = {}
-const camelCaseOptions = {}
-const defaultUnitOptions = {
+const defaultUnit = {
   border: 'rem',
   'border-width': 'rem',
   'border-left-width': 'rem',
@@ -47,25 +37,13 @@ const defaultUnitOptions = {
   'font-size': 'rem',
   'line-height': 'rem'
 }
-const vendorPrefixedOptions = {}
-const expandOptions = {}
-const composeOptions = {}
 
-const jssSheet = createJss()
-jssSheet.use(compose(composeOptions))
-jssSheet.use(extend(extendOptions))
-jssSheet.use(nested(nestedOptions))
-jssSheet.use(camelCase(camelCaseOptions))
-jssSheet.use(defaultUnit(defaultUnitOptions))
-jssSheet.use(vendorPrefixer(vendorPrefixedOptions))
-jssSheet.use(expand(expandOptions))
-
-const injectSheet = createInjectSheet(jssSheet)
+const jssSheet = createJss(preset({defaultUnit}))
 
 /**
  * Default export - for client application where react is connected.
  */
-export default injectSheet
+export default createInjectSheet(jssSheet)
 
 /**
  * This export serves for ONLY ssr rendering.

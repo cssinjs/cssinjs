@@ -67,4 +67,4 @@ export const getExternalPages = (list = pages) => {
   return result
 }
 
-export default {flattenPages, getHomeLink, getInvertedPages, getInvertedPages}
+export default {flattenPages, getHomeLink, getInvertedPages, getExternalPages}

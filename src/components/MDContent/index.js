@@ -150,7 +150,7 @@ class MDContent extends React.Component {
       }
 
       // Link is inside internal structure but set external
-      if(this.externalLinks[this.links[href]]) {
+      if (this.externalLinks[this.links[href]]) {
         link.setAttribute('target', '_blank')
         return
       }
