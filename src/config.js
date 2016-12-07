@@ -4,7 +4,20 @@ module.exports = {
   site: {
     head: {
       title: 'JSS',
-      description: 'A lib for generating CSS from JavaScript'
+      description: 'A lib for generating CSS from JavaScript',
+      keywords: [
+        'jss',
+        'style',
+        'sheet',
+        'stylesheet',
+        'css',
+        'cssinjs',
+        'css in js',
+        'css-in-js',
+        'components',
+        'composable',
+        'react',
+      ]
     },
     repo: 'cssinjs/jss'
   },

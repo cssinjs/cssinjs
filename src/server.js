@@ -17,6 +17,7 @@ export default function render() {
       <head>
         <title>{config.site.head.title}</title>
         <meta name="description" content={config.site.head.description} />
+        <meta name="keywords" content={config.site.head.keywords.join(' ')} />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="Content-Language" content="en" />
