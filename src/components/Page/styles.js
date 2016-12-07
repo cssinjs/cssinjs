@@ -31,7 +31,7 @@ export default {
         marginTop: 0,
       },
     },
-    '& h1 + h2': {
+    '& h1 + h2, & h1 + h3': {
       paddingTop: 0,
       marginTop: 0,
       '&:after': {
