@@ -13,7 +13,7 @@ export default {
     borderRight: vars.border(vars.backgroundLine),
 
     // Static content
-    '& h1, & h2': {
+    '& h1': {
       fontSize: 4.2,
       color: vars.textColor,
       backgroundColor: vars.themeColor,
@@ -31,14 +31,14 @@ export default {
         marginTop: 0,
       },
     },
-    '& h2 + h3': {
+    '& h1 + h2': {
       paddingTop: 0,
       marginTop: 0,
       '&:after': {
         display: 'none',
       },
     },
-    '& h3': {
+    '& h2, & h3': {
       margin: [4, 0],
       paddingTop: 4,
       position: 'relative',
@@ -54,8 +54,15 @@ export default {
         boxShadow: [['50vh', 0, 0, 0, vars.backgroundLine], ['-50vh', 0, 0, 0, vars.backgroundLine]], // Make them go outside
       }
     },
+    '& h2': {
+      fontSize: 3.2,
+    },
+    '& h3': {
+      fontSize: 2.8,
+    },
     '& h4': {
-      margin: [3, 0]
+      fontSize: 2.4,
+      margin: [3, 0],
     },
   },
   hidden: {
