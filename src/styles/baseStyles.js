@@ -27,7 +27,7 @@ export default {
   // Link styles
   a: {
     fontWeight: 'bold',
-    textDecortation: 'underline',
+    textDecoration: 'underline',
     color: vars.textColor,
     '&:hover': {
       textDecoration: 'none'
