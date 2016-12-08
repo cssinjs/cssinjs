@@ -73,7 +73,7 @@ export default {
   '@media (max-width: 1320px)': {
     content: {
       border: 'none',
-      '& h1, & h2': {
+      '& h1': {
         marginLeft: -5
       }
     }
@@ -81,12 +81,21 @@ export default {
   '@media (max-width: 620px)': {
     content: {
       padding: [3, 2],
-      '& h1, & h2': {
+      '& h1': {
         marginLeft: -2,
-        fontSize: 3.2,
+        fontSize: 3.6,
         lineHeight: 4.2,
       },
-      '& h3, & h4': {
+      '& h2': {
+        fontSize: 3.2,
+      },
+      '& h3': {
+        fontSize: 2.8,
+      },
+      '& h4': {
+        fontSize: 2.4,
+      },
+      '& h2, & h3, & h4': {
         margin: [2, 0],
         paddingTop: 2,
       }
