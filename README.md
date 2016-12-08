@@ -2,4 +2,4 @@
 
 Landing page for JSS. Build with webpack, react, jss and some other cool things :)
 
-[Current link](https://typical000.github.io/jss-landing/)
+[Current link](https://cssinjs.github.io/site/)
