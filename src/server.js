@@ -9,8 +9,8 @@ import baseStyles from './styles/baseStyles'
 import config from './config'
 
 export default function render() {
-  const baseSheet = jssSheet.createStyleSheet(baseStyles, {named: false})
-  const normalize = jssSheet.createStyleSheet(jssNormalize, {named: false})
+  const baseSheet = jssSheet.createStyleSheet(baseStyles)
+  const normalize = jssSheet.createStyleSheet(jssNormalize)
 
   return `<!doctype html>\n${renderToString(
     <html lang="en">
@@ -30,7 +30,7 @@ export default function render() {
           {baseSheet.toString()}
         </style>
         <style type="text/css" id="server-side-styles">
-          {jss.sheets.toString()}
+          {jss.sheets ? jss.sheets.toString() : ''}
         </style>
       </head>
       <body>

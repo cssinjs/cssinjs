@@ -62,6 +62,10 @@
         "name": "jss-camel-case",
         "link": "https://raw.githubusercontent.com/cssinjs/jss-camel-case/master/readme.md"
       },
+      "jssGlobal": {
+        "name": "jss-global",
+        "link": "https://raw.githubusercontent.com/cssinjs/jss-global/master/README.md"
+      },
       "jssDefaultUnit": {
         "name": "jss-default-unit",
         "link": "https://raw.githubusercontent.com/cssinjs/jss-default-unit/master/readme.md"
