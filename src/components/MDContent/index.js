@@ -223,7 +223,7 @@ class MDContent extends React.Component {
         </div>
         <div className={this.state.loadedContent ? classes.contentLoaded : classes.content}>
           <div className={classes.edit}>
-            <EditLink url={this.getEditLink(this.props.url)} />
+            <EditLink url={this.constructor.getEditLink(this.props.url)} />
           </div>
           <div
             className={classes.contentInner}
