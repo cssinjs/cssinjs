@@ -29,6 +29,7 @@ export default {
       // If element is first - remove top margin
       '&:first-child': {
         marginTop: 0,
+        marginRight: 14, // Leave space for 'Edit' button
       },
     },
     '& h1 + h2, & h1 + h3': {
@@ -41,6 +42,7 @@ export default {
     '& h2, & h3': {
       margin: [4, 0],
       paddingTop: 4,
+      lineHeight: 'normal',
       position: 'relative',
       '&:after': {
         content: '""',
@@ -52,6 +54,14 @@ export default {
         height: '1px',
         display: 'block',
         boxShadow: [['50vh', 0, 0, 0, vars.backgroundLine], ['-50vh', 0, 0, 0, vars.backgroundLine]], // Make them go outside
+      },
+      '&:first-child': {
+        paddingTop: 0,
+        marginTop: 0,
+        marginRight: 14, // Leave space for 'Edit' button
+        '&:after': {
+          display: 'none'
+        }
       }
     },
     '& h2': {
@@ -98,6 +108,10 @@ export default {
       '& h2, & h3, & h4': {
         margin: [2, 0],
         paddingTop: 2,
+      },
+       // Remove extra space for 'edit' button and button by itself
+      '& h1:first-child, & h2:first-child, & h3:first-child': {
+        marginRight: 0,
       }
     }
   }

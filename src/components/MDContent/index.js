@@ -10,6 +10,7 @@ import 'prismjs/components/prism-javascript.min.js'
 import 'prismjs/components/prism-bash.min.js'
 
 import Loader from '../Loader'
+import EditLink from '../EditLink'
 
 import {getInvertedPages, getExternalPages} from '../../helpers/pagesActions'
 import jssPreset from '../../helpers/jssPreset'
@@ -53,6 +54,19 @@ class MDContent extends React.Component {
       Prism.highlightElement(block)
     })
     return content
+  }
+
+  /**
+   * Create edit link for current GitHub page
+   * @param {string} original link
+   * @returns {string} processed link
+   */
+  static getEditLink(link) {
+    // TODO: Find a needed position by 'master' branch.
+    // It doesn'n work if branch will be not in master branch
+    const insertPosition = link.indexOf('/master')
+    link = `${link.slice(0, insertPosition)}/edit${link.slice(insertPosition, link.length)}`
+    return link.replace(GITHUB_RAW_URL, GITHUB_URL).replace()
   }
 
   /**
@@ -207,13 +221,18 @@ class MDContent extends React.Component {
         <div className={this.state.loadedContent ? classes.loaded : classes.loader}>
           <Loader playing={this.state.loadedContent} />
         </div>
-        <div
-          className={this.state.loadedContent ? classes.contentLoaded : classes.content}
-          ref={(target) => {
-            this.content = target
-          }}
-          dangerouslySetInnerHTML={this.createMarkup(this.state.loadedContent)}
-        />
+        <div className={this.state.loadedContent ? classes.contentLoaded : classes.content}>
+          <div className={classes.edit}>
+            <EditLink url={this.getEditLink(this.props.url)} />
+          </div>
+          <div
+            className={classes.contentInner}
+            ref={(target) => {
+              this.content = target
+            }}
+            dangerouslySetInnerHTML={this.createMarkup(this.state.loadedContent)}
+          />
+        </div>
       </div>
     )
   }

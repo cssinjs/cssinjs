@@ -7,6 +7,7 @@ export default {
 
   // Main content
   content: {
+    position: 'relative',
     opacity: 0,
     visibility: 'hidden',
     transition: vars.transition('300ms', '300ms'),
@@ -30,5 +31,21 @@ export default {
     composes: '$loader',
     opacity: 0,
     visibility: 'hidden',
+  },
+
+  // Inner
+  conntentInner: {},
+  edit: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    zIndex: 5,
+  },
+
+  // Remove edit button for small screens
+  '@media (max-width: 620px)': {
+    edit: {
+      display: 'none'
+    }
   }
 }
