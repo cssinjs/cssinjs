@@ -22,6 +22,11 @@ export default function render() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="Content-Language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content={config.site.og.title} />
+        <meta property="og:description" content={config.site.og.description} />
+        <meta property="og:type" content={config.site.og.type} />
+        <meta property="og:image" content={config.site.og.image} />
+        <meta property="og:url" content={config.site.og.url} />
         <link rel="shortcut icon" href="./static/favicon.ico" />
         <style type="text/css" id="normalize-styles">
           {normalize.toString()}
