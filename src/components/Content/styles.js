@@ -1,9 +1,5 @@
-import vars from '../../styles/vars'
-
 export default {
-  container: {
-
-  },
+  container: {},
 
   // Main content
   content: {

@@ -3,7 +3,7 @@ import {animateScroll} from 'react-scroll'
 
 import ParallaxScene from '../ParallaxScene'
 import NotFound from '../NotFound'
-import MDContent from '../MDContent'
+import Content from '../../containers/Content'
 
 import {flattenPages} from '../../helpers/pagesActions'
 import jssPreset from '../../helpers/jssPreset'
@@ -49,7 +49,7 @@ class Page extends React.Component {
       <div className={classes.container}>
         {this.props.isHomepage ? <ParallaxScene /> : <span className={classes.hidden} />}
         <div className={classes.content} id="mainContent">
-          <MDContent
+          <Content
             url={this.pages[currentPage]}
             linksReference={this.pages}
           />
