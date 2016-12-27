@@ -27,7 +27,7 @@ export default function render() {
         <meta property="og:type" content={config.site.og.type} />
         <meta property="og:image" content={config.site.og.image} />
         <meta property="og:url" content={config.site.og.url} />
-        <link rel="shortcut icon" href="./static/favicon.ico" />
+        <link rel="shortcut icon" href="./images/favicon.ico" />
         <style type="text/css" id="normalize-styles">
           {normalize.toString()}
         </style>
