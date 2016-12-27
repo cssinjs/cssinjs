@@ -1,4 +1,3 @@
-import color from 'color'
 import vars from '../../styles/vars'
 
 export default {
@@ -13,7 +12,7 @@ export default {
     color: vars.textColor,
     fill: vars.textColor,
     '&:hover': {
-      background: color(vars.cardColor).hexString()
+      background: vars.cardColor
     }
   },
   icon: {
