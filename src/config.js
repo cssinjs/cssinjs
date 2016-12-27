@@ -19,6 +19,13 @@ module.exports = {
         'react',
       ]
     },
+    og: {
+      title: 'JSS',
+      description: 'A lib for generating CSS from JavaScript',
+      type: 'website',
+      image: 'http://cssinjs.org/static/logo.og.png', // Can't be relative url, and can't be svg
+      url: 'http://cssinjs.org/'
+    },
     repo: 'cssinjs/jss'
   },
   isProduction: (process.env.NODE_ENV === 'production')
