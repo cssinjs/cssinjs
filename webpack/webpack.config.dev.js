@@ -4,18 +4,13 @@ var webpack = require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var config = require('./config')
 
-config.plugins = [
-  new ExtractTextPlugin('vendor.styles.css'),
-  new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+config.plugins = config.plugins.concat([
   new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: '"development"'
     }
   }),
-  new webpack.optimize.OccurenceOrderPlugin(), // Webpack 1.0
-  // new webpack.optimize.OccurrenceOrderPlugin(), // Webpack 2.0 fixed this mispelling
-  new webpack.HotModuleReplacementPlugin(),
-  new webpack.NoErrorsPlugin()
-]
+  new webpack.HotModuleReplacementPlugin()
+])
 
 module.exports = config

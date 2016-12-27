@@ -5,9 +5,7 @@ var CompressionPlugin = require('compression-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var config = require('./config')
 
-config.plugins = [
-  new ExtractTextPlugin("vendor.styles.css"),
-  new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+config.plugins = config.plugins.concat([
   new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: '"production"'
@@ -24,8 +22,6 @@ config.plugins = [
     }
   }),
   new webpack.optimize.DedupePlugin(),
-  new webpack.optimize.OccurenceOrderPlugin(),
-  new webpack.NoErrorsPlugin(),
   new CompressionPlugin({
     asset: "[path].gz[query]",
     algorithm: "gzip",
@@ -33,6 +29,6 @@ config.plugins = [
     threshold: 10240,
     minRatio: 0.8
   })
-]
+])
 
 module.exports = config
