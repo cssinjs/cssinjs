@@ -1,10 +1,10 @@
 'use strict'
 
-var webpack = require('webpack');
-var path = require('path');
-var vendor = require('./vendor');
-var CompressionPlugin = require("compression-webpack-plugin");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var webpack = require('webpack')
+var path = require('path')
+var vendor = require('./vendor')
+var CompressionPlugin = require("compression-webpack-plugin")
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   entry: {
@@ -64,4 +64,4 @@ module.exports = {
       minRatio: 0.8
     })
   ]
-};
+}

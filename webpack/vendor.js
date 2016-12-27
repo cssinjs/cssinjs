@@ -20,4 +20,4 @@ module.exports = [
   'marked',
   'prismjs',
   'whatwg-fetch'
-];
+]
