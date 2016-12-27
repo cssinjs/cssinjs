@@ -13,7 +13,7 @@ export default {
     background: 'transparent',
     transition: vars.transition(),
     '&:hover': {
-      background: color(vars.cardColor).alpha(0.3).rgbaString(),
+      background: color(vars.cardColor).alpha(0.3).string(),
     },
     // SVG dot (can't pass JSS instance inside)
     '& .inner': {
