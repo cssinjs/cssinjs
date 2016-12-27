@@ -65,7 +65,7 @@ class MDContent extends React.Component {
     // TODO: Find a needed position by 'master' branch.
     // It doesn'n work if branch will be not in master branch
     const insertPosition = link.indexOf('/master')
-    link = `${link.slice(0, insertPosition)}/edit${link.slice(insertPosition, link.length)}`
+    link = `${link.slice(0, insertPosition)}/blob${link.slice(insertPosition, link.length)}`
     return link.replace(GITHUB_RAW_URL, GITHUB_URL).replace()
   }
 
