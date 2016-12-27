@@ -1,7 +1,6 @@
 import React from 'react'
 import {renderToString} from 'react-dom/server'
 
-import jss from 'jss'
 import jssNormalize from 'jss-normalize'
 import {jssSheet} from './helpers/jssPreset'
 import baseStyles from './styles/baseStyles'

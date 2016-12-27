@@ -9,7 +9,6 @@ import 'prismjs/components/prism-css.min.js'
 import 'prismjs/components/prism-javascript.min.js'
 import 'prismjs/components/prism-bash.min.js'
 
-import Loader from '../Loader'
 import EditLink from '../EditLink'
 
 import {getInvertedPages, getExternalPages} from '../../helpers/pagesActions'
@@ -218,10 +217,7 @@ class MDContent extends React.Component {
 
     return (
       <div className={classes.container}>
-        <div className={this.state.loadedContent ? classes.loaded : classes.loader}>
-          <Loader playing={this.state.loadedContent} />
-        </div>
-        <div className={this.state.loadedContent ? classes.contentLoaded : classes.content}>
+        <div className={classes.content}>
           <div className={classes.edit}>
             <EditLink url={this.constructor.getEditLink(this.props.url)} />
           </div>
