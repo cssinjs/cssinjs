@@ -27,16 +27,11 @@ export default function render() {
         <meta property="og:type" content={config.site.og.type} />
         <meta property="og:image" content={config.site.og.image} />
         <meta property="og:url" content={config.site.og.url} />
-        <link rel="shortcut icon" href="./images/favicon.ico" />
-        <style type="text/css" id="normalize-styles">
-          {normalize.toString()}
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <style type="text/css">
+          {normalize + baseSheet}
         </style>
-        <style type="text/css" id="base-styles">
-          {baseSheet.toString()}
-        </style>
-        <style type="text/css" id="server-side-styles">
-          {jss.sheets ? jss.sheets.toString() : ''}
-        </style>
+        <link rel="stylesheet" type="text/css" href="vendor.styles.css" />
       </head>
       <body>
         <div id="root">
@@ -48,9 +43,8 @@ export default function render() {
              */
           }
         </div>
-        <script src="vendor.bundle.js" charSet="UTF-8" />
-        <script src="bundle.js" charSet="UTF-8" />
-        <link rel="stylesheet" type="text/css" href="vendor.styles.css" />
+        <script src="vendor.bundle.js" />
+        <script src="bundle.js" />
       </body>
     </html>
   )}`

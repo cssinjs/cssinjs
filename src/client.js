@@ -10,8 +10,8 @@ import routes from './routes'
  * Client side entry point for application
  */
 
-render(<Router history={hashHistory} routes={routes} />, document.getElementById('root'), () => {
-  const serverStyles = document.getElementById('server-side-styles')
-  serverStyles.parentNode.removeChild(serverStyles)
-})
+render(
+  <Router history={hashHistory} routes={routes} />,
+  document.getElementById('root')
+)
 
