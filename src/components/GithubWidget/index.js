@@ -78,13 +78,13 @@ class GithubWidget extends React.Component {
         rel="noopener noreferrer"
       >
         <div className={classes.item}>
-          <Isvg src={'static/images/star.svg'} className={classes.iconStar} />
+          <Isvg src={'images/star.svg'} className={classes.iconStar} />
           <span className={classes.text}>
             {this.state.stars}
           </span>
         </div>
         <div className={classes.item}>
-          <Isvg src={'static/images/github.svg'} className={classes.iconGithub} />
+          <Isvg src={'images/github.svg'} className={classes.iconGithub} />
           <span className={classes.text}>
             GitHub
           </span>

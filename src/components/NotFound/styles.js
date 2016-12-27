@@ -1,7 +1,7 @@
 import color from 'color'
 import vars from '../../styles/vars'
 
-const backgroundLineColor = color(vars.cardColor).alpha(0.4).rgbaString()
+const backgroundLineColor = color(vars.cardColor).alpha(0.4).string()
 
 export default {
   container: {

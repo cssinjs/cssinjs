@@ -14,25 +14,25 @@ export default {
 
   pageBackground: '#f9f9f9',
 
-  textColor: color(base.dark).hexString(),
-  textColorInverse: color(base.light).hexString(),
+  textColor: base.dark,
+  textColorInverse: base.light,
 
-  borderColor: color(base.light).darken(0.06).hexString(),
+  borderColor: color(base.light).darken(0.06).hex(),
   cardColor: '#fff',
 
-  backgroundLine: color(base.light).darken(0.03).hexString(),
+  backgroundLine: color(base.light).darken(0.03).hex(),
 
-  sidebarBg: color(base.dark).hexString(),
-  sidebarBgActive: color(base.dark).darken(0.2).hexString(),
-  sidebarColor: color(base.light).hexString(),
-  sidebarBorder: color(base.light).alpha(0.15).rgbaString(),
-  sidebarShadow: color(base.dark).darken(0.4).hexString(),
+  sidebarBg: base.dark,
+  sidebarBgActive: color(base.dark).darken(0.2).hex(),
+  sidebarColor: base.light,
+  sidebarBorder: color(base.light).alpha(0.15).string(),
+  sidebarShadow: color(base.dark).darken(0.4).hex(),
 
   // Size variables
   contentWidth: 100,
 
   // Something like SASS functions
-  border: (borderColor = color(base.light).darken(0.06).hexString()) => ({
+  border: (borderColor = color(base.light).darken(0.06).hex()) => ({
     width: '1px', // jss-default-unit and jss-expand bug. Deep passing interprets 'width' as not a part of 'border' statement
     style: 'solid',
     color: borderColor,

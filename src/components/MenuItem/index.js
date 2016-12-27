@@ -57,11 +57,11 @@ class MenuItem extends React.Component {
         return (
           <button className={classes.icons} onClick={this.handleChildrenToggle}>
             <Isvg
-              src={'static/images/arrow.svg'}
+              src={'images/arrow.svg'}
               className={this.state.isChildVisible ? classes.iconArrowHidden : classes.iconArrow}
             />
             <Isvg
-              src={'static/images/close.svg'}
+              src={'images/close.svg'}
               className={this.state.isChildVisible ? classes.iconClose : classes.iconCloseHidden}
             />
           </button>
