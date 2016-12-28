@@ -1,8 +1,9 @@
-import React, {Component, PropTypes} from 'react'
+import React, {PureComponent, PropTypes} from 'react'
 import marked from 'marked'
 
 import {getInvertedPages, getExternalPages} from '../../helpers/pagesActions'
 import jssPreset from '../../helpers/jssPreset'
+import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
 import {processCode, processLinks, getEditLink, onAnchorClick} from './utils'
 import styles from './styles'
@@ -10,11 +11,13 @@ import styles from './styles'
 /**
  * Render markdown content.
  */
-class Content extends Component {
+class Content extends PureComponent {
   static propTypes = {
     sheet: PropTypes.object,
     url: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
+    onChangeVersion: PropTypes.func.isRequred,
+    repo: PropTypes.string,
     linksReference: PropTypes.object, // Object in format { pageName: 'http://url.com/'}
   }
 
@@ -68,12 +71,15 @@ class Content extends Component {
   render() {
     const {
       sheet: {classes},
-      url
+      url,
+      repo,
+      onChangeVersion
     } = this.props
 
     return (
       <div className={classes.container}>
         <div className={classes.content}>
+          {repo && <VersionSelect repo={repo} onChange={onChangeVersion} />}
           <div className={classes.edit}>
             <EditLink url={getEditLink(url)} />
           </div>

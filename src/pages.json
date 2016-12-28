@@ -2,6 +2,8 @@
   "home": {
     "name": "Home",
     "link": "https://raw.githubusercontent.com/cssinjs/jss/master/readme.md",
+    "repo": "jss",
+    "path": "/readme.md",
     "home": true,
     "child": {
       "benefits": {

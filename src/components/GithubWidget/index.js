@@ -1,6 +1,5 @@
 import React from 'react'
 import Isvg from 'react-inlinesvg'
-import 'whatwg-fetch' // eslint-disable-line
 
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'

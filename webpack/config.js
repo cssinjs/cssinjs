@@ -36,7 +36,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '..', 'docs'),
-    publicPath: '/',
+    publicPath: '/docs',
     filename: 'bundle.js',
   },
   module: {

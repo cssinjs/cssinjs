@@ -20,10 +20,6 @@ class Page extends React.Component {
     isHomepage: React.PropTypes.bool
   }
 
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
   constructor(props) {
     super(props)
     this.pages = flattenPages()
@@ -33,15 +29,16 @@ class Page extends React.Component {
     animateScroll.scrollToTop()
   }
 
-  /**
-   * React component render
-   */
   render() {
-    const {classes} = this.props.sheet
-    const currentPage = this.props.params.page
+    const {
+      sheet: {classes},
+      params
+    } = this.props
+
+    const page = this.pages[params.page]
 
     // If page doesn't exists - render 404 page
-    if (!this.pages[currentPage]) {
+    if (!page) {
       return <NotFound />
     }
 
@@ -50,7 +47,10 @@ class Page extends React.Component {
         {this.props.isHomepage ? <ParallaxScene /> : <span className={classes.hidden} />}
         <div className={classes.content} id="mainContent">
           <Content
-            url={this.pages[currentPage]}
+            url={page.link}
+            repo={page.repo}
+            path={page.path}
+            // XXX it expects: {name: url}
             linksReference={this.pages}
           />
         </div>

@@ -9,8 +9,12 @@ export const flattenPages = (list = pages) => {
   const result = {}
   const iterate = (listItems) => {
     for (const entry in listItems) {
-      if (listItems[entry].link) result[entry] = listItems[entry].link
-      if (listItems[entry].child) iterate(listItems[entry].child)
+      result[entry] = {...listItems[entry]}
+      const {child} = result[entry]
+      if (child) {
+        delete result[entry].child
+        iterate(child)
+      }
     }
   }
   iterate(list)

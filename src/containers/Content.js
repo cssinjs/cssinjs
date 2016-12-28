@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import 'whatwg-fetch' // eslint-disable-line
+import React, {PureComponent, PropTypes} from 'react'
 import Content from '../components/Content'
+import {userContentUrl, org} from '../constants/github'
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -21,32 +21,46 @@ function loadContent(url) {
     })
 }
 
-export default class ContentContainer extends Component {
+const getUrl = (repo, version, path) => (
+  `${userContentUrl}/${org}/${repo}/${version}/${path}`
+)
+
+export default class ContentContainer extends PureComponent {
   static propTypes = {
-    url: React.PropTypes.string.isRequired
+    url: PropTypes.string.isRequired,
+    repo: PropTypes.string,
+    path: PropTypes.string
   }
 
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
   constructor(props) {
     super(props)
     this.state = {
       content: '',
+      url: props.url
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     loadContent(this.props.url).then((content) => {
       this.setState({content})
     })
   }
 
-  /**
-   * React component render
-   */
+  onChangeVersion = ({value}) => {
+    const {repo, path} = this.props
+    const url = getUrl(repo, value, path)
+    loadContent(url).then((content) => {
+      this.setState({url, content})
+    })
+  }
+
   render() {
-    return <Content {...this.props} content={this.state.content} />
+    return (
+      <Content
+        {...this.props}
+        content={this.state.content}
+        onChangeVersion={this.onChangeVersion}
+      />
+    )
   }
 }
