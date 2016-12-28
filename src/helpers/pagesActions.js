@@ -10,10 +10,10 @@ export const flattenPages = (list = pages) => {
   const iterate = (listItems) => {
     for (const entry in listItems) {
       result[entry] = {...listItems[entry]}
-      const {child} = result[entry]
-      if (child) {
-        delete result[entry].child
-        iterate(child)
+      const {children} = result[entry]
+      if (children) {
+        delete result[entry].children
+        iterate(children)
       }
     }
   }
@@ -31,7 +31,7 @@ export const getHomeLink = (list = pages) => {
   const iterate = (listItems) => {
     for (const entry in listItems) {
       if (listItems[entry].home) link = `/${entry}`
-      if (listItems[entry].child) iterate(listItems[entry].child)
+      if (listItems[entry].children) iterate(listItems[entry].children)
     }
     return link
   }
@@ -64,7 +64,7 @@ export const getExternalPages = (list = pages) => {
   const iterate = (listItems) => {
     for (const entry in listItems) {
       if (listItems[entry].external) result[entry] = true
-      if (listItems[entry].child) iterate(listItems[entry].child)
+      if (listItems[entry].children) iterate(listItems[entry].children)
     }
   }
   iterate(list)

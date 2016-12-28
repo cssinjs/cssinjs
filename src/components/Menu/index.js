@@ -14,8 +14,8 @@ export default class Menu extends PureComponent {
 
     for (const name in root) {
       const page = {...root[name], name}
-      if (page.child) {
-        page.children = this.renderMenu(page.child)
+      if (page.children) {
+        page.children = this.renderMenu(page.children)
       }
       menu.push(<MenuItem {...page} key={index} />)
 

@@ -4,7 +4,7 @@
     "repo": "jss",
     "path": "/readme.md",
     "home": true,
-    "child": {
+    "children": {
       "benefits": {
         "title": "Benefits",
         "repo": "jss",
@@ -31,7 +31,7 @@
     "title": "JSON Syntax",
     "repo": "jss",
     "path": "/docs/json-api.md",
-    "child": {
+    "children": {
       "jss-global": {
         "title": "jss-global",
         "repo": "jss-global",
@@ -66,7 +66,7 @@
         "title": "jss-expand",
         "repo": "jss-expand",
         "path": "/readme.md",
-        "child": {
+        "children": {
           "jss-expand-full": {
             "title": "Full documentation",
             "repo": "jss-expand",
@@ -85,7 +85,7 @@
     "title": "Official Plugins",
     "repo": "jss",
     "path": "/docs/plugins.md",
-    "child": {
+    "children": {
       "jss-preset-default": {
         "title": "jss-preset-default",
         "repo": "jss-preset-default",
@@ -125,7 +125,7 @@
         "title": "jss-expand",
         "repo": "jss-expand",
         "path": "/readme.md",
-        "child": {
+        "children": {
           "jss-expand-full": {
             "title": "Full documentation",
             "repo": "jss-expand",
