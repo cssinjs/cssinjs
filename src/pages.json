@@ -166,7 +166,7 @@
     }
   },
   "abstractions": {
-    "title": "Abstractions on top",
+    "title": "Abstractions on top of JSS",
     "children": {
       "react-jss": {
         "title": "React-JSS",
