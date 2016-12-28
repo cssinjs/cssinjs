@@ -1,13 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
 import VersionSelect from '../components/VersionSelect'
-import {apiDomain, org} from '../constants/github'
-
-const loadVersions = repo => (
-  fetch(`//${apiDomain}/repos/${org}/${repo}/tags`)
-    .then(response => response.text())
-    .then(data => JSON.parse(data))
-    .then(tags => tags.map(tag => tag.name))
-)
+import {loadTags} from '../utils/github'
 
 export default class VersionSelectContainer extends PureComponent {
   static propTypes = {
@@ -24,7 +17,7 @@ export default class VersionSelectContainer extends PureComponent {
 
   componentWillMount() {
     const {repo, onChange} = this.props
-    loadVersions(repo).then((versions) => {
+    loadTags(repo).then((versions) => {
       const value = versions[0]
       this.setState({versions, value})
       onChange({value})

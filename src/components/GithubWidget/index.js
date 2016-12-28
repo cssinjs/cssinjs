@@ -1,7 +1,8 @@
 import React, {PureComponent, PropTypes} from 'react'
 import Isvg from 'react-inlinesvg'
 
-import {apiDomain, primaryDomain} from '../../constants/github'
+import {primaryDomain} from '../../constants/github'
+import {loadStars} from '../../utils/github'
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
@@ -22,18 +23,6 @@ class GithubWidget extends PureComponent {
   }
 
   /**
-   * Helper function for check XHR response status
-   */
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response
-    }
-    const error = new Error(response.statusText)
-    error.response = response
-    throw error
-  }
-
-  /**
    * Class constructor
    * @param {Object} props
    */
@@ -45,19 +34,9 @@ class GithubWidget extends PureComponent {
   }
 
   componentDidMount() {
-    // Fetch stars count through GitHub API
-    fetch(`//${apiDomain}/repos/${this.props.repo}`)
-      .then(this.checkStatus)
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({
-          stars: addCommasToNum(data.stargazers_count)
-        })
-      })
-      .catch((error) => {
-        // eslint-disable-next-line
-        console.error(`Request failed. Something went wrong with Github API or url passed to component. ERROR: ${error}`)
-      })
+    loadStars(this.props.repo).then((stars) => {
+      this.setState({stars: addCommasToNum(stars)})
+    })
   }
 
   /**

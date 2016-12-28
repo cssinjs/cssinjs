@@ -61,7 +61,9 @@ class Content extends PureComponent {
     processCode(content)
 
     // Process all links one by one
-    processLinks(content, this.links, this.externalLinks, this.props.cdnUrl)
+    if (this.props.cdnUrl) {
+      processLinks(content, this.links, this.externalLinks, this.props.cdnUrl)
+    }
 
     return content.outerHTML
   }
