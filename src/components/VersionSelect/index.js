@@ -1,5 +1,9 @@
 import React, {PureComponent, PropTypes} from 'react'
 
+const formatVersion = version => (
+  isNaN(parseFloat(version)) ? version : `v${version}`
+)
+
 export default class VersionSelect extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func.isRequired,
@@ -22,7 +26,7 @@ export default class VersionSelect extends PureComponent {
       <select value={value} onChange={this.onChange}>
         {versions.map(version => (
           <option value={version}>
-            {version}
+            {formatVersion(version)}
           </option>
         ))}
       </select>
