@@ -16,7 +16,7 @@ class Content extends PureComponent {
     sheet: PropTypes.object,
     url: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired,
-    onChangeVersion: PropTypes.func.isRequred,
+    onChangeVersion: PropTypes.func.isRequired,
     repo: PropTypes.string,
     linksReference: PropTypes.object, // Object in format { pageName: 'http://url.com/'}
   }
