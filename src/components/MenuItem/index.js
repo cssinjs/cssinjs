@@ -97,7 +97,7 @@ class MenuItem extends PureComponent {
         // External link
         return (
           <a
-            className={setLinkClass()}
+            className={cn(setLinkClass(), classes.level0)}
             href={this.props.url}
             target="_blank"
             rel="noopener noreferrer"
