@@ -7,7 +7,8 @@ const lastVersionMap = {}
 export default class VersionSelectContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    org: PropTypes.string
   }
 
   constructor(props) {
@@ -18,8 +19,8 @@ export default class VersionSelectContainer extends PureComponent {
   }
 
   componentWillMount() {
-    const {repo} = this.props
-    loadTags(repo).then((versions) => {
+    const {repo, org} = this.props
+    loadTags(repo, org).then((versions) => {
       versions.push('master')
       this.setState({versions})
       this.onChange({value: lastVersionMap[repo] || versions[0]})

@@ -20,6 +20,7 @@ class Content extends PureComponent {
     cdnUrl: PropTypes.string,
     editUrl: PropTypes.string,
     repo: PropTypes.string,
+    org: PropTypes.string,
     linksReference: PropTypes.object, // Object in format { pageName: 'http://url.com/'}
     status: PropTypes.number
   }
@@ -78,15 +79,15 @@ class Content extends PureComponent {
       sheet: {classes},
       editUrl,
       repo,
+      org,
       onChangeVersion,
       status
     } = this.props
 
-
     return (
       <div className={classes.container}>
         <div className={classes.content}>
-          {repo && <VersionSelect repo={repo} onChange={onChangeVersion} />}
+          {repo && <VersionSelect repo={repo} org={org} onChange={onChangeVersion} />}
           {status === 404 && <NotFound />}
           <div className={classes.edit}>
             {editUrl && <EditLink url={editUrl} />}

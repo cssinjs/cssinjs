@@ -6,7 +6,8 @@ import {loadRawFile} from '../utils/github'
 export default class ContentContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string,
-    path: PropTypes.string
+    path: PropTypes.string,
+    org: PropTypes.string
   }
 
   constructor(props) {
@@ -15,8 +16,8 @@ export default class ContentContainer extends PureComponent {
   }
 
   onChangeVersion = ({value}) => {
-    const {repo, path} = this.props
-    loadRawFile(repo, path, value)
+    const {repo, path, org} = this.props
+    loadRawFile(repo, path, value, org)
       .then((content) => {
         this.setState({content, version: value, status: 200})
       })
@@ -27,13 +28,14 @@ export default class ContentContainer extends PureComponent {
 
   render() {
     const {content, status} = this.state
-    const {repo} = this.props
+    const {repo, org} = this.props
 
     return (
       <Content
         repo={repo}
         content={content}
         status={status}
+        org={org}
         onChangeVersion={this.onChangeVersion}
       />
     )

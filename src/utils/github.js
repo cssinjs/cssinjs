@@ -1,13 +1,11 @@
-import {primaryDomain, cdnDomain, apiDomain, org, token} from '../constants/github'
-
+import {primaryDomain, cdnDomain, apiDomain, org as defaultOrg, token} from '../constants/github'
 
 /**
  * Get a URL to the file on github.
  */
-export const getFileUrl = (repo, tag = 'master', path) => (
+export const getFileUrl = (repo, path, tag = 'master', org = defaultOrg) => (
   `//${primaryDomain}/${org}/${repo}/${tag}${path}`
 )
-
 
 const checkResponse = (response) => {
   if (response.status >= 200 && response.status < 300) {
@@ -23,11 +21,10 @@ const getText = response => response.text()
 
 const getJson = response => response.json()
 
-
 /**
  * Load tags list.
  */
-export const loadTags = repo => (
+export const loadTags = (repo, org = defaultOrg) => (
   fetch(`//${apiDomain}/repos/${org}/${repo}/tags?access_token=${token}`)
     .then(checkResponse)
     .then(getJson)
@@ -37,7 +34,7 @@ export const loadTags = repo => (
 /**
  * Load raw file from the CDN.
  */
-export const loadRawFile = (repo, path, tag = 'master') => (
+export const loadRawFile = (repo, path, tag = 'master', org = defaultOrg) => (
   fetch(`//${cdnDomain}/${org}/${repo}/${tag}${path}`)
     .then(checkResponse)
     .then(getText)

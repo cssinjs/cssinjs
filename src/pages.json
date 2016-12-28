@@ -150,6 +150,29 @@
       }
     }
   },
+  "abstractions": {
+    "title": "Abstractions on top",
+    "repo": "react-jss",
+    "path": "/README.md",
+    "children": {
+      "react-jss": {
+        "title": "React-JSS",
+        "repo": "react-jss",
+        "path": "/README.md"
+      },
+      "jss-theme-reactor": {
+        "title": "Theme Reactor",
+        "repo": "jss-theme-reactor",
+        "org": "nathanmarks",
+        "path": "/README.md"
+      },
+      "aphrodisiac": {
+        "title": "Aphrodisiac",
+        "repo": "aphrodisiac",
+        "path": "/readme.md"
+      }
+    }
+  },
   "examples": {
     "title": "Examples",
     "url": "http://cssinjs.github.io/examples/index.html",
