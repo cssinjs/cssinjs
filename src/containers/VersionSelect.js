@@ -13,13 +13,14 @@ export default class VersionSelectContainer extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      versions: []
+      versions: ['loading…']
     }
   }
 
   componentWillMount() {
     const {repo} = this.props
     loadTags(repo).then((versions) => {
+      versions.push('master')
       this.setState({versions})
       this.onChange({value: lastVersionMap[repo] || versions[0]})
     })
