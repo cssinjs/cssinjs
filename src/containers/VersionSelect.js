@@ -22,9 +22,11 @@ export default class VersionSelectContainer extends PureComponent {
   }
 
   componentWillMount() {
-    const {repo} = this.props
+    const {repo, onChange} = this.props
     loadVersions(repo).then((versions) => {
-      this.setState({versions})
+      const value = versions[0]
+      this.setState({versions, value})
+      onChange({value})
     })
   }
 

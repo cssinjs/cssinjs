@@ -37,19 +37,14 @@ class Page extends React.Component {
 
     const page = this.pages[params.page]
 
-    // If page doesn't exists - render 404 page
-    if (!page) {
-      return <NotFound />
-    }
+    if (!page) return <NotFound />
 
     return (
       <div className={classes.container}>
         {this.props.isHomepage ? <ParallaxScene /> : <span className={classes.hidden} />}
         <div className={classes.content} id="mainContent">
           <Content
-            url={page.link}
-            repo={page.repo}
-            path={page.path}
+            {...page}
             // XXX it expects: {name: url}
             linksReference={this.pages}
           />

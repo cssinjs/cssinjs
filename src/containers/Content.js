@@ -1,6 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
 import Content from '../components/Content'
-import {userContentUrl, org} from '../constants/github'
+import {getCdnFileUrl} from '../utils/github'
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -21,44 +21,34 @@ function loadContent(url) {
     })
 }
 
-const getUrl = (repo, version, path) => (
-  `${userContentUrl}/${org}/${repo}/${version}/${path}`
-)
-
 export default class ContentContainer extends PureComponent {
   static propTypes = {
-    url: PropTypes.string.isRequired,
     repo: PropTypes.string,
     path: PropTypes.string
   }
 
   constructor(props) {
     super(props)
-    this.state = {
-      content: '',
-      url: props.url
-    }
-  }
-
-  componentWillMount() {
-    loadContent(this.props.url).then((content) => {
-      this.setState({content})
-    })
+    this.state = {}
   }
 
   onChangeVersion = ({value}) => {
     const {repo, path} = this.props
-    const url = getUrl(repo, value, path)
-    loadContent(url).then((content) => {
-      this.setState({url, content})
+    const cdnUrl = getCdnFileUrl(repo, value, path)
+    loadContent(cdnUrl).then((content) => {
+      this.setState({cdnUrl, content, version: value})
     })
   }
 
   render() {
+    const {content, cdnUrl} = this.state
+    const {repo} = this.props
+
     return (
       <Content
-        {...this.props}
-        content={this.state.content}
+        repo={repo}
+        cdnUrl={cdnUrl}
+        content={content}
         onChangeVersion={this.onChangeVersion}
       />
     )

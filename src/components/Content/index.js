@@ -5,7 +5,7 @@ import {getInvertedPages, getExternalPages} from '../../helpers/pagesActions'
 import jssPreset from '../../helpers/jssPreset'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
-import {processCode, processLinks, getEditLink, onAnchorClick} from './utils'
+import {processCode, processLinks, onAnchorClick} from './utils'
 import styles from './styles'
 
 /**
@@ -13,10 +13,11 @@ import styles from './styles'
  */
 class Content extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object,
-    url: PropTypes.string.isRequired,
+    sheet: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
     onChangeVersion: PropTypes.func.isRequired,
+    cdnUrl: PropTypes.string,
+    editUrl: PropTypes.string,
     repo: PropTypes.string,
     linksReference: PropTypes.object, // Object in format { pageName: 'http://url.com/'}
   }
@@ -60,7 +61,7 @@ class Content extends PureComponent {
     processCode(content)
 
     // Process all links one by one
-    processLinks(content, this.links, this.externalLinks, this.props.url)
+    processLinks(content, this.links, this.externalLinks, this.props.cdnUrl)
 
     return content.outerHTML
   }
@@ -71,7 +72,7 @@ class Content extends PureComponent {
   render() {
     const {
       sheet: {classes},
-      url,
+      editUrl,
       repo,
       onChangeVersion
     } = this.props
@@ -81,7 +82,7 @@ class Content extends PureComponent {
         <div className={classes.content}>
           {repo && <VersionSelect repo={repo} onChange={onChangeVersion} />}
           <div className={classes.edit}>
-            <EditLink url={getEditLink(url)} />
+            {editUrl && <EditLink url={editUrl} />}
           </div>
           <div
             className={classes.contentInner}

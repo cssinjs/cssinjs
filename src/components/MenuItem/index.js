@@ -1,43 +1,32 @@
-import React from 'react'
+import React, {PureComponent, PropTypes} from 'react'
 import Isvg from 'react-inlinesvg'
 import Link from 'react-router/lib/Link'
 
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
-/**
- * Single menu item component
- * @extends React.Component
- */
-class MenuItem extends React.Component {
+class MenuItem extends PureComponent {
   static propTypes = {
-    sheet: React.PropTypes.object,
-    children: React.PropTypes.node,
-    name: React.PropTypes.string.isRequired,
-    link: React.PropTypes.string.isRequired,
-    realLink: React.PropTypes.string,
-    haveChildren: React.PropTypes.bool,
-    home: React.PropTypes.bool,
-    external: React.PropTypes.bool
+    sheet: PropTypes.object.isRequired,
+    title: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    home: PropTypes.bool,
+    children: PropTypes.node,
+    external: PropTypes.bool,
+    link: PropTypes.string
   }
 
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
   constructor(props) {
     super(props)
     this.state = {
       isChildVisible: false
     }
-
-    this.handleChildrenToggle = this.handleChildrenToggle.bind(this)
   }
 
   /**
    * Click Handler. Opens/Closes child menu
    */
-  handleChildrenToggle() {
+  onToggle = () => {
     this.setState({
       isChildVisible: !this.state.isChildVisible
     })
@@ -53,9 +42,9 @@ class MenuItem extends React.Component {
      * Render toggle item for children content
      */
     const renderItemToggler = () => {
-      if (this.props.haveChildren) {
+      if (this.props.children) {
         return (
-          <button className={classes.icons} onClick={this.handleChildrenToggle}>
+          <button className={classes.icons} onClick={this.onToggle}>
             <Isvg
               src={'images/arrow.svg'}
               className={this.state.isChildVisible ? classes.iconArrowHidden : classes.iconArrow}
@@ -74,7 +63,7 @@ class MenuItem extends React.Component {
      * Render children inside link
      */
     const renderChildren = () => {
-      if (this.props.haveChildren) {
+      if (this.props.children) {
         return (
           <div className={this.state.isChildVisible ? classes.childWrapActive : classes.childWrap}>
             <div className={classes.children}>
@@ -91,10 +80,10 @@ class MenuItem extends React.Component {
      */
     const setLinkClass = () => {
       if (this.state.isChildVisible) {
-        if (this.props.haveChildren) return classes.linkActive
+        if (this.props.children) return classes.linkActive
         return classes.linkActiveNoChildren
       }
-      if (this.props.haveChildren) return classes.link
+      if (this.props.children) return classes.link
       return classes.linkNoChildren
     }
 
@@ -102,46 +91,37 @@ class MenuItem extends React.Component {
      * Create layout for link
      */
     const renderLink = () => {
-      if (this.props.realLink) {
-        if (this.props.external) {
-          // External link
-          return (
-            <a
-              className={setLinkClass()}
-              href={this.props.realLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {this.props.name}
-            </a>
-          )
-        }
-        // Internal router link
+      if (this.props.external) {
+        // External link
         return (
-          <Link
+          <a
             className={setLinkClass()}
-            activeClassName={classes.linkActive}
-            to={{
-              pathname: this.props.link,
-              state: {
-                isHomepage: this.props.home // Pass homepage param to router
-              }
-            }}
+            href={this.props.link}
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            {this.props.name}
-          </Link>
+            {this.props.title}
+          </a>
         )
       }
+
+      // Internal router link
       return (
-        <div className={setLinkClass()}>
-          {this.props.name}
-        </div>
+        <Link
+          className={setLinkClass()}
+          activeClassName={classes.linkActive}
+          to={{
+            pathname: this.props.name,
+            state: {
+              isHomepage: this.props.home // Pass homepage param to router
+            }
+          }}
+        >
+          {this.props.title}
+        </Link>
       )
     }
 
-    /**
-     * Render main layout
-     */
     return (
       <div className={classes.container}>
         <div className={classes.item}>

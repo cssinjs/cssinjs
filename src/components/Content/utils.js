@@ -9,19 +9,6 @@ const GITHUB_URL = 'github.com'
 const GITHUB_RAW_URL = 'raw.githubusercontent.com'
 const ANCHOR_NAME = 'internalAnchor'
 
-/**
- * Create edit link for current GitHub page
- * @param {string} original link
- * @returns {string} processed link
- */
-export function getEditLink(link) {
-  // TODO: Find a needed position by 'master' branch.
-  // It doesn'n work if branch will be not in master branch
-  const insertPosition = link.indexOf('/master')
-  link = `${link.slice(0, insertPosition)}/blob${link.slice(insertPosition, link.length)}`
-  return link.replace(GITHUB_RAW_URL, GITHUB_URL).replace()
-}
-
 
 /**
  * Achor click handler. On click must scroll to needed target
