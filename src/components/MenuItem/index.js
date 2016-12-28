@@ -1,6 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 import Isvg from 'react-inlinesvg'
 import Link from 'react-router/lib/Link'
+import cn from 'classnames'
 
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
@@ -10,6 +11,7 @@ class MenuItem extends PureComponent {
     sheet: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
+    level: PropTypes.number.isRequired,
     home: PropTypes.bool,
     children: PropTypes.node,
     external: PropTypes.bool,
@@ -19,7 +21,7 @@ class MenuItem extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      showChildren: false
+      showChildren: true
     }
   }
 
@@ -36,7 +38,10 @@ class MenuItem extends PureComponent {
    * React component render
    */
   render() {
-    const {classes} = this.props.sheet
+    const {
+      sheet: {classes},
+      level
+    } = this.props
 
     /**
      * Render toggle item for children content
@@ -105,7 +110,7 @@ class MenuItem extends PureComponent {
       // Internal router link
       return (
         <Link
-          className={setLinkClass()}
+          className={cn(setLinkClass(), classes[`level${level}`])}
           activeClassName={classes.linkActive}
           to={{
             pathname: this.props.name,

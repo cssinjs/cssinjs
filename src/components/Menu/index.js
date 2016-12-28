@@ -8,16 +8,23 @@ export default class Menu extends PureComponent {
     sheet: PropTypes.object
   }
 
-  renderMenu = (root) => {
+  renderMenu = (root, level = 0) => {
     const menu = []
     let index = 0
 
     for (const name in root) {
-      const page = {...root[name], name}
-      if (page.children) {
-        page.children = this.renderMenu(page.children)
-      }
-      menu.push(<MenuItem {...page} key={index} />)
+      const page = root[name]
+
+      menu.push(
+        <MenuItem
+          {...page}
+          name={name}
+          key={index}
+          level={level}
+        >
+          {page.children && this.renderMenu(page.children, level + 1)}
+        </MenuItem>
+      )
 
       index++
     }

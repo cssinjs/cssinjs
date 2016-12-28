@@ -14,7 +14,6 @@ export default {
   // Links
   link: {
     color: vars.sidebarColor,
-    padding: [1.5, 6, 1.5, 2.5],
     textDecoration: 'none',
     fontWeight: 300,
     display: 'block',
@@ -28,13 +27,24 @@ export default {
     backgroundColor: vars.sidebarBgActive,
   },
 
-  // Links without childrens
+  // Links without children
   linkNoChildren: {
-    composes: '$link',
-    paddingRight: 2.5
+    composes: '$link'
   },
   linkActiveNoChildren: {
     composes: ['$linkNoChildren', '$linkActive']
+  },
+
+  level0: {
+    padding: [1.5, 2.5]
+  },
+
+  level1: {
+    padding: [0.7, 6, 0.7, 5]
+  },
+
+  level2: {
+    padding: [0.7, 6, 0.7, 7]
   },
 
   icons: {
@@ -107,7 +117,6 @@ export default {
 
   children: {
     '& $link, & $linkActive': {
-      padding: [0.7, 6, 0.7, 5],
       backgroundColor: vars.sidebarBgActive
     },
     '& $linkActive, & $link:hover': {
