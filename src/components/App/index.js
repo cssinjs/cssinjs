@@ -14,16 +14,16 @@ import styles from './styles'
 const App = (data) => {
   const {children, location, sheet} = data
   const {classes} = sheet
-  const homeLink = getHomeUrl()
+  const homeUrl = getHomeUrl()
 
   // Set in what direction content must move when page changes
   const transitionStyles = location.action === 'POP' ? presets.slideRight : presets.slideLeft
 
   // Check if is homepage - and pass params to child components
   if (typeof data.location.state === 'undefined') data.location.state = {}
-  if (data.location.pathname === homeLink) {
+  if (data.location.pathname === homeUrl) {
     data.location.state = {}
-    data.location.state.isHomepage = true
+    data.location.state.home = true
   }
 
   return (
@@ -39,7 +39,7 @@ const App = (data) => {
         >
           {React.cloneElement(children, {
             key: location.pathname,
-            isHomepage: data.location.state.isHomepage ? data.location.state.isHomepage : false
+            home: data.location.state.home
           })}
         </RouteTransition>
       </div>

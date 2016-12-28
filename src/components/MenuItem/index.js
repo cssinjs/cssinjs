@@ -110,7 +110,7 @@ class MenuItem extends PureComponent {
           to={{
             pathname: this.props.name,
             state: {
-              isHomepage: this.props.home // Pass homepage param to router
+              home: this.props.home // Pass homepage param to router
             }
           }}
         >

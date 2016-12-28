@@ -1,6 +1,7 @@
-import React from 'react'
+import React, {PureComponent, PropTypes} from 'react'
 import Isvg from 'react-inlinesvg'
 
+import {apiDomain, primaryDomain} from '../../constants/github'
 import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
@@ -12,13 +13,12 @@ import styles from './styles'
 const addCommasToNum = num => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 /**
- * Component, for displaying link to GitHub repository and stars counter
- * @extends React.Component
+ * Component, for displaying link to GitHub repository and stars counter.
  */
-class GithubWidget extends React.Component {
+class GithubWidget extends PureComponent {
   static propTypes = {
-    sheet: React.PropTypes.object,
-    repo: React.PropTypes.string
+    sheet: PropTypes.object.isRequired,
+    repo: PropTypes.string.isRequired
   }
 
   /**
@@ -42,14 +42,11 @@ class GithubWidget extends React.Component {
     this.state = {
       stars: -1
     }
-
-    this.publicRepo = `https://github.com/${this.props.repo}`
-    this.apiRepo = `https://api.github.com/repos/${this.props.repo}`
   }
 
   componentDidMount() {
     // Fetch stars count through GitHub API
-    fetch(this.apiRepo)
+    fetch(`//${apiDomain}/repos/${this.props.repo}`)
       .then(this.checkStatus)
       .then(response => response.json())
       .then((data) => {
@@ -71,7 +68,7 @@ class GithubWidget extends React.Component {
 
     return (
       <a
-        href={this.publicRepo}
+        href={`//${primaryDomain}/${this.props.repo}`}
         className={(this.state.stars === -1) ? classes.containerHidden : classes.container}
         target="_blank"
         rel="noopener noreferrer"

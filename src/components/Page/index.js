@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PureComponent, PropTypes} from 'react'
 import {animateScroll} from 'react-scroll'
 
 import ParallaxScene from '../ParallaxScene'
@@ -11,13 +11,12 @@ import styles from './styles'
 
 /**
  * Common application page rapresenting class
- * @extends React.Component
  */
-class Page extends React.Component {
+class Page extends PureComponent {
   static propTypes = {
-    sheet: React.PropTypes.object,
-    params: React.PropTypes.object,
-    isHomepage: React.PropTypes.bool
+    sheet: PropTypes.object.isRequired,
+    params: PropTypes.object,
+    home: PropTypes.bool
   }
 
   constructor(props) {
@@ -41,7 +40,7 @@ class Page extends React.Component {
 
     return (
       <div className={classes.container}>
-        {this.props.isHomepage ? <ParallaxScene /> : <span className={classes.hidden} />}
+        {this.props.home ? <ParallaxScene /> : <span className={classes.hidden} />}
         <div className={classes.content} id="mainContent">
           <Content
             {...page}

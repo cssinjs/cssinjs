@@ -1,8 +1,9 @@
 import React, {PureComponent, PropTypes} from 'react'
 import VersionSelect from '../components/VersionSelect'
+import {apiDomain, org} from '../constants/github'
 
 const loadVersions = repo => (
-  fetch(`//api.github.com/repos/cssinjs/${repo}/tags`)
+  fetch(`//${apiDomain}/repos/${org}/${repo}/tags`)
     .then(response => response.text())
     .then(data => JSON.parse(data))
     .then(tags => tags.map(tag => tag.name))
