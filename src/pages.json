@@ -1,10 +1,13 @@
 {
   "home": {
     "title": "Home",
-    "repo": "jss",
-    "path": "/readme.md",
-    "home": true,
     "children": {
+      "intro": {
+        "title": "Intro",
+        "repo": "jss",
+        "path": "/readme.md",
+        "home": true
+      },
       "benefits": {
         "title": "Benefits",
         "repo": "jss",
@@ -27,11 +30,14 @@
       }
     }
   },
-  "jsonApi": {
+  "json-api": {
     "title": "JSON Syntax",
-    "repo": "jss",
-    "path": "/docs/json-api.md",
     "children": {
+      "core": {
+        "title": "Core",
+        "repo": "jss",
+        "path": "/docs/json-api.md"
+      },
       "jss-global": {
         "title": "jss-global",
         "repo": "jss-global",
@@ -64,10 +70,13 @@
       },
       "jss-expand": {
         "title": "jss-expand",
-        "repo": "jss-expand",
-        "path": "/readme.md",
         "children": {
-          "jss-expand-full": {
+          "intro": {
+            "title": "Intro",
+            "repo": "jss-expand",
+            "path": "/readme.md"
+          },
+          "full": {
             "title": "Full documentation",
             "repo": "jss-expand",
             "path": "/docs/index.md"
@@ -76,16 +85,19 @@
       }
     }
   },
-  "jsApi": {
+  "js-api": {
     "title": "JavaScript API",
     "repo": "jss",
     "path": "/docs/js-api.md"
   },
   "plugins": {
     "title": "Official Plugins",
-    "repo": "jss",
-    "path": "/docs/plugins.md",
     "children": {
+      "intro": {
+        "title": "Intro",
+        "repo": "jss",
+        "path": "/docs/plugins.md"
+      },
       "jss-preset-default": {
         "title": "jss-preset-default",
         "repo": "jss-preset-default",
@@ -123,10 +135,13 @@
       },
       "jss-expand": {
         "title": "jss-expand",
-        "repo": "jss-expand",
-        "path": "/readme.md",
         "children": {
-          "jss-expand-full": {
+          "intro": {
+            "title": "Intro",
+            "repo": "jss-expand",
+            "path": "/readme.md"
+          },
+          "full": {
             "title": "Full documentation",
             "repo": "jss-expand",
             "path": "/docs/index.md"
@@ -138,12 +153,12 @@
         "repo": "jss-vendor-prefixer",
         "path": "/readme.md"
       },
-      "propsSort": {
+      "jss-props-sort": {
         "title": "jss-props-sort",
         "repo": "jss-props-sort",
         "path": "/readme.md"
       },
-      "isolate": {
+      "jss-isolate": {
         "title": "jss-isolate",
         "repo": "jss-isolate",
         "path": "/readme.md"
@@ -152,8 +167,6 @@
   },
   "abstractions": {
     "title": "Abstractions on top",
-    "repo": "react-jss",
-    "path": "/README.md",
     "children": {
       "react-jss": {
         "title": "React-JSS",
