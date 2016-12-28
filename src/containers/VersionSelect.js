@@ -2,6 +2,8 @@ import React, {PureComponent, PropTypes} from 'react'
 import VersionSelect from '../components/VersionSelect'
 import {loadTags} from '../utils/github'
 
+const lastVersionMap = {}
+
 export default class VersionSelectContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string.isRequired,
@@ -16,17 +18,18 @@ export default class VersionSelectContainer extends PureComponent {
   }
 
   componentWillMount() {
-    const {repo, onChange} = this.props
+    const {repo} = this.props
     loadTags(repo).then((versions) => {
-      const value = versions[0]
-      this.setState({versions, value})
-      onChange({value})
+      this.setState({versions})
+      this.onChange({value: lastVersionMap[repo] || versions[0]})
     })
   }
 
   onChange = ({value}) => {
+    const {repo, onChange} = this.props
+    lastVersionMap[repo] = value
     this.setState({value})
-    this.props.onChange({value})
+    onChange({value})
   }
 
   render() {

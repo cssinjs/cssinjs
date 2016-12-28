@@ -15,6 +15,7 @@ const checkResponse = (response) => {
   }
   const error = new Error(response.statusText)
   error.response = response
+  error.status = response.status
   throw error
 }
 
