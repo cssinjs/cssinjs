@@ -13,13 +13,13 @@ class MenuItem extends PureComponent {
     home: PropTypes.bool,
     children: PropTypes.node,
     external: PropTypes.bool,
-    link: PropTypes.string
+    url: PropTypes.string
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      isChildVisible: false
+      showChildren: false
     }
   }
 
@@ -28,7 +28,7 @@ class MenuItem extends PureComponent {
    */
   onToggle = () => {
     this.setState({
-      isChildVisible: !this.state.isChildVisible
+      showChildren: !this.state.showChildren
     })
   }
 
@@ -47,11 +47,11 @@ class MenuItem extends PureComponent {
           <button className={classes.icons} onClick={this.onToggle}>
             <Isvg
               src={'images/arrow.svg'}
-              className={this.state.isChildVisible ? classes.iconArrowHidden : classes.iconArrow}
+              className={this.state.showChildren ? classes.iconArrowHidden : classes.iconArrow}
             />
             <Isvg
               src={'images/close.svg'}
-              className={this.state.isChildVisible ? classes.iconClose : classes.iconCloseHidden}
+              className={this.state.showChildren ? classes.iconClose : classes.iconCloseHidden}
             />
           </button>
         )
@@ -59,13 +59,10 @@ class MenuItem extends PureComponent {
       return <span />
     }
 
-    /**
-     * Render children inside link
-     */
     const renderChildren = () => {
       if (this.props.children) {
         return (
-          <div className={this.state.isChildVisible ? classes.childWrapActive : classes.childWrap}>
+          <div className={this.state.showChildren ? classes.childWrapActive : classes.childWrap}>
             <div className={classes.children}>
               {this.props.children}
             </div>
@@ -79,7 +76,7 @@ class MenuItem extends PureComponent {
      * Detects wich link class need to be added
      */
     const setLinkClass = () => {
-      if (this.state.isChildVisible) {
+      if (this.state.showChildren) {
         if (this.props.children) return classes.linkActive
         return classes.linkActiveNoChildren
       }
@@ -96,7 +93,7 @@ class MenuItem extends PureComponent {
         return (
           <a
             className={setLinkClass()}
-            href={this.props.link}
+            href={this.props.url}
             target="_blank"
             rel="noopener noreferrer"
           >

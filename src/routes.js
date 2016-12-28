@@ -5,7 +5,7 @@ import IndexRoute from 'react-router/lib/IndexRoute'
 import App from './components/App'
 import Page from './components/Page/'
 
-import {getHomeLink} from './helpers/pagesActions'
+import {getHomeUrl} from './helpers/pagesActions'
 
 /**
  * Application routes description
@@ -13,7 +13,7 @@ import {getHomeLink} from './helpers/pagesActions'
 
 const indexRouteAction = (nextState, replace) => {
   if (!nextState.params.page) {
-    replace(getHomeLink())
+    replace(getHomeUrl())
   }
 }
 

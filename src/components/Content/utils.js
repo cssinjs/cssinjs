@@ -5,10 +5,12 @@ import 'prismjs/components/prism-css.min.js'
 import 'prismjs/components/prism-javascript.min.js'
 import 'prismjs/components/prism-bash.min.js'
 
-const GITHUB_URL = 'github.com'
-const GITHUB_RAW_URL = 'raw.githubusercontent.com'
-const ANCHOR_NAME = 'internalAnchor'
+import {
+  primaryDomain as githubPrimary,
+  cdn as githubCdn
+} from '../../constants/github'
 
+const internalAnchor = 'internalAnchor'
 
 /**
  * Achor click handler. On click must scroll to needed target
@@ -17,7 +19,7 @@ const ANCHOR_NAME = 'internalAnchor'
 export function onAnchorClick(e) {
   const el = e.target
 
-  if (el.getAttribute('ref') === ANCHOR_NAME) {
+  if (el.getAttribute('ref') === internalAnchor) {
     e.preventDefault()
     const target = el.querySelector(`${el.getAttribute('href')}-`)
     if (target) {
@@ -61,8 +63,8 @@ export function processLinks(content, links, externalLinks, url) {
       href = href[0]
     }
 
-    if (href.indexOf(GITHUB_URL) > -1) {
-      href = href.replace(GITHUB_URL, GITHUB_RAW_URL).replace('blob/', '')
+    if (href.indexOf(githubPrimary) > -1) {
+      href = href.replace(githubPrimary, githubCdn).replace('blob/', '')
       // Suppose, if page end without .md - isn't direct link to something
       if (!href.endsWith('.md')) {
         // Try to resolve link (just adding 'readme.md' to end of it)
@@ -98,7 +100,7 @@ export function processLinks(content, links, externalLinks, url) {
 
     // If is internal anchor
     if (href.startsWith('#')) {
-      link.setAttribute('ref', ANCHOR_NAME)
+      link.setAttribute('ref', internalAnchor)
       return
     }
 

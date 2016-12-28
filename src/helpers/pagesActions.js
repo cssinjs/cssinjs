@@ -26,14 +26,14 @@ export const flattenPages = (list = pages) => {
  * @param {Object} Object of pages (by default - provided by pages.json)
  * @returns {string} Link to homepage
  */
-export const getHomeLink = (list = pages) => {
-  let link = ''
+export const getHomeUrl = (list = pages) => {
+  let url = ''
   const iterate = (listItems) => {
     for (const entry in listItems) {
-      if (listItems[entry].home) link = `/${entry}`
+      if (listItems[entry].home) url = `/${entry}`
       if (listItems[entry].children) iterate(listItems[entry].children)
     }
-    return link
+    return url
   }
   return iterate(list)
 }
@@ -71,4 +71,4 @@ export const getExternalPages = (list = pages) => {
   return result
 }
 
-export default {flattenPages, getHomeLink, getInvertedPages, getExternalPages}
+export default {flattenPages, getHomeUrl, getInvertedPages, getExternalPages}

@@ -152,12 +152,12 @@
   },
   "examples": {
     "title": "Examples",
-    "link": "http://cssinjs.github.io/examples/index.html",
+    "url": "http://cssinjs.github.io/examples/index.html",
     "external": true
   },
   "playground": {
     "title": "JSS Playground",
-    "link": "http://cssinjs.github.io/repl/",
+    "url": "http://cssinjs.github.io/repl/",
     "external": true
   },
   "ssr": {
