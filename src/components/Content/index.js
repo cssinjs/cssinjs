@@ -1,6 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'
@@ -51,4 +51,4 @@ class Content extends PureComponent {
   }
 }
 
-export default jssPreset(styles)(Content)
+export default injectSheet(styles)(Content)

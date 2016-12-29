@@ -2,7 +2,7 @@ import React from 'react'
 import {renderToString} from 'react-dom/server'
 
 import jssNormalize from 'jss-normalize'
-import {jssSheet} from './helpers/jssPreset'
+import {jss} from './utils/jss'
 import baseStyles from './styles/baseStyles'
 
 import config from './config'
@@ -18,8 +18,8 @@ const analytics = `
 `
 
 export default function render() {
-  const baseSheet = jssSheet.createStyleSheet(baseStyles)
-  const normalize = jssSheet.createStyleSheet(jssNormalize)
+  const baseSheet = jss.createStyleSheet(baseStyles)
+  const normalize = jss.createStyleSheet(jssNormalize)
 
   return `<!doctype html>\n${renderToString(
     <html lang="en">

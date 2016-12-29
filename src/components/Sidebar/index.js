@@ -6,7 +6,7 @@ import MenuToggleWidget from '../MenuToggleWidget'
 import Menu from '../Menu'
 
 import config from '../../config'
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -70,4 +70,4 @@ class Sidebar extends React.Component {
   }
 }
 
-export default jssPreset(styles)(Sidebar)
+export default injectSheet(styles)(Sidebar)

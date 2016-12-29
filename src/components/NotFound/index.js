@@ -1,6 +1,6 @@
 import React from 'react'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -28,4 +28,4 @@ NotFound.propTypes = {
   sheet: React.PropTypes.object
 }
 
-export default jssPreset(styles)(NotFound)
+export default injectSheet(styles)(NotFound)

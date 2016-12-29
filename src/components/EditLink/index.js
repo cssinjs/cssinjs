@@ -1,7 +1,7 @@
 import React from 'react'
 import Isvg from 'react-inlinesvg'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -26,4 +26,4 @@ EditLink.propTypes = {
   url: React.PropTypes.string
 }
 
-export default jssPreset(styles)(EditLink)
+export default injectSheet(styles)(EditLink)

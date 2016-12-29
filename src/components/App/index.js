@@ -4,7 +4,7 @@ import {RouteTransition, presets} from 'react-router-transition'
 import Sidebar from '../Sidebar'
 
 import {getHomeUrl} from '../../helpers/pagesActions'
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -53,4 +53,4 @@ App.propTypes = {
   sheet: React.PropTypes.object
 }
 
-export default jssPreset(styles)(App)
+export default injectSheet(styles)(App)

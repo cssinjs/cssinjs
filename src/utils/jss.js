@@ -1,8 +1,3 @@
-/**
- * JSS preset helper
- * Used to simplify development. Exports pure JSS instance and react-jss instance (by default)
- */
-
 import {create as createJss} from 'jss'
 import {create as createInjectSheet} from 'react-jss'
 import preset from 'jss-preset-default'
@@ -38,15 +33,6 @@ const defaultUnit = {
   'line-height': 'rem'
 }
 
-const jssSheet = createJss(preset({defaultUnit}))
+export const jss = createJss(preset({defaultUnit}))
 
-/**
- * Default export - for client application where react is connected.
- */
-export default createInjectSheet(jssSheet)
-
-/**
- * This export serves for ONLY ssr rendering.
- * In our case is used only 1 time - when rendering base styles
- */
-export {jssSheet}
+export default createInjectSheet(jss)

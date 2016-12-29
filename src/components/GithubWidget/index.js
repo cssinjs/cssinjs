@@ -3,7 +3,7 @@ import Isvg from 'react-inlinesvg'
 
 import {primaryDomain} from '../../constants/github'
 import {loadStars} from '../../utils/github'
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /*
@@ -69,4 +69,4 @@ class GithubWidget extends PureComponent {
   }
 }
 
-export default jssPreset(styles)(GithubWidget)
+export default injectSheet(styles)(GithubWidget)

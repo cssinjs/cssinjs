@@ -3,7 +3,7 @@ import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
 import ScrollWidget from '../ScrollWidget'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -108,4 +108,4 @@ class ParallaxScene extends React.Component {
   }
 }
 
-export default jssPreset(styles)(ParallaxScene)
+export default injectSheet(styles)(ParallaxScene)

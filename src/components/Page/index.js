@@ -6,7 +6,7 @@ import NotFound from '../NotFound'
 import Content from '../../containers/Content'
 
 import {flattenPages} from '../../helpers/pagesActions'
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -53,4 +53,4 @@ class Page extends PureComponent {
   }
 }
 
-export default jssPreset(styles)(Page)
+export default injectSheet(styles)(Page)

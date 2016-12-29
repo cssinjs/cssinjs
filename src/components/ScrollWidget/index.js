@@ -1,7 +1,7 @@
 import React from 'react'
 import Isvg from 'react-inlinesvg'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -22,4 +22,4 @@ ScrollWidget.propTypes = {
   sheet: React.PropTypes.object
 }
 
-export default jssPreset(styles)(ScrollWidget)
+export default injectSheet(styles)(ScrollWidget)

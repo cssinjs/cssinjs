@@ -3,7 +3,7 @@ import Isvg from 'react-inlinesvg'
 import Link from 'react-router/lib/Link'
 import cn from 'classnames'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 class MenuItem extends PureComponent {
@@ -136,4 +136,4 @@ class MenuItem extends PureComponent {
   }
 }
 
-export default jssPreset(styles)(MenuItem)
+export default injectSheet(styles)(MenuItem)
