@@ -1,9 +1,4 @@
 import {animateScroll} from 'react-scroll'
-import Prism from 'prismjs'
-import 'prismjs/themes/prism.css'
-import 'prismjs/components/prism-css.min.js'
-import 'prismjs/components/prism-javascript.min.js'
-import 'prismjs/components/prism-bash.min.js'
 
 import {
   primaryDomain as githubPrimary,
@@ -26,19 +21,6 @@ export function onAnchorClick(e) {
       animateScroll.scrollTo(target.offsetTop)
     }
   }
-}
-
-/**
- * Modify each <code> tags adding code highlighting
- * @param {HTMLElement} markup, that need to be processed
- * @returns {HTMLElement} processed markup
- */
-export function processCode(content) {
-  // Because nodeList doesn't support forEach
-  [...content.querySelectorAll('code')].forEach((block) => {
-    Prism.highlightElement(block)
-  })
-  return content
 }
 
 /**

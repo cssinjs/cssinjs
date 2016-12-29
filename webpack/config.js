@@ -29,7 +29,7 @@ module.exports = {
       'jss-extend',
       'jss-nested',
       'jss-vendor-prefixer',
-      'marked',
+      'markdown-react-js',
       'prismjs',
       'whatwg-fetch'
     ]

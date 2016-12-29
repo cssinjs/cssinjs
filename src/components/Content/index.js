@@ -1,12 +1,11 @@
 import React, {PureComponent, PropTypes} from 'react'
-import marked from 'marked'
 
 import {getInvertedPages, getExternalPages} from '../../helpers/pagesActions'
 import jssPreset from '../../helpers/jssPreset'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'
-import {processCode, processLinks, onAnchorClick} from './utils'
+import HighlightedMarkdown from '../HighlightedMarkdown'
 import styles from './styles'
 
 /**
@@ -17,7 +16,6 @@ class Content extends PureComponent {
     sheet: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
     onChangeVersion: PropTypes.func.isRequired,
-    cdnUrl: PropTypes.string,
     editUrl: PropTypes.string,
     repo: PropTypes.string,
     org: PropTypes.string,
@@ -39,41 +37,10 @@ class Content extends PureComponent {
     this.externalLinks = getExternalPages()
   }
 
-  componentDidMount() {
-    // Handle internal anchors.
-    this.content.addEventListener('click', onAnchorClick)
-  }
-
   onRefContent = (ref) => {
     this.content = ref
   }
 
-  /**
-   * Create markup using MD syntax as input
-   * @returns {String} html, that can be appended to DOM
-   */
-  getHtml() {
-    // First of all - convert markdown to pure HTML markup string
-    const textContent = marked(this.props.content)
-
-    // Convert string to real HTML markup
-    const content = document.createElement('div')
-    content.innerHTML = textContent
-
-    // Highlight all code blocks
-    processCode(content)
-
-    // Process all links one by one
-    if (this.props.cdnUrl) {
-      processLinks(content, this.links, this.externalLinks, this.props.cdnUrl)
-    }
-
-    return content.outerHTML
-  }
-
-  /**
-   * React component render
-   */
   render() {
     const {
       sheet: {classes},
@@ -81,7 +48,8 @@ class Content extends PureComponent {
       repo,
       org,
       onChangeVersion,
-      status
+      status,
+      content
     } = this.props
 
     return (
@@ -92,11 +60,7 @@ class Content extends PureComponent {
           <div className={classes.edit}>
             {editUrl && <EditLink url={editUrl} />}
           </div>
-          <div
-            className={classes.contentInner}
-            ref={this.onRefContent}
-            dangerouslySetInnerHTML={{__html: this.getHtml()}}
-          />
+          <HighlightedMarkdown text={content} className={classes.markdown} />
         </div>
       </div>
     )

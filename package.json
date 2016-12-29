@@ -62,7 +62,7 @@
     "jss-normalize": "^2.0.0",
     "jss-preset-default": "^1.1.0",
     "jss-vendor-prefixer": "^4.0.0",
-    "marked": "^0.3.6",
+    "markdown-react-js": "^0.3.0",
     "prismjs": "^1.5.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
