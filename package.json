@@ -8,9 +8,10 @@
     "dev-server": "cross-env NODE_ENV=development PORT=3000 node ./webpack/webpack-dev-server.js",
     "build:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.config.dev",
     "build:prod": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod",
-    "build-html": "cross-env NODE_ENV=production node ./bin/build > ./docs/index.html",
-    "all:dev": "npm run build:dev && npm run build-html",
-    "all:prod": "npm run build:prod && npm run build-html",
+    "build-html:dev": "cross-env NODE_ENV=development node ./bin/build > ./docs/index.html",
+    "build-html:prod": "cross-env NODE_ENV=production node ./bin/build > ./docs/index.html",
+    "all:dev": "npm run build:dev && npm run build-html:dev",
+    "all:prod": "npm run build:prod && npm run build-html:prod",
     "svg": "svgo -i static/images",
     "lint": "eslint ./src",
     "start": "npm run lint && npm run all:prod"
