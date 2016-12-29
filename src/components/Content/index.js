@@ -1,6 +1,5 @@
 import React, {PureComponent, PropTypes} from 'react'
 
-import {getInvertedPages, getExternalPages} from '../../helpers/pagesActions'
 import jssPreset from '../../helpers/jssPreset'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
@@ -19,26 +18,11 @@ class Content extends PureComponent {
     editUrl: PropTypes.string,
     repo: PropTypes.string,
     org: PropTypes.string,
-    linksReference: PropTypes.object, // Object in format { pageName: 'http://url.com/'}
     status: PropTypes.number
   }
 
   static defaultProps = {
     content: ''
-  }
-
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
-  constructor(props) {
-    super(props)
-    this.links = getInvertedPages(props.linksReference)
-    this.externalLinks = getExternalPages()
-  }
-
-  onRefContent = (ref) => {
-    this.content = ref
   }
 
   render() {
