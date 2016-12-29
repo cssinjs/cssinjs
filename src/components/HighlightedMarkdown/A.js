@@ -16,9 +16,9 @@ export default function A(props) {
   let newHref = href
   let target
 
-  if (href) {
+  if (href && href[0] !== '#') {
     const page = findPage(absUrl(href, pageName))
-    if (page && !page.external) newHref = `#${page.name}`
+    if (page && !page.external) newHref = `/${page.name}`
     else target = '_blank'
   }
 
