@@ -1,13 +1,14 @@
 import resolve from 'resolve-url'
 
 export const parse = (function parse() {
-  const parser = document.createElement('a')
+  let parser
 
   const components = [
     'hash', 'host', 'hostname', 'href', 'pathname', 'port', 'protocol', 'search'
   ]
 
   return (url) => {
+    if (!parser) parser = document.createElement('a')
     const data = {}
     parser.href = encodeURI(url)
     components.forEach((component) => {

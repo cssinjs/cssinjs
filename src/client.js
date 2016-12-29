@@ -1,17 +1,12 @@
 import React from 'react'
 import {render} from 'react-dom'
-import Router from 'react-router/lib/Router'
-import hashHistory from 'react-router/lib/hashHistory'
+import {Router, browserHistory} from 'react-router'
 import 'whatwg-fetch'
 
 import routes from './routes'
 
-/**
- * Client side entry point for application
- */
-
 render(
-  <Router history={hashHistory} routes={routes} />,
+  <Router history={browserHistory} routes={routes} />,
   document.getElementById('root')
 )
 

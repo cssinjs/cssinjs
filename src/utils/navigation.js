@@ -99,3 +99,15 @@ export const findPage = (url) => {
 
   return null
 }
+
+/**
+ * Get first page name, which has `home: true`.
+ */
+export const getHomeRoute = () => {
+  for (const name in map) {
+    const page = map[name]
+    if (page.home) return `/${name}`
+  }
+
+  return null
+}
