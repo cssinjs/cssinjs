@@ -7,7 +7,8 @@ export default class ContentContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string,
     path: PropTypes.string,
-    org: PropTypes.string
+    org: PropTypes.string,
+    name: PropTypes.string
   }
 
   constructor(props) {
@@ -28,10 +29,11 @@ export default class ContentContainer extends PureComponent {
 
   render() {
     const {content, status} = this.state
-    const {repo, org} = this.props
+    const {repo, org, name} = this.props
 
     return (
       <Content
+        name={name}
         repo={repo}
         content={content}
         status={status}

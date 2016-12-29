@@ -1,7 +1,7 @@
 import {animateScroll} from 'react-scroll'
 
 import {
-  primaryDomain as githubPrimary,
+  primaryHost as githubPrimary,
   cdn as githubCdn
 } from '../../constants/github'
 

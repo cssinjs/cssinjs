@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 import Isvg from 'react-inlinesvg'
 
-import {primaryDomain} from '../../constants/github'
+import {primaryHost} from '../../constants/github'
 import {loadStars} from '../../utils/github'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
@@ -47,7 +47,7 @@ class GithubWidget extends PureComponent {
 
     return (
       <a
-        href={`//${primaryDomain}/${this.props.repo}`}
+        href={`//${primaryHost}/${this.props.repo}`}
         className={(this.state.stars === -1) ? classes.containerHidden : classes.container}
         target="_blank"
         rel="noopener noreferrer"

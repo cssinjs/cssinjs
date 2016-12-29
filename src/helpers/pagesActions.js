@@ -1,27 +1,6 @@
 import pages from '../pages'
 
 /**
- * Flatten pages construction because we need only URL and name. Other info doesn't care
- * @param {Object} Object of pages (by default - provided by pages.json)
- * @returns {Object} Flattened pages object
- */
-export const flattenPages = (list = pages) => {
-  const result = {}
-  const iterate = (listItems) => {
-    for (const entry in listItems) {
-      result[entry] = {...listItems[entry]}
-      const {children} = result[entry]
-      if (children) {
-        delete result[entry].children
-        iterate(children)
-      }
-    }
-  }
-  iterate(list)
-  return result
-}
-
-/**
  * Get link from page, where 'home' property is set true. Get only first one
  * @param {Object} Object of pages (by default - provided by pages.json)
  * @returns {string} Link to homepage
@@ -71,4 +50,4 @@ export const getExternalPages = (list = pages) => {
   return result
 }
 
-export default {flattenPages, getHomeUrl, getInvertedPages, getExternalPages}
+export default {getHomeUrl, getInvertedPages, getExternalPages}

@@ -1,10 +1,10 @@
-import {primaryDomain, cdnDomain, apiDomain, org as defaultOrg, token} from '../constants/github'
+import {primaryHost, cdnHost, apiHost, org as defaultOrg, token} from '../constants/github'
 
 /**
  * Get a URL to the file on github.
  */
-export const getFileUrl = (repo, path, tag = 'master', org = defaultOrg) => (
-  `//${primaryDomain}/${org}/${repo}/${tag}${path}`
+export const getBlobUrl = (repo, path, tag = 'master', org = defaultOrg) => (
+  `//${primaryHost}/${org}/${repo}/blob/${tag}${path}`
 )
 
 const checkResponse = (response) => {
@@ -25,7 +25,7 @@ const getJson = response => response.json()
  * Load tags list.
  */
 export const loadTags = (repo, org = defaultOrg) => (
-  fetch(`//${apiDomain}/repos/${org}/${repo}/tags?access_token=${token}`)
+  fetch(`//${apiHost}/repos/${org}/${repo}/tags?access_token=${token}`)
     .then(checkResponse)
     .then(getJson)
     .then(tags => tags.map(tag => tag.name))
@@ -35,7 +35,7 @@ export const loadTags = (repo, org = defaultOrg) => (
  * Load raw file from the CDN.
  */
 export const loadRawFile = (repo, path, tag = 'master', org = defaultOrg) => (
-  fetch(`//${cdnDomain}/${org}/${repo}/${tag}${path}`)
+  fetch(`//${cdnHost}/${org}/${repo}/${tag}${path}`)
     .then(checkResponse)
     .then(getText)
 )
@@ -44,9 +44,30 @@ export const loadRawFile = (repo, path, tag = 'master', org = defaultOrg) => (
  * Load stars counter.
  */
 export const loadStars = repo => (
-  fetch(`//${apiDomain}/repos/${repo}?access_token=${token}`)
+  fetch(`//${apiHost}/repos/${repo}?access_token=${token}`)
     .then(checkResponse)
     .then(getJson)
     .then(data => data.stargazers_count)
 )
 
+/**
+ * Parses a github file path and returns meta data.
+ */
+export const pathToMeta = (path) => {
+  const parts = path.split('/')
+
+  return {
+    org: parts[1],
+    repo: parts[2],
+    view: parts[3] || '', // blob, edit
+    branch: parts[4] || '', // branch, tag, commit
+    path: `/${parts.slice(5).join('/')}`
+  }
+}
+
+/**
+ * Returns `true` if github would show a readme page from a given path.
+ */
+export const isReadme = path => (
+  !path || path === '/' || /readme\.md$/i.test(path)
+)

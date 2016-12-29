@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 import MenuItem from '../MenuItem'
 
-import pages from '../../pages'
+import {tree} from '../../utils/navigation'
 
 export default class Menu extends PureComponent {
   static propTypes = {
@@ -35,7 +35,7 @@ export default class Menu extends PureComponent {
   render() {
     return (
       <div>
-        {this.renderMenu(pages)}
+        {this.renderMenu(tree)}
       </div>
     )
   }

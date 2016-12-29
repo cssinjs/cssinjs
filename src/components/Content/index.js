@@ -18,6 +18,7 @@ class Content extends PureComponent {
     editUrl: PropTypes.string,
     repo: PropTypes.string,
     org: PropTypes.string,
+    name: PropTypes.string,
     status: PropTypes.number
   }
 
@@ -33,7 +34,8 @@ class Content extends PureComponent {
       org,
       onChangeVersion,
       status,
-      content
+      content,
+      name
     } = this.props
 
     return (
@@ -44,7 +46,7 @@ class Content extends PureComponent {
           <div className={classes.edit}>
             {editUrl && <EditLink url={editUrl} />}
           </div>
-          <HighlightedMarkdown text={content} className={classes.markdown} />
+          <HighlightedMarkdown text={content} className={classes.markdown} page={name} />
         </div>
       </div>
     )

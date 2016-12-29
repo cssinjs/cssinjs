@@ -5,7 +5,7 @@ import ParallaxScene from '../ParallaxScene'
 import NotFound from '../NotFound'
 import Content from '../../containers/Content'
 
-import {flattenPages} from '../../helpers/pagesActions'
+import {map as navMap} from '../../utils/navigation'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
@@ -19,11 +19,6 @@ class Page extends PureComponent {
     home: PropTypes.bool
   }
 
-  constructor(props) {
-    super(props)
-    this.pages = flattenPages()
-  }
-
   componentWillMount() {
     animateScroll.scrollToTop()
   }
@@ -34,7 +29,7 @@ class Page extends PureComponent {
       params
     } = this.props
 
-    const page = this.pages[params.page]
+    const page = navMap[params.page]
 
     if (!page) return <NotFound />
 
@@ -42,11 +37,7 @@ class Page extends PureComponent {
       <div className={classes.container}>
         {this.props.home ? <ParallaxScene /> : <span className={classes.hidden} />}
         <div className={classes.content} id="mainContent">
-          <Content
-            {...page}
-            // XXX it expects: {name: url}
-            linksReference={this.pages}
-          />
+          <Content {...page} />
         </div>
       </div>
     )
