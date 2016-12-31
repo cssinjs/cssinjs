@@ -8,6 +8,10 @@ import A from './A'
 // but we still need to support older versions.
 const fixGitterBadge = text => text.replace(/Join Chat\.svg/g, 'JoinChat.svg')
 
+const markdownOptions = {
+  linkify: true
+}
+
 export default class HighlightedMarkdown extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
@@ -28,6 +32,7 @@ export default class HighlightedMarkdown extends PureComponent {
 
     return (
       <Markdown
+        markdownOptions={markdownOptions}
         className={className}
         text={fixGitterBadge(text)}
         onIterate={this.onIterate}
