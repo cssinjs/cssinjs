@@ -1,13 +1,10 @@
 {
-  "home": {
-    "title": "Home",
+  "introduction": {
+    "title": "Introduction",
+    "repo": "jss",
+    "path": "/readme.md",
+    "home": true,
     "children": {
-      "intro": {
-        "title": "Intro",
-        "repo": "jss",
-        "path": "/readme.md",
-        "home": true
-      },
       "benefits": {
         "title": "Benefits",
         "repo": "jss",
@@ -30,74 +27,21 @@
       }
     }
   },
-  "json-api": {
-    "title": "JSON Syntax",
-    "children": {
-      "core": {
-        "title": "Core",
-        "repo": "jss",
-        "path": "/docs/json-api.md"
-      },
-      "jss-global": {
-        "title": "jss-global",
-        "repo": "jss-global",
-        "path": "/readme.md"
-      },
-      "jss-extend": {
-        "title": "jss-extend",
-        "repo": "jss-extend",
-        "path": "/readme.md"
-      },
-      "jss-nested": {
-        "title": "jss-nested",
-        "repo": "jss-nested",
-        "path": "/readme.md"
-      },
-      "jss-compose": {
-        "title": "jss-compose",
-        "repo": "jss-compose",
-        "path": "/readme.md"
-      },
-      "jss-camel-case": {
-        "title": "jss-camel-case",
-        "repo": "jss-camel-case",
-        "path": "/readme.md"
-      },
-      "jss-default-unit": {
-        "title": "jss-default-unit",
-        "repo": "jss-default-unit",
-        "path": "/readme.md"
-      },
-      "jss-expand": {
-        "title": "jss-expand",
-        "children": {
-          "intro": {
-            "title": "Intro",
-            "repo": "jss-expand",
-            "path": "/readme.md"
-          },
-          "full": {
-            "title": "Full documentation",
-            "repo": "jss-expand",
-            "path": "/docs/index.md"
-          }
-        }
-      }
-    }
-  },
   "js-api": {
     "title": "JavaScript API",
     "repo": "jss",
     "path": "/docs/js-api.md"
   },
+  "json-api": {
+    "title": "Core JSON syntax",
+    "repo": "jss",
+    "path": "/docs/json-api.md"
+  },
   "plugins": {
     "title": "Official Plugins",
+    "repo": "jss",
+    "path": "/docs/plugins.md",
     "children": {
-      "intro": {
-        "title": "Intro",
-        "repo": "jss",
-        "path": "/docs/plugins.md"
-      },
       "jss-preset-default": {
         "title": "jss-preset-default",
         "repo": "jss-preset-default",
@@ -135,14 +79,11 @@
       },
       "jss-expand": {
         "title": "jss-expand",
+        "repo": "jss-expand",
+        "path": "/readme.md",
         "children": {
-          "intro": {
-            "title": "Intro",
-            "repo": "jss-expand",
-            "path": "/readme.md"
-          },
-          "full": {
-            "title": "Full documentation",
+          "jss-expand-full": {
+            "title": "Full syntax",
             "repo": "jss-expand",
             "path": "/docs/index.md"
           }
@@ -167,6 +108,8 @@
   },
   "abstractions": {
     "title": "Abstractions on top of JSS",
+    "repo": "jss",
+    "path": "abstraction-level.md",
     "children": {
       "react-jss": {
         "title": "React-JSS",
@@ -196,12 +139,12 @@
     "url": "//cssinjs.github.io/repl/",
     "external": true
   },
-  "ssr": {
-    "title": "Server-side",
+  "server-side-rendering": {
+    "title": "Server-side rendering",
     "repo": "jss",
     "path": "/docs/ssr.md"
   },
-  "external": {
+  "external-projects": {
     "title": "External Projects",
     "repo": "jss",
     "path": "/docs/external-projects.md"

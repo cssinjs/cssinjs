@@ -6,13 +6,30 @@ var config = JSON.parse(fs.readFileSync(configPath))
 require('babel-register')(config)
 
 var render = require('../src/server').default
+var nav = require('../src/utils/navigation')
 
-var navMap = require('../src/utils/navigation').map
+// Make sure there are no duplicate routes.
+function findDups(root, map = {}, dups = []) {
+  for (var name in root) {
+    const page = root[name]
+    if (map[name]) dups.push(name)
+    map[name] = true
+    if (page.children) findDups(page.children, map, dups)
+  }
+  return dups
+}
+var dups = findDups(nav.tree)
+
+if (dups.length) {
+  console.error('Duplicate paths found:\n', dups)
+  process.exit(1)
+}
+
 var html = render()
 
 // Generate html files.
 const getDir = name => path.join(__dirname, '..', `/docs/${name}`)
-Object.keys(navMap).forEach((name) => {
+Object.keys(nav.map).forEach((name) => {
   const dir = getDir(name)
   try {
     fs.mkdirSync(dir)

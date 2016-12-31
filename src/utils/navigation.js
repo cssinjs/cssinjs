@@ -4,48 +4,18 @@ import {parse as parseUrl} from './url'
 import {pathToMeta, isReadme} from './github'
 
 /**
- * Ensure unique page names by prefixing them with the parent name.
- */
-const prefixNames = (root, parentName) => {
-  const newRoot = {}
-
-  for (const name in root) {
-    const page = {...root[name]}
-    let newName = name
-    if (parentName) newName = `${parentName}-${name}`
-    newRoot[newName] = page
-    if (page.children) page.children = prefixNames(page.children, name)
-  }
-
-  return newRoot
-}
-
-/**
- * Get first value from an object.
- */
-const getFirstValue = (obj) => {
-  if (obj) {
-    for (const key in obj) return obj[key]
-  }
-  return null
-}
-
-/**
- * If a page has children, take the first one and merge it with its parent.
+ * Add to the structure:
+ *  - name
+ *  - org
  */
 const addDefaults = (root) => {
   const newRoot = {}
 
   for (const name in root) {
-    const page = {...root[name], name}
+    const page = newRoot[name] = {...root[name], name}
     if (!page.org) page.org = defaultOrg
     const {children} = page
-    const firstChild = getFirstValue(children)
-    if (firstChild) {
-      const newPage = Object.assign({}, firstChild, page, {children: addDefaults(children)})
-      Object.assign(page, newPage)
-    }
-    newRoot[name] = page
+    if (children) page.children = addDefaults(children)
   }
 
   return newRoot
@@ -54,7 +24,7 @@ const addDefaults = (root) => {
 /**
  * Transformed pages structure.
  */
-export const tree = addDefaults(prefixNames(pages))
+export const tree = addDefaults(pages)
 
 /**
  * A flat map of pages.
@@ -78,14 +48,14 @@ const isSameUrl = (url0, url1) => {
 }
 
 /**
- * Get internal URL if passed URL matches the navigation.
+ * Get a page object by URL.
  */
 export const findPage = (url) => {
   const {host, pathname} = parseUrl(url)
 
   for (const name in map) {
     const page = map[name]
-    // Its an external page, we can compare by `.url`.
+    // Its an external page, we can compare by `url`.
     if (page.url && isSameUrl(page.url, url)) return page
     if (host === githubHost) {
       const meta = pathToMeta(pathname)
