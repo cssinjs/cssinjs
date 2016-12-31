@@ -5,8 +5,11 @@ import 'whatwg-fetch'
 
 import routes from './routes'
 
+const container = document.createElement('div')
+container.style.height = '100%'
+
 render(
   <Router history={browserHistory} routes={routes} />,
-  document.body.appendChild(document.createElement('div'))
+  document.body.appendChild(container)
 )
 
