@@ -2,7 +2,30 @@ import React, {PureComponent, PropTypes} from 'react'
 import VersionSelect from '../components/VersionSelect'
 import {loadTags} from '../utils/github'
 
+// Last version used for a certain repository.
+// Once user switches to another page from the same repository, he doesn't
+// need to select the version again.
 const lastVersionMap = {}
+
+
+/**
+ * Get only latest major versions from the list.
+ */
+const getMajorVersions = (versions) => {
+  const map = {}
+  return versions.filter((version) => {
+    const majorVersion = Number(/\d{1}/.exec(version))
+    if (map[majorVersion]) return false
+    map[majorVersion] = true
+    return true
+  })
+}
+
+const loadVersions = (repo, org) => (
+  loadTags(repo, org)
+    .then(getMajorVersions)
+    .then(versions => [...versions, 'master'])
+)
 
 export default class VersionSelectContainer extends PureComponent {
   static propTypes = {
@@ -20,14 +43,16 @@ export default class VersionSelectContainer extends PureComponent {
 
   componentWillMount() {
     const {repo, org} = this.props
-    loadTags(repo, org).then((versions) => {
-      versions.push('master')
-      this.setState({versions})
-      this.onChange({value: lastVersionMap[repo] || versions[0]})
-    })
+    loadVersions(repo, org).then(this.onLoadVersions)
   }
 
-  onChange = ({value}) => {
+  onLoadVersions = (versions) => {
+    const {repo} = this.props
+    this.setState({versions})
+    this.onChangeVersion({value: lastVersionMap[repo] || versions[0]})
+  }
+
+  onChangeVersion = ({value}) => {
     const {repo, onChange} = this.props
     lastVersionMap[repo] = value
     this.setState({value})
@@ -44,7 +69,7 @@ export default class VersionSelectContainer extends PureComponent {
       <VersionSelect
         versions={versions}
         value={value}
-        onChange={this.onChange}
+        onChange={this.onChangeVersion}
       />
     )
   }
