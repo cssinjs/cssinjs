@@ -30,6 +30,7 @@ var html = render()
 // Generate html files.
 const getDir = name => path.join(__dirname, '..', `/docs/${name}`)
 Object.keys(nav.map).forEach((name) => {
+  if (name === nav.home.name) return
   const dir = getDir(name)
   try {
     fs.mkdirSync(dir)

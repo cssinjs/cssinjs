@@ -36,11 +36,11 @@ export default function render() {
         <meta property="og:type" content={config.site.og.type} />
         <meta property="og:image" content={config.site.og.image} />
         <meta property="og:url" content={config.site.og.url} />
-        <link rel="shortcut icon" href="images/favicon.ico" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
         <style type="text/css">
           {normalize + baseSheet}
         </style>
-        <link rel="stylesheet" type="text/css" href="vendor.styles.css" />
+        <link rel="stylesheet" type="text/css" href="/vendor.styles.css" />
       </head>
       <body>
         <div id="root">
@@ -52,8 +52,8 @@ export default function render() {
              */
           }
         </div>
-        <script src="vendor.bundle.js" />
-        <script src="bundle.js" />
+        <script src="/vendor.bundle.js" />
+        <script src="/bundle.js" />
         {process.env.NODE_ENV === 'production' && <script dangerouslySetInnerHTML={{__html: analytics}} />}
       </body>
     </html>

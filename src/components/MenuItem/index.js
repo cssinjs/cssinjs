@@ -40,7 +40,8 @@ class MenuItem extends PureComponent {
   render() {
     const {
       sheet: {classes},
-      level
+      level,
+      home
     } = this.props
 
     /**
@@ -51,11 +52,11 @@ class MenuItem extends PureComponent {
         return (
           <button className={classes.icons} onClick={this.onToggle}>
             <Isvg
-              src={'images/arrow.svg'}
+              src={'/images/arrow.svg'}
               className={this.state.showChildren ? classes.iconArrowHidden : classes.iconArrow}
             />
             <Isvg
-              src={'images/close.svg'}
+              src={'/images/close.svg'}
               className={this.state.showChildren ? classes.iconClose : classes.iconCloseHidden}
             />
           </button>
@@ -113,9 +114,9 @@ class MenuItem extends PureComponent {
           className={cn(setLinkClass(), classes[`level${level}`])}
           activeClassName={classes.linkActive}
           to={{
-            pathname: this.props.name,
+            pathname: home ? '/' : `/${this.props.name}`,
             state: {
-              home: this.props.home // Pass homepage param to router
+              home // Pass homepage param to router
             }
           }}
         >

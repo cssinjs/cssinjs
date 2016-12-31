@@ -1,6 +1,7 @@
 {
-  "name": "jss-landing",
-  "version": "0.0.1",
+  "name": "cssinjs",
+  "private": true,
+  "version": "0.1.0",
   "description": "JSS landing page",
   "author": "Pavel Davydov",
   "license": "MIT",

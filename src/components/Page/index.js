@@ -5,7 +5,7 @@ import ParallaxScene from '../ParallaxScene'
 import NotFound from '../NotFound'
 import Content from '../../containers/Content'
 
-import {map as navMap} from '../../utils/navigation'
+import {map as navMap, home} from '../../utils/navigation'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
@@ -15,8 +15,7 @@ import styles from './styles'
 class Page extends PureComponent {
   static propTypes = {
     sheet: PropTypes.object.isRequired,
-    params: PropTypes.object,
-    home: PropTypes.bool
+    params: PropTypes.object
   }
 
   componentWillMount() {
@@ -29,13 +28,15 @@ class Page extends PureComponent {
       params
     } = this.props
 
-    const page = navMap[params.page]
+    const name = params.page || home.name
+
+    const page = navMap[name]
 
     if (!page) return <NotFound />
 
     return (
       <div className={classes.container}>
-        {this.props.home ? <ParallaxScene /> : <span className={classes.hidden} />}
+        {name === home.name ? <ParallaxScene /> : <span className={classes.hidden} />}
         <div className={classes.content} id="mainContent">
           <Content {...page} />
         </div>

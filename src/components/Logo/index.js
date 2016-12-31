@@ -21,7 +21,7 @@ const Logo = ({type, sheet}) => {
       logoUrl = 'logo-dark'
     }
   }
-  logoUrl = `images/${logoUrl}.svg`
+  logoUrl = `/images/${logoUrl}.svg`
 
   return (
     <Link to="/" className={classes.logo}>

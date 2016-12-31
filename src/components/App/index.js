@@ -2,8 +2,6 @@ import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 
 import Sidebar from '../Sidebar'
-
-import {getHomeRoute} from '../../utils/navigation'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
@@ -14,17 +12,9 @@ import styles from './styles'
 const App = (data) => {
   const {children, location, sheet} = data
   const {classes} = sheet
-  const home = getHomeRoute()
 
   // Set in what direction content must move when page changes
   const transitionStyles = location.action === 'POP' ? presets.slideRight : presets.slideLeft
-
-  // Check if is homepage - and pass params to child components
-  if (typeof data.location.state === 'undefined') data.location.state = {}
-  if (data.location.pathname === home) {
-    data.location.state = {}
-    data.location.state.home = true
-  }
 
   return (
     <div className={classes.app}>
@@ -37,10 +27,7 @@ const App = (data) => {
           pathname={location.pathname}
           {...transitionStyles}
         >
-          {React.cloneElement(children, {
-            key: location.pathname,
-            home: data.location.state.home
-          })}
+          {children}
         </RouteTransition>
       </div>
     </div>

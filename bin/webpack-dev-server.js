@@ -6,8 +6,11 @@ var express = require('express')
 var config = require('../src/config')
 var webpackConfig = require('../webpack.config.dev')
 
-// Add dev-server and hot reloading to webpack config
-//webpackConfig.entry.app.unshift('webpack-dev-server/client?http://' + config.host + ':' + config.port + '/', 'webpack/hot/dev-server')
+// Add dev-server and hot reloading to webpack config.
+webpackConfig.entry.app.unshift(
+  'webpack-dev-server/client?http://' + config.host + ':' + config.port + '/',
+  'webpack/hot/dev-server'
+)
 
 var compiler = webpack(webpackConfig)
 
@@ -15,6 +18,7 @@ var serverConfig = {
   publicPath: webpackConfig.output.publicPath,
   stats: { colors: true },
   hot: true,
+  contentBase: webpackConfig.output.path
 }
 
 var server = new WebpackDevServer(compiler, serverConfig)

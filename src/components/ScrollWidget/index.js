@@ -13,7 +13,7 @@ const ScrollWidget = ({sheet}) => {
 
   return (
     <div className={classes.container}>
-      <Isvg src={'images/mouse.svg'} className={classes.icon} />
+      <Isvg src={'/images/mouse.svg'} className={classes.icon} />
     </div>
   )
 }
