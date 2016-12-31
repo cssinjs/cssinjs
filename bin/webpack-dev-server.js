@@ -15,7 +15,6 @@ webpackConfig.entry.app.unshift(
 var compiler = webpack(webpackConfig)
 
 var serverConfig = {
-  publicPath: webpackConfig.output.publicPath,
   stats: { colors: true },
   hot: true,
   contentBase: webpackConfig.output.path
