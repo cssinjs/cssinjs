@@ -10,7 +10,7 @@ import styles from './styles'
 /**
  * Render markdown content.
  */
-class Content extends PureComponent {
+class MdContent extends PureComponent {
   static propTypes = {
     sheet: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
@@ -53,4 +53,4 @@ class Content extends PureComponent {
   }
 }
 
-export default injectSheet(styles)(Content)
+export default injectSheet(styles)(MdContent)

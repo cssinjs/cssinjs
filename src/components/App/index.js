@@ -7,10 +7,6 @@ import styles from './styles'
 
 let initial = true
 
-/**
- * Main application wrapper component.
- * All pages render starts here
- */
 const App = (props) => {
   const {children, location, sheet: {classes}} = props
   let transition

@@ -137,7 +137,7 @@
   "playground": {
     "title": "JSS Playground",
     "url": "//cssinjs.github.io/repl/",
-    "external": true
+    "iframe": true
   },
   "server-side-rendering": {
     "title": "Server-side rendering",

@@ -1,9 +1,9 @@
 import React, {PureComponent, PropTypes} from 'react'
-import Content from '../components/Content'
+import MdContent from '../components/MdContent'
 
 import {loadRawFile} from '../utils/github'
 
-export default class ContentContainer extends PureComponent {
+export default class MdContentContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string,
     path: PropTypes.string,
@@ -32,7 +32,7 @@ export default class ContentContainer extends PureComponent {
     const {repo, org, name} = this.props
 
     return (
-      <Content
+      <MdContent
         name={name}
         repo={repo}
         content={content}

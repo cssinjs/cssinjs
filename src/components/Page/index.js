@@ -3,7 +3,8 @@ import {animateScroll} from 'react-scroll'
 
 import ParallaxScene from '../ParallaxScene'
 import NotFound from '../NotFound'
-import Content from '../../containers/Content'
+import Iframe from '../Iframe'
+import Content from '../../containers/MdContent'
 
 import {map as navMap, home} from '../../utils/navigation'
 import injectSheet from '../../utils/jss'
@@ -33,6 +34,7 @@ class Page extends PureComponent {
     const page = navMap[name]
 
     if (!page) return <NotFound />
+    if (page.iframe) return <Iframe src={page.url} />
 
     return (
       <div className={classes.container}>
