@@ -38,7 +38,7 @@ class Page extends PureComponent {
 
     return (
       <div className={classes.container}>
-        {name === home.name ? <ParallaxScene /> : <span className={classes.hidden} />}
+        {name === home.name && <ParallaxScene />}
         <div className={classes.content} id="mainContent">
           <Content {...page} />
         </div>

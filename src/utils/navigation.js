@@ -80,3 +80,16 @@ export const home = (() => {
   }
   return null
 })()
+
+const stripSlashes = str => str.replace(/\//g, '')
+
+const names = Object.keys(map)
+
+/**
+ * Returns true if path2 is after path1 in the navigation.
+ */
+export const isAfter = (path0, path1) => {
+  const name0 = stripSlashes(path0)
+  const name1 = stripSlashes(path1)
+  return names.indexOf(name0) < names.indexOf(name1)
+}

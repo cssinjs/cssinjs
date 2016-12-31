@@ -1,18 +1,33 @@
 import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 
-import Sidebar from '../Sidebar'
 import injectSheet from '../../utils/jss'
+import {isAfter} from '../../utils/navigation'
+import Sidebar from '../Sidebar'
 import styles from './styles'
 
-let initial = true
+let lastLocation
+
+/**
+ * Returns a transition based on the order in the tree.
+ * There is no transition if its the first page.
+ */
+const getTransition = (location) => {
+  let transition
+
+  if (lastLocation) {
+    if (isAfter(lastLocation.pathname, location.pathname)) transition = presets.slideLeft
+    else transition = presets.slideRight
+  }
+
+  lastLocation = location
+
+  return transition
+}
 
 const App = (props) => {
   const {children, location, sheet: {classes}} = props
-  let transition
-
-  if (initial) initial = false
-  else transition = location.action === 'POP' ? presets.slideRight : presets.slideLeft
+  const transition = getTransition(location)
 
   return (
     <div className={classes.app}>
@@ -20,7 +35,7 @@ const App = (props) => {
         <Sidebar />
       </div>
       <div className={classes.content}>
-        {transition && (
+        {transition ? (
           <RouteTransition
             className={classes.contentInner}
             pathname={location.pathname}
@@ -28,8 +43,7 @@ const App = (props) => {
           >
             {children}
           </RouteTransition>
-        )}
-        {!transition && children}
+        ) : children}
       </div>
     </div>
   )
