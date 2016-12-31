@@ -114,10 +114,7 @@ class MenuItem extends PureComponent {
           className={cn(setLinkClass(), classes[`level${level}`])}
           activeClassName={classes.linkActive}
           to={{
-            pathname: home ? '/' : `/${this.props.name}`,
-            state: {
-              home // Pass homepage param to router
-            }
+            pathname: home ? '/' : `/${this.props.name}`
           }}
         >
           {this.props.title}

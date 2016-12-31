@@ -5,16 +5,18 @@ import Sidebar from '../Sidebar'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
+let initial = true
+
 /**
  * Main application wrapper component.
  * All pages render starts here
  */
-const App = (data) => {
-  const {children, location, sheet} = data
-  const {classes} = sheet
+const App = (props) => {
+  const {children, location, sheet: {classes}} = props
+  let transition
 
-  // Set in what direction content must move when page changes
-  const transitionStyles = location.action === 'POP' ? presets.slideRight : presets.slideLeft
+  if (initial) initial = false
+  else transition = location.action === 'POP' ? presets.slideRight : presets.slideLeft
 
   return (
     <div className={classes.app}>
@@ -22,13 +24,16 @@ const App = (data) => {
         <Sidebar />
       </div>
       <div className={classes.content}>
-        <RouteTransition
-          className={classes.contentInner}
-          pathname={location.pathname}
-          {...transitionStyles}
-        >
-          {children}
-        </RouteTransition>
+        {transition && (
+          <RouteTransition
+            className={classes.contentInner}
+            pathname={location.pathname}
+            {...transition}
+          >
+            {children}
+          </RouteTransition>
+        )}
+        {!transition && children}
       </div>
     </div>
   )
