@@ -109,7 +109,7 @@
   "abstractions": {
     "title": "Abstractions on top of JSS",
     "repo": "jss",
-    "path": "abstraction-level.md",
+    "path": "/abstraction-level.md",
     "children": {
       "react-jss": {
         "title": "React-JSS",

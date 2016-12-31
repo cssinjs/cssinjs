@@ -8,7 +8,7 @@ var CopyFilesPlugin = require('copy-webpack-plugin')
 module.exports = {
   entry: {
     app: [
-      path.join(__dirname, '..', 'src', 'client.js'),
+      path.join(__dirname, 'src', 'client.js'),
     ],
     vendor: [
       'babel-polyfill', // Need to support 'transform-react-inline-elements' and keep app work in IE
@@ -35,7 +35,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, '..', 'docs'),
+    path: path.join(__dirname, 'docs'),
     publicPath: '/docs',
     filename: 'bundle.js',
   },
