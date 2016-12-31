@@ -43,15 +43,6 @@ export default function render() {
         <link rel="stylesheet" type="text/css" href="/vendor.styles.css" />
       </head>
       <body>
-        <div id="root">
-          {
-            /**
-             * TODO: If someone find any solution how to server-side render
-             * react-router without real 'server' - tell me. :)
-             * So, for now, there is no JSS server sider rendering. No ssr in few words :(
-             */
-          }
-        </div>
         <script src="/vendor.bundle.js" />
         <script src="/bundle.js" />
         {process.env.NODE_ENV === 'production' && <script dangerouslySetInnerHTML={{__html: analytics}} />}

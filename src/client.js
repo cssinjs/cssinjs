@@ -7,6 +7,6 @@ import routes from './routes'
 
 render(
   <Router history={browserHistory} routes={routes} />,
-  document.getElementById('root')
+  document.body.appendChild(document.createElement('div'))
 )
 

@@ -30,10 +30,9 @@ export default {
       fontWeight: 'bold',
       textDecoration: 'underline',
       color: vars.textColor,
-    },
-    // TODO: After https://github.com/cssinjs/jss/issues/380 if fixed we can write it as nested value
-    'a:hover': {
-      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'none',
+      },
     },
 
     // Paragraphs
@@ -44,6 +43,18 @@ export default {
     // Headings
     'h1, h2, h3, h4': {
       margin: [0, 0, 4],
+      '& a': {
+        position: 'absolute',
+        marginLeft: '-20px',
+        opacity: 0,
+        '& svg': {
+          width: vars.fontSize,
+          height: 'auto'
+        }
+      },
+      '&:hover a': {
+        opacity: 1
+      }
     },
     h1: {
       fontSize: 4.2,
@@ -91,24 +102,19 @@ export default {
       padding: [1, 2],
       borderBottom: vars.border(vars.backgroundLine),
       borderLeft: vars.border(vars.backgroundLine),
+      ':first-child': {
+        borderLeft: 'none',
+      },
     },
     th: {
       fontWeight: 'bold',
       background: vars.cardColor,
     },
-    // TODO: After https://github.com/cssinjs/jss/issues/380 if fixed we can write it as nested value
-    'td:first-child, th:first-child': {
-      borderLeft: 'none',
-    },
+
     // Svg tag
     svg: {
       display: 'inline-block',
       verticalAlign: 'middle',
-    },
-
-    // Main container styles
-    '#root': {
-      height: '100%',
     }
   }
 }

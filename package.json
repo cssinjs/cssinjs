@@ -62,7 +62,7 @@
     "jss-global": "^0.4.0",
     "jss-nested": "^3.0.0",
     "jss-normalize": "^2.0.0",
-    "jss-preset-default": "^1.1.0",
+    "jss-preset-default": "^1.2.0",
     "jss-vendor-prefixer": "^4.0.0",
     "markdown-react-js": "^0.3.0",
     "prismjs": "^1.5.1",
