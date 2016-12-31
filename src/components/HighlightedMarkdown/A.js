@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import {Link} from 'react-router'
 import {findPage, map} from '../../utils/navigation'
 import {isRelative, resolve, parse} from '../../utils/url'
 import {getBlobUrl} from '../../utils/github'
@@ -11,23 +12,37 @@ const absUrl = (url, currPageName) => {
   return getBlobUrl(currPage.repo, resolvedPath, undefined, currPage.org)
 }
 
-export default function A(props) {
+const formatProps = (props) => {
   const {href, page: pageName, children, ...rest} = props
-  let newHref = href
   let target
+  let to
 
   if (href && href[0] !== '#') {
     const page = findPage(absUrl(href, pageName))
-    if (page && !page.external) newHref = `/${page.name}`
+    if (page && !page.external) to = `/${page.name}`
     else target = '_blank'
   }
 
-  return <a {...rest} href={newHref} target={target}>{children}</a>
+  return {
+    ...rest,
+    target,
+    href,
+    to,
+    children
+  }
+}
+
+export default function A(props) {
+  const {to, children, ...rest} = formatProps(props)
+
+  if (to) {
+    return <Link {...rest} to={to}>{children}</Link>
+  }
+
+  return <a {...rest}>{children}</a>
 }
 
 A.propTypes = {
   href: PropTypes.string,
-  page: PropTypes.string.isRequired,
-  target: PropTypes.string,
   children: PropTypes.node
 }

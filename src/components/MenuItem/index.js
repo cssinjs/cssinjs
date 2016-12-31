@@ -1,6 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
 import Isvg from 'react-inlinesvg'
-import Link from 'react-router/lib/Link'
+import {Link} from 'react-router'
 import cn from 'classnames'
 
 import injectSheet from '../../utils/jss'
