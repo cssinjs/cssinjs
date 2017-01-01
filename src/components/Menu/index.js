@@ -21,10 +21,10 @@ export default class Menu extends PureComponent {
           name={name}
           key={index}
           level={level}
-        >
-          {page.children && this.renderMenu(page.children, level + 1)}
-        </MenuItem>
+        />
       )
+
+      if (page.children) menu.push(this.renderMenu(page.children, level + 1))
 
       index++
     }
@@ -33,10 +33,6 @@ export default class Menu extends PureComponent {
   }
 
   render() {
-    return (
-      <div>
-        {this.renderMenu(tree)}
-      </div>
-    )
+    return <nav>{this.renderMenu(tree)}</nav>
   }
 }

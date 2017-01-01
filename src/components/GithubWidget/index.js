@@ -6,12 +6,7 @@ import {loadStars} from '../../utils/github'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
-/*
- * Helper function for adding commas to number
- * @param {number} original number
- * @return {string} stringlifyed number with commas
- */
-const addCommasToNum = num => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+const formatStars = num => String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 /**
  * Component, for displaying link to GitHub repository and stars counter.
@@ -22,10 +17,6 @@ class GithubWidget extends PureComponent {
     repo: PropTypes.string.isRequired
   }
 
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
   constructor(props) {
     super(props)
     this.state = {
@@ -35,27 +26,25 @@ class GithubWidget extends PureComponent {
 
   componentDidMount() {
     loadStars(this.props.repo).then((stars) => {
-      this.setState({stars: addCommasToNum(stars)})
+      this.setState({stars})
     })
   }
 
-  /**
-   * React component render
-   */
   render() {
-    const {classes} = this.props.sheet
+    const {sheet: {classes}} = this.props
+    const {stars} = this.state
 
     return (
       <a
         href={`//${primaryHost}/${this.props.repo}`}
-        className={(this.state.stars === -1) ? classes.containerHidden : classes.container}
+        className={stars === -1 ? classes.containerHidden : classes.container}
         target="_blank"
         rel="noopener noreferrer"
       >
         <div className={classes.item}>
           <Isvg src={'/images/star.svg'} className={classes.iconStar} />
           <span className={classes.text}>
-            {this.state.stars}
+            {formatStars(stars)}
           </span>
         </div>
         <div className={classes.item}>

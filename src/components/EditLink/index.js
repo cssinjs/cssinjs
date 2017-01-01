@@ -4,10 +4,6 @@ import Isvg from 'react-inlinesvg'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
-/**
- * Edit link
- * @param {Object} JSS sheet object
- */
 const EditLink = ({url, sheet}) => {
   const {classes} = sheet
 
