@@ -3,6 +3,18 @@ import MdContent from '../components/MdContent'
 
 import {loadRawFile} from '../utils/github'
 
+const loadCachedFile = (() => {
+  const cache = {}
+  return (...args) => {
+    const key = args.join('')
+    if (cache[key]) return Promise.resolve(cache[key])
+    return loadRawFile(...args).then((content) => {
+      cache[key] = content
+      return content
+    })
+  }
+})()
+
 export default class MdContentContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string,
@@ -16,11 +28,12 @@ export default class MdContentContainer extends PureComponent {
     this.state = {}
   }
 
-  onChangeVersion = ({value}) => {
+  onChangeVersion = ({value: version}) => {
     const {repo, path, org} = this.props
-    loadRawFile(repo, path, value, org)
+
+    loadCachedFile(repo, path, version, org)
       .then((content) => {
-        this.setState({content, version: value, status: 200})
+        this.setState({content, version, status: 200})
       })
       .catch((err) => {
         this.setState({status: err.status, content: ''})
