@@ -1,113 +1,157 @@
 {
-  "home": {
-    "name": "Home",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/readme.md",
-    "home": true
-  },
-  "liveExamples": {
-    "name": "Live Examples",
-    "link": "http://cssinjs.github.io/examples/index.html",
-    "external": true
-  },
-  "playground": {
-    "name": "JSS Playground",
-    "link": "http://cssinjs.github.io/repl/",
-    "external": true
-  },
-  "benefits": {
-    "name": "Benefits",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/benefits.md"
-  },
-  "setup": {
-    "name": "Setup",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/setup.md"
-  },
-  "jsonAPI": {
-    "name": "JSON API (JSS Syntax)",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/json-api.md"
-  },
-  "jsAPI": {
-    "name": "JavaScript API",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/js-api.md"
-  },
-  "ssr": {
-    "name": "Server-side rendering",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/ssr.md"
-  },
-  "performance": {
-    "name": "Performance",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/performance.md"
-  },
-  "reactJss": {
-    "name": "React JSS",
-    "link": "https://raw.githubusercontent.com/cssinjs/react-jss/master/README.md"
-  },
-  "plugins": {
-    "name": "JSS Plugins",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/plugins.md",
-    "child": {
-      "jssPresetDefault": {
-        "name": "jss-preset-default",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-preset-default/master/readme.md"
+  "introduction": {
+    "title": "Introduction",
+    "repo": "jss",
+    "path": "/readme.md",
+    "home": true,
+    "children": {
+      "benefits": {
+        "title": "Benefits",
+        "repo": "jss",
+        "path": "/docs/benefits.md"
       },
-      "jssExtend": {
-        "name": "jss-extend",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-extend/master/readme.md"
+      "setup": {
+        "title": "Setup",
+        "repo": "jss",
+        "path": "/docs/setup.md"
       },
-      "jssNested": {
-        "name": "jss-nested",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-nested/master/readme.md"
+      "performance": {
+        "title": "Performance",
+        "repo": "jss",
+        "path": "/docs/performance.md"
       },
-      "jssCamelCase": {
-        "name": "jss-camel-case",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-camel-case/master/readme.md"
-      },
-      "jssGlobal": {
-        "name": "jss-global",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-global/master/README.md"
-      },
-      "jssDefaultUnit": {
-        "name": "jss-default-unit",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-default-unit/master/readme.md"
-      },
-      "jssExpand": {
-        "name": "jss-expand",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-expand/master/readme.md",
-        "child": {
-          "jssExpandFullDoc": {
-            "name": "Full documentation",
-            "link": "https://raw.githubusercontent.com/cssinjs/jss-expand/master/docs/index.md"
-          }
-        }
-      },
-      "jssVendorPrefixer": {
-        "name": "jss-vendor-prefixer",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-vendor-prefixer/master/readme.md"
-      },
-      "jssPropsSort": {
-        "name": "jss-props-sort",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-props-sort/master/readme.md"
-      },
-      "jssCompose": {
-        "name": "jss-compose",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-compose/master/readme.md"
-      },
-      "jssIsolate": {
-        "name": "jss-isolate",
-        "link": "https://raw.githubusercontent.com/cssinjs/jss-isolate/master/readme.md"
+      "contributing": {
+        "title": "Contributing",
+        "repo": "jss",
+        "path": "/contributing.md"
       }
     }
   },
-  "externalProjects": {
-    "name": "External Projects",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/docs/external-projects.md"
+  "js-api": {
+    "title": "JavaScript API",
+    "repo": "jss",
+    "path": "/docs/js-api.md"
   },
-  "cliForJss": {
-    "name": "CLI for JSS",
-    "link": "https://raw.githubusercontent.com/cssinjs/cli/master/readme.md"
+  "json-api": {
+    "title": "Core JSON syntax",
+    "repo": "jss",
+    "path": "/docs/json-api.md"
   },
-  "contributing": {
-    "name": "Contributing",
-    "link": "https://raw.githubusercontent.com/cssinjs/jss/master/contributing.md"
+  "plugins": {
+    "title": "Official Plugins",
+    "repo": "jss",
+    "path": "/docs/plugins.md",
+    "children": {
+      "jss-preset-default": {
+        "title": "jss-preset-default",
+        "repo": "jss-preset-default",
+        "path": "/readme.md"
+      },
+      "jss-global": {
+        "title": "jss-global",
+        "repo": "jss-global",
+        "path": "/readme.md"
+      },
+      "jss-extend": {
+        "title": "jss-extend",
+        "repo": "jss-extend",
+        "path": "/readme.md"
+      },
+      "jss-nested": {
+        "title": "jss-nested",
+        "repo": "jss-nested",
+        "path": "/readme.md"
+      },
+      "jss-compose": {
+        "title": "jss-compose",
+        "repo": "jss-compose",
+        "path": "/readme.md"
+      },
+      "jss-camel-case": {
+        "title": "jss-camel-case",
+        "repo": "jss-camel-case",
+        "path": "/readme.md"
+      },
+      "jss-default-unit": {
+        "title": "jss-default-unit",
+        "repo": "jss-default-unit",
+        "path": "/readme.md"
+      },
+      "jss-expand": {
+        "title": "jss-expand",
+        "repo": "jss-expand",
+        "path": "/readme.md",
+        "children": {
+          "jss-expand-full": {
+            "title": "Full syntax",
+            "repo": "jss-expand",
+            "path": "/docs/index.md"
+          }
+        }
+      },
+      "jss-vendor-prefixer": {
+        "title": "jss-vendor-prefixer",
+        "repo": "jss-vendor-prefixer",
+        "path": "/readme.md"
+      },
+      "jss-props-sort": {
+        "title": "jss-props-sort",
+        "repo": "jss-props-sort",
+        "path": "/readme.md"
+      },
+      "jss-isolate": {
+        "title": "jss-isolate",
+        "repo": "jss-isolate",
+        "path": "/readme.md"
+      }
+    }
+  },
+  "abstractions": {
+    "title": "Abstractions on top of JSS",
+    "repo": "jss",
+    "path": "/abstraction-level.md",
+    "children": {
+      "react-jss": {
+        "title": "React-JSS",
+        "repo": "react-jss",
+        "path": "/README.md"
+      },
+      "jss-theme-reactor": {
+        "title": "Theme Reactor",
+        "repo": "jss-theme-reactor",
+        "org": "nathanmarks",
+        "path": "/README.md"
+      },
+      "aphrodisiac": {
+        "title": "Aphrodisiac",
+        "repo": "aphrodisiac",
+        "path": "/readme.md"
+      }
+    }
+  },
+  "examples": {
+    "title": "Examples",
+    "url": "//cssinjs.github.io/examples/index.html",
+    "external": true
+  },
+  "playground": {
+    "title": "JSS Playground",
+    "url": "//cssinjs.github.io/repl/",
+    "iframe": true
+  },
+  "server-side-rendering": {
+    "title": "Server-side rendering",
+    "repo": "jss",
+    "path": "/docs/ssr.md"
+  },
+  "external-projects": {
+    "title": "External Projects",
+    "repo": "jss",
+    "path": "/docs/external-projects.md"
+  },
+  "cli": {
+    "title": "CLI Tool",
+    "repo": "cli",
+    "path": "/readme.md"
   }
 }

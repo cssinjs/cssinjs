@@ -1,17 +1,20 @@
 {
-  "name": "jss-landing",
-  "version": "0.0.1",
+  "name": "cssinjs",
+  "private": true,
+  "version": "0.1.0",
   "description": "JSS landing page",
   "author": "Pavel Davydov",
   "license": "MIT",
   "scripts": {
-    "dev-server": "cross-env NODE_ENV=development PORT=3000 node ./webpack/webpack-dev-server.js",
-    "build:dev": "cross-env NODE_ENV=development webpack --config webpack/webpack.config.dev",
-    "build:prod": "cross-env NODE_ENV=production webpack --config webpack/webpack.config.prod",
-    "build-html": "cross-env NODE_ENV=production node ./bin/build > ./docs/index.html",
-    "all:dev": "npm run build:dev && npm run build-html",
-    "all:prod": "npm run build:prod && npm run build-html",
-    "svg": "svgo -i static/images",
+    "dev-server": "cross-env NODE_ENV=development PORT=3000 node ./bin/webpack-dev-server.js",
+    "clean": "rimraf -fr './docs/!(CNAME)**'",
+    "build:dev": "cross-env NODE_ENV=development webpack --config ./webpack.config.dev",
+    "build:prod": "cross-env NODE_ENV=production webpack --config ./webpack.config.prod",
+    "build-html:dev": "cross-env NODE_ENV=development node ./bin/build-html",
+    "build-html:prod": "cross-env NODE_ENV=production node ./bin/build-html",
+    "all:dev": "npm run clean && npm run build:dev && npm run build-html:dev",
+    "all:prod": "npm run clean && npm run build:prod && npm run build-html:prod",
+    "svg": "svgo -i ./src/images",
     "lint": "eslint ./src",
     "start": "npm run lint && npm run all:prod"
   },
@@ -48,6 +51,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "color": "^1.0.3",
     "jss": "^6.0.1",
     "jss-camel-case": "^3.0.0",
@@ -58,9 +62,9 @@
     "jss-global": "^0.4.0",
     "jss-nested": "^3.0.0",
     "jss-normalize": "^2.0.0",
-    "jss-preset-default": "^1.1.0",
+    "jss-preset-default": "^1.2.0",
     "jss-vendor-prefixer": "^4.0.0",
-    "marked": "^0.3.6",
+    "markdown-react-js": "^0.3.0",
     "prismjs": "^1.5.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -70,6 +74,7 @@
     "react-router": "^3.0.0",
     "react-router-transition": "0.0.6",
     "react-scroll": "^1.4.4",
+    "resolve-url": "^0.2.1",
     "whatwg-fetch": "^2.0.1"
   }
 }

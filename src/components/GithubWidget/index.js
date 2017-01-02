@@ -1,90 +1,54 @@
-import React from 'react'
+import React, {PureComponent, PropTypes} from 'react'
 import Isvg from 'react-inlinesvg'
-import 'whatwg-fetch' // eslint-disable-line
 
-import jssPreset from '../../helpers/jssPreset'
+import {primaryHost} from '../../constants/github'
+import {loadStars} from '../../utils/github'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
-/*
- * Helper function for adding commas to number
- * @param {number} original number
- * @return {string} stringlifyed number with commas
- */
-const addCommasToNum = num => num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+const formatStars = num => String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 /**
- * Component, for displaying link to GitHub repository and stars counter
- * @extends React.Component
+ * Component, for displaying link to GitHub repository and stars counter.
  */
-class GithubWidget extends React.Component {
+class GithubWidget extends PureComponent {
   static propTypes = {
-    sheet: React.PropTypes.object,
-    repo: React.PropTypes.string
+    sheet: PropTypes.object.isRequired,
+    repo: PropTypes.string.isRequired
   }
 
-  /**
-   * Helper function for check XHR response status
-   */
-  static checkStatus(response) {
-    if (response.status >= 200 && response.status < 300) {
-      return response
-    }
-    const error = new Error(response.statusText)
-    error.response = response
-    throw error
-  }
-
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
   constructor(props) {
     super(props)
     this.state = {
       stars: -1
     }
-
-    this.publicRepo = `https://github.com/${this.props.repo}`
-    this.apiRepo = `https://api.github.com/repos/${this.props.repo}`
   }
 
   componentDidMount() {
-    // Fetch stars count through GitHub API
-    fetch(this.apiRepo)
-      .then(this.checkStatus)
-      .then(response => response.json())
-      .then((data) => {
-        this.setState({
-          stars: addCommasToNum(data.stargazers_count)
-        })
-      })
-      .catch((error) => {
-        // eslint-disable-next-line
-        console.error(`Request failed. Something went wrong with Github API or url passed to component. ERROR: ${error}`)
-      })
+    loadStars(this.props.repo).then((stars) => {
+      this.setState({stars})
+    })
   }
 
-  /**
-   * React component render
-   */
   render() {
-    const {classes} = this.props.sheet
+    const {sheet: {classes}} = this.props
+    const {stars} = this.state
 
     return (
       <a
-        href={this.publicRepo}
-        className={(this.state.stars === -1) ? classes.containerHidden : classes.container}
+        href={`//${primaryHost}/${this.props.repo}`}
+        className={stars === -1 ? classes.containerHidden : classes.container}
         target="_blank"
         rel="noopener noreferrer"
       >
         <div className={classes.item}>
-          <Isvg src={'images/star.svg'} className={classes.iconStar} />
+          <Isvg src={'/images/star.svg'} className={classes.iconStar} />
           <span className={classes.text}>
-            {this.state.stars}
+            {formatStars(stars)}
           </span>
         </div>
         <div className={classes.item}>
-          <Isvg src={'images/github.svg'} className={classes.iconGithub} />
+          <Isvg src={'/images/github.svg'} className={classes.iconGithub} />
           <span className={classes.text}>
             GitHub
           </span>
@@ -94,4 +58,4 @@ class GithubWidget extends React.Component {
   }
 }
 
-export default jssPreset(styles)(GithubWidget)
+export default injectSheet(styles)(GithubWidget)

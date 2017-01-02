@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'react-router/lib/Link'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -21,7 +21,7 @@ const Logo = ({type, sheet}) => {
       logoUrl = 'logo-dark'
     }
   }
-  logoUrl = `images/${logoUrl}.svg`
+  logoUrl = `/images/${logoUrl}.svg`
 
   return (
     <Link to="/" className={classes.logo}>
@@ -35,4 +35,4 @@ Logo.propTypes = {
   type: React.PropTypes.string
 }
 
-export default jssPreset(styles)(Logo)
+export default injectSheet(styles)(Logo)

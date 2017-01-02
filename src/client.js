@@ -1,17 +1,15 @@
 import React from 'react'
 import {render} from 'react-dom'
-
-import Router from 'react-router/lib/Router'
-import hashHistory from 'react-router/lib/hashHistory'
+import {Router, browserHistory} from 'react-router'
+import 'whatwg-fetch'
 
 import routes from './routes'
 
-/**
- * Client side entry point for application
- */
+const container = document.createElement('div')
+container.style.height = '100%'
 
-render(<Router history={hashHistory} routes={routes} />, document.getElementById('root'), () => {
-  const serverStyles = document.getElementById('server-side-styles')
-  serverStyles.parentNode.removeChild(serverStyles)
-})
+render(
+  <Router history={browserHistory} routes={routes} />,
+  document.body.appendChild(container)
+)
 

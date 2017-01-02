@@ -1,30 +1,33 @@
 import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 
+import injectSheet from '../../utils/jss'
+import {isAfter} from '../../utils/navigation'
 import Sidebar from '../Sidebar'
-
-import {getHomeLink} from '../../helpers/pagesActions'
-import jssPreset from '../../helpers/jssPreset'
 import styles from './styles'
 
+let lastLocation
+
 /**
- * Main application wrapper component.
- * All pages render starts here
+ * Returns a transition based on the order in the tree.
+ * There is no transition if its the first page.
  */
-const App = (data) => {
-  const {children, location, sheet} = data
-  const {classes} = sheet
-  const homeLink = getHomeLink()
+const getTransition = (location) => {
+  let transition
 
-  // Set in what direction content must move when page changes
-  const transitionStyles = location.action === 'POP' ? presets.slideRight : presets.slideLeft
-
-  // Check if is homepage - and pass params to child components
-  if (typeof data.location.state === 'undefined') data.location.state = {}
-  if (data.location.pathname === homeLink) {
-    data.location.state = {}
-    data.location.state.isHomepage = true
+  if (lastLocation) {
+    if (isAfter(lastLocation.pathname, location.pathname)) transition = presets.slideLeft
+    else transition = presets.slideRight
   }
+
+  lastLocation = location
+
+  return transition
+}
+
+const App = (props) => {
+  const {children, location, sheet: {classes}} = props
+  const transition = getTransition(location)
 
   return (
     <div className={classes.app}>
@@ -32,16 +35,15 @@ const App = (data) => {
         <Sidebar />
       </div>
       <div className={classes.content}>
-        <RouteTransition
-          className={classes.contentInner}
-          pathname={location.pathname}
-          {...transitionStyles}
-        >
-          {React.cloneElement(children, {
-            key: location.pathname,
-            isHomepage: data.location.state.isHomepage ? data.location.state.isHomepage : false
-          })}
-        </RouteTransition>
+        {transition ? (
+          <RouteTransition
+            className={classes.contentInner}
+            pathname={location.pathname}
+            {...transition}
+          >
+            {children}
+          </RouteTransition>
+        ) : children}
       </div>
     </div>
   )
@@ -53,4 +55,4 @@ App.propTypes = {
   sheet: React.PropTypes.object
 }
 
-export default jssPreset(styles)(App)
+export default injectSheet(styles)(App)

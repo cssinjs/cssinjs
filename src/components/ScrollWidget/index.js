@@ -1,7 +1,7 @@
 import React from 'react'
 import Isvg from 'react-inlinesvg'
 
-import jssPreset from '../../helpers/jssPreset'
+import injectSheet from '../../utils/jss'
 import styles from './styles'
 
 /**
@@ -13,7 +13,7 @@ const ScrollWidget = ({sheet}) => {
 
   return (
     <div className={classes.container}>
-      <Isvg src={'images/mouse.svg'} className={classes.icon} />
+      <Isvg src={'/images/mouse.svg'} className={classes.icon} />
     </div>
   )
 }
@@ -22,4 +22,4 @@ ScrollWidget.propTypes = {
   sheet: React.PropTypes.object
 }
 
-export default jssPreset(styles)(ScrollWidget)
+export default injectSheet(styles)(ScrollWidget)

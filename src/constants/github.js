@@ -1,0 +1,5 @@
+export const primaryHost = 'github.com'
+export const cdnHost = 'raw.githubusercontent.com'
+export const apiHost = 'api.github.com'
+export const org = 'cssinjs'
+export const token = '84f9d02a430cb688a2fbe568a9c0ce0ef0de9745'
