@@ -31,15 +31,13 @@ class VersionSelect extends PureComponent {
         <div className={classes.label}>
           Version:
         </div>
-        <div className={classes.selectWrap}>
-          <select className={classes.select} value={value} onChange={this.onChange}>
-            {versions.map(version => (
-              <option value={version}>
-                {formatVersion(version)}
-              </option>
-            ))}
-          </select>
-        </div>
+        <select className={classes.select} value={value} onChange={this.onChange}>
+          {versions.map(version => (
+            <option value={version}>
+              {formatVersion(version)}
+            </option>
+          ))}
+        </select>
       </div>
     )
   }
