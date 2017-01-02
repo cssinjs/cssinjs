@@ -30,7 +30,7 @@ function MenuItem(props) {
           {title}
         </span>
         <span className={classes.itemIcon}>
-          <Isvg src={'/images/link.svg'} className={classes.icon} />
+          <Isvg src={'/images/external.svg'} className={classes.icon} />
         </span>
       </a>
     )

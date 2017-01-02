@@ -45,7 +45,7 @@ export default {
   },
   itemIcon: {
     composes: ['$itemInner'],
-    paddingLeft: 0.5,
+    paddingLeft: 1,
     opacity: 0.5,
   }
 }
