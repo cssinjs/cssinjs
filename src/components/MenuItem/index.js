@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import Isvg from 'react-inlinesvg'
 import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
 
@@ -25,7 +26,12 @@ function MenuItem(props) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {title}
+        <span className={classes.itemInner}>
+          {title}
+        </span>
+        <span className={classes.itemIcon}>
+          <Isvg src={'/images/link.svg'} className={classes.icon} />
+        </span>
       </a>
     )
   }

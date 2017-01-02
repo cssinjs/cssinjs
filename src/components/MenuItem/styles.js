@@ -3,6 +3,7 @@ import vars from '../../styles/vars'
 export default {
   item: {
     color: vars.textColorInverse,
+    fill: vars.textColorInverse,
     display: 'block',
     textDecoration: 'none',
     transition: vars.transition(),
@@ -36,4 +37,15 @@ export default {
   level2: {
     paddingLeft: 3,
   },
+
+  // Inner content
+  itemInner: {
+    display: 'inline-block',
+    verticalAlign: 'middle',
+  },
+  itemIcon: {
+    composes: ['$itemInner'],
+    paddingLeft: 0.5,
+    opacity: 0.5,
+  }
 }
