@@ -37,17 +37,29 @@ export default {
 
     // Paragraphs
     p: {
-      margin: [0, 0, 2],
+      margin: [2, 0],
+      '&:first-child': {
+        marginTop: 0
+      },
     },
 
     // Headings
     'h1, h2, h3, h4': {
-      margin: [0, 0, 4],
+      margin: [4, 0],
       fontWeight: 400,
+      position: 'relative',
+      '&:first-child': {
+        marginTop: 0
+      },
+
+      // Anchors on headings (TODO: Move to H)
       '& a': {
         transition: vars.transition(),
         position: 'absolute',
-        marginLeft: '-20px',
+        top: 0,
+        bottom: 0,
+        right: '100%',
+        marginRight: 0.5,
         opacity: 0,
         '& svg': {
           width: vars.fontSize,
@@ -57,20 +69,22 @@ export default {
       '&:hover a': {
         opacity: 1
       }
+
     },
     h1: {
       fontSize: 3.6,
     },
     h2: {
       fontSize: 2.4,
+      margin: [3, 0],
     },
     h3: {
       fontSize: 2,
-      marginBottom: 2,
+      margin: [2, 0],
     },
     h4: {
       fontSize: 1.8,
-      marginBottom: 2,
+      margin: [2, 0],
     },
 
     // Lists
@@ -89,7 +103,7 @@ export default {
     hr: {
       margin: [2, 0],
       border: 'none',
-      background: vars.backgroundLine,
+      background: vars.borderColor,
       height: '1px',
       display: 'block',
     },
@@ -101,8 +115,8 @@ export default {
     },
     'th, td': {
       padding: [0.5, 1.5],
-      borderBottom: vars.border(vars.backgroundLine),
-      borderLeft: vars.border(vars.backgroundLine),
+      borderBottom: vars.border(vars.borderColor),
+      borderLeft: vars.border(vars.borderColor),
       ':first-child': {
         borderLeft: 'none',
       },

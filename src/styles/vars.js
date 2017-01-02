@@ -21,8 +21,6 @@ export default {
   borderColor: color(base.light).darken(0.06).hex(),
   cardColor: '#fff',
 
-  backgroundLine: color(base.light).darken(0.03).hex(),
-
   sidebarBg: base.dark,
   sidebarBgActive: color(base.dark).darken(0.2).hex(),
   sidebarColor: base.light,

@@ -8,72 +8,7 @@ export default {
     minHeight: '100%',
     maxWidth: 100,
     margin: [0, 'auto'],
-    padding: 5,
-    borderLeft: vars.border(vars.backgroundLine),
-    borderRight: vars.border(vars.backgroundLine),
-
-    // Static content
-    '& h1': {
-      fontSize: 4.2,
-      color: vars.textColor,
-      backgroundColor: vars.themeColor,
-      padding: [2, 3],
-      margin: [4, 0, 4, -8],
-      lineHeight: 5,
-      display: 'inline-block',
-      borderLeft: {
-        width: 0.5,
-        style: 'solid',
-        color: vars.textColor
-      },
-      // If element is first - remove top margin
-      '&:first-child': {
-        marginTop: 0,
-        marginRight: 14, // Leave space for 'Edit' button
-      },
-    },
-    '& h1 + h2, & h1 + h3': {
-      paddingTop: 0,
-      marginTop: 0,
-      '&:after': {
-        display: 'none',
-      },
-    },
-    '& h2, & h3': {
-      margin: [4, 0],
-      paddingTop: 4,
-      lineHeight: 'normal',
-      position: 'relative',
-      '&:after': {
-        content: '""',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        background: vars.backgroundLine,
-        height: '1px',
-        display: 'block',
-        boxShadow: [['50vh', 0, 0, 0, vars.backgroundLine], ['-50vh', 0, 0, 0, vars.backgroundLine]], // Make them go outside
-      },
-      '&:first-child': {
-        paddingTop: 0,
-        marginTop: 0,
-        marginRight: 14, // Leave space for 'Edit' button
-        '&:after': {
-          display: 'none'
-        }
-      }
-    },
-    '& h2': {
-      fontSize: 3.2,
-    },
-    '& h3': {
-      fontSize: 2.8,
-    },
-    '& h4': {
-      fontSize: 2.4,
-      margin: [3, 0],
-    },
+    padding: [5, 2],
   },
   hidden: {
     display: 'none',
@@ -83,36 +18,11 @@ export default {
   '@media (max-width: 1320px)': {
     content: {
       border: 'none',
-      '& h1': {
-        marginLeft: -5
-      }
     }
   },
   '@media (max-width: 620px)': {
     content: {
       padding: [3, 2],
-      '& h1': {
-        marginLeft: -2,
-        fontSize: 3.6,
-        lineHeight: 4.2,
-      },
-      '& h2': {
-        fontSize: 3.2,
-      },
-      '& h3': {
-        fontSize: 2.8,
-      },
-      '& h4': {
-        fontSize: 2.4,
-      },
-      '& h2, & h3, & h4': {
-        margin: [2, 0],
-        paddingTop: 2,
-      },
-       // Remove extra space for 'edit' button and button by itself
-      '& h1:first-child, & h2:first-child, & h3:first-child': {
-        marginRight: 0,
-      }
     }
   }
 }
