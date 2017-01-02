@@ -11,17 +11,16 @@ export default {
   logo: {
     textAlign: 'center',
     flexShrink: 0,
-    padding: [6, 3],
+    padding: [5, 3],
   },
   counter: {
     flexShrink: 0,
-    padding: [0, 3, 3],
-    lineHeight: 4,
+    lineHeight: 5,
+    padding: [0, 3],
+    background: vars.sidebarBgActive,
   },
   menu: {
     transition: vars.transition(),
-    borderTop: vars.border(vars.sidebarShadow),
-    borderBottom: vars.border(vars.sidebarBorder),
     background: vars.sidebarBg,
   },
 
@@ -46,9 +45,6 @@ export default {
     logo: {
       padding: [3, 2],
     },
-    counter: {
-      padding: [0, 2, 2]
-    }
   },
 
   // For small screens (mobile, portrait mode for iPad) - change completely layout
@@ -58,7 +54,7 @@ export default {
       alignItems: 'center',
       justifyContent: 'space-between',
       flexDirection: 'row',
-      padding: 2,
+      padding: [1, 2],
       overflow: 'visible',
     },
     logo: {
@@ -66,10 +62,11 @@ export default {
       width: 5,
     },
     menu: {
+      borderTop: [1, 'solid', vars.sidebarBgActive],
       position: 'fixed',
       overflowY: 'auto',
       overflowX: 'hidden',
-      top: 8,
+      top: 7,
       left: 0,
       right: 0,
       bottom: 0,
@@ -82,10 +79,9 @@ export default {
       display: 'block',
     },
     counter: {
-      padding: [0, 2],
+      padding: [0, 3],
       flexGrow: 1,
-      lineHeight: 3,
-      fontSize: 1.4,
+      background: 'transparent',
     },
   }
 }

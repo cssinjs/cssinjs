@@ -4,7 +4,7 @@ import vars from './vars'
  * Global stylesheet that merges together base styles and normalize
  */
 export default {
-  '@import': 'https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i',
+  '@import': 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i',
 
   '@global': {
     html: {
@@ -17,7 +17,7 @@ export default {
       height: '100%',
       fontFamily: vars.fontFamily,
       fontSize: vars.fontSize,
-      fontWeight: 300,
+      fontWeight: 400,
       lineHeight: vars.lineHeight,
       overflowX: 'hidden', // Need to hide transition scroll
     },
@@ -27,7 +27,7 @@ export default {
 
     // Link styles
     a: {
-      fontWeight: 'bold',
+      fontWeight: 500,
       textDecoration: 'underline',
       color: vars.textColor,
       '&:hover': {
@@ -43,7 +43,9 @@ export default {
     // Headings
     'h1, h2, h3, h4': {
       margin: [0, 0, 4],
+      fontWeight: 400,
       '& a': {
+        transition: vars.transition(),
         position: 'absolute',
         marginLeft: '-20px',
         opacity: 0,
@@ -57,17 +59,17 @@ export default {
       }
     },
     h1: {
-      fontSize: 4.2,
-    },
-    h2: {
       fontSize: 3.6,
     },
-    h3: {
+    h2: {
       fontSize: 2.4,
+    },
+    h3: {
+      fontSize: 2,
       marginBottom: 2,
     },
     h4: {
-      fontSize: 2,
+      fontSize: 1.8,
       marginBottom: 2,
     },
 
@@ -80,17 +82,16 @@ export default {
       listStyle: 'circle',
     },
     li: {
-      padding: [0.5, 0]
+      padding: [0.3, 0]
     },
 
     // Divider
     hr: {
-      margin: [4, 0],
+      margin: [2, 0],
       border: 'none',
       background: vars.backgroundLine,
       height: '1px',
       display: 'block',
-      boxShadow: [['50vh', 0, 0, 0, vars.backgroundLine], ['-50vh', 0, 0, 0, vars.backgroundLine]], // Make them go outside
     },
 
     // Tables
@@ -99,7 +100,7 @@ export default {
       marginBottom: 2,
     },
     'th, td': {
-      padding: [1, 2],
+      padding: [0.5, 1.5],
       borderBottom: vars.border(vars.backgroundLine),
       borderLeft: vars.border(vars.backgroundLine),
       ':first-child': {

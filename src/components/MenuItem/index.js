@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-import {Link} from 'react-router'
+import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
 
 import injectSheet from '../../utils/jss'
@@ -30,11 +30,24 @@ function MenuItem(props) {
     )
   }
 
+  // Need to use IndexLink due to situation, when 2 links are active at same time
+  if (home) {
+    return (
+      <IndexLink
+        className={className}
+        activeClassName={classes.active}
+        to="/"
+      >
+        {title}
+      </IndexLink>
+    )
+  }
+
   return (
     <Link
       className={className}
       activeClassName={classes.active}
-      to={home ? '/' : `/${name}`}
+      to={`/${name}`}
     >
       {title}
     </Link>

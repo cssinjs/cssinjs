@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-reactroot="" data-reactid="1" data-react-checksum="614144105"><head data-reactid="2"><title data-reactid="3">JSS</title><meta name="description" content="A lib for generating CSS from JavaScript" data-reactid="4"/><meta name="keywords" content="jss style sheet stylesheet css cssinjs css in js css-in-js components composable react" data-reactid="5"/><meta charset="utf-8" data-reactid="6"/><meta http-equiv="X-UA-Compatible" content="IE=edge" data-reactid="7"/><meta http-equiv="Content-Language" content="en" data-reactid="8"/><meta name="viewport" content="width=device-width, initial-scale=1" data-reactid="9"/><meta property="og:title" content="JSS" data-reactid="10"/><meta property="og:description" content="A lib for generating CSS from JavaScript" data-reactid="11"/><meta property="og:type" content="website" data-reactid="12"/><meta property="og:image" content="http://cssinjs.org/images/logo.og.png" data-reactid="13"/><meta property="og:url" content="http://cssinjs.org/" data-reactid="14"/><link rel="shortcut icon" href="/images/favicon.ico" data-reactid="15"/><style type="text/css" data-reactid="16">html {
+<html lang="en" data-reactroot="" data-reactid="1" data-react-checksum="118433788"><head data-reactid="2"><title data-reactid="3">JSS</title><meta name="description" content="A lib for generating CSS from JavaScript" data-reactid="4"/><meta name="keywords" content="jss style sheet stylesheet css cssinjs css in js css-in-js components composable react" data-reactid="5"/><meta charset="utf-8" data-reactid="6"/><meta http-equiv="X-UA-Compatible" content="IE=edge" data-reactid="7"/><meta http-equiv="Content-Language" content="en" data-reactid="8"/><meta name="viewport" content="width=device-width, initial-scale=1" data-reactid="9"/><meta property="og:title" content="JSS" data-reactid="10"/><meta property="og:description" content="A lib for generating CSS from JavaScript" data-reactid="11"/><meta property="og:type" content="website" data-reactid="12"/><meta property="og:image" content="http://cssinjs.org/images/logo.og.png" data-reactid="13"/><meta property="og:url" content="http://cssinjs.org/" data-reactid="14"/><link rel="shortcut icon" href="/images/favicon.ico" data-reactid="15"/><style type="text/css" data-reactid="16">html {
   font-family: sans-serif;
   line-height: 1.15;
   text-size-adjust: 100%;
@@ -134,26 +134,26 @@ template {
 }
 [hidden] {
   display: none;
-}@import https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i;
+}@import https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i;
 html {
   height: 100%;
   font-size: 62.5%;
 }
 body {
   height: 100%;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   background: #f9f9f9;
   overflow-x: hidden;
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: 300;
-  line-height: 3rem;
+  font-family: Fira Sans, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 2.4rem;
 }
 *, *::before, *::after {
   box-sizing: border-box;
 }
 a {
   color: #333;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: underline;
 }
 a:hover {
@@ -164,31 +164,33 @@ p {
 }
 h1, h2, h3, h4 {
   margin: 0 0 4rem;
+  font-weight: 400;
 }
 h1 a, h2 a, h3 a, h4 a {
   opacity: 0;
   position: absolute;
+  transition: all 300ms cubic-bezier(0.77, 0, 0.175, 1) 0ms;
   margin-left: -20px;
 }
 h1:hover a, h2:hover a, h3:hover a, h4:hover a {
   opacity: 1;
 }
 h1 a svg, h2 a svg, h3 a svg, h4 a svg {
-  width: 1.6rem;
+  width: 1.5rem;
   height: auto;
 }
 h1 {
-  font-size: 4.2rem;
-}
-h2 {
   font-size: 3.6rem;
 }
-h3 {
+h2 {
   font-size: 2.4rem;
+}
+h3 {
+  font-size: 2rem;
   margin-bottom: 2rem;
 }
 h4 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
 }
 ul, ol {
@@ -199,22 +201,21 @@ ul {
   list-style: circle;
 }
 li {
-  padding: 0.5rem 0;
+  padding: 0.3rem 0;
 }
 hr {
-  margin: 4rem 0;
+  margin: 2rem 0;
   border: none;
   height: 1px;
   display: block;
   background: #E7E7E7;
-  box-shadow: 50vh 0 0 0 #E7E7E7, -50vh 0 0 0 #E7E7E7;
 }
 table {
   margin-bottom: 2rem;
   border-collapse: collapse;
 }
 th, td {
-  padding: 1rem 2rem;
+  padding: 0.5rem 1.5rem;
   border-left: 1px solid #E7E7E7;
   border-bottom: 1px solid #E7E7E7;
 }

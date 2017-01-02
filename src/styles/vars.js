@@ -6,9 +6,9 @@ const base = {
 }
 
 export default {
-  fontFamily: 'Roboto, Arial, sans-serif',
-  fontSize: 1.6, // Site uses REM sizes
-  lineHeight: 3,
+  fontFamily: 'Fira Sans, Helvetica, Arial, sans-serif',
+  fontSize: 1.5, // Site uses REM sizes
+  lineHeight: 2.4,
 
   themeColor: '#f7df1e', // Main theme color
 
@@ -16,6 +16,7 @@ export default {
 
   textColor: base.dark,
   textColorInverse: base.light,
+  textColorInverseActive: '#fff',
 
   borderColor: color(base.light).darken(0.06).hex(),
   cardColor: '#fff',

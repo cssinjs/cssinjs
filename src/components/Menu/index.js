@@ -3,7 +3,10 @@ import MenuItem from '../MenuItem'
 
 import {tree} from '../../utils/navigation'
 
-export default class Menu extends PureComponent {
+import injectSheet from '../../utils/jss'
+import styles from './styles'
+
+class Menu extends PureComponent {
   static propTypes = {
     sheet: PropTypes.object
   }
@@ -33,6 +36,10 @@ export default class Menu extends PureComponent {
   }
 
   render() {
-    return <nav>{this.renderMenu(tree)}</nav>
+    const {classes} = this.props.sheet
+
+    return <nav className={classes.menu}>{this.renderMenu(tree)}</nav>
   }
 }
+
+export default injectSheet(styles)(Menu)

@@ -6,11 +6,12 @@ export default {
     backgroundColor: 'transparent',
     display: 'flex',
     alignItems: 'center',
-    border: vars.border(vars.sidebarBorder),
     textDecoration: 'none',
+    fontWeight: 400,
+    opacity: 1,
     transition: vars.transition(),
     '&:hover': {
-      backgroundColor: vars.sidebarBgActive,
+      opacity: 0.7,
     }
   },
   containerHidden: {
@@ -19,7 +20,6 @@ export default {
   },
   item: {
     textAlign: 'center',
-    borderLeft: vars.border(vars.sidebarBorder),
     flexGrow: 1,
     display: 'flex',
     justifyContent: 'center',
@@ -28,9 +28,6 @@ export default {
     width: '50%',
     padding: 0.5,
     maxHeight: 5, // Fix for IE10
-    '&:first-child': {
-      borderLeft: 'none',
-    }
   },
   text: {
 
