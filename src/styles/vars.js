@@ -18,7 +18,7 @@ export default {
   textColorInverse: base.light,
   textColorInverseActive: '#fff',
 
-  borderColor: color(base.light).darken(0.06).hex(),
+  borderColor: color(base.light).darken(0.1).hex(),
   cardColor: '#fff',
 
   sidebarBg: base.dark,

@@ -1,3 +1,5 @@
+import vars from '../../styles/vars'
+
 export default {
   container: {},
   content: {
@@ -6,16 +8,27 @@ export default {
   markdown: {
     display: 'block'
   },
-  edit: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
+  actions: {
+    float: 'right',
+    display: 'flex',
+    alignItems: 'center',
+    position: 'relative',
     zIndex: 5,
   },
-  // Remove edit button for small screens
-  '@media (max-width: 620px)': {
-    edit: {
-      display: 'none'
+  action: {
+    borderRight: [1, 'solid', vars.borderColor],
+    paddingRight: 2,
+    marginLeft: 2,
+    '&:last-child': {
+      borderRight: 0,
+      paddingRight: 0,
+    }
+  },
+
+  '@media (max-width: 1024px)': {
+    actions: {
+      float: 'none',
+      justifyContent: 'flex-end',
     }
   }
 }

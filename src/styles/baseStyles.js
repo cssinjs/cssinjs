@@ -47,7 +47,7 @@ export default {
     'h1, h2, h3, h4': {
       margin: [4, 0],
       fontWeight: 400,
-      position: 'relative',
+      lineHeight: '1',
       '&:first-child': {
         marginTop: 0
       },

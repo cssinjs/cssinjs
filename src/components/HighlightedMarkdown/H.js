@@ -10,8 +10,12 @@ const createId = str => str.toLowerCase().replace(/\s/g, '-').replace(/[^-\w]/g,
  * Renders `h*` tags and generates a github like id attribute.
  */
 function H(props) {
-  const {children, tag, sheet, ...rest} = props
-  const {classes} = sheet
+  const {
+    children,
+    tag,
+    sheet: {classes},
+    ...rest
+  } = props
   const id = createId(children[0])
 
   children.unshift(<a className={classes.anchor} href={`#${id}`}><Isvg className={classes.icon} src="/images/link.svg" /></a>)

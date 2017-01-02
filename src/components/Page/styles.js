@@ -6,7 +6,7 @@ export default {
     minHeight: '100%',
     maxWidth: 100,
     margin: [0, 'auto'],
-    padding: [5, 2],
+    padding: 5,
   },
   hidden: {
     display: 'none',
