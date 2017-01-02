@@ -12,8 +12,8 @@
     "build:prod": "cross-env NODE_ENV=production webpack --config ./webpack.config.prod",
     "build-html:dev": "cross-env NODE_ENV=development node ./bin/build-html",
     "build-html:prod": "cross-env NODE_ENV=production node ./bin/build-html",
-    "all:dev": "npm run build:dev && npm run build-html:dev",
-    "all:prod": "npm run build:prod && npm run build-html:prod",
+    "all:dev": "npm run clean && npm run build:dev && npm run build-html:dev",
+    "all:prod": "npm run clean && npm run build:prod && npm run build-html:prod",
     "svg": "svgo -i ./src/images",
     "lint": "eslint ./src",
     "start": "npm run lint && npm run all:prod"
