@@ -13,7 +13,7 @@ export default {
     },
     body: {
       background: vars.pageBackground,
-      color: vars.color,
+      color: vars.textColor,
       height: '100%',
       fontFamily: vars.fontFamily,
       fontSize: vars.fontSize,
@@ -45,6 +45,7 @@ export default {
 
     // Headings
     'h1, h2, h3, h4': {
+      color: vars.titleColor,
       margin: [4, 0],
       fontWeight: 400,
       lineHeight: '1',

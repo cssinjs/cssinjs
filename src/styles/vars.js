@@ -14,7 +14,8 @@ export default {
 
   pageBackground: '#f9f9f9',
 
-  textColor: base.dark,
+  titleColor: base.dark,
+  textColor: color(base.dark).lighten(1.5).hex(),
   textColorInverse: base.light,
   textColorInverseActive: '#fff',
 
