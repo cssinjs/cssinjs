@@ -51,25 +51,6 @@ export default {
       '&:first-child': {
         marginTop: 0
       },
-
-      // Anchors on headings (TODO: Move to H)
-      '& a': {
-        transition: vars.transition(),
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        right: '100%',
-        marginRight: 0.5,
-        opacity: 0,
-        '& svg': {
-          width: vars.fontSize,
-          height: 'auto'
-        }
-      },
-      '&:hover a': {
-        opacity: 1
-      }
-
     },
     h1: {
       fontSize: 3.6,

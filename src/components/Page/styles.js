@@ -1,5 +1,3 @@
-import vars from '../../styles/vars'
-
 export default {
   container: {
     height: '100%',
