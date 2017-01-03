@@ -51,11 +51,11 @@ export default {
     sidebar: {
       width: '100%',
       bottom: 'auto',
-      height: 8,
+      height: 7,
     },
     content: {
       marginLeft: 0,
-      paddingTop: 8,
+      paddingTop: 7,
     }
   },
 }

@@ -11,7 +11,7 @@ const EditLink = ({url, sheet}) => {
     <a className={classes.button} href={url}>
       <Isvg src={'/images/edit.svg'} className={classes.icon} />
       <span className={classes.text}>
-        Edit
+        Edit this page
       </span>
     </a>
   )

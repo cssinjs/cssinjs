@@ -1,21 +1,51 @@
-// import vars from '../../styles/vars'
+import vars from '../../styles/vars'
 
 export default {
   item: {
-    color: '#fff',
+    color: vars.textColorInverse,
+    fill: vars.textColorInverse,
     display: 'block',
-    textDecoration: 'none'
-  },
-  level0: {
-    padding: [1.5, 2.5]
-  },
-  level1: {
-    padding: [0.7, 6, 0.7, 5]
-  },
-  level2: {
-    padding: [0.7, 6, 0.7, 7]
+    textDecoration: 'none',
+    transition: vars.transition(),
+    opacity: 0.8,
+    font: {
+      weight: 400,
+      size: 1.4,
+    },
+    '&:hover': {
+      color: vars.textColorInverseActive,
+      opacity: 1,
+    }
   },
   active: {
+    opacity: 1,
+    color: vars.themeColor,
+    '&:hover': {
+      color: vars.themeColor,
+    }
+  },
 
+  // Nesting levels
+  level0: {
+    padding: [0.5, 0],
+    fontSize: 1.6,
+    opacity: 1,
+  },
+  level1: {
+    paddingLeft: 1.5,
+  },
+  level2: {
+    paddingLeft: 3,
+  },
+
+  // Inner content
+  itemInner: {
+    display: 'inline-block',
+    verticalAlign: 'middle',
+  },
+  itemIcon: {
+    composes: ['$itemInner'],
+    paddingLeft: 1,
+    opacity: 0.5,
   }
 }

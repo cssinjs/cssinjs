@@ -4,7 +4,7 @@ import vars from './vars'
  * Global stylesheet that merges together base styles and normalize
  */
 export default {
-  '@import': 'https://fonts.googleapis.com/css?family=Roboto:300,300i,700,700i',
+  '@import': 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i',
 
   '@global': {
     html: {
@@ -13,11 +13,11 @@ export default {
     },
     body: {
       background: vars.pageBackground,
-      color: vars.color,
+      color: vars.textColor,
       height: '100%',
       fontFamily: vars.fontFamily,
       fontSize: vars.fontSize,
-      fontWeight: 300,
+      fontWeight: 400,
       lineHeight: vars.lineHeight,
       overflowX: 'hidden', // Need to hide transition scroll
     },
@@ -27,7 +27,7 @@ export default {
 
     // Link styles
     a: {
-      fontWeight: 'bold',
+      fontWeight: 500,
       textDecoration: 'underline',
       color: vars.textColor,
       '&:hover': {
@@ -37,38 +37,36 @@ export default {
 
     // Paragraphs
     p: {
-      margin: [0, 0, 2],
+      margin: [2, 0],
+      '&:first-child': {
+        marginTop: 0
+      },
     },
 
     // Headings
     'h1, h2, h3, h4': {
-      margin: [0, 0, 4],
-      '& a': {
-        position: 'absolute',
-        marginLeft: '-20px',
-        opacity: 0,
-        '& svg': {
-          width: vars.fontSize,
-          height: 'auto'
-        }
+      color: vars.titleColor,
+      margin: [4, 0],
+      fontWeight: 400,
+      lineHeight: '1',
+      '&:first-child': {
+        marginTop: 0
       },
-      '&:hover a': {
-        opacity: 1
-      }
     },
     h1: {
-      fontSize: 4.2,
-    },
-    h2: {
       fontSize: 3.6,
     },
-    h3: {
+    h2: {
       fontSize: 2.4,
-      marginBottom: 2,
+      margin: [3, 0],
+    },
+    h3: {
+      fontSize: 2,
+      margin: [2, 0],
     },
     h4: {
-      fontSize: 2,
-      marginBottom: 2,
+      fontSize: 1.8,
+      margin: [2, 0],
     },
 
     // Lists
@@ -80,17 +78,16 @@ export default {
       listStyle: 'circle',
     },
     li: {
-      padding: [0.5, 0]
+      padding: [0.3, 0]
     },
 
     // Divider
     hr: {
-      margin: [4, 0],
+      margin: [2, 0],
       border: 'none',
-      background: vars.backgroundLine,
+      background: vars.borderColor,
       height: '1px',
       display: 'block',
-      boxShadow: [['50vh', 0, 0, 0, vars.backgroundLine], ['-50vh', 0, 0, 0, vars.backgroundLine]], // Make them go outside
     },
 
     // Tables
@@ -99,9 +96,9 @@ export default {
       marginBottom: 2,
     },
     'th, td': {
-      padding: [1, 2],
-      borderBottom: vars.border(vars.backgroundLine),
-      borderLeft: vars.border(vars.backgroundLine),
+      padding: [0.5, 1.5],
+      borderBottom: vars.border(vars.borderColor),
+      borderLeft: vars.border(vars.borderColor),
       ':first-child': {
         borderLeft: 'none',
       },

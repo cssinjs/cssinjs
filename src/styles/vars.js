@@ -6,21 +6,21 @@ const base = {
 }
 
 export default {
-  fontFamily: 'Roboto, Arial, sans-serif',
-  fontSize: 1.6, // Site uses REM sizes
-  lineHeight: 3,
+  fontFamily: 'Fira Sans, Helvetica, Arial, sans-serif',
+  fontSize: 1.5, // Site uses REM sizes
+  lineHeight: 2.4,
 
   themeColor: '#f7df1e', // Main theme color
 
   pageBackground: '#f9f9f9',
 
-  textColor: base.dark,
+  titleColor: base.dark,
+  textColor: color(base.dark).lighten(0.6).hex(),
   textColorInverse: base.light,
+  textColorInverseActive: '#fff',
 
-  borderColor: color(base.light).darken(0.06).hex(),
+  borderColor: color(base.light).darken(0.1).hex(),
   cardColor: '#fff',
-
-  backgroundLine: color(base.light).darken(0.03).hex(),
 
   sidebarBg: base.dark,
   sidebarBgActive: color(base.dark).darken(0.2).hex(),

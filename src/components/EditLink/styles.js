@@ -3,25 +3,25 @@ import vars from '../../styles/vars'
 export default {
   button: {
     textDecoration: 'none',
-    padding: [1, 2],
-    border: ['2px', 'solid', vars.textColor],
     display: 'block',
     background: 'none',
-    lineHeight: 'normal',
+    lineHeight: 2,
     transition: vars.transition(),
     color: vars.textColor,
     fill: vars.textColor,
+    opacity: 0.7,
+    textTransform: 'uppercase',
+    fontWeight: 400,
+    padding: [1, 0],
     '&:hover': {
-      background: vars.cardColor
+      opacity: 1,
     }
   },
   icon: {
-    paddingRight: 1,
+    paddingRight: 0.8,
+    marginTop: -0.1,
     display: 'inline-block',
     lineHeight: 'normal',
-    '& svg': {
-      height: 2
-    }
   },
   text: {
     verticalAlign: 'middle'

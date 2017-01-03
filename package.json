@@ -45,6 +45,7 @@
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "json-loader": "^0.5.4",
+    "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "svgo": "^0.7.1",
     "webpack": "^1.13.3",

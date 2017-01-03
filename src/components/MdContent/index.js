@@ -41,10 +41,14 @@ class MdContent extends PureComponent {
     return (
       <div className={classes.container}>
         <div className={classes.content}>
-          {repo && <VersionSelect repo={repo} org={org} onChange={onChangeVersion} />}
           {status === 404 && <NotFound />}
-          <div className={classes.edit}>
-            {editUrl && <EditLink url={editUrl} />}
+          <div className={classes.actions}>
+            <div className={classes.action}>
+              {editUrl && <EditLink url={editUrl} />}
+            </div>
+            <div className={classes.action}>
+              {repo && <VersionSelect repo={repo} org={org} onChange={onChangeVersion} />}
+            </div>
           </div>
           <HighlightedMarkdown text={content} className={classes.markdown} page={name} />
         </div>

@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react'
-import {Link} from 'react-router'
+import Isvg from 'react-inlinesvg'
+import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
 
 import injectSheet from '../../utils/jss'
@@ -25,8 +26,26 @@ function MenuItem(props) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        {title}
+        <span className={classes.itemInner}>
+          {title}
+        </span>
+        <span className={classes.itemIcon}>
+          <Isvg src={'/images/external.svg'} className={classes.icon} />
+        </span>
       </a>
+    )
+  }
+
+  // Need to use IndexLink due to situation, when 2 links are active at same time
+  if (home) {
+    return (
+      <IndexLink
+        className={className}
+        activeClassName={classes.active}
+        to="/"
+      >
+        {title}
+      </IndexLink>
     )
   }
 
@@ -34,7 +53,7 @@ function MenuItem(props) {
     <Link
       className={className}
       activeClassName={classes.active}
-      to={home ? '/' : `/${name}`}
+      to={`/${name}`}
     >
       {title}
     </Link>
