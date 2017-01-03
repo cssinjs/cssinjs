@@ -1,7 +1,7 @@
 import React from 'react'
 import {renderToString} from 'react-dom/server'
 
-import jssNormalize from 'jss-normalize'
+import normalizeJss from 'normalize-jss'
 import {jss} from './utils/jss'
 
 import config from './config'
@@ -17,7 +17,7 @@ const analytics = `
 `
 
 export default function render() {
-  const normalize = jss.createStyleSheet(jssNormalize)
+  const normalize = jss.createStyleSheet(normalizeJss).toString()
 
   return `<!doctype html>\n${renderToString(
     <html lang="en">
