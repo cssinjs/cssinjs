@@ -2,10 +2,12 @@ import React from 'react'
 import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
 
+import {Logo} from '../icons'
 import Jumper from '../Jumper'
 
 import injectSheet from '../../utils/jss'
 import styles from './styles'
+import theme from '../theme'
 
 /**
  * Main presentation block for site. Here is drawed animated logo on mouse move
@@ -86,14 +88,12 @@ class ParallaxScene extends React.Component {
                 }}
               >
                 <div className={classes.logo}>
-                  <div className={classes.logoBase}>
-                    <div className={classes.logoTextUnder}>
-                      JSS
-                    </div>
-                  </div>
-                  <div className={classes.logoText}>
-                    JSS
-                  </div>
+                  <Logo
+                    className={classes.logoBase}
+                    strokeColor={theme.titleColorDark}
+                    backgroundColor={theme.themeColor}
+                    textColor={theme.titleColorDark}
+                  />
                 </div>
               </div>
             }

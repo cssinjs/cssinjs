@@ -142,30 +142,9 @@ export default {
   logoBase: {
     position: 'relative',
     overflow: 'hidden',
-    width: 40,
-    height: 40,
-    background: baseColor,
-    border: {
-      width: 0.2,
-      style: 'solid',
-      color: textColor,
-    }
-  },
-  logoText: {
-    lineHeight: 'normal',
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: textColor,
-    position: 'absolute',
-    bottom: 0,
-    right: -9.5,
-    transform: translateZ(30)
-  },
-  logoTextUnder: {
-    composes: '$logoText',
-    transform: 'none',
-    opacity: 0.1,
-    textShadow: [`0 0 20px ${textColor}`, `0 0 20px ${textColor}`, `0 0 20px ${textColor}`]
+    width: 45,
+    height: 45,
+    left: 4, // Need to proper alignment
   },
 
   // Decrease size of main logo for small screens
