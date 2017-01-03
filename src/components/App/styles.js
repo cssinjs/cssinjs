@@ -1,7 +1,7 @@
 import theme from '../theme'
 
 export default {
-  '@import': 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i',
+  '@import': '"//fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i"',
   '@global': {
     html: {
       fontSize: '62.5%',
