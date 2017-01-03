@@ -1,3 +1,5 @@
+import {rotate, translateX} from 'css-functions'
+
 import theme from '../theme'
 
 const size = 3
@@ -19,16 +21,16 @@ export default {
     '& $barFirst': {
       top: '50%',
       marginTop: -barWeight / 2,
-      transform: 'rotate(135deg)',
+      transform: rotate(135),
     },
     '& $barSecond': {
       opacity: 0,
-      transform: 'translateX(6rem)',
+      transform: translateX(`${size * 2}rem`),
     },
     '& $barThird': {
       bottom: '50%',
       marginBottom: -barWeight / 2,
-      transform: 'rotate(-135deg)',
+      transform: rotate(135),
     }
   },
   bar: {

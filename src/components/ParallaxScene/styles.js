@@ -1,4 +1,6 @@
 import color from 'color'
+import {translate, translateZ, multiple, rotate, scale} from 'css-functions'
+
 import theme from '../theme'
 
 const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
@@ -23,7 +25,7 @@ export default {
       position: 'absolute',
       top: '50%',
       left: '50%',
-      transform: 'translate(-50%, -50%)',
+      transform: translate('-50%', '-50%'),
       width: '70%',
       height: '80%',
       zIndex: 2,
@@ -64,14 +66,14 @@ export default {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
+    transform: translate('-50%', '-50%'),
     zIndex: 5,
     transformStyle: 'preserve-3d',
     perspective: 1000,
   },
   targetInner: {
     transformStyle: 'preserve-3d',
-    transform: 'translateZ(0)',
+    transform: translateZ(0),
   },
 
   // Scroll to widget
@@ -157,7 +159,7 @@ export default {
     position: 'absolute',
     bottom: 0,
     right: -9.5,
-    transform: 'translateZ(30px)'
+    transform: translateZ(30)
   },
   logoTextUnder: {
     composes: '$logoText',
@@ -169,7 +171,7 @@ export default {
   // Decrease size of main logo for small screens
   '@media (max-width: 750px)': {
     target: {
-      transform: 'translate(-50%, -50%) scale(0.5)',
+      transform: multiple(translate('-50%', '-50%'), scale(0.5)),
     },
     scrollTo: {
       bottom: 2,
@@ -184,10 +186,10 @@ export default {
   // Keyframes for rotating animation
   '@keyframes parallaxRotate': {
     from: {
-      transform: 'rotate(0)',
+      transform: rotate(0),
     },
     to: {
-      transform: 'rotate(360deg)',
+      transform: rotate(360),
     },
   }
 }

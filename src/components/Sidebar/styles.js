@@ -1,3 +1,5 @@
+import {translateX} from 'css-functions'
+
 import theme from '../theme'
 
 export default {
@@ -70,10 +72,10 @@ export default {
       left: 0,
       right: 0,
       bottom: 0,
-      transform: 'translateX(100%)'
+      transform: translateX('100%')
     },
     menuActive: {
-      transform: 'translateX(0)',
+      transform: translateX(0),
     },
     toggle: {
       display: 'block',

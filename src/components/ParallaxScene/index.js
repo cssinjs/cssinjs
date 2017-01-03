@@ -1,6 +1,7 @@
 import React from 'react'
 import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
+
 import Jumper from '../Jumper'
 
 import injectSheet from '../../utils/jss'

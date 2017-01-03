@@ -1,4 +1,6 @@
 import color from 'color'
+import {translateY} from 'css-functions'
+
 import theme from '../theme'
 
 export default {
@@ -32,13 +34,13 @@ export default {
   // Animation for SVG dot
   '@keyframes mouseMove': {
     '0%': {
-      transform: 'translateY(0)',
+      transform: translateY(0),
     },
     '50%': {
-      transform: 'translateY(3px)',
+      transform: translateY(3),
     },
     '100%': {
-      transform: 'translateY(0)',
+      transform: translateY(0),
     },
   }
 }

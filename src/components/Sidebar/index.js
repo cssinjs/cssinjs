@@ -18,10 +18,6 @@ class Sidebar extends React.Component {
     sheet: React.PropTypes.object
   }
 
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
   constructor(props) {
     super(props)
     this.state = {
@@ -40,9 +36,6 @@ class Sidebar extends React.Component {
     })
   }
 
-  /**
-   * React component render
-   */
   render() {
     const {classes} = this.props.sheet
     const toggleMenu = () => {

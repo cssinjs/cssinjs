@@ -1,4 +1,6 @@
 import color from 'color'
+import {translate} from 'css-functions'
+
 import theme from '../theme'
 
 const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
@@ -23,7 +25,7 @@ export default {
       position: 'absolute',
       top: '50%',
       left: '50%',
-      transform: 'translate(-50%, -50%)',
+      transform: translate('-50%', '-50%'),
       width: '70%',
       height: '80%',
       zIndex: 2,
