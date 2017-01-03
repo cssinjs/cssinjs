@@ -40,7 +40,9 @@ class Page extends PureComponent {
       <div className={classes.page}>
         {name === home.name && <ParallaxScene />}
         <div className={classes.content} id="mainContent">
-          <Content {...page} />
+          <div className={classes.inner}>
+            <Content {...page} />
+          </div>
         </div>
       </div>
     )
