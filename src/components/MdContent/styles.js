@@ -1,7 +1,92 @@
 import vars from '../../styles/vars'
 
 export default {
-  container: {},
+  container: {
+    '@global': {
+      // Link styles
+      a: {
+        fontWeight: 500,
+        textDecoration: 'underline',
+        color: vars.textColor,
+        '&:hover': {
+          textDecoration: 'none',
+        },
+      },
+
+      // Paragraphs
+      p: {
+        margin: [2, 0],
+        '&:first-child': {
+          marginTop: 0
+        },
+      },
+
+      // Headings
+      'h1, h2, h3, h4': {
+        color: vars.titleColor,
+        margin: [4, 0],
+        fontWeight: 400,
+        lineHeight: '1',
+        '&:first-child': {
+          marginTop: 0
+        },
+      },
+      h1: {
+        fontSize: 3.6,
+      },
+      h2: {
+        fontSize: 2.4,
+        margin: [3, 0],
+      },
+      h3: {
+        fontSize: 2,
+        margin: [2, 0],
+      },
+      h4: {
+        fontSize: 1.8,
+        margin: [2, 0],
+      },
+
+      // Lists
+      'ul, ol': {
+        margin: [2, 0],
+        padding: [0, 0, 0, 2.5],
+      },
+      ul: {
+        listStyle: 'circle',
+      },
+      li: {
+        padding: [0.3, 0]
+      },
+
+      // Divider
+      hr: {
+        margin: [2, 0],
+        border: 'none',
+        background: vars.borderColor,
+        height: '1px',
+        display: 'block',
+      },
+
+      // Tables
+      table: {
+        borderCollapse: 'collapse',
+        marginBottom: 2,
+      },
+      'th, td': {
+        padding: [0.5, 1.5],
+        borderBottom: vars.border(vars.borderColor),
+        borderLeft: vars.border(vars.borderColor),
+        ':first-child': {
+          borderLeft: 'none',
+        },
+      },
+      th: {
+        fontWeight: 'bold',
+        background: vars.cardColor,
+      }
+    }
+  },
   content: {
     position: 'relative',
   },
