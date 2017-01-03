@@ -2,7 +2,6 @@ import vars from '../../styles/vars'
 
 export default {
   button: {
-    textDecoration: 'none',
     display: 'block',
     background: 'none',
     lineHeight: 2,
@@ -11,6 +10,7 @@ export default {
     fill: vars.textColor,
     opacity: 0.7,
     textTransform: 'uppercase',
+    textDecoration: 'none',
     fontWeight: 400,
     padding: [1, 0],
     '&:hover': {

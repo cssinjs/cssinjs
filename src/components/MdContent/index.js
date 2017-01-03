@@ -39,7 +39,7 @@ class MdContent extends PureComponent {
     } = this.props
 
     return (
-      <div className={classes.container}>
+      <div className={classes.mdContent}>
         <div className={classes.content}>
           {status === 404 && <NotFound />}
           <div className={classes.actions}>

@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 import MdContent from '../components/MdContent'
 
-import {loadRawFile} from '../utils/github'
+import {loadRawFile, getBlobUrl} from '../utils/github'
 
 const loadCachedFile = (() => {
   const cache = {}
@@ -42,7 +42,7 @@ export default class MdContentContainer extends PureComponent {
 
   render() {
     const {content, status} = this.state
-    const {repo, org, name} = this.props
+    const {repo, org, name, path} = this.props
 
     return (
       <MdContent
@@ -51,6 +51,7 @@ export default class MdContentContainer extends PureComponent {
         content={content}
         status={status}
         org={org}
+        editUrl={getBlobUrl(repo, path, 'master', org)}
         onChangeVersion={this.onChangeVersion}
       />
     )

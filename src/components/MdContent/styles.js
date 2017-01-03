@@ -1,7 +1,12 @@
 import vars from '../../styles/vars'
 
 export default {
-  container: {
+  mdContent: {},
+  content: {
+    position: 'relative',
+  },
+  markdown: {
+    display: 'block',
     '@global': {
       // Link styles
       a: {
@@ -86,12 +91,6 @@ export default {
         background: vars.cardColor,
       }
     }
-  },
-  content: {
-    position: 'relative',
-  },
-  markdown: {
-    display: 'block'
   },
   actions: {
     float: 'right',
