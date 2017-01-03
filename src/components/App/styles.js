@@ -1,4 +1,4 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   '@import': 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i',
@@ -12,12 +12,12 @@ export default {
   },
   app: {
     height: '100%',
-    background: vars.pageBackground,
-    color: vars.textColor,
-    fontFamily: vars.fontFamily,
-    fontSize: vars.fontSize,
+    background: theme.pageBackground,
+    color: theme.textColor,
+    fontFamily: theme.fontFamily,
+    fontSize: theme.fontSize,
     fontWeight: 400,
-    lineHeight: vars.lineHeight,
+    lineHeight: theme.lineHeight,
     '@global': {
       '*, *::before, *::after': {
         boxSizing: 'border-box',
@@ -29,8 +29,8 @@ export default {
     }
   },
   sidebar: {
-    background: vars.sidebarBg,
-    color: vars.sidebarColor,
+    background: theme.sidebarBg,
+    color: theme.sidebarColor,
     position: 'fixed',
     top: 0,
     left: 0,

@@ -1,5 +1,5 @@
 import color from 'color'
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   container: {
@@ -11,9 +11,9 @@ export default {
     borderRadius: '50%',
     textAlign: 'center',
     background: 'transparent',
-    transition: vars.transition(),
+    transition: theme.transition(),
     '&:hover': {
-      background: color(vars.cardColor).alpha(0.3).string(),
+      background: color(theme.cardColor).alpha(0.3).string(),
     },
     // SVG dot (can't pass JSS instance inside)
     '& .inner': {
@@ -26,7 +26,7 @@ export default {
     }
   },
   icon: {
-    fill: vars.textColor,
+    fill: theme.textColor,
   },
 
   // Animation for SVG dot

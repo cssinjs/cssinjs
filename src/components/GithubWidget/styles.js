@@ -1,15 +1,15 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   container: {
-    color: vars.textColorInverse,
+    color: theme.textColorInverse,
     backgroundColor: 'transparent',
     display: 'flex',
     alignItems: 'center',
     textDecoration: 'none',
     fontWeight: 400,
     opacity: 1,
-    transition: vars.transition(),
+    transition: theme.transition(),
     '&:hover': {
       opacity: 0.7,
     }
@@ -42,10 +42,10 @@ export default {
   },
   iconStar: {
     extend: 'icon',
-    fill: vars.themeColor,
+    fill: theme.themeColor,
   },
   iconGithub: {
     extend: 'icon',
-    fill: vars.textColorInverse,
+    fill: theme.textColorInverse,
   }
 }

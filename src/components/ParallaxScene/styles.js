@@ -1,8 +1,8 @@
 import color from 'color'
-import vars from '../../styles/vars'
+import theme from '../theme'
 
-const backgroundLineColor = color(vars.cardColor).alpha(0.4).string()
-const baseColor = vars.themeColor
+const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
+const baseColor = theme.themeColor
 const textColor = '#000'
 
 export default {
@@ -12,8 +12,8 @@ export default {
     minHeight: 40,
     position: 'relative',
     overflow: 'hidden',
-    color: vars.textColorInverse,
-    background: vars.themeColor,
+    color: theme.textColorInverse,
+    background: theme.themeColor,
     userSelect: 'none',
     zIndex: 10,
 
@@ -44,11 +44,11 @@ export default {
   inner: {
     height: '100%',
     position: 'relative',
-    maxWidth: vars.contentWidth,
+    maxWidth: theme.contentWidth,
     width: '100%',
     margin: [0, 'auto'],
-    borderLeft: vars.border(backgroundLineColor),
-    borderRight: vars.border(backgroundLineColor),
+    borderLeft: theme.border(backgroundLineColor),
+    borderRight: theme.border(backgroundLineColor),
     // Vertical line
     '&::after': {
       content: '""',
@@ -94,7 +94,7 @@ export default {
     border: {
       width: 1.5,
       style: 'solid',
-      color: vars.cardColor
+      color: theme.cardColor
     },
     animation: {
       name: 'parallaxRotate',

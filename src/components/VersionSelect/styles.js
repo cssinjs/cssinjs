@@ -1,4 +1,4 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   container: {
@@ -13,8 +13,8 @@ export default {
     cursor: 'pointer',
     background: 'transparent',
     outline: 'none',
-    border: vars.border(vars.borderColor),
-    color: vars.textColor,
+    border: theme.border(theme.borderColor),
+    color: theme.textColor,
     padding: [1, 1.5],
     font: {
       family: 'Arial, serif', // Because Chrome cant align main font correctly :(

@@ -1,13 +1,13 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   button: {
     display: 'block',
     background: 'none',
     lineHeight: 2,
-    transition: vars.transition(),
-    color: vars.textColor,
-    fill: vars.textColor,
+    transition: theme.transition(),
+    color: theme.textColor,
+    fill: theme.textColor,
     opacity: 0.7,
     textTransform: 'uppercase',
     textDecoration: 'none',

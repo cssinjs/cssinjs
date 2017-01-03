@@ -1,4 +1,4 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 const size = 3
 const barWeight = 0.2
@@ -39,7 +39,7 @@ export default {
     position: 'absolute',
     height: barWeight,
     width: '100%',
-    background: vars.textColorInverse, // Need to change
+    background: theme.textColorInverse, // Need to change
     opacity: 1,
     left: 0,
     transition: {

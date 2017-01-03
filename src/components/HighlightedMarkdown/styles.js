@@ -1,4 +1,4 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   heading: {
@@ -8,7 +8,7 @@ export default {
     }
   },
   anchor: {
-    transition: vars.transition(),
+    transition: theme.transition(),
     position: 'absolute',
     top: 0,
     bottom: 0,
@@ -17,7 +17,7 @@ export default {
     opacity: 0,
   },
   icon: {
-    width: vars.fontSize,
+    width: theme.fontSize,
     height: 'auto',
   }
 }

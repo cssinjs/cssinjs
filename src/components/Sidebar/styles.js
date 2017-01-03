@@ -1,4 +1,4 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   container: {
@@ -17,11 +17,11 @@ export default {
     flexShrink: 0,
     lineHeight: 5,
     padding: [0, 3],
-    background: vars.sidebarBgActive,
+    background: theme.sidebarBgActive,
   },
   menu: {
-    transition: vars.transition(),
-    background: vars.sidebarBg,
+    transition: theme.transition(),
+    background: theme.sidebarBg,
   },
 
   // Active state for menu
@@ -62,7 +62,7 @@ export default {
       width: 5,
     },
     menu: {
-      borderTop: [1, 'solid', vars.sidebarBgActive],
+      borderTop: [1, 'solid', theme.sidebarBgActive],
       position: 'fixed',
       overflowY: 'auto',
       overflowX: 'hidden',

@@ -1,7 +1,7 @@
 import color from 'color'
-import vars from '../../styles/vars'
+import theme from '../theme'
 
-const backgroundLineColor = color(vars.cardColor).alpha(0.4).string()
+const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
 
 export default {
   container: {
@@ -10,8 +10,8 @@ export default {
     minHeight: 40,
     position: 'relative',
     overflow: 'hidden',
-    color: vars.textColor,
-    background: vars.themeColor,
+    color: theme.textColor,
+    background: theme.themeColor,
     textAlign: 'center',
     display: 'flex',
     alignItems: 'center',
@@ -49,8 +49,8 @@ export default {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    borderLeft: vars.border(backgroundLineColor),
-    borderRight: vars.border(backgroundLineColor),
+    borderLeft: theme.border(backgroundLineColor),
+    borderRight: theme.border(backgroundLineColor),
 
     // Vertical line
     '&::after': {
