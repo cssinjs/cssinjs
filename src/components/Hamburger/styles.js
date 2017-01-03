@@ -34,7 +34,6 @@ export default {
     }
   },
   bar: {
-    display: 'block',
     position: 'absolute',
     height: barWeight,
     width: '100%',

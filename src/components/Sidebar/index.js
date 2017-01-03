@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import cn from 'classnames'
 
 import Logo from '../Logo'
-import GithubWidget from '../GithubWidget'
+import GithubWidget from '../../containers/GithubWidget'
 import Hamburger from '../Hamburger'
 import Menu from '../Menu'
 
