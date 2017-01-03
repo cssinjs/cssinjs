@@ -6,7 +6,7 @@ const baseColor = theme.themeColor
 const textColor = '#000'
 
 export default {
-  container: {
+  parallaxScene: {
     width: '100%',
     height: '100%',
     minHeight: 40,
@@ -18,7 +18,7 @@ export default {
     zIndex: 10,
 
     // Center radial gradient
-    '&::before': {
+    '&:before': {
       content: '""',
       position: 'absolute',
       top: '50%',
@@ -31,7 +31,7 @@ export default {
     },
 
     // Horizontal line
-    '&::after': {
+    '&:after': {
       content: '""',
       position: 'absolute',
       top: '50%',
@@ -50,7 +50,7 @@ export default {
     borderLeft: theme.border(backgroundLineColor),
     borderRight: theme.border(backgroundLineColor),
     // Vertical line
-    '&::after': {
+    '&:after': {
       content: '""',
       position: 'absolute',
       top: 0,

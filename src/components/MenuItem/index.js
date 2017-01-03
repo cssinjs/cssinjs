@@ -16,7 +16,7 @@ function MenuItem(props) {
     name,
     sheet: {classes}
   } = props
-  const className = cn(classes.item, classes[`level${level}`])
+  const className = cn(classes.menuItem, classes[`level${level}`])
 
   if (external) {
     return (

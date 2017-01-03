@@ -1,7 +1,7 @@
 import theme from '../theme'
 
 export default {
-  container: {
+  versionSelect: {
     display: 'flex',
     alignItems: 'center',
   },

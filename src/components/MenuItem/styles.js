@@ -1,7 +1,7 @@
 import theme from '../theme'
 
 export default {
-  item: {
+  menuItem: {
     color: theme.textColorInverse,
     fill: theme.textColorInverse,
     display: 'block',

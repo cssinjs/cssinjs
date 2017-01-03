@@ -4,7 +4,7 @@ const size = 3
 const barWeight = 0.2
 
 export default {
-  toggle: {
+  hamburger: {
     width: size,
     height: size,
     position: 'relative',
@@ -15,10 +15,7 @@ export default {
       timingFunction: 'ease-in-out',
     },
   },
-
-  // Active state
-  toggleActive: {
-    composes: '$toggle',
+  active: {
     '& $barFirst': {
       top: '50%',
       marginTop: -barWeight / 2,

@@ -28,7 +28,7 @@ class VersionSelect extends PureComponent {
     } = this.props
 
     return (
-      <div className={classes.container}>
+      <div className={classes.versionSelect}>
         <div className={classes.label}>
           Version:
         </div>

@@ -1,5 +1,5 @@
 export default {
-  container: {
+  page: {
     height: '100%',
   },
   content: {

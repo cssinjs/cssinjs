@@ -4,7 +4,7 @@ import theme from '../theme'
 const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
 
 export default {
-  container: {
+  notFound: {
     width: '100%',
     height: '100%',
     minHeight: 40,
@@ -18,7 +18,7 @@ export default {
     justifyContent: 'center',
 
     // Center radial gradient
-    '&::before': {
+    '&:before': {
       content: '""',
       position: 'absolute',
       top: '50%',
@@ -31,7 +31,7 @@ export default {
     },
 
     // Horizontal line
-    '&::after': {
+    '&:after': {
       content: '""',
       position: 'absolute',
       top: '50%',
@@ -53,7 +53,7 @@ export default {
     borderRight: theme.border(backgroundLineColor),
 
     // Vertical line
-    '&::after': {
+    '&:after': {
       content: '""',
       position: 'absolute',
       top: 0,

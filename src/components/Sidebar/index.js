@@ -2,7 +2,7 @@ import React from 'react'
 
 import Logo from '../Logo'
 import GithubWidget from '../GithubWidget'
-import MenuToggleWidget from '../MenuToggleWidget'
+import Hamburger from '../Hamburger'
 import Menu from '../Menu'
 
 import config from '../../config'
@@ -52,7 +52,7 @@ class Sidebar extends React.Component {
     }
 
     return (
-      <div className={classes.container}>
+      <div className={classes.sidebar}>
         <div className={classes.logo}>
           <Logo type="white" />
         </div>
@@ -60,7 +60,7 @@ class Sidebar extends React.Component {
           <GithubWidget repo={config.site.repo} />
         </div>
         <button className={classes.toggle} onClick={toggleMenu}>
-          <MenuToggleWidget active={this.state.isActiveMenu} />
+          <Hamburger active={this.state.isActiveMenu} />
         </button>
         <div className={this.state.isActiveMenu ? classes.menuActive : classes.menu}>
           <Menu />

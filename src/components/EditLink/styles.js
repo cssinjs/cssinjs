@@ -1,7 +1,7 @@
 import theme from '../theme'
 
 export default {
-  button: {
+  editLink: {
     display: 'block',
     background: 'none',
     lineHeight: 2,

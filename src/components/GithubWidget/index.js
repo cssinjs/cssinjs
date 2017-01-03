@@ -37,7 +37,7 @@ class GithubWidget extends PureComponent {
     return (
       <a
         href={`//${primaryHost}/${this.props.repo}`}
-        className={stars === -1 ? classes.containerHidden : classes.container}
+        className={classes.githubWidget}
         target="_blank"
         rel="noopener noreferrer"
       >

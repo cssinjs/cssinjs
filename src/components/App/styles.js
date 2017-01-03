@@ -3,11 +3,14 @@ import theme from '../theme'
 export default {
   '@import': 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i',
   '@global': {
-    'html, body': {
+    html: {
       fontSize: '62.5%',
+      height: '100%'
+    },
+    body: {
       height: '100%',
       // Needed for the transition.
-      overflowX: 'hidden',
+      overflowX: 'hidden'
     }
   },
   app: {
@@ -19,7 +22,7 @@ export default {
     fontWeight: 400,
     lineHeight: theme.lineHeight,
     '@global': {
-      '*, *::before, *::after': {
+      '*, *:before, *:after': {
         boxSizing: 'border-box',
       },
       svg: {

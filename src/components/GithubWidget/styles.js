@@ -1,7 +1,7 @@
 import theme from '../theme'
 
 export default {
-  container: {
+  githubWidget: {
     color: theme.textColorInverse,
     backgroundColor: 'transparent',
     display: 'flex',
@@ -14,19 +14,17 @@ export default {
       opacity: 0.7,
     }
   },
-  containerHidden: {
-    extend: 'container',
-    opacity: 0,
-  },
   item: {
     textAlign: 'center',
     flexGrow: 1,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    '-ms-flex-pack': 'center', // justify-content fix for IE10
+    // Fix of justify-content for IE10
+    MsFlexPack: 'center',
     width: '50%',
-    maxHeight: 5, // Fix for IE10
+    // Fix for IE10
+    maxHeight: 5,
   },
   text: {
 
@@ -34,7 +32,8 @@ export default {
   icon: {
     lineHeight: 'normal',
     marginRight: 0.8,
-    marginTop: -0.3, // Fix for wring browser alignment
+    // Fix for wrong alignment.
+    marginTop: -0.3,
     width: 1.5,
     '& svg': {
       width: 1.5,

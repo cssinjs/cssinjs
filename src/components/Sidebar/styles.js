@@ -1,7 +1,7 @@
 import theme from '../theme'
 
 export default {
-  container: {
+  sidebar: {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',

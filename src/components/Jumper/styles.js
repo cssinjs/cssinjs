@@ -2,7 +2,7 @@ import color from 'color'
 import theme from '../theme'
 
 export default {
-  container: {
+  jumper: {
     display: 'inline-block',
     cursor: 'pointer',
     width: 8,
