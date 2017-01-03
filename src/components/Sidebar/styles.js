@@ -13,7 +13,8 @@ export default {
   logo: {
     textAlign: 'center',
     flexShrink: 0,
-    padding: [5, 3],
+    margin: [3, 7],
+    height: 'auto'
   },
   counter: {
     flexShrink: 0,
@@ -40,13 +41,6 @@ export default {
     boxShadow: 'none',
   },
 
-  // Decrease spaces for small screens
-  '@media (max-height: 800px)': {
-    logo: {
-      padding: [3, 2],
-    },
-  },
-
   // For small screens (mobile, portrait mode for iPad) - change completely layout
   '@media (max-width: 768px)': {
     sidebar: {
@@ -58,7 +52,7 @@ export default {
       overflow: 'visible',
     },
     logo: {
-      padding: 0,
+      margin: 0,
       width: 5,
     },
     menu: {

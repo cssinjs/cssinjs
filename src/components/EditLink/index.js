@@ -1,5 +1,5 @@
 import React from 'react'
-import Isvg from 'react-inlinesvg'
+import {Pencil} from '../icons'
 
 import injectSheet from '../../utils/jss'
 import styles from './styles'
@@ -9,7 +9,7 @@ const EditLink = ({url, sheet}) => {
 
   return (
     <a className={classes.editLink} href={url} target="_blank" rel="noopener noreferrer">
-      <Isvg src={'/images/edit.svg'} className={classes.icon} />
+      <Pencil className={classes.icon} />
       <span className={classes.text}>
         Edit this page
       </span>

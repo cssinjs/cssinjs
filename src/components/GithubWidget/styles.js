@@ -33,14 +33,10 @@ export default {
 
   },
   icon: {
-    lineHeight: 'normal',
-    marginRight: 0.8,
-    // Fix for wrong alignment.
-    marginTop: -0.3,
-    width: 1.5,
-    '& svg': {
-      width: 1.5,
-    },
+    margin: {
+      top: -0.3,
+      right: 0.8
+    }
   },
   iconStar: {
     extend: 'icon',

@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
+import Link from 'react-router/lib/Link'
 import cn from 'classnames'
 
-import Logo from '../Logo'
+import {Logo} from '../icons'
 import GithubWidget from '../../containers/GithubWidget'
 import Hamburger from '../Hamburger'
 import Menu from '../Menu'
@@ -45,9 +46,9 @@ class Sidebar extends Component {
 
     return (
       <div className={classes.sidebar}>
-        <div className={classes.logo}>
-          <Logo type="white" />
-        </div>
+        <Link to="/">
+          <Logo className={classes.logo} />
+        </Link>
         <div className={classes.counter}>
           <GithubWidget repo={config.site.repo} />
         </div>
