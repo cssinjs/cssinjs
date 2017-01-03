@@ -8,12 +8,11 @@ export default {
     alignItems: 'center',
     textDecoration: 'none',
     fontWeight: 400,
-    opacity: 0,
+    opacity: 1,
     transition: theme.transition(),
     '&:hover': {
       opacity: 0.7,
     }
-
   },
   item: {
     textAlign: 'center',

@@ -27,9 +27,7 @@ export default {
   },
 
   // Active state for menu
-  menuActive: {
-    composes: '$menu',
-  },
+  active: {},
 
   // Toggle widget
   toggle: {
@@ -51,7 +49,7 @@ export default {
 
   // For small screens (mobile, portrait mode for iPad) - change completely layout
   '@media (max-width: 768px)': {
-    container: {
+    sidebar: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -74,7 +72,7 @@ export default {
       bottom: 0,
       transform: translateX('100%')
     },
-    menuActive: {
+    active: {
       transform: translateX(0),
     },
     toggle: {

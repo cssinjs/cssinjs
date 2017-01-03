@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {Component} from 'react'
+import cn from 'classnames'
 
 import Logo from '../Logo'
 import GithubWidget from '../GithubWidget'
@@ -9,19 +10,15 @@ import config from '../../config'
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
-/**
- * Sidebar component class
- * @extends React.Component
- */
-class Sidebar extends React.Component {
+class Sidebar extends Component {
   static propTypes = {
-    sheet: React.PropTypes.object
+    sheet: React.PropTypes.object.isRequired
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      isActiveMenu: false
+      showMenu: false
     }
   }
 
@@ -32,17 +29,19 @@ class Sidebar extends React.Component {
    */
   componentWillReceiveProps() {
     this.setState({
-      isActiveMenu: false
+      showMenu: false
+    })
+  }
+
+  onToggleMenu = () => {
+    this.setState({
+      showMenu: !this.state.showMenu
     })
   }
 
   render() {
     const {classes} = this.props.sheet
-    const toggleMenu = () => {
-      this.setState({
-        isActiveMenu: !this.state.isActiveMenu
-      })
-    }
+    const {showMenu} = this.state
 
     return (
       <div className={classes.sidebar}>
@@ -52,10 +51,10 @@ class Sidebar extends React.Component {
         <div className={classes.counter}>
           <GithubWidget repo={config.site.repo} />
         </div>
-        <button className={classes.toggle} onClick={toggleMenu}>
-          <Hamburger active={this.state.isActiveMenu} />
+        <button className={classes.toggle} onClick={this.onToggleMenu}>
+          <Hamburger active={showMenu} />
         </button>
-        <div className={this.state.isActiveMenu ? classes.menuActive : classes.menu}>
+        <div className={cn(classes.menu, showMenu && classes.active)}>
           <Menu />
         </div>
       </div>
