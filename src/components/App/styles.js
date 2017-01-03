@@ -1,8 +1,32 @@
 import vars from '../../styles/vars'
 
 export default {
+  '@import': 'https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i',
+  '@global': {
+    'html, body': {
+      fontSize: '62.5%',
+      height: '100%',
+      // Needed for the transition.
+      overflowX: 'hidden',
+    }
+  },
   app: {
     height: '100%',
+    background: vars.pageBackground,
+    color: vars.textColor,
+    fontFamily: vars.fontFamily,
+    fontSize: vars.fontSize,
+    fontWeight: 400,
+    lineHeight: vars.lineHeight,
+    '@global': {
+      '*, *::before, *::after': {
+        boxSizing: 'border-box',
+      },
+      svg: {
+        display: 'inline-block',
+        verticalAlign: 'middle',
+      }
+    }
   },
   sidebar: {
     background: vars.sidebarBg,

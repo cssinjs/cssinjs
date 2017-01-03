@@ -3,7 +3,6 @@ import {renderToString} from 'react-dom/server'
 
 import jssNormalize from 'jss-normalize'
 import {jss} from './utils/jss'
-import baseStyles from './styles/baseStyles'
 
 import config from './config'
 
@@ -18,7 +17,6 @@ const analytics = `
 `
 
 export default function render() {
-  const baseSheet = jss.createStyleSheet(baseStyles)
   const normalize = jss.createStyleSheet(jssNormalize)
 
   return `<!doctype html>\n${renderToString(
@@ -38,7 +36,7 @@ export default function render() {
         <meta property="og:url" content={config.site.og.url} />
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <style type="text/css">
-          {normalize + baseSheet}
+          {normalize}
         </style>
         <link rel="stylesheet" type="text/css" href="/vendor.styles.css" />
       </head>
