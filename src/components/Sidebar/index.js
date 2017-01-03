@@ -46,7 +46,7 @@ class Sidebar extends Component {
 
     return (
       <div className={classes.sidebar}>
-        <Link to="/">
+        <Link to="/" className={classes.container}>
           <Logo className={classes.logo} />
         </Link>
         <div className={classes.counter}>

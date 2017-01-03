@@ -10,11 +10,15 @@ export default {
     overflowY: 'auto',
     overflowX: 'hidden',
   },
-  logo: {
+  container: {
     textAlign: 'center',
     flexShrink: 0,
-    margin: [3, 7],
-    height: 'auto'
+    margin: 3,
+  },
+  logo: {
+    height: 14,
+    width: 14,
+    verticalAlign: 'middle',
   },
   counter: {
     flexShrink: 0,
@@ -51,9 +55,13 @@ export default {
       padding: [1, 2],
       overflow: 'visible',
     },
-    logo: {
+    container: {
       margin: 0,
       width: 5,
+    },
+    logo: {
+      height: 'auto',
+      width: 'auto',
     },
     menu: {
       borderTop: [1, 'solid', theme.sidebarBgActive],
