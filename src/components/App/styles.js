@@ -24,10 +24,6 @@ export default {
     '@global': {
       '*, *:before, *:after': {
         boxSizing: 'border-box',
-      },
-      svg: {
-        display: 'inline-block',
-        verticalAlign: 'middle',
       }
     }
   },

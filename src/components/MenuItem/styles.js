@@ -42,10 +42,5 @@ export default {
   itemInner: {
     display: 'inline-block',
     verticalAlign: 'middle',
-  },
-  itemIcon: {
-    composes: ['$itemInner'],
-    paddingLeft: 1,
-    opacity: 0.5,
   }
 }

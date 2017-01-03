@@ -19,9 +19,7 @@ export default {
   },
   icon: {
     paddingRight: 0.8,
-    marginTop: -0.1,
-    display: 'inline-block',
-    lineHeight: 'normal',
+    marginTop: -0.1
   },
   text: {
     verticalAlign: 'middle'

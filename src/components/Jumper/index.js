@@ -1,19 +1,15 @@
 import React from 'react'
-import Isvg from 'react-inlinesvg'
+import {Mouse} from '../icons'
 
 import injectSheet from '../../utils/jss'
 import styles from './styles'
 
-/**
- * Scroll widget
- * @param {Object} JSS sheet object
- */
 const Jumper = ({sheet}) => {
   const {classes} = sheet
 
   return (
     <div className={classes.jumper}>
-      <Isvg src={'/images/mouse.svg'} className={classes.icon} />
+      <Mouse className={classes.icon} dotClassName={classes.iconDot} />
     </div>
   )
 }

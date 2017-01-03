@@ -1,7 +1,7 @@
 import React, {PropTypes, createElement} from 'react'
-import Isvg from 'react-inlinesvg'
 
 import injectSheet from '../../utils/jss'
+import {Link} from '../icons'
 import styles from './styles'
 
 const createId = str => str.toLowerCase().replace(/\s/g, '-').replace(/[^-\w]/g, '')
@@ -17,8 +17,8 @@ function H(props) {
     ...rest
   } = props
   const id = createId(children[0])
-
-  children.unshift(<a className={classes.anchor} href={`#${id}`}><Isvg className={classes.icon} src="/images/link.svg" /></a>)
+  // eslint-disable-next-line
+  children.unshift(<a className={classes.headingAnchor} href={`#${id}`}><Link /></a>)
   return createElement(tag, {...rest, id, className: classes.heading}, children)
 }
 

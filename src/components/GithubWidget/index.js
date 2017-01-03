@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react'
 import cn from 'classnames'
-import Isvg from 'react-inlinesvg'
+import {Github, Star} from '../icons'
 
 import {primaryHost} from '../../constants/github'
 import injectSheet from '../../utils/jss'
@@ -26,13 +26,13 @@ function GithubWidget(props) {
       rel="noopener noreferrer"
     >
       <div className={classes.item}>
-        <Isvg src={'/images/star.svg'} className={classes.iconStar} />
+        <Star className={classes.iconStar} />
         <span className={classes.text}>
           {formatStars(stars)}
         </span>
       </div>
       <div className={classes.item}>
-        <Isvg src={'/images/github.svg'} className={classes.iconGithub} />
+        <Github className={classes.iconGithub} />
         <span className={classes.text}>
           GitHub
         </span>
