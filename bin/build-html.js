@@ -4,7 +4,7 @@ var path = require('path')
 var configPath = path.join(process.cwd(), '.babelrc')
 var config = JSON.parse(fs.readFileSync(configPath))
 require('babel-register')(config)
-
+require('ignore-styles')
 var render = require('../src/server').default
 var nav = require('../src/utils/navigation')
 
@@ -25,16 +25,16 @@ if (dups.length) {
   process.exit(1)
 }
 
-var html = render()
-
 // Generate html files.
-const getDir = name => path.join(__dirname, '..', `/docs/${name}`)
+const getDir = slug => path.join(__dirname, '..', `/docs${slug}`)
 Object.keys(nav.map).forEach((name) => {
-  if (name === nav.home.name) return
-  const dir = getDir(name)
+  const slug = nav.map[name].home ? '/' : `/${name}`
+  const dir = getDir(slug)
   try {
     fs.mkdirSync(dir)
   } catch(err) {}
-  fs.writeFileSync(path.join(dir, 'index.html'), html)
+  render(slug, (html) => {
+    fs.writeFileSync(path.join(dir, 'index.html'), html)
+  })
 })
-fs.writeFileSync(path.join(getDir(''), 'index.html'), html)
+

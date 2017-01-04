@@ -13,7 +13,7 @@ export default class GithubWidgetContainer extends PureComponent {
     this.state = {}
   }
 
-  componentWillMount() {
+  componentDidMount() {
     loadStars(this.props.repo).then((stars) => {
       this.setState({stars})
     })

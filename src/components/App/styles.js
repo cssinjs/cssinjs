@@ -1,18 +1,6 @@
 import theme from '../theme'
 
 export default {
-  '@import': '"//fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i"',
-  '@global': {
-    html: {
-      fontSize: '62.5%',
-      height: '100%'
-    },
-    body: {
-      height: '100%',
-      // Needed for the transition.
-      overflowX: 'hidden'
-    }
-  },
   app: {
     height: '100%',
     background: theme.pageBackground,

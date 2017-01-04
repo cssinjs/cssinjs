@@ -19,7 +19,7 @@ class Page extends PureComponent {
     params: PropTypes.object
   }
 
-  componentWillMount() {
+  componentDidMount() {
     animateScroll.scrollToTop()
   }
 
