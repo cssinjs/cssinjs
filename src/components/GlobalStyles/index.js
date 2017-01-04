@@ -11,13 +11,9 @@ const styles = {
     html: {
       extend: global.html,
       fontSize: '62.5%',
-      height: '100%'
     },
     body: {
       extend: global.body,
-      height: '100%',
-      // Needed for the transition.
-      overflowX: 'hidden'
     }
   }
 }

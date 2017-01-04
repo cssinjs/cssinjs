@@ -15,28 +15,29 @@ function GithubWidget(props) {
   const {
     sheet: {classes},
     stars,
-    repo
+    repo,
+    className
   } = props
 
   return (
     <a
       href={`//${primaryHost}/${repo}`}
-      className={cn(classes.githubWidget, stars && classes.loaded)}
+      className={cn(classes.githubWidget, stars && classes.loaded, className)}
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className={classes.item}>
+      <span className={classes.item}>
         <Star className={classes.iconStar} />
         <span className={classes.text}>
           {formatStars(stars)}
         </span>
-      </div>
-      <div className={classes.item}>
+      </span>
+      <span className={classes.item}>
         <Github className={classes.iconGithub} />
         <span className={classes.text}>
           GitHub
         </span>
-      </div>
+      </span>
     </a>
   )
 }

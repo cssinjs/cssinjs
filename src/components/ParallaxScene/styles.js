@@ -8,7 +8,7 @@ const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
 export default {
   parallaxScene: {
     width: '100%',
-    height: '100%',
+    height: '100vh',
     minHeight: 40,
     position: 'relative',
     overflow: 'hidden',

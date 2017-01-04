@@ -2,11 +2,8 @@ import theme from '../theme'
 
 export default {
   page: {
-    height: '100%',
-  },
-  content: {
+    minHeight: '100vh',
     background: theme.pageBackground,
-    minHeight: '100%',
   },
   inner: {
     maxWidth: 100,

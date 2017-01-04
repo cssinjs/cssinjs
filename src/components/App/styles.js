@@ -2,13 +2,13 @@ import theme from '../theme'
 
 export default {
   app: {
-    height: '100%',
     background: theme.pageBackground,
     color: theme.textColor,
     fontFamily: theme.fontFamily,
     fontSize: theme.fontSize,
     fontWeight: 400,
     lineHeight: theme.lineHeight,
+    overflow: 'hidden',
     '@global': {
       '*, *:before, *:after': {
         boxSizing: 'border-box',
@@ -26,14 +26,11 @@ export default {
     zIndex: 100,
   },
   content: {
-    height: '100%',
     position: 'relative',
     marginLeft: 30,
   },
   contentInner: {
-    height: '100%',
     '& > div': {
-      height: '100%',
       left: 0,
       right: 0,
       willChange: 'transform',
