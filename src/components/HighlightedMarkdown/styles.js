@@ -70,7 +70,7 @@ export default {
         margin: [2, 0],
         border: 'none',
         background: theme.borderColor,
-        height: '1px',
+        height: 1,
         display: 'block',
       },
 
