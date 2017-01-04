@@ -1,4 +1,4 @@
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   app: {
@@ -8,12 +8,7 @@ export default {
     fontSize: theme.fontSize,
     fontWeight: 400,
     lineHeight: theme.lineHeight,
-    overflow: 'hidden',
-    '@global': {
-      '*, *:before, *:after': {
-        boxSizing: 'border-box',
-      }
-    }
+    overflow: 'hidden'
   },
   sidebar: {
     background: theme.sidebarBg,

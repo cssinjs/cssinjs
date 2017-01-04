@@ -7,7 +7,7 @@ import Jumper from '../Jumper'
 
 import injectSheet from '../../utils/jss'
 import styles from './styles'
-import theme from '../theme'
+import theme from '../../theme'
 
 /**
  * Main presentation block for site. Here is drawed animated logo on mouse move

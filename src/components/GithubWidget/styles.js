@@ -1,4 +1,4 @@
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   githubWidget: {
@@ -10,7 +10,8 @@ export default {
     fontWeight: 400,
     transition: theme.transition(),
     '&:hover': {
-      opacity: 0.7,
+      isoalte: false,
+      opacity: 0.7
     }
   },
   loaded: {
@@ -29,7 +30,8 @@ export default {
     maxHeight: 50,
   },
   text: {
-    lineHeight: 50
+    lineHeight: 50,
+    color: theme.textColorInverseActive
   },
   icon: {
     margin: {

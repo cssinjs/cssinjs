@@ -1,7 +1,7 @@
 import color from 'color'
 import {translateY} from 'css-functions'
 
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   jumper: {
@@ -14,7 +14,8 @@ export default {
     background: 'transparent',
     transition: theme.transition(),
     '&:hover': {
-      background: color(theme.cardColor).alpha(0.3).string(),
+      isolate: false,
+      background: color(theme.cardColor).alpha(0.3).string()
     }
   },
   icon: {

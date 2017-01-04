@@ -1,15 +1,13 @@
 import React, {PropTypes, createElement} from 'react'
 
-import injectSheet from '../../utils/jss'
 import {Link} from '../icons'
-import styles from './styles'
 
 const createId = str => str.toLowerCase().replace(/\s/g, '-').replace(/[^-\w]/g, '')
 
 /**
  * Renders `h*` tags and generates a github like id attribute.
  */
-function H(props) {
+export default function H(props) {
   const {
     children,
     tag,
@@ -23,8 +21,7 @@ function H(props) {
 }
 
 H.propTypes = {
-  sheet: PropTypes.object,
+  sheet: PropTypes.object.isRequired,
   tag: PropTypes.string.isRequired
 }
 
-export default injectSheet(styles)(H)

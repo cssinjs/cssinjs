@@ -7,4 +7,4 @@ const styles = {
   ...normalize
 }
 
-export default injectSheet(styles)(props => props.children)
+export default injectSheet(styles, {isolate: false})(props => props.children)

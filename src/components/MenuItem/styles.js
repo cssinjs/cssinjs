@@ -1,4 +1,4 @@
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   menuItem: {
@@ -13,14 +13,16 @@ export default {
       size: 14,
     },
     '&:hover': {
+      isolate: false,
       color: theme.textColorInverseActive,
-      opacity: 1,
+      opacity: 1
     }
   },
   active: {
     opacity: 1,
     color: theme.themeColor,
     '&:hover': {
+      isolate: false,
       color: theme.themeColor,
     }
   },

@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import cn from 'classnames'
 
 import Icon from './Icon'
-import theme from '../theme'
+import theme from '../../theme'
 
 const Logo = ({className, strokeColor, backgroundColor, textColor}) => (
   <Icon>

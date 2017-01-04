@@ -1,7 +1,7 @@
 import color from 'color'
 import {translate, translateZ, multiple, rotate, scale} from 'css-functions'
 
-import theme from '../theme'
+import theme from '../../theme'
 
 const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
 

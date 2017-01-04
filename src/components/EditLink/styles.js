@@ -1,4 +1,4 @@
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   editLink: {
@@ -14,6 +14,7 @@ export default {
     fontWeight: 400,
     padding: [10, 0],
     '&:hover': {
+      isolate: false,
       opacity: 1,
     }
   },

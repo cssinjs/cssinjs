@@ -1,6 +1,6 @@
 import {rotateZ, translateX} from 'css-functions'
 
-import theme from '../theme'
+import theme from '../../theme'
 
 const size = 30
 const barWeight = 2
