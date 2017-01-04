@@ -1,33 +1,38 @@
-import vars from '../../styles/vars'
+import {translateX} from 'css-functions'
+
+import theme from '../theme'
 
 export default {
-  container: {
+  sidebar: {
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     overflowY: 'auto',
     overflowX: 'hidden',
   },
-  logo: {
+  container: {
     textAlign: 'center',
     flexShrink: 0,
-    padding: [5, 3],
+    margin: 3,
+  },
+  logo: {
+    height: 14,
+    width: 14,
+    verticalAlign: 'middle',
   },
   counter: {
     flexShrink: 0,
     lineHeight: 5,
     padding: [0, 3],
-    background: vars.sidebarBgActive,
+    background: theme.sidebarBgActive,
   },
   menu: {
-    transition: vars.transition(),
-    background: vars.sidebarBg,
+    transition: theme.transition(),
+    background: theme.sidebarBg,
   },
 
   // Active state for menu
-  menuActive: {
-    composes: '$menu',
-  },
+  active: {},
 
   // Toggle widget
   toggle: {
@@ -40,16 +45,9 @@ export default {
     boxShadow: 'none',
   },
 
-  // Decrease spaces for small screens
-  '@media (max-height: 800px)': {
-    logo: {
-      padding: [3, 2],
-    },
-  },
-
   // For small screens (mobile, portrait mode for iPad) - change completely layout
   '@media (max-width: 768px)': {
-    container: {
+    sidebar: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
@@ -57,12 +55,16 @@ export default {
       padding: [1, 2],
       overflow: 'visible',
     },
-    logo: {
-      padding: 0,
+    container: {
+      margin: 0,
       width: 5,
     },
+    logo: {
+      height: 'auto',
+      width: 'auto',
+    },
     menu: {
-      borderTop: [1, 'solid', vars.sidebarBgActive],
+      borderTop: [1, 'solid', theme.sidebarBgActive],
       position: 'fixed',
       overflowY: 'auto',
       overflowX: 'hidden',
@@ -70,10 +72,10 @@ export default {
       left: 0,
       right: 0,
       bottom: 0,
-      transform: 'translateX(100%)'
+      transform: translateX('100%')
     },
-    menuActive: {
-      transform: 'translateX(0)',
+    active: {
+      transform: translateX(0),
     },
     toggle: {
       display: 'block',

@@ -19,7 +19,7 @@ class Page extends PureComponent {
     params: PropTypes.object
   }
 
-  componentWillMount() {
+  componentDidMount() {
     animateScroll.scrollToTop()
   }
 
@@ -37,10 +37,12 @@ class Page extends PureComponent {
     if (page.iframe) return <Iframe src={page.url} />
 
     return (
-      <div className={classes.container}>
+      <div className={classes.page}>
         {name === home.name && <ParallaxScene />}
         <div className={classes.content} id="mainContent">
-          <Content {...page} />
+          <div className={classes.inner}>
+            <Content {...page} />
+          </div>
         </div>
       </div>
     )

@@ -1,29 +1,29 @@
 import color from 'color'
-import vars from '../../styles/vars'
+import {translate, translateZ, multiple, rotate, scale} from 'css-functions'
 
-const backgroundLineColor = color(vars.cardColor).alpha(0.4).string()
-const baseColor = vars.themeColor
-const textColor = '#000'
+import theme from '../theme'
+
+const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
 
 export default {
-  container: {
+  parallaxScene: {
     width: '100%',
     height: '100%',
     minHeight: 40,
     position: 'relative',
     overflow: 'hidden',
-    color: vars.textColorInverse,
-    background: vars.themeColor,
+    color: theme.textColorInverse,
+    background: theme.themeColor,
     userSelect: 'none',
     zIndex: 10,
 
     // Center radial gradient
-    '&::before': {
+    '&:before': {
       content: '""',
       position: 'absolute',
       top: '50%',
       left: '50%',
-      transform: 'translate(-50%, -50%)',
+      transform: translate('-50%', '-50%'),
       width: '70%',
       height: '80%',
       zIndex: 2,
@@ -31,7 +31,7 @@ export default {
     },
 
     // Horizontal line
-    '&::after': {
+    '&:after': {
       content: '""',
       position: 'absolute',
       top: '50%',
@@ -44,13 +44,13 @@ export default {
   inner: {
     height: '100%',
     position: 'relative',
-    maxWidth: vars.contentWidth,
+    maxWidth: theme.contentWidth,
     width: '100%',
     margin: [0, 'auto'],
-    borderLeft: vars.border(backgroundLineColor),
-    borderRight: vars.border(backgroundLineColor),
+    borderLeft: theme.border(backgroundLineColor),
+    borderRight: theme.border(backgroundLineColor),
     // Vertical line
-    '&::after': {
+    '&:after': {
       content: '""',
       position: 'absolute',
       top: 0,
@@ -64,14 +64,14 @@ export default {
     position: 'absolute',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
+    transform: translate('-50%', '-50%'),
     zIndex: 5,
     transformStyle: 'preserve-3d',
     perspective: 1000,
   },
   targetInner: {
     transformStyle: 'preserve-3d',
-    transform: 'translateZ(0)',
+    transform: translateZ(0),
   },
 
   // Scroll to widget
@@ -94,7 +94,7 @@ export default {
     border: {
       width: 1.5,
       style: 'solid',
-      color: vars.cardColor
+      color: theme.cardColor
     },
     animation: {
       name: 'parallaxRotate',
@@ -140,36 +140,15 @@ export default {
   logoBase: {
     position: 'relative',
     overflow: 'hidden',
-    width: 40,
-    height: 40,
-    background: baseColor,
-    border: {
-      width: 0.2,
-      style: 'solid',
-      color: textColor,
-    }
-  },
-  logoText: {
-    lineHeight: 'normal',
-    fontSize: 22,
-    fontWeight: 'bold',
-    color: textColor,
-    position: 'absolute',
-    bottom: 0,
-    right: -9.5,
-    transform: 'translateZ(30px)'
-  },
-  logoTextUnder: {
-    composes: '$logoText',
-    transform: 'none',
-    opacity: 0.1,
-    textShadow: [`0 0 20px ${textColor}`, `0 0 20px ${textColor}`, `0 0 20px ${textColor}`]
+    width: 45,
+    height: 45,
+    left: 4, // Need to proper alignment
   },
 
   // Decrease size of main logo for small screens
   '@media (max-width: 750px)': {
     target: {
-      transform: 'translate(-50%, -50%) scale(0.5)',
+      transform: multiple(translate('-50%', '-50%'), scale(0.5)),
     },
     scrollTo: {
       bottom: 2,
@@ -184,10 +163,10 @@ export default {
   // Keyframes for rotating animation
   '@keyframes parallaxRotate': {
     from: {
-      transform: 'rotate(0)',
+      transform: rotate(0),
     },
     to: {
-      transform: 'rotate(360deg)',
+      transform: rotate(360),
     },
   }
 }

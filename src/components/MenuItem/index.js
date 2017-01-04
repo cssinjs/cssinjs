@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react'
-import Isvg from 'react-inlinesvg'
 import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
 
@@ -16,7 +15,7 @@ function MenuItem(props) {
     name,
     sheet: {classes}
   } = props
-  const className = cn(classes.item, classes[`level${level}`])
+  const className = cn(classes.menuItem, classes[`level${level}`])
 
   if (external) {
     return (
@@ -28,9 +27,6 @@ function MenuItem(props) {
       >
         <span className={classes.itemInner}>
           {title}
-        </span>
-        <span className={classes.itemIcon}>
-          <Isvg src={'/images/external.svg'} className={classes.icon} />
         </span>
       </a>
     )

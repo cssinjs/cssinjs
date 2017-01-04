@@ -41,7 +41,7 @@ export default class VersionSelectContainer extends PureComponent {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const {repo, org} = this.props
     loadVersions(repo, org).then(this.onLoadVersions)
   }

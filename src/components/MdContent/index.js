@@ -38,10 +38,11 @@ class MdContent extends PureComponent {
       name
     } = this.props
 
+    if (status === 404) return <NotFound />
+
     return (
-      <div className={classes.container}>
+      <div className={classes.mdContent}>
         <div className={classes.content}>
-          {status === 404 && <NotFound />}
           <div className={classes.actions}>
             <div className={classes.action}>
               {editUrl && <EditLink url={editUrl} />}

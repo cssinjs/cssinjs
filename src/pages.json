@@ -134,7 +134,7 @@
     "url": "//cssinjs.github.io/examples/index.html",
     "external": true
   },
-  "playground": {
+  "repl": {
     "title": "JSS Playground",
     "url": "//cssinjs.github.io/repl/",
     "iframe": true

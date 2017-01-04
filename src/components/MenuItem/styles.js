@@ -1,27 +1,27 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
-  item: {
-    color: vars.textColorInverse,
-    fill: vars.textColorInverse,
+  menuItem: {
+    color: theme.textColorInverse,
+    fill: theme.textColorInverse,
     display: 'block',
     textDecoration: 'none',
-    transition: vars.transition(),
+    transition: theme.transition(),
     opacity: 0.8,
     font: {
       weight: 400,
       size: 1.4,
     },
     '&:hover': {
-      color: vars.textColorInverseActive,
+      color: theme.textColorInverseActive,
       opacity: 1,
     }
   },
   active: {
     opacity: 1,
-    color: vars.themeColor,
+    color: theme.themeColor,
     '&:hover': {
-      color: vars.themeColor,
+      color: theme.themeColor,
     }
   },
 
@@ -42,10 +42,5 @@ export default {
   itemInner: {
     display: 'inline-block',
     verticalAlign: 'middle',
-  },
-  itemIcon: {
-    composes: ['$itemInner'],
-    paddingLeft: 1,
-    opacity: 0.5,
   }
 }

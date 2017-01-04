@@ -1,10 +1,13 @@
 import React from 'react'
 import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
-import ScrollWidget from '../ScrollWidget'
+
+import {Logo} from '../icons'
+import Jumper from '../Jumper'
 
 import injectSheet from '../../utils/jss'
 import styles from './styles'
+import theme from '../theme'
 
 /**
  * Main presentation block for site. Here is drawed animated logo on mouse move
@@ -63,7 +66,7 @@ class ParallaxScene extends React.Component {
     const {tiltx, tilty, degree} = this.state
 
     return (
-      <div className={classes.container}>
+      <div className={classes.parallaxScene}>
         <div className={classes.inner} />
         <div className={classes.ringFirst} />
         <div className={classes.ringSecond} />
@@ -85,14 +88,12 @@ class ParallaxScene extends React.Component {
                 }}
               >
                 <div className={classes.logo}>
-                  <div className={classes.logoBase}>
-                    <div className={classes.logoTextUnder}>
-                      JSS
-                    </div>
-                  </div>
-                  <div className={classes.logoText}>
-                    JSS
-                  </div>
+                  <Logo
+                    className={classes.logoBase}
+                    strokeColor={theme.titleColorDark}
+                    backgroundColor={theme.themeColor}
+                    textColor={theme.titleColorDark}
+                  />
                 </div>
               </div>
             }
@@ -100,7 +101,7 @@ class ParallaxScene extends React.Component {
         </div>
         <div className={classes.scrollTo}>
           <ScrollLink to="mainContent" smooth duration={500}>
-            <ScrollWidget />
+            <Jumper />
           </ScrollLink>
         </div>
       </div>

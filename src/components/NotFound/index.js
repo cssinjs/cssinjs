@@ -11,7 +11,7 @@ const NotFound = ({sheet}) => {
   const {classes} = sheet
 
   return (
-    <div className={classes.container}>
+    <div className={classes.notFound}>
       <div className={classes.inner}>
         <div className={classes.text}>
           {'The page you are looking for can\'t be found.'}

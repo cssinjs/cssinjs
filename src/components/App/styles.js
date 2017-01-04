@@ -1,12 +1,23 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
   app: {
     height: '100%',
+    background: theme.pageBackground,
+    color: theme.textColor,
+    fontFamily: theme.fontFamily,
+    fontSize: theme.fontSize,
+    fontWeight: 400,
+    lineHeight: theme.lineHeight,
+    '@global': {
+      '*, *:before, *:after': {
+        boxSizing: 'border-box',
+      }
+    }
   },
   sidebar: {
-    background: vars.sidebarBg,
-    color: vars.sidebarColor,
+    background: theme.sidebarBg,
+    color: theme.sidebarColor,
     position: 'fixed',
     top: 0,
     left: 0,

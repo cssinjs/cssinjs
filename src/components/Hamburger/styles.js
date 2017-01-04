@@ -1,10 +1,12 @@
-import vars from '../../styles/vars'
+import {rotateZ, translateX} from 'css-functions'
+
+import theme from '../theme'
 
 const size = 3
 const barWeight = 0.2
 
 export default {
-  toggle: {
+  hamburger: {
     width: size,
     height: size,
     position: 'relative',
@@ -15,31 +17,27 @@ export default {
       timingFunction: 'ease-in-out',
     },
   },
-
-  // Active state
-  toggleActive: {
-    composes: '$toggle',
+  active: {
     '& $barFirst': {
       top: '50%',
       marginTop: -barWeight / 2,
-      transform: 'rotate(135deg)',
+      transform: rotateZ(135),
     },
     '& $barSecond': {
       opacity: 0,
-      transform: 'translateX(6rem)',
+      transform: translateX(`${size * 2}rem`),
     },
     '& $barThird': {
       bottom: '50%',
       marginBottom: -barWeight / 2,
-      transform: 'rotate(-135deg)',
+      transform: rotateZ(-135),
     }
   },
   bar: {
-    display: 'block',
     position: 'absolute',
     height: barWeight,
     width: '100%',
-    background: vars.textColorInverse, // Need to change
+    background: theme.textColorInverse, // Need to change
     opacity: 1,
     left: 0,
     transition: {

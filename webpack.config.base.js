@@ -4,35 +4,14 @@ var webpack = require('webpack')
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CopyFilesPlugin = require('copy-webpack-plugin')
+var deps = require('./package.json').dependencies
 
 module.exports = {
   entry: {
     app: [
       path.join(__dirname, 'src', 'client.js'),
     ],
-    vendor: [
-      'babel-polyfill', // Need to support 'transform-react-inline-elements' and keep app work in IE
-      'color',
-      'react',
-      'react-dom',
-      'react-inlinesvg',
-      'react-motion',
-      'react-router',
-      'react-router-transition',
-      'react-scroll',
-      'react-jss',
-      'jss',
-      'jss-camel-case',
-      'jss-compose',
-      'jss-default-unit',
-      'jss-expand',
-      'jss-extend',
-      'jss-nested',
-      'jss-vendor-prefixer',
-      'markdown-react-js',
-      'prismjs',
-      'whatwg-fetch'
-    ]
+    vendor: Object.keys(deps)
   },
   output: {
     path: path.join(__dirname, 'docs'),

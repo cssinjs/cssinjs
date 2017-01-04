@@ -1,22 +1,21 @@
-import vars from '../../styles/vars'
+import theme from '../theme'
 
 export default {
-  container: {
-    color: vars.textColorInverse,
+  githubWidget: {
+    opacity: 0,
+    color: theme.textColorInverse,
     backgroundColor: 'transparent',
     display: 'flex',
     alignItems: 'center',
     textDecoration: 'none',
     fontWeight: 400,
-    opacity: 1,
-    transition: vars.transition(),
+    transition: theme.transition(),
     '&:hover': {
       opacity: 0.7,
     }
   },
-  containerHidden: {
-    extend: 'container',
-    opacity: 0,
+  loaded: {
+    opacity: 1
   },
   item: {
     textAlign: 'center',
@@ -24,28 +23,27 @@ export default {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    '-ms-flex-pack': 'center', // justify-content fix for IE10
+    // Fix of justify-content for IE10
+    MsFlexPack: 'center',
     width: '50%',
-    maxHeight: 5, // Fix for IE10
+    // Fix for IE10
+    maxHeight: 5,
   },
   text: {
 
   },
   icon: {
-    lineHeight: 'normal',
-    marginRight: 0.8,
-    marginTop: -0.3, // Fix for wring browser alignment
-    width: 1.5,
-    '& svg': {
-      width: 1.5,
-    },
+    margin: {
+      top: -0.3,
+      right: 0.8
+    }
   },
   iconStar: {
     extend: 'icon',
-    fill: vars.themeColor,
+    fill: theme.themeColor,
   },
   iconGithub: {
     extend: 'icon',
-    fill: vars.textColorInverse,
+    fill: theme.textColorInverse,
   }
 }

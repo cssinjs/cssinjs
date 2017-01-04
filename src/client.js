@@ -5,11 +5,10 @@ import 'whatwg-fetch'
 
 import routes from './routes'
 
-const container = document.createElement('div')
-container.style.height = '100%'
-
 render(
   <Router history={browserHistory} routes={routes} />,
-  document.body.appendChild(container)
+  document.getElementById('cssinjs')
 )
 
+const style = document.getElementById('critical-css')
+style.parentNode.removeChild(style)

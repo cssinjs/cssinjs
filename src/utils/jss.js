@@ -1,5 +1,9 @@
 import {create as createJss} from 'jss'
-import {create as createInjectSheet} from 'react-jss'
+import {
+  create as createInjectSheet,
+  SheetsRegistryProvider,
+  SheetsRegistry
+} from 'react-jss'
 import preset from 'jss-preset-default'
 
 const defaultUnit = {
@@ -34,5 +38,10 @@ const defaultUnit = {
 }
 
 export const jss = createJss(preset({defaultUnit}))
+
+export {
+  SheetsRegistryProvider,
+  SheetsRegistry
+}
 
 export default createInjectSheet(jss)
