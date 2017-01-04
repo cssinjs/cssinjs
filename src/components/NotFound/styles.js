@@ -34,7 +34,7 @@ export default {
     position: 'relative',
     zIndex: 5,
   },
-  '@media (max-width: 1024px)': {
+  [theme.media.md]: {
     inner: {
       margin: [0, 20],
       width: 'auto',

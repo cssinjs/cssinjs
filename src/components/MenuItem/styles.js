@@ -3,7 +3,6 @@ import theme from '../../theme'
 export default {
   menuItem: {
     color: theme.textColorInverse,
-    fill: theme.textColorInverse,
     display: 'block',
     textDecoration: 'none',
     transition: theme.transition(),
@@ -38,11 +37,5 @@ export default {
   },
   level2: {
     paddingLeft: 30,
-  },
-
-  // Inner content
-  itemInner: {
-    display: 'inline-block',
-    verticalAlign: 'middle',
   }
 }

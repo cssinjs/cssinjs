@@ -25,9 +25,7 @@ function MenuItem(props) {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span className={classes.itemInner}>
-          {title}
-        </span>
+        {title}
       </a>
     )
   }
