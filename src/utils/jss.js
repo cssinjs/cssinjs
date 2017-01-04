@@ -12,11 +12,11 @@ import theme from '../theme'
 export const jss = createJss(preset()).use(isolate({
   reset: {
     'box-sizing': 'border-box',
-    'color': theme.textColor,
     'font-family': theme.fontFamily,
     'font-size': theme.fontSize,
     'font-weight': 400,
-    'line-height': theme.lineHeight
+    'line-height': theme.lineHeight,
+    color: theme.textColor
   }
 }))
 

@@ -25,7 +25,7 @@ export default {
     },
     '& $barSecond': {
       opacity: 0,
-      transform: translateX(`${size * 2}px`),
+      transform: translateX(size * 2),
     },
     '& $barThird': {
       bottom: '50%',
