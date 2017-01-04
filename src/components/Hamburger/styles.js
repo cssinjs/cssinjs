@@ -3,7 +3,7 @@ import {rotateZ, translateX} from 'css-functions'
 import theme from '../theme'
 
 const size = 30
-const barWeight = 0.2
+const barWeight = 2
 
 export default {
   hamburger: {
