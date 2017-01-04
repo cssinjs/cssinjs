@@ -45,7 +45,7 @@ export default {
   },
 
   // Decrease sidebar size on iPads
-  '@media (max-width: 1024px)': {
+  [theme.media.md]: {
     sidebar: {
       width: 260
     },
@@ -55,7 +55,7 @@ export default {
   },
 
   // For small screens (mobile, portrait mode for iPad) - change completely layout
-  '@media (max-width: 768px)': {
+  [theme.media.sm]: {
     sidebar: {
       width: '100%',
       bottom: 'auto',

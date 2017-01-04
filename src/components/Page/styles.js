@@ -15,7 +15,7 @@ export default {
   },
 
   // Change layout and spacings on smaller screens
-  '@media (max-width: 620px)': {
+  [theme.media.sm]: {
     inner: {
       padding: [30, 20],
     }

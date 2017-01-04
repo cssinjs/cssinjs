@@ -43,5 +43,13 @@ export default {
     timingFunction: 'cubic-bezier(0.77, 0, 0.175, 1)',
     duration: transitionDuration,
     delay: transitionDelay,
-  })
+  }),
+
+  // Breakpoints
+  media: {
+    lg: '@media (max-width: 1200px)',
+    md: '@media (max-width: 992px)',
+    sm: '@media (max-width: 768px)',
+    xs: '@media (max-width: 480px)'
+  }
 }

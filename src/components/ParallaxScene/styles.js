@@ -146,7 +146,7 @@ export default {
   },
 
   // Decrease size of main logo for small screens
-  '@media (max-width: 750px)': {
+  [theme.media.sm]: {
     target: {
       transform: multiple(translate('-50%', '-50%'), scale(0.5)),
     },
@@ -154,7 +154,7 @@ export default {
       bottom: 20,
     }
   },
-  '@media (max-height: 500px)': {
+  [theme.media.xs]: {
     scrollTo: {
       display: 'none',
     }

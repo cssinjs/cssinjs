@@ -46,7 +46,7 @@ export default {
   },
 
   // For small screens (mobile, portrait mode for iPad) - change completely layout
-  '@media (max-width: 768px)': {
+  [theme.media.sm]: {
     sidebar: {
       display: 'flex',
       alignItems: 'center',

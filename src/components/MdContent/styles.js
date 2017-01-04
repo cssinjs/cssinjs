@@ -110,7 +110,7 @@ export default {
   },
 
   // Remove inlining with title
-  '@media (max-width: 1024px)': {
+  [theme.media.md]: {
     actions: {
       float: 'none',
       justifyContent: 'flex-end',
@@ -119,7 +119,7 @@ export default {
   },
 
   // Remove widgets on mobile. Because there is no space for them
-  '@media (max-width: 600px)': {
+  [theme.media.sm]: {
     actions: {
       display: 'none',
     }
