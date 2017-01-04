@@ -83,7 +83,7 @@ export default {
         padding: [5, 15],
         borderBottom: theme.border(theme.borderColor),
         borderLeft: theme.border(theme.borderColor),
-        ':first-child': {
+        '&:first-child': {
           isolate: false,
           borderLeft: 'none'
         },
