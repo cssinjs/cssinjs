@@ -38,8 +38,6 @@ export default {
       position: 'static',
     },
   },
-
-  // Decrease sidebar size on iPads
   [theme.media.md]: {
     sidebar: {
       width: 260
@@ -48,8 +46,6 @@ export default {
       marginLeft: 260
     },
   },
-
-  // For small screens (mobile, portrait mode for iPad) - change completely layout
   [theme.media.sm]: {
     sidebar: {
       width: '100%',
