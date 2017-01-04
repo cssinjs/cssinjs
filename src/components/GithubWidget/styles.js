@@ -4,7 +4,6 @@ export default {
   githubWidget: {
     opacity: 0,
     color: theme.textColorInverse,
-    backgroundColor: 'transparent',
     display: 'flex',
     alignItems: 'center',
     textDecoration: 'none',
@@ -30,7 +29,7 @@ export default {
     maxHeight: 5,
   },
   text: {
-
+    lineHeight: 5
   },
   icon: {
     margin: {

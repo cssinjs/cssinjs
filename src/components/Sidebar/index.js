@@ -49,9 +49,7 @@ class Sidebar extends Component {
         <Link to="/" className={classes.container}>
           <Logo className={classes.logo} />
         </Link>
-        <div className={classes.counter}>
-          <GithubWidget repo={config.site.repo} />
-        </div>
+        <GithubWidget className={classes.counter} repo={config.site.repo} />
         <button className={classes.toggle} onClick={this.onToggleMenu}>
           <Hamburger active={showMenu} />
         </button>
