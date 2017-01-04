@@ -7,8 +7,8 @@ const base = {
 
 export default {
   fontFamily: 'Fira Sans, Helvetica, Arial, sans-serif',
-  fontSize: 1.5, // Site uses REM sizes
-  lineHeight: 2.4,
+  fontSize: 15,
+  lineHeight: 1.65,
 
   themeColor: '#f7df1e', // Main theme color
 
@@ -30,7 +30,7 @@ export default {
   sidebarShadow: color(base.dark).darken(0.4).hex(),
 
   // Size variables
-  contentWidth: 100,
+  contentWidth: 1000,
 
   // Something like SASS functions
   border: (borderColor = color(base.light).darken(0.06).hex()) => ({

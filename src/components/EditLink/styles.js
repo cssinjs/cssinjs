@@ -4,7 +4,7 @@ export default {
   editLink: {
     display: 'block',
     background: 'none',
-    lineHeight: 2,
+    lineHeight: 1.5,
     transition: theme.transition(),
     color: theme.textColor,
     fill: theme.textColor,
@@ -12,14 +12,14 @@ export default {
     textTransform: 'uppercase',
     textDecoration: 'none',
     fontWeight: 400,
-    padding: [1, 0],
+    padding: [10, 0],
     '&:hover': {
       opacity: 1,
     }
   },
   icon: {
-    paddingRight: 0.8,
-    marginTop: -0.1
+    paddingRight: 8,
+    marginTop: -1
   },
   text: {
     verticalAlign: 'middle'

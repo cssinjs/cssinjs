@@ -20,7 +20,7 @@ export default {
 
       // Paragraphs
       p: {
-        margin: [2, 0],
+        margin: [20, 0],
         '&:first-child': {
           marginTop: 0
         },
@@ -29,44 +29,44 @@ export default {
       // Headings
       'h1, h2, h3, h4': {
         color: theme.titleColor,
-        margin: [4, 0],
+        margin: [40, 0],
         fontWeight: 400,
-        lineHeight: '1',
+        lineHeight: 1,
         '&:first-child': {
           marginTop: 0
         },
       },
       h1: {
-        fontSize: 3.6,
+        fontSize: 36,
       },
       h2: {
-        fontSize: 2.4,
-        margin: [3, 0],
+        fontSize: 24,
+        margin: [30, 0],
       },
       h3: {
-        fontSize: 2,
-        margin: [2, 0],
+        fontSize: 20,
+        margin: [20, 0],
       },
       h4: {
-        fontSize: 1.8,
-        margin: [2, 0],
+        fontSize: 18,
+        margin: [20, 0],
       },
 
       // Lists
       'ul, ol': {
-        margin: [2, 0],
-        padding: [0, 0, 0, 2.5],
+        margin: [20, 0],
+        padding: [0, 0, 0, 25],
       },
       ul: {
         listStyle: 'circle',
       },
       li: {
-        padding: [0.3, 0]
+        padding: [3, 0]
       },
 
       // Divider
       hr: {
-        margin: [2, 0],
+        margin: [20, 0],
         border: 'none',
         background: theme.borderColor,
         height: '1px',
@@ -76,10 +76,10 @@ export default {
       // Tables
       table: {
         borderCollapse: 'collapse',
-        marginBottom: 2,
+        marginBottom: 20,
       },
       'th, td': {
-        padding: [0.5, 1.5],
+        padding: [5, 15],
         borderBottom: theme.border(theme.borderColor),
         borderLeft: theme.border(theme.borderColor),
         ':first-child': {
@@ -101,8 +101,8 @@ export default {
   },
   action: {
     borderRight: [1, 'solid', theme.borderColor],
-    paddingRight: 2,
-    marginLeft: 2,
+    paddingRight: 20,
+    marginLeft: 20,
     '&:last-child': {
       borderRight: 0,
       paddingRight: 0,
@@ -114,7 +114,7 @@ export default {
     actions: {
       float: 'none',
       justifyContent: 'flex-end',
-      marginBottom: 2,
+      marginBottom: 20,
     }
   },
 

@@ -9,7 +9,7 @@ export default {
   parallaxScene: {
     width: '100%',
     height: '100vh',
-    minHeight: 40,
+    minHeight: 400,
     position: 'relative',
     overflow: 'hidden',
     color: theme.textColorInverse,
@@ -77,7 +77,7 @@ export default {
   // Scroll to widget
   scrollTo: {
     position: 'absolute',
-    bottom: 5,
+    bottom: 50,
     left: 0,
     right: 0,
     zIndex: 10,
@@ -92,7 +92,7 @@ export default {
     borderRadius: '50%',
     transformOrigin: '45%',
     border: {
-      width: 1.5,
+      width: 15,
       style: 'solid',
       color: theme.cardColor
     },
@@ -105,30 +105,30 @@ export default {
   },
   ringFirst: {
     composes: '$ring',
-    left: 10,
-    top: -17,
-    width: 110,
-    height: 110,
+    left: 100,
+    top: -170,
+    width: 1100,
+    height: 1100,
     transformOrigin: '45%',
     animationDirection: 'alternate',
     animationDuration: '45s',
   },
   ringSecond: {
     composes: '$ring',
-    top: -20,
-    left: 52,
-    width: 165,
-    height: 165,
+    top: -200,
+    left: 520,
+    width: 1650,
+    height: 1650,
     transformOrigin: '48%',
     animationDirection: 'reverse',
   },
   ringThird: {
     composes: '$ring',
-    top: 10,
+    top: 100,
     left: '100%',
-    marginLeft: -18,
-    width: 175,
-    height: 175,
+    marginLeft: -180,
+    width: 1750,
+    height: 1750,
     animationDuration: '40s',
   },
 
@@ -140,9 +140,9 @@ export default {
   logoBase: {
     position: 'relative',
     overflow: 'hidden',
-    width: 45,
-    height: 45,
-    left: 4, // Need to proper alignment
+    width: 450,
+    height: 450,
+    left: 40, // Need to proper alignment
   },
 
   // Decrease size of main logo for small screens
@@ -151,7 +151,7 @@ export default {
       transform: multiple(translate('-50%', '-50%'), scale(0.5)),
     },
     scrollTo: {
-      bottom: 2,
+      bottom: 20,
     }
   },
   '@media (max-height: 500px)': {

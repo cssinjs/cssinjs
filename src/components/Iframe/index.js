@@ -14,7 +14,7 @@ const styles = {
   iframe: {
     width: '100%',
     height: '100vh',
-    minHeight: 50,
+    minHeight: 500,
     border: 0,
     display: 'block'
   }

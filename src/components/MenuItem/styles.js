@@ -10,7 +10,7 @@ export default {
     opacity: 0.8,
     font: {
       weight: 400,
-      size: 1.4,
+      size: 14,
     },
     '&:hover': {
       color: theme.textColorInverseActive,
@@ -27,15 +27,15 @@ export default {
 
   // Nesting levels
   level0: {
-    padding: [0.5, 0],
-    fontSize: 1.6,
+    padding: [5, 0],
+    fontSize: 16,
     opacity: 1,
   },
   level1: {
-    paddingLeft: 1.5,
+    paddingLeft: 15,
   },
   level2: {
-    paddingLeft: 3,
+    paddingLeft: 30,
   },
 
   // Inner content

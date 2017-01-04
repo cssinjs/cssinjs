@@ -26,15 +26,15 @@ export default {
     MsFlexPack: 'center',
     width: '50%',
     // Fix for IE10
-    maxHeight: 5,
+    maxHeight: 50,
   },
   text: {
-    lineHeight: 5
+    lineHeight: 50
   },
   icon: {
     margin: {
-      top: -0.3,
-      right: 0.8
+      top: -3,
+      right: 8
     }
   },
   iconStar: {

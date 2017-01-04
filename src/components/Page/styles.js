@@ -6,9 +6,9 @@ export default {
     background: theme.pageBackground,
   },
   inner: {
-    maxWidth: 100,
+    maxWidth: 1000,
     margin: [0, 'auto'],
-    padding: 5,
+    padding: 50,
   },
   hidden: {
     display: 'none',
@@ -17,7 +17,7 @@ export default {
   // Change layout and spacings on smaller screens
   '@media (max-width: 620px)': {
     inner: {
-      padding: [3, 2],
+      padding: [30, 20],
     }
   }
 }

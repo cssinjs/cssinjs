@@ -7,7 +7,7 @@ export default {
   },
   label: {
     opacity: 0.5,
-    paddingRight: 1.5,
+    paddingRight: 15,
   },
   select: {
     cursor: 'pointer',
@@ -15,10 +15,10 @@ export default {
     outline: 'none',
     border: theme.border(theme.borderColor),
     color: theme.textColor,
-    padding: [1, 1.5],
+    padding: [10, 15],
     font: {
       family: 'Arial, serif', // Because Chrome cant align main font correctly :(
-      size: 1.4,
+      size: 14,
       lineHeight: 'normal',
     }
   }

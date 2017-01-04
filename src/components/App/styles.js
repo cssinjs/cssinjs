@@ -22,12 +22,12 @@ export default {
     top: 0,
     left: 0,
     bottom: 0,
-    width: 30,
+    width: 300,
     zIndex: 100,
   },
   content: {
     position: 'relative',
-    marginLeft: 30,
+    marginLeft: 300,
   },
   contentInner: {
     '& > div': {
@@ -47,10 +47,10 @@ export default {
   // Decrease sidebar size on iPads
   '@media (max-width: 1024px)': {
     sidebar: {
-      width: 26
+      width: 260
     },
     content: {
-      marginLeft: 26
+      marginLeft: 260
     },
   },
 
@@ -59,11 +59,11 @@ export default {
     sidebar: {
       width: '100%',
       bottom: 'auto',
-      height: 7,
+      height: 70,
     },
     content: {
       marginLeft: 0,
-      paddingTop: 7,
+      paddingTop: 70,
     }
   },
 }

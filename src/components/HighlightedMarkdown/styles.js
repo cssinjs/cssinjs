@@ -12,9 +12,9 @@ export default {
     position: 'absolute',
     top: 0,
     bottom: 0,
-    width: 1.5,
+    width: 15,
     right: '100%',
-    marginRight: 0.5,
+    marginRight: 5,
     opacity: 0,
   }
 }
