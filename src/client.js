@@ -10,3 +10,5 @@ render(
   document.getElementById('cssinjs')
 )
 
+const style = document.getElementById('critical-css')
+style.parentNode.removeChild(style)

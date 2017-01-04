@@ -62,7 +62,7 @@ const renderDoc = ({app, css, analytics}) => (
         <meta property="og:image" content=${config.site.og.image} />
         <meta property="og:url" content=${config.site.og.url} />
         <link rel="shortcut icon" href="/images/favicon.ico" />
-        <style type="text/css">
+        <style id="critical-css" type="text/css">
           ${css}
         </style>
         <link rel="stylesheet" type="text/css" href="/vendor.styles.css" />
