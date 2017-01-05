@@ -22,7 +22,6 @@ export default {
   },
   counter: {
     flexShrink: 0,
-    lineHeight: 5,
     padding: [0, 30],
     background: theme.sidebarBgActive,
   },

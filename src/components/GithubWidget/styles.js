@@ -30,7 +30,7 @@ export default {
     maxHeight: 50,
   },
   text: {
-    lineHeight: 50,
+    lineHeight: 5,
     color: theme.textColorInverseActive
   },
   icon: {
