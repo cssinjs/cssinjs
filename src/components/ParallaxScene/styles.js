@@ -139,7 +139,6 @@ export default {
   },
   logoBase: {
     position: 'relative',
-    overflow: 'hidden',
     width: 450,
     height: 450,
     left: 40, // Need to proper alignment
