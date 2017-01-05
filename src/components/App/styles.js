@@ -1,4 +1,4 @@
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   app: {
@@ -8,12 +8,7 @@ export default {
     fontSize: theme.fontSize,
     fontWeight: 400,
     lineHeight: theme.lineHeight,
-    overflow: 'hidden',
-    '@global': {
-      '*, *:before, *:after': {
-        boxSizing: 'border-box',
-      }
-    }
+    overflow: 'hidden'
   },
   sidebar: {
     background: theme.sidebarBg,
@@ -22,12 +17,12 @@ export default {
     top: 0,
     left: 0,
     bottom: 0,
-    width: 30,
+    width: 300,
     zIndex: 100,
   },
   content: {
     position: 'relative',
-    marginLeft: 30,
+    marginLeft: 300,
   },
   contentInner: {
     '& > div': {
@@ -43,27 +38,23 @@ export default {
       position: 'static',
     },
   },
-
-  // Decrease sidebar size on iPads
-  '@media (max-width: 1024px)': {
+  [theme.media.md]: {
     sidebar: {
-      width: 26
+      width: 260
     },
     content: {
-      marginLeft: 26
+      marginLeft: 260
     },
   },
-
-  // For small screens (mobile, portrait mode for iPad) - change completely layout
-  '@media (max-width: 768px)': {
+  [theme.media.sm]: {
     sidebar: {
       width: '100%',
       bottom: 'auto',
-      height: 7,
+      height: 70,
     },
     content: {
       marginLeft: 0,
-      paddingTop: 7,
+      paddingTop: 70,
     }
   },
 }

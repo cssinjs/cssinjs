@@ -1,11 +1,11 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
 import {findPage, map} from '../../utils/navigation'
-import {isRelative, resolve, parse} from '../../utils/url'
+import {isAbsolute, isHash, resolve, parse} from '../../utils/url'
 import {getBlobUrl} from '../../utils/github'
 
 const absUrl = (url, currPageName) => {
-  if (!isRelative(url)) return url
+  if (isAbsolute(url)) return url
   const currPage = map[currPageName]
   const resolvedUrl = resolve(currPage.path, url)
   const resolvedPath = parse(resolvedUrl).pathname
@@ -13,12 +13,14 @@ const absUrl = (url, currPageName) => {
 }
 
 const formatProps = (props) => {
-  const {href, page: pageName, children, ...rest} = props
+  const {page: pageName, children, ...rest} = props
+  let {href} = props
   let target
   let to
 
-  if (href && href[0] !== '#') {
-    const page = findPage(absUrl(href, pageName))
+  if (href && !isHash(href)) {
+    href = absUrl(href, pageName)
+    const page = findPage(href)
     if (page && !page.external) to = `/${page.name}`
     else target = '_blank'
   }

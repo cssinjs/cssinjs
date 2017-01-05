@@ -1,4 +1,5 @@
 import resolve from 'resolve-url'
+import isAbsolute from 'is-absolute-url'
 
 export const parse = (function parse() {
   let parser
@@ -20,4 +21,9 @@ export const parse = (function parse() {
 
 export const isRelative = path => path[0] === '.'
 
-export {resolve}
+export const isHash = slug => slug[0] === '#'
+
+export {
+  resolve,
+  isAbsolute
+}

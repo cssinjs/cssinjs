@@ -29,9 +29,8 @@ const renderApp = (renderProps) => {
   }
 }
 
-const renderAnalytics = () => {
-  if (process.env.NODE_ENV !== 'production') return ''
-  return stripIndents`
+const renderAnalytics = () => (
+  stripIndents`
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -42,7 +41,7 @@ const renderAnalytics = () => {
       ga('send', 'pageview');
     </script>
   `
-}
+)
 
 const renderDoc = ({app, css, analytics}) => (
   stripIndents`
@@ -50,17 +49,17 @@ const renderDoc = ({app, css, analytics}) => (
     <html lang="en">
       <head>
         <title>${config.site.head.title}</title>
-        <meta name="description" content=${config.site.head.description} />
-        <meta name="keywords" content=${config.site.head.keywords.join(' ')} />
+        <meta name="description" content="${config.site.head.description}" />
+        <meta name="keywords" content="${config.site.head.keywords.join(' ')}" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="Content-Language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content=${config.site.og.title} />
-        <meta property="og:description" content=${config.site.og.description} />
-        <meta property="og:type" content=${config.site.og.type} />
-        <meta property="og:image" content=${config.site.og.image} />
-        <meta property="og:url" content=${config.site.og.url} />
+        <meta property="og:title" content="${config.site.og.title}" />
+        <meta property="og:description" content="${config.site.og.description}" />
+        <meta property="og:type" content="${config.site.og.type}" />
+        <meta property="og:image" content="${config.site.og.image}" />
+        <meta property="og:url" content="${config.site.og.url}" />
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <style id="critical-css" type="text/css">
           ${css}

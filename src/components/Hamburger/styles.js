@@ -1,9 +1,9 @@
 import {rotateZ, translateX} from 'css-functions'
 
-import theme from '../theme'
+import theme from '../../theme'
 
-const size = 3
-const barWeight = 0.2
+const size = 30
+const barWeight = 2
 
 export default {
   hamburger: {
@@ -25,7 +25,7 @@ export default {
     },
     '& $barSecond': {
       opacity: 0,
-      transform: translateX(`${size * 2}rem`),
+      transform: translateX(size * 2),
     },
     '& $barThird': {
       bottom: '50%',
@@ -41,8 +41,7 @@ export default {
     opacity: 1,
     left: 0,
     transition: {
-      // duration: 0.5,
-      duration: '300ms',
+      duration: 300,
       timingFunction: 'ease-in-out',
     },
   },

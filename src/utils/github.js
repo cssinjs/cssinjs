@@ -4,7 +4,7 @@ import {primaryHost, cdnHost, apiHost, org as defaultOrg, token} from '../consta
  * Get a URL to the file on github.
  */
 export const getBlobUrl = (repo, path, tag = 'master', org = defaultOrg) => (
-  `//${primaryHost}/${org}/${repo}/blob/${tag}${path}`
+  `https://${primaryHost}/${org}/${repo}/blob/${tag}${path}`
 )
 
 const checkResponse = (response) => {
@@ -25,7 +25,7 @@ const getJson = response => response.json()
  * Load tags list.
  */
 export const loadTags = (repo, org = defaultOrg) => (
-  fetch(`//${apiHost}/repos/${org}/${repo}/tags?access_token=${token}`)
+  fetch(`https://${apiHost}/repos/${org}/${repo}/tags?access_token=${token}`)
     .then(checkResponse)
     .then(getJson)
     .then(tags => tags.map(tag => tag.name))
@@ -35,7 +35,7 @@ export const loadTags = (repo, org = defaultOrg) => (
  * Load raw file from the CDN.
  */
 export const loadRawFile = (repo, path, tag = 'master', org = defaultOrg) => (
-  fetch(`//${cdnHost}/${org}/${repo}/${tag}${path}`)
+  fetch(`https://${cdnHost}/${org}/${repo}/${tag}${path}`)
     .then(checkResponse)
     .then(getText)
 )
@@ -44,7 +44,7 @@ export const loadRawFile = (repo, path, tag = 'master', org = defaultOrg) => (
  * Load stars counter.
  */
 export const loadStars = repo => (
-  fetch(`//${apiHost}/repos/${repo}?access_token=${token}`)
+  fetch(`https://${apiHost}/repos/${repo}?access_token=${token}`)
     .then(checkResponse)
     .then(getJson)
     .then(data => data.stargazers_count)

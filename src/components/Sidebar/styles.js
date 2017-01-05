@@ -1,6 +1,6 @@
 import {translateX} from 'css-functions'
 
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   sidebar: {
@@ -13,17 +13,16 @@ export default {
   container: {
     textAlign: 'center',
     flexShrink: 0,
-    margin: 3,
+    margin: 30,
   },
   logo: {
-    height: 14,
-    width: 14,
+    height: 140,
+    width: 140,
     verticalAlign: 'middle',
   },
   counter: {
     flexShrink: 0,
-    lineHeight: 5,
-    padding: [0, 3],
+    padding: [0, 30],
     background: theme.sidebarBgActive,
   },
   menu: {
@@ -46,18 +45,18 @@ export default {
   },
 
   // For small screens (mobile, portrait mode for iPad) - change completely layout
-  '@media (max-width: 768px)': {
+  [theme.media.sm]: {
     sidebar: {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
       flexDirection: 'row',
-      padding: [1, 2],
+      padding: [10, 20],
       overflow: 'visible',
     },
     container: {
       margin: 0,
-      width: 5,
+      width: 50,
     },
     logo: {
       height: 'auto',
@@ -68,7 +67,7 @@ export default {
       position: 'fixed',
       overflowY: 'auto',
       overflowX: 'hidden',
-      top: 7,
+      top: 70,
       left: 0,
       right: 0,
       bottom: 0,
@@ -81,7 +80,7 @@ export default {
       display: 'block',
     },
     counter: {
-      padding: [0, 3],
+      padding: [0, 30],
       flexGrow: 1,
       background: 'transparent',
     },

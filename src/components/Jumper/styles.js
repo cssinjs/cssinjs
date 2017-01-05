@@ -1,20 +1,21 @@
 import color from 'color'
 import {translateY} from 'css-functions'
 
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   jumper: {
     display: 'inline-block',
     cursor: 'pointer',
-    width: 2.5,
-    height: 4,
+    width: 25,
+    height: 40,
     borderRadius: '50%',
     textAlign: 'center',
     background: 'transparent',
     transition: theme.transition(),
     '&:hover': {
-      background: color(theme.cardColor).alpha(0.3).string(),
+      isolate: false,
+      background: color(theme.cardColor).alpha(0.3).string()
     }
   },
   icon: {

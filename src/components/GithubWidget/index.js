@@ -45,7 +45,8 @@ function GithubWidget(props) {
 GithubWidget.propTypes = {
   sheet: PropTypes.object.isRequired,
   repo: PropTypes.string.isRequired,
-  stars: PropTypes.number
+  stars: PropTypes.number,
+  className: PropTypes.string
 }
 
 export default injectSheet(styles)(GithubWidget)

@@ -1,4 +1,4 @@
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   page: {
@@ -6,18 +6,18 @@ export default {
     background: theme.pageBackground,
   },
   inner: {
-    maxWidth: 100,
+    maxWidth: 1000,
     margin: [0, 'auto'],
-    padding: 5,
+    padding: 50,
   },
   hidden: {
     display: 'none',
   },
 
   // Change layout and spacings on smaller screens
-  '@media (max-width: 620px)': {
+  [theme.media.sm]: {
     inner: {
-      padding: [3, 2],
+      padding: [30, 20],
     }
   }
 }

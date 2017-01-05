@@ -1,9 +1,12 @@
 import React, {PureComponent, PropTypes, createElement} from 'react'
 import Markdown from 'markdown-react-js'
+import cn from 'classnames'
 
+import injectSheet from '../../utils/jss'
 import Code from './Code'
 import A from './A'
 import H from './H'
+import styles from './styles'
 
 // There was a wrong formatted image url in all our .md files, now its fixed
 // but we still need to support older versions.
@@ -15,8 +18,9 @@ const markdownOptions = {
 
 const headlines = ['h1', 'h2', 'h3', 'h4', 'h5']
 
-export default class HighlightedMarkdown extends PureComponent {
+class HighlightedMarkdown extends PureComponent {
   static propTypes = {
+    sheet: PropTypes.object.isRequired,
     className: PropTypes.string,
     text: PropTypes.string,
     page: PropTypes.string.isRequired
@@ -27,20 +31,24 @@ export default class HighlightedMarkdown extends PureComponent {
     if (tag === 'code') return <Code lang={props['data-language']} text={children[0]} />
     // React throws if children are passed to img.
     if (tag === 'img') return createElement(tag, props)
-    if (headlines.indexOf(tag) !== -1) return <H {...props} tag={tag}>{children}</H>
+    if (headlines.indexOf(tag) !== -1) {
+      return <H {...props} tag={tag} sheet={this.props.sheet}>{children}</H>
+    }
     return createElement(tag, props, children)
   }
 
   render() {
-    const {className, text} = this.props
+    const {sheet: {classes}, className, text} = this.props
 
     return (
       <Markdown
         markdownOptions={markdownOptions}
-        className={className}
+        className={cn(classes.highlightedMarkdown, className)}
         text={fixGitterBadge(text)}
         onIterate={this.onIterate}
       />
     )
   }
 }
+
+export default injectSheet(styles)(HighlightedMarkdown)

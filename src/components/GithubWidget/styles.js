@@ -1,4 +1,4 @@
-import theme from '../theme'
+import theme from '../../theme'
 
 export default {
   githubWidget: {
@@ -10,7 +10,8 @@ export default {
     fontWeight: 400,
     transition: theme.transition(),
     '&:hover': {
-      opacity: 0.7,
+      isoalte: false,
+      opacity: 0.7
     }
   },
   loaded: {
@@ -26,15 +27,16 @@ export default {
     MsFlexPack: 'center',
     width: '50%',
     // Fix for IE10
-    maxHeight: 5,
+    maxHeight: 50,
   },
   text: {
-    lineHeight: 5
+    lineHeight: 5,
+    color: theme.textColorInverseActive
   },
   icon: {
     margin: {
-      top: -0.3,
-      right: 0.8
+      top: -3,
+      right: 8
     }
   },
   iconStar: {

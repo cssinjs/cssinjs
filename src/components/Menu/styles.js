@@ -1,5 +1,5 @@
 export default {
   menu: {
-    padding: [2, 3]
+    padding: [20, 30]
   }
 }

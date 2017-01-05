@@ -112,18 +112,18 @@
     "path": "/abstraction-level.md",
     "children": {
       "react-jss": {
-        "title": "React-JSS",
+        "title": "react-jss",
         "repo": "react-jss",
         "path": "/README.md"
       },
       "jss-theme-reactor": {
-        "title": "Theme Reactor",
+        "title": "jss-theme-reactor",
         "repo": "jss-theme-reactor",
         "org": "nathanmarks",
         "path": "/README.md"
       },
       "aphrodisiac": {
-        "title": "Aphrodisiac",
+        "title": "aphrodisiac",
         "repo": "aphrodisiac",
         "path": "/readme.md"
       }
@@ -131,8 +131,25 @@
   },
   "examples": {
     "title": "Examples",
-    "url": "//cssinjs.github.io/examples/index.html",
-    "external": true
+    "repo": "examples",
+    "path": "/readme.md",
+    "children": {
+      "react-todo-mvc": {
+        "title": "React TodoMVC",
+        "iframe": true,
+        "url": "//cssinjs.github.io/react-todomvc-jss/"
+      },
+      "calendar-example": {
+        "title": "Calendar",
+        "iframe": true,
+        "url": "//cssinjs.github.io/examples/calendar/"
+      },
+      "perdido-example": {
+        "title": "Perdido Grid System",
+        "iframe": true,
+        "url": "//cssinjs.github.io/examples/perdido/"
+      }
+    }
   },
   "repl": {
     "title": "JSS Playground",
