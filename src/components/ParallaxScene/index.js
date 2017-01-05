@@ -66,12 +66,12 @@ class ParallaxScene extends Component {
               deg: spring(deg)
             }}
           >
-            {({x, y, deg}) => (
+            {({x, y, deg: nextDeg}) => (
               <div
                 className={classes.targetInner}
                 style={{
-                  WebkitTransform: `rotate3d(${x}, ${y}, 0, ${deg}deg)`,
-                  transform: `rotate3d(${x}, ${y}, 0, ${deg}deg)`,
+                  WebkitTransform: `rotate3d(${x}, ${y}, 0, ${nextDeg}deg)`,
+                  transform: `rotate3d(${x}, ${y}, 0, ${nextDeg}deg)`,
                 }}
               >
                 <div className={classes.logo}>
