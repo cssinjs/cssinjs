@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
 
@@ -11,62 +11,49 @@ import theme from '../../theme'
 
 /**
  * Main presentation block for site. Here is drawed animated logo on mouse move
- * @extends React.Component
  */
-class ParallaxScene extends React.Component {
+class ParallaxScene extends Component {
   static propTypes = {
-    sheet: React.PropTypes.object
+    sheet: React.PropTypes.object.isRequired
   }
 
-  /**
-   * Class constructor
-   * @param {Object} props
-   */
   constructor(props) {
     super(props)
     this.state = {
-      tiltx: 0,
-      tilty: 0,
-      degree: 0,
+      tiltX: 0,
+      tiltY: 0,
+      deg: 0
     }
-
-    this.handleMouseMove = this.handleMouseMove.bind(this)
   }
 
-  componentDidMount() {
-    window.addEventListener('mousemove', this.handleMouseMove)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('mousemove', this.handleMouseMove)
-  }
-
-  /**
-   * Mouse move handler, redraws site logo inside rendered scene
-   */
-  handleMouseMove({pageX: x, pageY: y}) {
-    const cx = Math.ceil(document.body.clientWidth / 2)
-    const cy = Math.ceil(document.body.clientHeight / 2)
+  onMouseMove = ({pageX: x, pageY: y}) => {
+    const cx = Math.ceil(this.container.clientWidth / 2)
+    const cy = Math.ceil(this.container.clientHeight / 2)
     const dx = x - cx
     const dy = y - cy
 
-    const tiltx = dy / cy
-    const tilty = -(dx / cx)
-    const radius = Math.sqrt((tiltx ** 2) + (tilty ** 2))
-    const degree = radius * 25
+    const tiltX = dy / cy
+    const tiltY = -(dx / cx)
+    const radius = Math.sqrt((tiltX ** 2) + (tiltY ** 2))
+    const deg = radius * 25
 
-    this.setState({tiltx, tilty, degree})
+    this.setState({tiltX, tiltY, deg})
   }
 
-  /**
-   * React component render
-   */
+  onRef = (ref) => {
+    this.container = ref
+  }
+
   render() {
     const {classes} = this.props.sheet
-    const {tiltx, tilty, degree} = this.state
+    const {tiltX, tiltY, deg} = this.state
 
     return (
-      <div className={classes.parallaxScene}>
+      <div
+        className={classes.parallaxScene}
+        onMouseMove={this.onMouseMove}
+        ref={this.onRef}
+      >
         <div className={classes.inner} />
         <div className={classes.ringFirst} />
         <div className={classes.ringSecond} />
@@ -74,12 +61,12 @@ class ParallaxScene extends React.Component {
         <div className={classes.target}>
           <Motion
             style={{
-              x: spring(tiltx),
-              y: spring(tilty),
-              deg: spring(degree)
+              x: spring(tiltX),
+              y: spring(tiltY),
+              deg: spring(deg)
             }}
           >
-            {({x, y, deg}) =>
+            {({x, y, deg}) => (
               <div
                 className={classes.targetInner}
                 style={{
@@ -96,7 +83,7 @@ class ParallaxScene extends React.Component {
                   />
                 </div>
               </div>
-            }
+            )}
           </Motion>
         </div>
         <div className={classes.scrollTo}>
