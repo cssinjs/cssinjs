@@ -141,7 +141,7 @@
       },
       "calendar-example": {
         "title": "Calendar",
-        "external": true,
+        "iframe": true,
         "url": "//cssinjs.github.io/examples/calendar/"
       },
       "perdido-example": {
