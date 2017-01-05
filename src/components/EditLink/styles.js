@@ -9,7 +9,6 @@ export default {
     color: theme.textColor,
     fill: theme.textColor,
     opacity: 0.7,
-    textTransform: 'uppercase',
     textDecoration: 'none',
     fontWeight: 400,
     padding: [10, 0],
@@ -23,6 +22,7 @@ export default {
     marginTop: -1
   },
   text: {
-    verticalAlign: 'middle'
+    verticalAlign: 'middle',
+    textTransform: 'uppercase'
   }
 }
