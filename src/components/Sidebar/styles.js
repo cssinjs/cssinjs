@@ -16,8 +16,8 @@ export default {
     margin: 30,
   },
   logo: {
-    height: 140,
-    width: 140,
+    height: 100,
+    width: 100,
     verticalAlign: 'middle',
   },
   counter: {
