@@ -110,7 +110,10 @@ export default {
     bottom: 0,
     width: 15,
     right: '100%',
-    marginRight: 5,
+    margin: {
+      right: 5,
+      top: '0.5em'
+    },
     opacity: 0,
   }
 }
