@@ -29,10 +29,8 @@ class VersionSelect extends PureComponent {
 
     return (
       <div className={classes.versionSelect}>
-        <div className={classes.label}>
-          Version:
-        </div>
         <select className={classes.select} value={value} onChange={this.onChange}>
+          <option disabled>Version</option>
           {versions.map(version => (
             <option value={version}>
               {formatVersion(version)}

@@ -16,6 +16,8 @@ export default {
     zIndex: 5
   },
   action: {
+    display: 'flex',
+    height: 30,
     borderRight: [1, 'solid', theme.borderColor],
     paddingRight: 20,
     marginLeft: 20,

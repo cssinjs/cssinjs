@@ -37,7 +37,7 @@ export default class VersionSelectContainer extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      versions: ['loading…']
+      versions: ['––.––.––']
     }
   }
 

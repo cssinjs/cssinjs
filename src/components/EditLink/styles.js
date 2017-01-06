@@ -2,9 +2,9 @@ import theme from '../../theme'
 
 export default {
   editLink: {
-    display: 'block',
+    display: 'flex',
+    alignItems: 'center',
     background: 'none',
-    lineHeight: 1.5,
     transition: theme.transition(),
     color: theme.textColor,
     fill: theme.textColor,
@@ -21,6 +21,7 @@ export default {
     marginTop: -1
   },
   text: {
+    lineHeight: 1,
     verticalAlign: 'middle',
     textTransform: 'uppercase'
   }
