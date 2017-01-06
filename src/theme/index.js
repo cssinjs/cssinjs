@@ -38,7 +38,7 @@ export default {
     style: 'solid',
     color: borderColor,
   }),
-  transition: (transitionDuration = '300ms', transitionDelay = '0ms') => ({
+  transition: (transitionDuration = '200ms', transitionDelay = '0ms') => ({
     property: 'all',
     timingFunction: 'cubic-bezier(0.77, 0, 0.175, 1)',
     duration: transitionDuration,
