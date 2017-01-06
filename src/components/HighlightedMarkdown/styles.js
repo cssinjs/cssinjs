@@ -52,17 +52,19 @@ export default {
       // Lists
       'ul, ol': {
         margin: [20, 0],
-        padding: [0, 0, 0, 25],
-
+        padding: [0, 0, 0, 25]
       },
-      'ul li': {
+      'ul > li': {
         listStyle: 'circle',
       },
-      'ol li': {
+      'ol > li': {
         listStyle: 'decimal'
       },
       li: {
-        padding: [3, 0]
+        padding: [3, 0],
+        '& p': {
+          margin: 0
+        }
       },
 
       // Divider
