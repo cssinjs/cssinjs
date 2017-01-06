@@ -28,21 +28,16 @@ class ParallaxScene extends Component {
   }
 
   onMouseMove = ({pageX: x, pageY: y}) => {
-    const cx = Math.ceil(this.container.clientWidth / 2)
-    const cy = Math.ceil(this.container.clientHeight / 2)
+    const cx = Math.ceil(window.innerWidth / 2)
+    const cy = Math.ceil(window.innerHeight / 2)
     const dx = x - cx
     const dy = y - cy
-
     const tiltX = dy / cy
     const tiltY = -(dx / cx)
     const radius = Math.sqrt((tiltX ** 2) + (tiltY ** 2))
     const deg = radius * 25
 
     this.setState({tiltX, tiltY, deg})
-  }
-
-  onRef = (ref) => {
-    this.container = ref
   }
 
   render() {
@@ -53,7 +48,6 @@ class ParallaxScene extends Component {
       <div
         className={classes.parallaxScene}
         onMouseMove={this.onMouseMove}
-        ref={this.onRef}
       >
         <div className={classes.inner} />
         <div className={classes.ringFirst} />
