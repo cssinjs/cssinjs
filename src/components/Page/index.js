@@ -32,7 +32,7 @@ class Page extends PureComponent {
 
     const page = navMap[name]
 
-    if (!page) return <NotFound />
+    if (!page || name === '404') return <NotFound />
     if (page.iframe) return <Iframe src={page.url} />
 
     return (

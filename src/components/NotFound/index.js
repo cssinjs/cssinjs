@@ -1,6 +1,7 @@
 import React from 'react'
 
 import injectSheet from '../../utils/jss'
+import ParallaxScene from '../ParallaxScene'
 import styles from './styles'
 
 /**
@@ -13,12 +14,7 @@ const NotFound = ({sheet}) => {
   return (
     <div className={classes.notFound}>
       <div className={classes.inner}>
-        <div className={classes.text}>
-          {'The page you are looking for can\'t be found.'}
-        </div>
-        <h1 className={classes.title}>
-          {'404'}
-        </h1>
+        <ParallaxScene text="404"/>
       </div>
     </div>
   )

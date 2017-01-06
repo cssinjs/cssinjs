@@ -18,6 +18,8 @@ class Menu extends PureComponent {
     for (const name in root) {
       const page = root[name]
 
+      if (page.hidden) continue
+
       menu.push(
         <MenuItem
           {...page}
