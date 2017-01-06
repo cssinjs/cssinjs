@@ -10,11 +10,8 @@ export default {
     margin: [0, 'auto'],
     padding: 50,
   },
-  hidden: {
-    display: 'none',
-  },
   [theme.media.sm]: {
-    inner: {
+    content: {
       padding: [30, 20],
     }
   }
