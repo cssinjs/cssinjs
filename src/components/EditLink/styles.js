@@ -11,7 +11,6 @@ export default {
     opacity: 0.7,
     textDecoration: 'none',
     fontWeight: 400,
-    padding: [10, 0],
     '&:hover': {
       isolate: false,
       opacity: 1,
