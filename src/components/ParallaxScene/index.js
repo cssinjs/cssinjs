@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
 
@@ -14,7 +14,8 @@ import theme from '../../theme'
  */
 class ParallaxScene extends Component {
   static propTypes = {
-    sheet: React.PropTypes.object.isRequired
+    sheet: PropTypes.object.isRequired,
+    scrollTo: PropTypes.string.isRequired
   }
 
   constructor(props) {
@@ -45,7 +46,7 @@ class ParallaxScene extends Component {
   }
 
   render() {
-    const {classes} = this.props.sheet
+    const {sheet: {classes}, scrollTo} = this.props
     const {tiltX, tiltY, deg} = this.state
 
     return (
@@ -87,7 +88,7 @@ class ParallaxScene extends Component {
           </Motion>
         </div>
         <div className={classes.scrollTo}>
-          <ScrollLink to="mainContent" smooth duration={500}>
+          <ScrollLink to={scrollTo} smooth duration={500}>
             <Jumper />
           </ScrollLink>
         </div>

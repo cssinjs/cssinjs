@@ -38,11 +38,9 @@ class Page extends PureComponent {
 
     return (
       <div className={classes.page}>
-        {name === home.name && <ParallaxScene />}
-        <div className={classes.content} id="mainContent">
-          <div className={classes.inner}>
-            <Content {...page} />
-          </div>
+        {name === home.name && <ParallaxScene scrollTo={classes.content} />}
+        <div className={classes.content} id={classes.content}>
+          <Content {...page} />
         </div>
       </div>
     )
