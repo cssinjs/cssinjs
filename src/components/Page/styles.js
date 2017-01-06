@@ -5,7 +5,7 @@ export default {
     minHeight: '100vh',
     background: theme.pageBackground,
   },
-  inner: {
+  content: {
     maxWidth: 1000,
     margin: [0, 'auto'],
     padding: 50,
@@ -13,8 +13,6 @@ export default {
   hidden: {
     display: 'none',
   },
-
-  // Change layout and spacings on smaller screens
   [theme.media.sm]: {
     inner: {
       padding: [30, 20],

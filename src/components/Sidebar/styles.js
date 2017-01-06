@@ -16,8 +16,8 @@ export default {
     margin: 30,
   },
   logo: {
-    height: 140,
-    width: 140,
+    height: 100,
+    width: 100,
     verticalAlign: 'middle',
   },
   counter: {
@@ -55,12 +55,11 @@ export default {
       overflow: 'visible',
     },
     container: {
-      margin: 0,
-      width: 50,
+      margin: 0
     },
     logo: {
-      height: 'auto',
-      width: 'auto',
+      width: 50,
+      height: 50
     },
     menu: {
       borderTop: [1, 'solid', theme.sidebarBgActive],

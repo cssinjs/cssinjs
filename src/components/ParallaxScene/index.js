@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
 
@@ -14,7 +14,8 @@ import theme from '../../theme'
  */
 class ParallaxScene extends Component {
   static propTypes = {
-    sheet: React.PropTypes.object.isRequired
+    sheet: PropTypes.object.isRequired,
+    scrollTo: PropTypes.string.isRequired
   }
 
   constructor(props) {
@@ -27,11 +28,10 @@ class ParallaxScene extends Component {
   }
 
   onMouseMove = ({pageX: x, pageY: y}) => {
-    const cx = Math.ceil(this.container.clientWidth / 2)
-    const cy = Math.ceil(this.container.clientHeight / 2)
+    const cx = Math.ceil(window.innerWidth / 2)
+    const cy = Math.ceil(window.innerHeight / 2)
     const dx = x - cx
     const dy = y - cy
-
     const tiltX = dy / cy
     const tiltY = -(dx / cx)
     const radius = Math.sqrt((tiltX ** 2) + (tiltY ** 2))
@@ -40,19 +40,14 @@ class ParallaxScene extends Component {
     this.setState({tiltX, tiltY, deg})
   }
 
-  onRef = (ref) => {
-    this.container = ref
-  }
-
   render() {
-    const {classes} = this.props.sheet
+    const {sheet: {classes}, scrollTo} = this.props
     const {tiltX, tiltY, deg} = this.state
 
     return (
       <div
         className={classes.parallaxScene}
         onMouseMove={this.onMouseMove}
-        ref={this.onRef}
       >
         <div className={classes.inner} />
         <div className={classes.ringFirst} />
@@ -87,7 +82,7 @@ class ParallaxScene extends Component {
           </Motion>
         </div>
         <div className={classes.scrollTo}>
-          <ScrollLink to="mainContent" smooth duration={500}>
+          <ScrollLink to={scrollTo} smooth duration={500}>
             <Jumper />
           </ScrollLink>
         </div>
