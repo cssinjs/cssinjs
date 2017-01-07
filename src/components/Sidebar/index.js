@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component, PropTypes} from 'react'
 import Link from 'react-router/lib/Link'
 import cn from 'classnames'
 
@@ -13,7 +13,8 @@ import styles from './styles'
 
 class Sidebar extends Component {
   static propTypes = {
-    sheet: React.PropTypes.object.isRequired
+    sheet: PropTypes.object.isRequired,
+    className: PropTypes.string
   }
 
   constructor(props) {
@@ -41,12 +42,15 @@ class Sidebar extends Component {
   }
 
   render() {
-    const {classes} = this.props.sheet
+    const {
+      sheet: {classes},
+      className
+    } = this.props
     const {showMenu} = this.state
 
     return (
-      <div className={classes.sidebar}>
-        <Link to="/" className={classes.container}>
+      <aside className={cn(classes.sidebar, className)}>
+        <Link to="/" className={classes.logoContainer}>
           <Logo className={classes.logo} />
         </Link>
         <GithubWidget className={classes.counter} repo={config.site.repo} />
@@ -56,7 +60,7 @@ class Sidebar extends Component {
         <div className={cn(classes.menu, showMenu && classes.active)}>
           <Menu />
         </div>
-      </div>
+      </aside>
     )
   }
 }

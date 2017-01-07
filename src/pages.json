@@ -170,5 +170,8 @@
     "title": "CLI Tool",
     "repo": "cli",
     "path": "/readme.md"
+  },
+  "404": {
+    "hidden": true
   }
 }

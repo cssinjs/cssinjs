@@ -10,7 +10,7 @@ export default {
     overflowY: 'auto',
     overflowX: 'hidden',
   },
-  container: {
+  logoContainer: {
     textAlign: 'center',
     flexShrink: 0,
     margin: 30,
@@ -54,7 +54,7 @@ export default {
       padding: [10, 20],
       overflow: 'visible',
     },
-    container: {
+    logoContainer: {
       margin: 0
     },
     logo: {

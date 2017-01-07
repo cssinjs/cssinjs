@@ -75,15 +75,6 @@ export default {
   },
 
   // Scroll to widget
-  scrollTo: {
-    position: 'absolute',
-    bottom: 50,
-    left: 0,
-    right: 0,
-    zIndex: 10,
-    textAlign: 'center'
-  },
-
   // Background rings
   ring: {
     position: 'absolute',
@@ -148,14 +139,6 @@ export default {
   [theme.media.sm]: {
     target: {
       transform: multiple(translate('-50%', '-50%'), scale(0.5)),
-    },
-    scrollTo: {
-      bottom: 20,
-    }
-  },
-  [theme.media.xs]: {
-    scrollTo: {
-      display: 'none',
     }
   },
 

@@ -33,9 +33,7 @@ const App = (props) => {
   return (
     <GlobalStyles>
       <div className={classes.app}>
-        <div className={classes.sidebar}>
-          <Sidebar />
-        </div>
+        <Sidebar className={classes.sidebar} />
         <div className={classes.content}>
           {transition ? (
             <RouteTransition

@@ -3,7 +3,6 @@ import {Motion, spring} from 'react-motion'
 import {Link as ScrollLink} from 'react-scroll'
 
 import {Logo} from '../icons'
-import Jumper from '../Jumper'
 
 import injectSheet from '../../utils/jss'
 import styles from './styles'
@@ -14,8 +13,7 @@ import theme from '../../theme'
  */
 class ParallaxScene extends Component {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
-    scrollTo: PropTypes.string.isRequired
+    sheet: PropTypes.object.isRequired
   }
 
   constructor(props) {
@@ -41,7 +39,7 @@ class ParallaxScene extends Component {
   }
 
   render() {
-    const {sheet: {classes}, scrollTo} = this.props
+    const {sheet: {classes}} = this.props
     const {tiltX, tiltY, deg} = this.state
 
     return (
@@ -80,11 +78,6 @@ class ParallaxScene extends Component {
               </div>
             )}
           </Motion>
-        </div>
-        <div className={classes.scrollTo}>
-          <ScrollLink to={scrollTo} smooth duration={500}>
-            <Jumper />
-          </ScrollLink>
         </div>
       </div>
     )

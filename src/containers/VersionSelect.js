@@ -7,6 +7,17 @@ import {loadTags} from '../utils/github'
 // need to select the version again.
 const lastVersionMap = {}
 
+const loadCachedTags = (() => {
+  const cache = {}
+  return (...args) => {
+    const key = args.join('')
+    if (cache[key]) return Promise.resolve(cache[key])
+    return loadTags(...args).then((tags) => {
+      cache[key] = tags
+      return tags
+    })
+  }
+})()
 
 /**
  * Get only latest major versions from the list.
@@ -22,7 +33,7 @@ const getMajorVersions = (versions) => {
 }
 
 const loadVersions = (repo, org) => (
-  loadTags(repo, org)
+  loadCachedTags(repo, org)
     .then(getMajorVersions)
     .then(versions => [...versions, 'master'])
 )
@@ -37,7 +48,7 @@ export default class VersionSelectContainer extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
-      versions: ['loading…']
+      versions: ['––.––.––']
     }
   }
 

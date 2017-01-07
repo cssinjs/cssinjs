@@ -1,7 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
 import {animateScroll} from 'react-scroll'
 
-import ParallaxScene from '../ParallaxScene'
 import NotFound from '../NotFound'
 import Iframe from '../Iframe'
 import Content from '../../containers/MdContent'
@@ -33,13 +32,12 @@ class Page extends PureComponent {
 
     const page = navMap[name]
 
-    if (!page) return <NotFound />
+    if (!page || name === '404') return <NotFound />
     if (page.iframe) return <Iframe src={page.url} />
 
     return (
       <div className={classes.page}>
-        {name === home.name && <ParallaxScene scrollTo={classes.content} />}
-        <div className={classes.content} id={classes.content}>
+        <div className={classes.content}>
           <Content {...page} />
         </div>
       </div>
