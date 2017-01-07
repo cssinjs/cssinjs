@@ -14,7 +14,7 @@ const NotFound = ({sheet}) => {
   return (
     <div className={classes.notFound}>
       <div className={classes.inner}>
-        <ParallaxScene text="404"/>
+        <ParallaxScene>404</ParallaxScene>
       </div>
     </div>
   )

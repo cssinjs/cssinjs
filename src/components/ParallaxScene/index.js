@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react'
 import {Motion, spring} from 'react-motion'
-import {Link as ScrollLink} from 'react-scroll'
 
 import {Logo} from '../icons'
 

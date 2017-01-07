@@ -1,12 +1,14 @@
 import color from 'color'
 
+import {transitionDuration} from '../constants/animations'
+
 const base = {
   dark: '#333',
   light: '#eee',
 }
 
 export default {
-  fontFamily: 'Fira Sans, Helvetica, Arial, sans-serif',
+  fontFamily: '"Fira Sans", Helvetica, Arial, sans-serif',
   fontSize: 15,
   lineHeight: 1.65,
 
@@ -38,11 +40,11 @@ export default {
     style: 'solid',
     color: borderColor,
   }),
-  transition: (transitionDuration = '200ms', transitionDelay = '0ms') => ({
+  transition: (duration = `${transitionDuration}ms`, delay = '0ms') => ({
     property: 'all',
     timingFunction: 'cubic-bezier(0.77, 0, 0.175, 1)',
-    duration: transitionDuration,
-    delay: transitionDelay,
+    duration,
+    delay,
   }),
 
   // Breakpoints

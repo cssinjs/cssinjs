@@ -26,7 +26,7 @@ export default {
       borderRight: 0,
       paddingRight: 0
     },
-    '&:first-child': {
+    '&:first-child': {
       marginLeft: 0
     }
   },

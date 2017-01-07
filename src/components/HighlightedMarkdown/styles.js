@@ -114,6 +114,6 @@ export default {
       right: 5,
       top: '0.5em'
     },
-    opacity: 0,
+    opacity: 0
   }
 }
