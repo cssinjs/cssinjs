@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import {Motion, spring} from 'react-motion'
 
-import {Logo} from '../icons'
+import {NotFound} from '../icons'
 
 import injectSheet from '../../utils/jss'
 import styles from './styles'
@@ -67,7 +67,7 @@ class ParallaxScene extends Component {
                 }}
               >
                 <div className={classes.logo}>
-                  <Logo
+                  <NotFound
                     className={classes.logoBase}
                     strokeColor={theme.titleColorDark}
                     backgroundColor={theme.themeColor}

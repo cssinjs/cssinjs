@@ -33,13 +33,5 @@ export default {
     lineHeight: 'normal',
     position: 'relative',
     zIndex: 5,
-  },
-  [theme.media.md]: {
-    inner: {
-      margin: [0, 20],
-      width: 'auto',
-      borderLeft: 'none',
-      borderRight: 'none',
-    }
-  },
+  }
 }

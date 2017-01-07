@@ -130,9 +130,8 @@ export default {
   },
   logoBase: {
     position: 'relative',
-    width: 450,
-    height: 450,
-    left: 40, // Need to proper alignment
+    width: '50vw',
+    height: '50vw'
   },
 
   // Decrease size of main logo for small screens
