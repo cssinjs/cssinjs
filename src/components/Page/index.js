@@ -1,5 +1,4 @@
 import React, {PureComponent, PropTypes} from 'react'
-import {animateScroll} from 'react-scroll'
 
 import NotFound from '../NotFound'
 import Iframe from '../Iframe'
@@ -16,10 +15,6 @@ class Page extends PureComponent {
   static propTypes = {
     sheet: PropTypes.object.isRequired,
     params: PropTypes.object
-  }
-
-  componentDidMount() {
-    animateScroll.scrollToTop()
   }
 
   render() {
