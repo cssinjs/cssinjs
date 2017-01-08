@@ -31,7 +31,7 @@ export default {
         color: theme.titleColor,
         margin: [40, 0],
         fontWeight: 400,
-        lineHeight: 1,
+        lineHeight: 1.25,
         '&:first-child': {
           isolate: false,
           marginTop: 0
@@ -42,7 +42,10 @@ export default {
       },
       h2: {
         fontSize: 24,
-        margin: [30, 0],
+        margin: {
+          top: 24,
+          bottom: 16
+        },
       },
       h3: {
         fontSize: 20,
