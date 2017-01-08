@@ -13,7 +13,8 @@ export default {
     display: 'flex',
     alignItems: 'center',
     position: 'relative',
-    zIndex: 5
+    zIndex: 5,
+    marginLeft: 20
   },
   action: {
     display: 'flex',
