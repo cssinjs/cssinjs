@@ -5,7 +5,7 @@ import {loadTags} from '../utils/github'
 // Last version used for a certain repository.
 // Once user switches to another page from the same repository, he doesn't
 // need to select the version again.
-const lastVersionMap = {}
+const lastValuesMap = {}
 
 const loadCachedTags = (() => {
   const cache = {}
@@ -38,11 +38,17 @@ const loadVersions = (repo, org) => (
     .then(versions => [...versions, 'master'])
 )
 
+const ensureValue = (value, arr) => {
+  if (arr.indexOf(value) !== -1) return arr
+  return [value, ...arr]
+}
+
 export default class VersionSelectContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    org: PropTypes.string
+    org: PropTypes.string.isRequired,
+    value: PropTypes.string
   }
 
   constructor(props) {
@@ -54,33 +60,35 @@ export default class VersionSelectContainer extends PureComponent {
 
   componentDidMount() {
     const {repo, org} = this.props
-    loadVersions(repo, org).then(this.onLoadVersions)
+    loadVersions(repo, org).then(this.onLoad)
   }
 
-  onLoadVersions = (versions) => {
-    const {repo} = this.props
-    this.setState({versions})
-    this.onChangeVersion({value: lastVersionMap[repo] || versions[0]})
+  onLoad = (versions) => {
+    const value = this.getValue(versions)
+    this.setState({versions: ensureValue(value, versions)})
+    this.onChange({value})
   }
 
-  onChangeVersion = ({value}) => {
+  onChange = ({value}) => {
     const {repo, onChange} = this.props
-    lastVersionMap[repo] = value
-    this.setState({value})
+    lastValuesMap[repo] = value
     onChange({value})
   }
 
+  getValue(versions) {
+    const {repo, value} = this.props
+    return value || lastValuesMap[repo] || versions[0]
+  }
+
   render() {
-    const {
-      versions,
-      value
-    } = this.state
+    const {versions} = this.state
+    const {value} = this.props
 
     return (
       <VersionSelect
         versions={versions}
         value={value}
-        onChange={this.onChangeVersion}
+        onChange={this.onChange}
       />
     )
   }
