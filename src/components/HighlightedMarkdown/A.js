@@ -8,8 +8,9 @@ const absUrl = (url, currPageName) => {
   if (isAbsolute(url)) return url
   const currPage = map[currPageName]
   const resolvedUrl = resolve(currPage.path, url)
-  const resolvedPath = parse(resolvedUrl).pathname
-  return getBlobUrl(currPage.repo, resolvedPath, undefined, currPage.org)
+  const parsedUrl = parse(resolvedUrl)
+  const path = parsedUrl.pathname + parsedUrl.hash
+  return getBlobUrl(currPage.repo, path, undefined, currPage.org)
 }
 
 const formatProps = (props) => {
@@ -21,7 +22,9 @@ const formatProps = (props) => {
   if (href && !isHash(href)) {
     href = absUrl(href, pageName)
     const page = findPage(href)
-    if (page && !page.external) to = `/${page.name}`
+    if (page && !page.external) {
+      to = `/${page.name}${parse(href).hash}`
+    }
     else target = '_blank'
   }
 
