@@ -55,6 +55,7 @@ export const findPage = (url) => {
 
   for (const name in map) {
     const page = map[name]
+    if (page.hidden || page.iframe) continue
     // Its an external page, we can compare by `url`.
     if (page.url && isSameUrl(page.url, url)) return page
     if (host === githubHost) {
