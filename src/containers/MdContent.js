@@ -17,23 +17,32 @@ const loadCachedFile = (() => {
 
 export default class MdContentContainer extends PureComponent {
   static propTypes = {
-    repo: PropTypes.string,
-    path: PropTypes.string,
-    org: PropTypes.string,
-    name: PropTypes.string
+    query: PropTypes.object.isRequired,
+    repo: PropTypes.string.isRequired,
+    path: PropTypes.string.isRequired,
+    org: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    onChangeVersion: PropTypes.func.isRequired
   }
 
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      version: props.query.v,
+      status: 200
+    }
   }
 
-  onChangeVersion = ({value: version}) => {
-    const {repo, path, org} = this.props
+  onChangeVersion = (param) => {
+    this.load(param)
+    this.props.onChangeVersion(param)
+  }
 
+  load({value: version}) {
+    const {repo, path, org} = this.props
     loadCachedFile(repo, path, version, org)
       .then((content) => {
-        this.setState({content, version, status: 200})
+        this.setState({status: 200, content, version})
       })
       .catch((err) => {
         this.setState({status: err.status, content: ''})
@@ -41,7 +50,7 @@ export default class MdContentContainer extends PureComponent {
   }
 
   render() {
-    const {content, status} = this.state
+    const {content, status, version} = this.state
     const {repo, org, name, path} = this.props
 
     return (
@@ -52,6 +61,7 @@ export default class MdContentContainer extends PureComponent {
         status={status}
         org={org}
         editUrl={getBlobUrl(repo, path, 'master', org)}
+        version={version}
         onChangeVersion={this.onChangeVersion}
       />
     )
