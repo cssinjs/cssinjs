@@ -1,5 +1,5 @@
 import color from 'color'
-import {translate, translateZ, multiple, rotateZ, scale} from 'css-functions'
+import {translate, translateZ, rotateZ} from 'css-functions'
 
 import theme from '../../theme'
 
