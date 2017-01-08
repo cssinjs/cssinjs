@@ -60,7 +60,7 @@ export const findPage = (url) => {
     if (page.url && isSameUrl(page.url, url)) return page
     if (host === githubHost) {
       const meta = pathToMeta(pathname)
-      if (meta.org === page.org && meta.repo === page.repo) {
+      if (meta.org === page.org && meta.repo === page.repo && meta.view !== 'tree') {
         if (meta.path === page.path || isReadme(meta.path)) {
           return page
         }
