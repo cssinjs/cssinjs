@@ -23,6 +23,6 @@ export default class Code extends PureComponent {
 
   render() {
     const {lang} = this.props
-    return <code ref={this.onRef} className={lang && `language-${lang}`} />
+    return <code ref={this.onRef} className={`language-${lang}`} />
   }
 }
