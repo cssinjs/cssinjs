@@ -23,6 +23,7 @@ export default {
   content: {
     position: 'relative',
     marginLeft: 300,
+    minHeight: '100vh',
   },
   contentInner: {
     '& > div': {
