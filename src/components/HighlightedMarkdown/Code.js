@@ -3,6 +3,8 @@ import {highlightElement} from 'prismjs'
 import 'prismjs/themes/prism.css'
 import 'prismjs/components/prism-css'
 import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-json'
+import 'prismjs/components/prism-markup'
 import 'prismjs/components/prism-bash'
 
 export default class Code extends PureComponent {
