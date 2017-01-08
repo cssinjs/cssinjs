@@ -27,6 +27,5 @@ module.exports = {
       url: 'http://cssinjs.org/'
     },
     repo: 'cssinjs/jss'
-  },
-  isProduction: (process.env.NODE_ENV === 'production')
+  }
 }
