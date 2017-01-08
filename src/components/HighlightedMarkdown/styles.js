@@ -3,6 +3,10 @@ import theme from '../../theme'
 export default {
   highlightedMarkdown: {
     '@global': {
+      'b, strong': {
+        fontWeight: 500
+      },
+
       // Link styles
       a: {
         textDecoration: 'underline',
