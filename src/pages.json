@@ -131,7 +131,7 @@
   },
   "examples": {
     "title": "Examples",
-    "repo": "examples",
+    "repo": "jss",
     "path": "/readme.md",
     "children": {
       "react-todo-mvc": {
