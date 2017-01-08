@@ -89,7 +89,7 @@ export default {
     },
     animation: {
       name: 'parallaxRotate',
-      duration: '35s', // Need to wait until https://github.com/cssinjs/jss-default-unit/pull/9 will be merged
+      duration: 35,
       timingFunction: 'linear',
       iterationCount: 'infinite',
     }

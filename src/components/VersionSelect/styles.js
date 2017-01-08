@@ -11,9 +11,10 @@ export default {
     outline: 'none',
     border: theme.border(theme.borderColor),
     color: theme.textColor,
-    padding: 6,
+    padding: [0, 6],
     width: 70,
     height: '100%',
+    boxSizing: 'content-box',
     font: {
       family: 'Arial, serif', // Because Chrome cant align main font correctly :(
       size: 14,
