@@ -22,7 +22,9 @@ export default class Code extends PureComponent {
   }
 
   render() {
-    const {lang} = this.props
+    // Fix the difference between github and prism syntax highlighting
+    const lang = this.props.lang === 'es6' ? 'javascript' : this.props.lang
+
     return <code ref={this.onRef} className={`language-${lang}`} />
   }
 }
