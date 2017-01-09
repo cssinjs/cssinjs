@@ -21,9 +21,9 @@ const headlines = ['h1', 'h2', 'h3', 'h4', 'h5']
 class HighlightedMarkdown extends PureComponent {
   static propTypes = {
     sheet: PropTypes.object.isRequired,
+    text: PropTypes.string.isRequired,
+    page: PropTypes.string.isRequired,
     className: PropTypes.string,
-    text: PropTypes.string,
-    page: PropTypes.string.isRequired
   }
 
   onIterate = (tag, props, children) => {

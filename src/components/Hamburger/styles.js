@@ -37,7 +37,7 @@ export default {
     position: 'absolute',
     height: barWeight,
     width: '100%',
-    background: theme.textColorInverse, // Need to change
+    background: theme.textColorInverse,
     opacity: 1,
     left: 0,
     transition: {

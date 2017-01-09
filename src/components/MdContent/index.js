@@ -2,6 +2,7 @@ import React, {PureComponent, PropTypes} from 'react'
 
 import injectSheet from '../../utils/jss'
 import VersionSelect from '../../containers/VersionSelect'
+import ScrollToHash from '../ScrollToHash'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'
 import HighlightedMarkdown from '../HighlightedMarkdown'
@@ -15,11 +16,12 @@ class MdContent extends PureComponent {
     sheet: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
     onChangeVersion: PropTypes.func.isRequired,
-    editUrl: PropTypes.string,
-    repo: PropTypes.string,
-    org: PropTypes.string,
-    name: PropTypes.string,
-    status: PropTypes.number
+    editUrl: PropTypes.string.isRequired,
+    repo: PropTypes.string.isRequired,
+    org: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    status: PropTypes.number.isRequired,
+    version: PropTypes.string
   }
 
   static defaultProps = {
@@ -32,6 +34,7 @@ class MdContent extends PureComponent {
       editUrl,
       repo,
       org,
+      version,
       onChangeVersion,
       status,
       content,
@@ -48,10 +51,19 @@ class MdContent extends PureComponent {
               {editUrl && <EditLink url={editUrl} />}
             </div>
             <div className={classes.action}>
-              {repo && <VersionSelect repo={repo} org={org} onChange={onChangeVersion} />}
+              {repo && (
+                <VersionSelect
+                  repo={repo}
+                  org={org}
+                  value={version}
+                  onChange={onChangeVersion}
+                />
+              )}
             </div>
           </div>
-          <HighlightedMarkdown text={content} className={classes.markdown} page={name} />
+          <ScrollToHash isReady={Boolean(content)}>
+            <HighlightedMarkdown text={content} className={classes.markdown} page={name} />
+          </ScrollToHash>
         </div>
       </div>
     )

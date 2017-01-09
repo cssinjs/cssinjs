@@ -7,21 +7,20 @@ import GlobalStyles from '../GlobalStyles'
 import Sidebar from '../Sidebar'
 import styles from './styles'
 
-let lastLocation
+let prevLocation
 
 /**
  * Returns a transition based on the order in the tree.
  * There is no transition if its the first page.
  */
 const getTransition = (location) => {
-  let transition
+  let transition = presets.slideRight
 
-  if (lastLocation) {
-    if (isAfter(lastLocation.pathname, location.pathname)) transition = presets.slideLeft
-    else transition = presets.slideRight
+  if (prevLocation && isAfter(prevLocation.pathname, location.pathname)) {
+    transition = presets.slideLeft
   }
 
-  lastLocation = location
+  prevLocation = location
 
   return transition
 }
@@ -35,15 +34,14 @@ const App = (props) => {
       <div className={classes.app}>
         <Sidebar className={classes.sidebar} />
         <div className={classes.content}>
-          {transition ? (
-            <RouteTransition
-              className={classes.contentInner}
-              pathname={location.pathname}
-              {...transition}
-            >
-              {children}
-            </RouteTransition>
-          ) : children}
+          <RouteTransition
+            className={classes.contentInner}
+            pathname={location.pathname}
+            runOnMount={false}
+            {...transition}
+          >
+            {children}
+          </RouteTransition>
         </div>
       </div>
     </GlobalStyles>
@@ -51,9 +49,9 @@ const App = (props) => {
 }
 
 App.propTypes = {
-  children: React.PropTypes.node,
-  location: React.PropTypes.object,
-  sheet: React.PropTypes.object
+  location: React.PropTypes.object.isRequired,
+  sheet: React.PropTypes.object.isRequired,
+  children: React.PropTypes.node
 }
 
 export default injectSheet(styles)(App)

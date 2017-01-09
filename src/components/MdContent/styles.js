@@ -13,7 +13,8 @@ export default {
     display: 'flex',
     alignItems: 'center',
     position: 'relative',
-    zIndex: 5
+    zIndex: 5,
+    marginLeft: 20
   },
   action: {
     display: 'flex',
@@ -26,7 +27,7 @@ export default {
       borderRight: 0,
       paddingRight: 0
     },
-    '&:first-child': {
+    '&:first-child': {
       marginLeft: 0
     }
   },

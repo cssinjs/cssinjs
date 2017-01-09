@@ -1,35 +1,35 @@
 import React, {PureComponent, PropTypes} from 'react'
-import {animateScroll} from 'react-scroll'
+import {browserHistory as history} from 'react-router'
 
+import injectSheet from '../../utils/jss'
+import Content from '../../containers/MdContent'
+import {map as navMap, home} from '../../utils/navigation'
 import NotFound from '../NotFound'
 import Iframe from '../Iframe'
-import Content from '../../containers/MdContent'
-
-import {map as navMap, home} from '../../utils/navigation'
-import injectSheet from '../../utils/jss'
 import styles from './styles'
 
-/**
- * Common application page rapresenting class
- */
 class Page extends PureComponent {
   static propTypes = {
     sheet: PropTypes.object.isRequired,
-    params: PropTypes.object
+    location: PropTypes.object.isRequired,
+    params: PropTypes.object.isRequired
   }
 
-  componentDidMount() {
-    animateScroll.scrollToTop()
+  onChangeVersion = ({value}) => {
+    history.replace({
+      ...history.getCurrentLocation(),
+      query: {v: value}
+    })
   }
 
   render() {
     const {
       sheet: {classes},
-      params
+      params,
+      location: {query}
     } = this.props
 
     const name = params.page || home.name
-
     const page = navMap[name]
 
     if (!page || name === '404') return <NotFound />
@@ -38,7 +38,11 @@ class Page extends PureComponent {
     return (
       <div className={classes.page}>
         <div className={classes.content}>
-          <Content {...page} />
+          <Content
+            {...page}
+            query={query}
+            onChangeVersion={this.onChangeVersion}
+          />
         </div>
       </div>
     )

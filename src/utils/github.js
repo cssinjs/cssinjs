@@ -59,7 +59,7 @@ export const pathToMeta = (path) => {
   return {
     org: parts[1],
     repo: parts[2],
-    view: parts[3] || '', // blob, edit
+    view: parts[3] || '', // blob, edit, tree
     branch: parts[4] || '', // branch, tag, commit
     path: `/${parts.slice(5).join('/')}`
   }

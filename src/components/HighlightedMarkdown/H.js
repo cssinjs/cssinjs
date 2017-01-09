@@ -1,27 +1,52 @@
-import React, {PropTypes, createElement} from 'react'
+import React, {PureComponent, PropTypes, createElement} from 'react'
+import {Link} from 'react-scroll'
 
-import {Link} from '../icons'
+import {Link as LinkIcon} from '../icons'
+import {scrollDuration} from '../../constants/animations'
 
 const createId = str => str.toLowerCase().replace(/\s/g, '-').replace(/[^-\w]/g, '')
 
 /**
  * Renders `h*` tags and generates a github like id attribute.
  */
-export default function H(props) {
-  const {
-    children,
-    tag,
-    sheet: {classes},
-    ...rest
-  } = props
-  const id = createId(children[0])
-  // eslint-disable-next-line
-  children.unshift(<a className={classes.headingAnchor} href={`#${id}`}><Link /></a>)
-  return createElement(tag, {...rest, id, className: classes.heading}, children)
-}
+export default class H extends PureComponent {
+  static propTypes = {
+    sheet: PropTypes.object.isRequired,
+    tag: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
+  }
 
-H.propTypes = {
-  sheet: PropTypes.object.isRequired,
-  tag: PropTypes.string.isRequired
-}
+  onClick = () => {
+    // We need to set the hash manually because <Link/> will not.
+    // Also we can't use `onSetActive` callback because it doesn't work if
+    // an element is on very bottom so that there is no scroll possible.
+    setTimeout(() => {
+      location.hash = this.props.children[0].props.to
+    }, scrollDuration)
+  }
 
+  render() {
+    const {
+      children,
+      tag,
+      sheet: {classes},
+      ...rest
+    } = this.props
+    const id = createId(children[0])
+    // eslint-disable-next-line
+    children.unshift(
+      <Link
+        className={classes.headingAnchor}
+        to={id}
+        // Needed for the cursor.
+        href={`#${id}`}
+        smooth
+        duration={scrollDuration}
+        onClick={this.onClick}
+      >
+        <LinkIcon />
+      </Link>
+    )
+    return createElement(tag, {...rest, id, className: classes.heading}, children)
+  }
+}
