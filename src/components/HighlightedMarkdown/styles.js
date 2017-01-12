@@ -9,6 +9,7 @@ export default {
 
       // Link styles
       a: {
+        cursor: 'pointer',
         textDecoration: 'underline',
         color: theme.textColor,
         '&:hover': {
