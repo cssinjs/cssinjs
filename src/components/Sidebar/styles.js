@@ -42,6 +42,7 @@ export default {
     padding: 0,
     outline: 0,
     boxShadow: 'none',
+    cursor: 'pointer'
   },
 
   // For small screens (mobile, portrait mode for iPad) - change completely layout
