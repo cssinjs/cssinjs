@@ -67,9 +67,7 @@ const renderDoc = ({app, css, analytics}) => (
         <link rel="stylesheet" type="text/css" href="/vendor.styles.css" />
       </head>
       <body>
-        <div id="cssinjs">
-          ${app}
-        </div>
+        ${app}
         <script src="/vendor.bundle.js"></script>
         <script src="/bundle.js"></script>
         ${analytics}

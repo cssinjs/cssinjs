@@ -4,7 +4,9 @@
   "version": "0.1.1",
   "description": "JSS landing page",
   "author": "Pavel Davydov",
-  "license": "MIT",
+  "engines": {
+    "node": "0.6.x"
+  },
   "scripts": {
     "dev-server": "cross-env NODE_ENV=development PORT=3000 node ./bin/webpack-dev-server.js",
     "clean": "rimraf -fr './docs/!(CNAME)**'",
@@ -64,6 +66,8 @@
     "jss-preset-default": "^1.2.0",
     "markdown-react-js": "^0.3.0",
     "normalize-jss": "^3.0.0",
+    "preact": "^7.1.0",
+    "preact-compat": "^3.10.0",
     "prismjs": "^1.5.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
@@ -81,5 +85,6 @@
       "git add"
     ]
   },
-  "pre-commit": "lint:staged"
+  "pre-commit": "lint:staged",
+  "license": "MIT"
 }
