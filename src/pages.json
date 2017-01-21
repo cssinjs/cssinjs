@@ -24,6 +24,11 @@
         "title": "Contributing",
         "repo": "jss",
         "path": "/contributing.md"
+      },
+      "we-are-using": {
+        "title": "We are using",
+        "repo": "jss",
+        "path": "/docs/we-are-using.md"
       }
     }
   },
