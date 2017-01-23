@@ -4,7 +4,15 @@ import {Link} from 'react-scroll'
 import {Link as LinkIcon} from '../icons'
 import {scrollDuration} from '../../constants/animations'
 
-const createId = str => str.toLowerCase().replace(/\s/g, '-').replace(/[^-\w]/g, '')
+const createId = data => {
+  if (Array.isArray(data)) {
+    data = data.map(value => {
+      if (typeof value === 'object') return value.attributes.text
+      return value
+    }).join('')
+  }
+  return data.toLowerCase().replace(/\s/g, '-').replace(/[^-\w]/g, '')
+}
 
 /**
  * Renders `h*` tags and generates a github like id attribute.
