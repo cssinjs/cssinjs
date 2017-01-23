@@ -16,12 +16,12 @@ export default class H extends PureComponent {
     children: PropTypes.node.isRequired
   }
 
-  onClick = () => {
+  onClick() {
     // We need to set the hash manually because <Link/> will not.
     // Also we can't use `onSetActive` callback because it doesn't work if
     // an element is on very bottom so that there is no scroll possible.
     setTimeout(() => {
-      location.hash = this.props.children[0].props.to
+      location.hash = this.to
     }, scrollDuration)
   }
 
@@ -32,9 +32,9 @@ export default class H extends PureComponent {
       sheet: {classes},
       ...rest
     } = this.props
-    const id = createId(children[0])
-    // eslint-disable-next-line
-    children.unshift(
+
+    const id = createId(children)
+    const content = [
       <Link
         className={classes.headingAnchor}
         to={id}
@@ -45,8 +45,10 @@ export default class H extends PureComponent {
         onClick={this.onClick}
       >
         <LinkIcon />
-      </Link>
-    )
-    return createElement(tag, {...rest, id, className: classes.heading}, children)
+      </Link>,
+      children
+    ]
+
+    return createElement(tag, {...rest, id, className: classes.heading}, content)
   }
 }
