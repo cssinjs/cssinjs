@@ -6,7 +6,6 @@
   ],
   "plugins": [
     "transform-runtime",
-    "transform-react-inline-elements",
     "transform-react-constant-elements"
   ],
   "ignore": [
