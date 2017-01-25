@@ -25,10 +25,10 @@
         "repo": "jss",
         "path": "/contributing.md"
       },
-      "we-are-using": {
-        "title": "We are using",
+      "who-is-using": {
+        "title": "Who is using",
         "repo": "jss",
-        "path": "/docs/we-are-using.md"
+        "path": "/docs/users.md"
       }
     }
   },
