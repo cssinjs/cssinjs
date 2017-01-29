@@ -4,19 +4,19 @@ var webpack = require('webpack')
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CopyFilesPlugin = require('copy-webpack-plugin')
-var deps = require('./package.json').dependencies
+var config = require('./package.json')
 
 module.exports = {
   entry: {
     app: [
       path.join(__dirname, 'src', 'client.js'),
     ],
-    vendor: Object.keys(deps)
+    vendor: Object.keys(config.dependencies)
   },
   output: {
     path: path.join(__dirname, 'docs'),
     publicPath: '/docs',
-    filename: 'bundle.js',
+    filename: 'bundle.v' + config.version + '.js',
   },
   module: {
     loaders: [
@@ -33,14 +33,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('vendor.styles.css'),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new ExtractTextPlugin('vendor.styles.v' + config.version + '.css'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.v' + config.version + '.js'),
     new CopyFilesPlugin([{
       from: './src/images',
       to: './images'
     }]),
-    new webpack.optimize.OccurenceOrderPlugin(), // Webpack 1.0
-    // new webpack.optimize.OccurrenceOrderPlugin(), // Webpack 2.0 fixed this mispelling
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin()
   ]
 }
