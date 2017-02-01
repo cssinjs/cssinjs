@@ -8,6 +8,7 @@ import routes from './routes'
 import {SheetsRegistryProvider, SheetsRegistry} from './utils/jss'
 
 import config from './config'
+import {version} from '../package.json'
 
 const minifyOptions = {
   minifyCSS: true,
@@ -64,12 +65,12 @@ const renderDoc = ({app, css, analytics}) => (
         <style id="critical-css" type="text/css">
           ${css}
         </style>
-        <link rel="stylesheet" type="text/css" href="/vendor.styles.css" />
+        <link rel="stylesheet" type="text/css" href="/vendor.styles.v${version}.css" />
       </head>
       <body>
         ${app}
-        <script src="/vendor.bundle.js"></script>
-        <script src="/bundle.js"></script>
+        <script src="/vendor.bundle.v${version}.js"></script>
+        <script src="/bundle.v${version}.js"></script>
         ${analytics}
       </body>
     </html>
