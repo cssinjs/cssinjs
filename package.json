@@ -20,7 +20,7 @@
     "start": "npm run lint && npm run all:prod"
   },
   "devDependencies": {
-    "babel-core": "^6.18.2",
+    "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.8",
     "babel-plugin-transform-react-constant-elements": "^6.9.1",
@@ -48,6 +48,7 @@
     "ignore-styles": "^5.0.1",
     "json-loader": "^0.5.4",
     "lint-staged": "^3.2.5",
+    "module-alias": "^2.0.0",
     "pre-commit": "^1.2.2",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
@@ -68,8 +69,6 @@
     "preact": "^7.1.0",
     "preact-compat": "^3.10.0",
     "prismjs": "^1.5.1",
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1",
     "react-jss": "^5.1.1",
     "react-motion": "^0.4.5",
     "react-router": "^3.0.0",

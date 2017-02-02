@@ -9,7 +9,6 @@
     "transform-react-constant-elements"
   ],
   "ignore": [
-    "build",
     "node_modules"
   ],
   "env": {
