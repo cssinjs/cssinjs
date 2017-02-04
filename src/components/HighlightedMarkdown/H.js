@@ -24,12 +24,16 @@ export default class H extends PureComponent {
     children: PropTypes.node.isRequired
   }
 
-  onClick() {
+  componentWillMount() {
+    this.id = createId(this.props.children)
+  }
+
+  onClick = () => {
     // We need to set the hash manually because <Link/> will not.
     // Also we can't use `onSetActive` callback because it doesn't work if
     // an element is on very bottom so that there is no scroll possible.
     setTimeout(() => {
-      location.hash = this.to
+      location.hash = this.id
     }, scrollDuration)
   }
 
@@ -41,13 +45,12 @@ export default class H extends PureComponent {
       ...rest
     } = this.props
 
-    const id = createId(children)
     const content = [
       <Link
         className={classes.headingAnchor}
-        to={id}
+        to={this.id}
         // Needed for the cursor.
-        href={`#${id}`}
+        href={`#${this.id}`}
         smooth
         duration={scrollDuration}
         onClick={this.onClick}
@@ -57,6 +60,6 @@ export default class H extends PureComponent {
       children
     ]
 
-    return createElement(tag, {...rest, id, className: classes.heading}, content)
+    return createElement(tag, {...rest, id: this.id, className: classes.heading}, content)
   }
 }
