@@ -42,7 +42,7 @@ class HighlightedMarkdown extends PureComponent {
 
     // Server side rendering throws erros.
     // So we need to handle situation when text comes undefined
-    if (!text) return <div/>
+    if (!text) return <div />
 
     return (
       <Markdown
