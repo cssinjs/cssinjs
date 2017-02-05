@@ -32,6 +32,12 @@ module.exports = {
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader')} // When migrate to Webpack 2.0 read this: https://github.com/webpack/extract-text-webpack-plugin/issues/215
     ]
   },
+  resolve: {
+    alias: {
+      react: 'preact-compat',
+      'react-dom': 'preact-compat'
+    }
+  },
   plugins: [
     new ExtractTextPlugin('vendor.styles.v' + config.version + '.css'),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.v' + config.version + '.js'),

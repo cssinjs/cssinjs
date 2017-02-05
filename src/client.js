@@ -7,7 +7,7 @@ import routes from './routes'
 
 render(
   <Router history={browserHistory} routes={routes} />,
-  document.getElementById('cssinjs')
+  document.body
 )
 
 const style = document.getElementById('critical-css')
