@@ -127,9 +127,9 @@
         "org": "nathanmarks",
         "path": "/README.md"
       },
-      "aphrodisiac": {
-        "title": "aphrodisiac",
-        "repo": "aphrodisiac",
+      "aphrodite-jss": {
+        "title": "aphrodite-jss",
+        "repo": "aphrodite-jss",
         "path": "/readme.md"
       }
     }
