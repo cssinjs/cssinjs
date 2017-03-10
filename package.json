@@ -1,7 +1,7 @@
 {
   "name": "cssinjs",
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "JSS landing page",
   "author": "Pavel Davydov",
   "engines": {
