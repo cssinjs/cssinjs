@@ -10,16 +10,15 @@ const scroll = () => {
 
 export default class ScrollToHash extends PureComponent {
   static propTypes = {
-    isReady: PropTypes.boolean,
     children: PropTypes.node
   }
 
   componentDidMount() {
-    if (this.props.isReady) scroll()
+    scroll()
   }
 
   componentDidUpdate() {
-    if (this.props.isReady) scroll()
+    scroll()
   }
 
   render() {

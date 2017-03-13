@@ -2,7 +2,6 @@ import React, {PureComponent, PropTypes} from 'react'
 
 import injectSheet from '../../utils/jss'
 import VersionSelect from '../../containers/VersionSelect'
-import ScrollToHash from '../ScrollToHash'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'
 import HighlightedMarkdown from '../HighlightedMarkdown'
@@ -61,9 +60,7 @@ class MdContent extends PureComponent {
               )}
             </div>
           </div>
-          <ScrollToHash isReady={Boolean(content)}>
-            <HighlightedMarkdown text={content} className={classes.markdown} page={name} />
-          </ScrollToHash>
+          <HighlightedMarkdown text={content} className={classes.markdown} page={name} />
         </div>
       </div>
     )

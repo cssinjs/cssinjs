@@ -2,6 +2,7 @@ import React, {PureComponent, PropTypes, createElement} from 'react'
 import Markdown from 'markdown-react-js'
 import cn from 'classnames'
 
+import ScrollToHash from '../ScrollToHash'
 import injectSheet from '../../utils/jss'
 import Code from './Code'
 import A from './A'
@@ -45,12 +46,14 @@ class HighlightedMarkdown extends PureComponent {
     if (!text) return <div />
 
     return (
-      <Markdown
-        markdownOptions={markdownOptions}
-        className={cn(classes.highlightedMarkdown, className)}
-        text={fixGitterBadge(text)}
-        onIterate={this.onIterate}
-      />
+      <ScrollToHash>
+        <Markdown
+          markdownOptions={markdownOptions}
+          className={cn(classes.highlightedMarkdown, className)}
+          text={fixGitterBadge(text)}
+          onIterate={this.onIterate}
+        />
+      </ScrollToHash>
     )
   }
 }
