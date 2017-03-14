@@ -153,6 +153,11 @@
         "title": "Perdido Grid System",
         "iframe": true,
         "url": "//cssinjs.github.io/examples/perdido/"
+      },
+      "function-values": {
+        "title": "Function values",
+        "iframe": true,
+        "url": "//cssinjs.github.io/examples/function-values/"
       }
     }
   },
