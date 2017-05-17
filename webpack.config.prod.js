@@ -16,11 +16,14 @@ config.plugins = config.plugins.concat([
 
   // Optimizations
   new webpack.optimize.UglifyJsPlugin({
+    sourceMap: true,
     compress: {
       warnings: false
     }
   }),
-  new webpack.optimize.DedupePlugin(),
+  new webpack.LoaderOptionsPlugin({
+    minimize: true
+  }),
   new CompressionPlugin({
     asset: "[path].gz[query]",
     algorithm: "gzip",
