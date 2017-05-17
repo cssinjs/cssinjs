@@ -65,4 +65,8 @@ Logo.propTypes = {
   className: PropTypes.string
 }
 
+Logo.defaultProps = {
+  className: ''
+}
+
 export default injectSheet(styles)(Logo)

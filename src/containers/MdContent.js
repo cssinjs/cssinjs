@@ -1,7 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
 import MdContent from '../components/MdContent'
-
-import {loadRawFile, getBlobUrl} from '../utils/github'
+import {loadRawFile, getBlobUrl, org as organization} from '../utils/github'
 
 const loadCachedFile = (() => {
   const cache = {}
@@ -20,9 +19,13 @@ export default class MdContentContainer extends PureComponent {
     query: PropTypes.object.isRequired,
     repo: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
-    org: PropTypes.string.isRequired,
+    org: PropTypes.string,
     name: PropTypes.string.isRequired,
     onChangeVersion: PropTypes.func.isRequired
+  }
+
+  static defaultProps = {
+    org: organization
   }
 
   constructor(props) {

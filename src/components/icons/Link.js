@@ -21,5 +21,9 @@ Link.propTypes = {
   className: PropTypes.string
 }
 
+Link.defaultProps = {
+  className: ''
+}
+
 export default Link
 

@@ -5,8 +5,7 @@
     "stage-0"
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-react-constant-elements"
+    "transform-runtime"
   ],
   "ignore": [
     "node_modules"

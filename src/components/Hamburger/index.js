@@ -23,7 +23,11 @@ const Hamburger = ({active, sheet}) => {
 
 Hamburger.propTypes = {
   active: React.PropTypes.bool,
-  sheet: React.PropTypes.object
+  sheet: React.PropTypes.object.isRequired
+}
+
+Hamburger.defaultProps = {
+  active: false
 }
 
 export default injectSheet(styles)(Hamburger)

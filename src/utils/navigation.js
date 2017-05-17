@@ -12,7 +12,8 @@ const addDefaults = (root) => {
   const newRoot = {}
 
   for (const name in root) {
-    const page = newRoot[name] = {...root[name], name}
+    const page = {...root[name], name}
+    newRoot[name] = {...root[name], name}
     if (!page.org) page.org = defaultOrg
     const {children} = page
     if (children) page.children = addDefaults(children)
@@ -33,6 +34,7 @@ export const map = (function iterate(root, result) {
   for (const name in root) {
     const page = root[name]
     result[name] = page
+    result[name].name = name
     if (page.children) iterate(page.children, result)
   }
   return result

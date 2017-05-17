@@ -16,7 +16,7 @@ export default {
     height: '100%',
     boxSizing: 'content-box',
     font: {
-      family: 'Arial, serif', // Because Chrome cant align main font correctly :(
+      family: theme.fontFamily,
       size: 14,
       lineHeight: 'normal',
     }

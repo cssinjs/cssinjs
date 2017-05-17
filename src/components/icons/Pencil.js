@@ -21,4 +21,8 @@ Pencil.propTypes = {
   className: PropTypes.string
 }
 
+Pencil.defaultProps = {
+  className: ''
+}
+
 export default Pencil

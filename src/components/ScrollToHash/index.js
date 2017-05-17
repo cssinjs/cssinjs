@@ -10,7 +10,7 @@ const scroll = () => {
 
 export default class ScrollToHash extends PureComponent {
   static propTypes = {
-    children: PropTypes.node
+    children: PropTypes.node.isRequired
   }
 
   componentDidMount() {

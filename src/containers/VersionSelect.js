@@ -1,6 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
 import VersionSelect from '../components/VersionSelect'
-import {loadTags} from '../utils/github'
+import {loadTags, org as organization} from '../utils/github'
 
 // Last version used for a certain repository.
 // Once user switches to another page from the same repository, he doesn't
@@ -47,8 +47,13 @@ export default class VersionSelectContainer extends PureComponent {
   static propTypes = {
     repo: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
-    org: PropTypes.string.isRequired,
+    org: PropTypes.string,
     value: PropTypes.string
+  }
+
+  static defaultProps = {
+    org: organization,
+    value: ''
   }
 
   constructor(props) {

@@ -10,7 +10,10 @@ export default {
     fill: theme.textColor,
     opacity: 0.7,
     textDecoration: 'none',
-    fontWeight: 400,
+    font: {
+      size: 14,
+      weight: 400,
+    },
     '&:hover': {
       isolate: false,
       opacity: 1,

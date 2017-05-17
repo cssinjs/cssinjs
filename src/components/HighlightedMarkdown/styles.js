@@ -20,7 +20,7 @@ export default {
 
       // Paragraphs
       p: {
-        margin: [20, 0],
+        margin: [16, 0],
         '&:first-child': {
           isolate: false,
           marginTop: 0
@@ -30,8 +30,8 @@ export default {
       // Headings
       'h1, h2, h3, h4': {
         color: theme.titleColor,
-        margin: [40, 0],
-        fontWeight: 400,
+        margin: [24, 0],
+        fontWeight: 600,
         lineHeight: 1.25,
         '&:first-child': {
           isolate: false,
@@ -39,27 +39,21 @@ export default {
         },
       },
       h1: {
-        fontSize: 36,
+        fontSize: 32,
       },
       h2: {
         fontSize: 24,
-        margin: {
-          top: 24,
-          bottom: 16
-        },
       },
       h3: {
         fontSize: 20,
-        margin: [20, 0],
       },
       h4: {
         fontSize: 18,
-        margin: [20, 0],
       },
 
       // Lists
       'ul, ol': {
-        margin: [20, 0],
+        margin: [16, 0],
         padding: [0, 0, 0, 25]
       },
       'ul > li': {
@@ -77,7 +71,7 @@ export default {
 
       // Divider
       hr: {
-        margin: [20, 0],
+        margin: [16, 0],
         border: 'none',
         background: theme.borderColor,
         height: 1,
@@ -87,10 +81,10 @@ export default {
       // Tables
       table: {
         borderCollapse: 'collapse',
-        marginBottom: 20,
+        marginBottom: 16,
       },
       'th, td': {
-        padding: [5, 15],
+        padding: [3, 12],
         borderBottom: theme.border(theme.borderColor),
         borderLeft: theme.border(theme.borderColor),
         '&:first-child': {
@@ -120,7 +114,7 @@ export default {
     right: '100%',
     margin: {
       right: 5,
-      top: '0.5em'
+      top: 0
     },
     opacity: 0
   }

@@ -8,13 +8,13 @@ const base = {
 }
 
 export default {
-  fontFamily: '"Fira Sans", Helvetica, Arial, sans-serif',
-  fontSize: 15,
-  lineHeight: 1.65,
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  fontSize: 16,
+  lineHeight: 1.5,
 
   themeColor: '#f7df1e', // Main theme color
 
-  pageBackground: '#f9f9f9',
+  pageBackground: '#fff',
 
   titleColor: base.dark,
   titleColorDark: '#000',

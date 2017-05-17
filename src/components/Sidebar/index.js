@@ -17,6 +17,10 @@ class Sidebar extends Component {
     className: PropTypes.string
   }
 
+  static defaultProps = {
+    className: ''
+  }
+
   constructor(props) {
     super(props)
     this.state = {

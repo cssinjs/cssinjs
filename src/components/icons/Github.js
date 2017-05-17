@@ -21,4 +21,8 @@ Github.propTypes = {
   className: PropTypes.string
 }
 
+Github.defaultProps = {
+  className: ''
+}
+
 export default Github

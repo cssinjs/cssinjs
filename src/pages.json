@@ -121,6 +121,11 @@
         "repo": "react-jss",
         "path": "/README.md"
       },
+      "styled-jss": {
+        "title": "styled-jss",
+        "repo": "styled-jss",
+        "path": "/README.md"
+      },
       "jss-theme-reactor": {
         "title": "jss-theme-reactor",
         "repo": "jss-theme-reactor",
@@ -171,10 +176,10 @@
     "repo": "jss",
     "path": "/docs/ssr.md"
   },
-  "external-projects": {
-    "title": "External Projects",
+  "projects": {
+    "title": "Projects",
     "repo": "jss",
-    "path": "/docs/external-projects.md"
+    "path": "/docs/projects.md"
   },
   "cli": {
     "title": "CLI Tool",

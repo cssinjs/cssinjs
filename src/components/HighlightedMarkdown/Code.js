@@ -13,6 +13,11 @@ export default class Code extends PureComponent {
     text: PropTypes.string
   }
 
+  static defaultProps = {
+    lang: 'javascript',
+    text: ''
+  }
+
   componentDidMount() {
     const {lang, text} = this.props
     this.code.textContent = text
