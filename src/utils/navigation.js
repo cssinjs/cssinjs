@@ -34,6 +34,7 @@ export const map = (function iterate(root, result) {
   for (const name in root) {
     const page = root[name]
     result[name] = page
+    result[name].name = name
     if (page.children) iterate(page.children, result)
   }
   return result

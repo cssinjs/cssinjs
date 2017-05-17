@@ -1,6 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 
 import injectSheet from '../../utils/jss'
+import {org} from '../../utils/github'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'
@@ -17,14 +18,15 @@ class MdContent extends PureComponent {
     onChangeVersion: PropTypes.func.isRequired,
     editUrl: PropTypes.string.isRequired,
     repo: PropTypes.string.isRequired,
-    org: PropTypes.string.isRequired,
+    org: PropTypes.string,
     name: PropTypes.string.isRequired,
     status: PropTypes.number.isRequired,
     version: PropTypes.string
   }
 
   static defaultProps = {
-    content: ''
+    content: '',
+    org
   }
 
   render() {
