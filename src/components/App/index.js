@@ -51,7 +51,7 @@ const App = (props) => {
 App.propTypes = {
   location: React.PropTypes.object.isRequired,
   sheet: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node
+  children: React.PropTypes.node.isRequired
 }
 
 export default injectSheet(styles)(App)

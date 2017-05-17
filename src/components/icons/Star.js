@@ -21,4 +21,8 @@ Star.propTypes = {
   className: PropTypes.string
 }
 
+Star.defaultProps = {
+  className: ''
+}
+
 export default Star

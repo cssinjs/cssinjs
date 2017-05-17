@@ -28,6 +28,7 @@ Logo.propTypes = {
 }
 
 Logo.defaultProps = {
+  className: '',
   strokeColor: theme.textColorInverse,
   backgroundColor: 'transparent',
   textColor: theme.textColorInverseActive

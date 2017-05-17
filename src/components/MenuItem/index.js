@@ -64,4 +64,10 @@ MenuItem.propTypes = {
   url: PropTypes.string
 }
 
+MenuItem.defaultProps = {
+  home: false,
+  external: false,
+  url: ''
+}
+
 export default injectSheet(styles)(MenuItem)

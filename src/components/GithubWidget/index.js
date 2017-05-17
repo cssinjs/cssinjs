@@ -49,4 +49,9 @@ GithubWidget.propTypes = {
   className: PropTypes.string
 }
 
+GithubWidget.defaultProps = {
+  stars: 0,
+  className: ''
+}
+
 export default injectSheet(styles)(GithubWidget)

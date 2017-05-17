@@ -8,7 +8,7 @@ import styles from './styles'
 
 class Menu extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object
+    sheet: PropTypes.object.isRequired
   }
 
   renderMenu = (root, level = 0) => {

@@ -18,8 +18,8 @@ const EditLink = ({url, sheet}) => {
 }
 
 EditLink.propTypes = {
-  sheet: React.PropTypes.object,
-  url: React.PropTypes.string
+  sheet: React.PropTypes.object.isRequired,
+  url: React.PropTypes.string.isRequired
 }
 
 export default injectSheet(styles)(EditLink)

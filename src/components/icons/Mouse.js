@@ -23,4 +23,9 @@ Mouse.propTypes = {
   dotClassName: PropTypes.string
 }
 
+Mouse.defaultProps = {
+  className: '',
+  dotClassName: ''
+}
+
 export default Mouse

@@ -27,6 +27,10 @@ class HighlightedMarkdown extends PureComponent {
     className: PropTypes.string,
   }
 
+  static defaultProps = {
+    className: ''
+  }
+
   onIterate = (tag, props, children) => {
     if (tag === 'a') return <A {...props} page={this.props.page}>{children}</A>
     if (tag === 'code') return <Code lang={props['data-language']} text={children[0]} />
