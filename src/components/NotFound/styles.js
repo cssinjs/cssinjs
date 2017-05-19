@@ -1,4 +1,4 @@
-import {transparentize} from 'polished'
+import transparentize from 'polished/lib/color/transparentize'
 import {translate, translateZ, rotateZ} from 'css-functions'
 
 import theme from '../../theme'
