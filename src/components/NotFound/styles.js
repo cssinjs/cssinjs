@@ -1,9 +1,9 @@
-import color from 'color'
+import {transparentize} from 'polished'
 import {translate, translateZ, rotateZ} from 'css-functions'
 
 import theme from '../../theme'
 
-const backgroundLineColor = color(theme.cardColor).alpha(0.4).string()
+const backgroundLineColor = transparentize(0.2, theme.cardColor)
 
 export default {
   notFound: {

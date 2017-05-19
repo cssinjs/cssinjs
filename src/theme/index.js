@@ -1,4 +1,4 @@
-import color from 'color'
+import {darken} from 'polished'
 
 import {transitionDuration} from '../constants/animations'
 
@@ -22,20 +22,18 @@ export default {
   textColorInverse: base.light,
   textColorInverseActive: '#fff',
 
-  borderColor: color(base.light).darken(0.1).hex(),
+  borderColor: darken(0.1, base.light),
   cardColor: '#fff',
 
   sidebarBg: base.dark,
-  sidebarBgActive: color(base.dark).darken(0.2).hex(),
+  sidebarBgActive: darken(0.04, base.dark),
   sidebarColor: base.light,
-  sidebarBorder: color(base.light).alpha(0.15).string(),
-  sidebarShadow: color(base.dark).darken(0.4).hex(),
 
   // Size variables
   contentWidth: 1000,
 
   // Something like SASS functions
-  border: (borderColor = color(base.light).darken(0.06).hex()) => ({
+  border: (borderColor = darken(0.06, base.light)) => ({
     width: '1px', // jss-default-unit and jss-expand bug. Deep passing interprets 'width' as not a part of 'border' statement
     style: 'solid',
     color: borderColor,
