@@ -4,7 +4,7 @@ export default {
   highlightedMarkdown: {
     '@global': {
       'b, strong': {
-        fontWeight: 500
+        fontWeight: 600
       },
 
       // Link styles
@@ -20,11 +20,7 @@ export default {
 
       // Paragraphs
       p: {
-        margin: [16, 0],
-        '&:first-child': {
-          isolate: false,
-          marginTop: 0
-        },
+        marginBottom: 16
       },
 
       // Headings
@@ -46,6 +42,7 @@ export default {
       },
       h3: {
         fontSize: 20,
+        marginBottom: 16,
       },
       h4: {
         fontSize: 18,
@@ -53,8 +50,8 @@ export default {
 
       // Lists
       'ul, ol': {
-        margin: [16, 0],
-        padding: [0, 0, 0, 25]
+        margin: [0, 0, 16, 0],
+        padding: [0, 0, 0, 32]
       },
       'ul > li': {
         listStyle: 'circle',
@@ -62,11 +59,14 @@ export default {
       'ol > li': {
         listStyle: 'decimal'
       },
-      li: {
-        padding: [3, 0],
-        '& p': {
-          margin: 0
-        }
+      'ol ul': {
+        margin: 0
+      },
+      'lo > p': {
+        marginTop: 16,
+      },
+      'li + li': {
+        marginTop: 4,
       },
 
       // Divider

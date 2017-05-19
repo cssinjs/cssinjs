@@ -3,7 +3,7 @@ import color from 'color'
 import {transitionDuration} from '../constants/animations'
 
 const base = {
-  dark: '#333',
+  dark: '#24292e',
   light: '#eee',
 }
 
@@ -18,7 +18,7 @@ export default {
 
   titleColor: base.dark,
   titleColorDark: '#000',
-  textColor: color(base.dark).lighten(0.6).hex(),
+  textColor: base.dark,
   textColorInverse: base.light,
   textColorInverseActive: '#fff',
 
