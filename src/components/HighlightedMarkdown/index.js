@@ -14,6 +14,7 @@ import styles from './styles'
 const fixGitterBadge = text => text.replace(/Join Chat\.svg/g, 'JoinChat.svg')
 
 const markdownOptions = {
+  html: true,
   linkify: true
 }
 
@@ -31,7 +32,7 @@ class HighlightedMarkdown extends PureComponent {
     className: ''
   }
 
-  onIterate = (tag, props, children) => {
+  onIterate = (tag, props, children, level) => {
     if (tag === 'a') return <A {...props} page={this.props.page}>{children}</A>
     if (tag === 'code') return <Code lang={props['data-language']} text={children[0]} />
     // React throws if children are passed to img.
@@ -39,7 +40,23 @@ class HighlightedMarkdown extends PureComponent {
     if (headlines.indexOf(tag) !== -1) {
       return <H {...props} tag={tag} sheet={this.props.sheet}>{children}</H>
     }
+    // Process top level node to convert possible stringified html to real one
+    if (level === 0) children = this.iterateChildren(children, tag)
     return createElement(tag, props, children)
+  }
+
+  iterateChildren = (node, tag) => {
+    node = node.map((entry) => {
+      // Suppose, if string starts with '<' - its a html markup
+      if (typeof entry === 'string' && /<[a-z][\s\S]*>/i.test(entry)) {
+        return createElement(tag, {dangerouslySetInnerHTML: {__html: entry}})
+      }
+      if (typeof entry === 'object' && entry.children) {
+        entry.children = this.iterateChildren(entry.children, tag)
+      }
+      return entry
+    })
+    return node
   }
 
   render() {
