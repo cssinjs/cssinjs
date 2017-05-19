@@ -48,7 +48,7 @@ class HighlightedMarkdown extends PureComponent {
   iterateChildren = (node, tag) => {
     node = node.map((entry) => {
       // Suppose, if string starts with '<' - its a html markup
-      if (typeof entry === 'string' && entry.indexOf('<') === 0) {
+      if (typeof entry === 'string' && /<[a-z][\s\S]*>/i.test(entry)) {
         return createElement(tag, {dangerouslySetInnerHTML: {__html: entry}})
       }
       if (typeof entry === 'object' && entry.children) {
