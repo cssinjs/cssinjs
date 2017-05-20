@@ -95,6 +95,22 @@ export default {
       th: {
         fontWeight: 'bold',
         background: theme.cardColor,
+      },
+
+      pre: {
+        margin: {
+          top: 0,
+          bottom: 16,
+        },
+        padding: 16,
+      },
+      'code[class*="language-"], pre': {
+        font: {
+          size: 14,
+          family: theme.codeFontFamily,
+        },
+        borderRadius: 0,
+        background: theme.codeBackground,
       }
     }
   },

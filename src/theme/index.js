@@ -29,6 +29,9 @@ export default {
   sidebarBgActive: darken(0.04, base.dark),
   sidebarColor: base.light,
 
+  codeFontFamily: '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
+  codeBackground: '#f6f8fa',
+
   // Size variables
   contentWidth: 1000,
 
