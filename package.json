@@ -64,6 +64,7 @@
     "jss-preset-default": "^2.0.0",
     "markdown-react-js": "^0.3.0",
     "normalize-jss": "^3.0.0",
+    "polished": "^1.1.2",
     "preact": "^8.1.0",
     "preact-compat": "^3.10.0",
     "prismjs": "^1.5.1",
