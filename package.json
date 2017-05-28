@@ -1,23 +1,22 @@
 {
   "name": "cssinjs",
   "private": true,
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "JSS landing page",
   "author": "Pavel Davydov",
   "engines": {
     "node": "0.6.x"
   },
   "scripts": {
-    "dev-server": "cross-env NODE_ENV=development PORT=3000 node ./bin/webpack-dev-server.js",
-    "clean": "rimraf -fr './docs/!(CNAME)**'",
+    "start": "cross-env NODE_ENV=development PORT=3000 node ./bin/webpack-dev-server.js",
+    "all:prod": "npm run clean && npm run build:prod && npm run build-html",
+    "all:dev": "npm run clean && npm run build:dev && npm run build-html",
     "build:dev": "cross-env NODE_ENV=development webpack --config ./webpack.config.dev",
     "build:prod": "cross-env NODE_ENV=production webpack --config ./webpack.config.prod",
     "build-html": "cross-env NODE_ENV=production node ./bin/build-html",
-    "all:dev": "npm run clean && npm run build:dev && npm run build-html",
-    "all:prod": "npm run clean && npm run build:prod && npm run build-html",
     "lint": "eslint ./src",
     "lint:staged": "lint-staged",
-    "start": "npm run lint && npm run all:prod"
+    "clean": "rimraf -fr './docs/!(CNAME)**'"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -59,8 +58,8 @@
     "classnames": "^2.2.5",
     "css-functions": "^1.0.5",
     "is-absolute-url": "^2.1.0",
-    "jss": "^7.0.0",
-    "jss-isolate": "^2.0.0",
+    "jss": "^7.1.5",
+    "jss-isolate": "^3.0.0",
     "jss-preset-default": "^2.0.0",
     "markdown-react-js": "^0.3.0",
     "normalize-jss": "^3.0.0",
