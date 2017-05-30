@@ -111,6 +111,7 @@ export default {
         },
         borderRadius: 0,
         background: theme.codeBackground,
+        isolate: false,
       }
     }
   },
