@@ -44,7 +44,18 @@ const renderAnalytics = () => (
   `
 )
 
-const renderDoc = ({app, css, analytics}) => (
+const renderSidecar = () => (
+  stripIndents`
+    <script>
+      ((window.gitter = {}).chat = {}).options = {
+        room: '${config.site.repo}'
+      };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+  `
+)
+
+const renderDoc = ({app, css, analytics, sidecar}) => (
   stripIndents`
     <!doctype html>
     <html lang="en">
@@ -72,6 +83,7 @@ const renderDoc = ({app, css, analytics}) => (
         <script src="/vendor.bundle.v${version}.js"></script>
         <script src="/bundle.v${version}.js"></script>
         ${analytics}
+        ${sidecar}
       </body>
     </html>
   `
@@ -81,7 +93,8 @@ export default (location, callback) => {
   match({routes, location}, (error, redirectLocation, renderProps) => {
     const html = renderDoc({
       ...renderApp(renderProps),
-      analytics: renderAnalytics()
+      analytics: renderAnalytics(),
+      sidecar: renderSidecar()
     })
     callback(minify(html, minifyOptions))
   })
