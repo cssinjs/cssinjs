@@ -26,6 +26,7 @@ module.exports = {
       image: 'http://cssinjs.org/images/logo-og.png', // Can't be relative url, and can't be svg
       url: 'http://cssinjs.org/'
     },
-    repo: 'cssinjs/jss'
+    repo: 'cssinjs/jss',
+    gitter: 'cssinjs/Lobby'
   }
 }
