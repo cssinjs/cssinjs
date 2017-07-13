@@ -126,12 +126,6 @@
         "repo": "styled-jss",
         "path": "/README.md"
       },
-      "jss-theme-reactor": {
-        "title": "jss-theme-reactor",
-        "repo": "jss-theme-reactor",
-        "org": "nathanmarks",
-        "path": "/README.md"
-      },
       "aphrodite-jss": {
         "title": "aphrodite-jss",
         "repo": "aphrodite-jss",
