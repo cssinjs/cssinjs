@@ -63,7 +63,6 @@ export const findPage = (url) => {
     if (host === githubHost) {
       const meta = pathToMeta(pathname)
       if (
-          meta.org === page.org &&
           meta.repo === page.repo &&
           (!meta.view || meta.view === 'blob') &&
           (meta.path === page.path || isReadme(meta.path))
