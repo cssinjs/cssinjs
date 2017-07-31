@@ -12,11 +12,10 @@ const addDefaults = (root) => {
   const newRoot = {}
 
   for (const name in root) {
-    const page = {...root[name], name}
     newRoot[name] = {...root[name], name}
-    if (!page.org) page.org = defaultOrg
-    const {children} = page
-    if (children) page.children = addDefaults(children)
+    if (!newRoot[name].org) newRoot[name].org = defaultOrg
+    const {children} = newRoot[name]
+    if (children) newRoot[name].children = addDefaults(children)
   }
 
   return newRoot
