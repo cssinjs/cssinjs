@@ -16,7 +16,6 @@ const addDefaults = (root) => {
     if (!newRoot[name].org) newRoot[name].org = defaultOrg
     const {children} = newRoot[name]
     if (children) newRoot[name].children = addDefaults(children)
-
   }
 
   return newRoot
