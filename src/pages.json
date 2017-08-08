@@ -108,6 +108,11 @@
         "title": "jss-isolate",
         "repo": "jss-isolate",
         "path": "/readme.md"
+      },
+      "jss-template": {
+        "title": "jss-template",
+        "repo": "jss-template",
+        "path": "/readme.md"
       }
     }
   },
