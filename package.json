@@ -16,7 +16,8 @@
     "build-html": "cross-env NODE_ENV=production node ./bin/build-html",
     "lint": "eslint ./src",
     "lint:staged": "lint-staged",
-    "clean": "rimraf -fr './docs/!(CNAME)**'"
+    "clean": "rimraf -fr './docs/!(CNAME)**'",
+    "postversion": "npm run all:prod && git add . && git commit -am 'release build'"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
