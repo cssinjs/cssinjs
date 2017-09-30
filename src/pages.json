@@ -167,6 +167,11 @@
         "title": "Function values",
         "iframe": true,
         "url": "//cssinjs.github.io/examples/function-values/"
+      },
+      "observables": {
+        "title": "Observable values",
+        "iframe": true,
+        "url": "//cssinjs.github.io/examples/observables/"
       }
     }
   },
