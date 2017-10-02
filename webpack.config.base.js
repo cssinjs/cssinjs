@@ -8,15 +8,14 @@ var config = require('./package.json')
 
 module.exports = {
   entry: {
-    app: [
-      path.join(__dirname, 'src', 'client.js'),
-    ],
+    landing: [path.join(__dirname, 'src', 'landing', 'client.js')],
+    docs: [path.join(__dirname, 'src', 'docs', 'client.js')],
     vendor: Object.keys(config.dependencies)
   },
   output: {
     path: path.join(__dirname, 'docs'),
     publicPath: '/docs',
-    filename: 'bundle.v' + config.version + '.js',
+    filename: 'bundle.[name].v' + config.version + '.js',
   },
   module: {
     rules: [
@@ -36,6 +35,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      common: path.resolve(__dirname, 'src/common/'),
       react: 'preact-compat',
       'react-dom': 'preact-compat',
       // See: https://github.com/developit/preact-compat/issues/47
@@ -46,10 +46,10 @@ module.exports = {
     new ExtractTextPlugin('vendor.styles.v' + config.version + '.css'),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.bundle.v' + config.version + '.js'
+      filename: 'bundle.vendor.v' + config.version + '.js'
     }),
     new CopyFilesPlugin([{
-      from: './src/images',
+      from: './src/common/images',
       to: './images'
     }]),
     new webpack.NoEmitOnErrorsPlugin()

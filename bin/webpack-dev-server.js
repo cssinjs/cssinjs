@@ -3,11 +3,16 @@
 var WebpackDevServer = require('webpack-dev-server')
 var webpack = require('webpack')
 var express = require('express')
-var config = require('../src/config')
+var config = require('../src/common/config')
 var webpackConfig = require('../webpack.config.dev')
 
 // Add dev-server and hot reloading to webpack config.
-webpackConfig.entry.app.unshift(
+webpackConfig.entry.docs.unshift(
+  'webpack-dev-server/client?http://' + config.host + ':' + config.port + '/',
+  'webpack/hot/dev-server'
+)
+
+webpackConfig.entry.landing.unshift(
   'webpack-dev-server/client?http://' + config.host + ':' + config.port + '/',
   'webpack/hot/dev-server'
 )

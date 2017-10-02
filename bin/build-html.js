@@ -1,15 +1,17 @@
-var fs = require('fs')
-var path = require('path')
+const fs = require('fs')
+const path = require('path')
 
-var configPath = path.join(process.cwd(), '.babelrc')
-var config = JSON.parse(fs.readFileSync(configPath))
+const configPath = path.join(process.cwd(), '.babelrc')
+const config = JSON.parse(fs.readFileSync(configPath))
 
 require('babel-register')(config)
 require('ignore-styles')
 require('module-alias').addAliases(require('../webpack.config.base').resolve.alias)
 
-var render = require('../src/server').default
-var nav = require('../src/utils/navigation')
+const siteConfig = require('../src/common/config');
+const renderLanding = require('../src/landing/server').default
+const renderDocs = require('../src/docs/server').default
+const nav = require('../src/docs/utils/navigation')
 
 // Make sure there are no duplicate routes.
 function findDups(root, map = {}, dups = []) {
@@ -21,23 +23,41 @@ function findDups(root, map = {}, dups = []) {
   }
   return dups
 }
-var dups = findDups(nav.tree)
+
+const dups = findDups(nav.tree)
 
 if (dups.length) {
   console.error('Duplicate paths found:\n', dups)
   process.exit(1)
 }
 
-// Generate html files.
-const getDir = slug => path.join(__dirname, '..', `/docs${slug}`)
-Object.keys(nav.map).forEach((name) => {
+// Generate html files for docs site
+const getDir = slug => {
+  const dir = siteConfig.docs.rootDir;
+  return path.join(__dirname, '..', dir ? `/docs/${dir}/${slug}` : `/docs/${slug}`)
+}
+
+// Create docs
+const docsDir = path.join(__dirname, '..', 'docs', siteConfig.docs.rootDir)
+if (!fs.existsSync(docsDir)) {
+  fs.mkdirSync(docsDir)
+}
+
+Object.keys(nav.map).forEach(name => {
   const slug = nav.map[name].home ? '/' : `/${name}`
   const dir = getDir(slug)
   try {
     fs.mkdirSync(dir)
   } catch(err) {}
-  render(slug, (html) => {
+  renderDocs(slug, html => {
     fs.writeFileSync(path.join(dir, 'index.html'), html)
   })
 })
 
+// Create landing
+renderLanding(html => {
+  fs.writeFileSync(
+    path.join(__dirname, '..', 'docs', siteConfig.landing.rootDir, 'index.html'),
+    html
+  )
+})
