@@ -173,7 +173,7 @@
         "iframe": true,
         "url": "//cssinjs.github.io/examples/observables/"
       },
-      "observables": {
+      "swinging-cat": {
         "title": "Swinging cat",
         "iframe": true,
         "url": "//cssinjs.github.io/examples/swinging-cat/"
