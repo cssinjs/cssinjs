@@ -76,12 +76,12 @@ const renderDoc = ({app, css, analytics, sidecar}) => (
         <style id="critical-css" type="text/css">
           ${css}
         </style>
-        <link rel="stylesheet" type="text/css" href="./vendor.styles.v${version}.css" />
+        <link rel="stylesheet" type="text/css" href="/vendor.styles.v${version}.css" />
       </head>
       <body>
         ${app}
-        <script src="./bundle.vendor.v${version}.js"></script>
-        <script src="./bundle.docs.v${version}.js"></script>
+        <script src="/bundle.vendor.v${version}.js"></script>
+        <script src="/bundle.docs.v${version}.js"></script>
         ${analytics}
         ${sidecar}
       </body>
