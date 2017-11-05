@@ -76,7 +76,7 @@ const renderDoc = ({app, css, analytics, sidecar}) => (
         <style id="critical-css" type="text/css">
           ${css}
         </style>
-        <link rel="stylesheet" type="text/css" href="/vendor.styles.v${version}.css" />
+        <link rel="stylesheet" type="text/css" href="./vendor.styles.v${version}.css" />
       </head>
       <body>
         ${app}
