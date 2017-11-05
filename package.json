@@ -60,7 +60,7 @@
     "classnames": "^2.2.5",
     "css-functions": "^1.0.5",
     "is-absolute-url": "^2.1.0",
-    "jss": "^8.0.0",
+    "jss": "^8.1.0",
     "jss-isolate": "^5.0.0",
     "jss-preset-default": "^4.0.0",
     "markdown-react-js": "^0.3.0",

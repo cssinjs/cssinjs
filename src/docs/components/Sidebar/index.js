@@ -46,10 +46,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    const {
-      sheet: {classes},
-      className
-    } = this.props
+    const {classes, className} = this.props
     const {showMenu} = this.state
 
     return (

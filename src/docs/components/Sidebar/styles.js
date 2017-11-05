@@ -4,7 +4,6 @@ import theme from '../../../common/theme'
 
 export default {
   sidebar: {
-    height: '100%',
     display: 'flex',
     flexDirection: 'column',
     overflowY: 'auto',

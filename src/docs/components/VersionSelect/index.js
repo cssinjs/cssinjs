@@ -26,7 +26,7 @@ class VersionSelect extends PureComponent {
 
   render() {
     const {
-      sheet: {classes},
+      classes,
       versions,
       value
     } = this.props

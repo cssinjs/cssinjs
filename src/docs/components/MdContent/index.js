@@ -32,7 +32,7 @@ class MdContent extends PureComponent {
 
   render() {
     const {
-      sheet: {classes},
+      classes,
       editUrl,
       repo,
       org,
