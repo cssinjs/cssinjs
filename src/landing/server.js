@@ -57,8 +57,8 @@ const renderDoc = ({app, css, analytics}) => (
       </head>
       <body>
         ${app}
-        <script src="/bundle.vendor.v${version}.js"></script>
-        <script src="/bundle.landing.v${version}.js"></script>
+        <script src="./bundle.vendor.v${version}.js"></script>
+        <script src="./bundle.landing.v${version}.js"></script>
         ${analytics}
       </body>
     </html>

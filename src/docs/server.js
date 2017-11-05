@@ -80,8 +80,8 @@ const renderDoc = ({app, css, analytics, sidecar}) => (
       </head>
       <body>
         ${app}
-        <script src="/bundle.vendor.v${version}.js"></script>
-        <script src="/bundle.docs.v${version}.js"></script>
+        <script src="./bundle.vendor.v${version}.js"></script>
+        <script src="./bundle.docs.v${version}.js"></script>
         ${analytics}
         ${sidecar}
       </body>

@@ -32,7 +32,7 @@ if (dups.length) {
 }
 
 // Generate html files for docs site
-const getDir = slug => {
+const getDir = (slug) => {
   const dir = siteConfig.docs.rootDir;
   return path.join(__dirname, '..', dir ? `/docs/${dir}/${slug}` : `/docs/${slug}`)
 }
@@ -43,13 +43,13 @@ if (!fs.existsSync(docsDir)) {
   fs.mkdirSync(docsDir)
 }
 
-Object.keys(nav.map).forEach(name => {
+Object.keys(nav.map).forEach((name) => {
   const slug = nav.map[name].home ? '/' : `/${name}`
   const dir = getDir(slug)
   try {
     fs.mkdirSync(dir)
   } catch(err) {}
-  renderDocs(slug, html => {
+  renderDocs(slug, (html) => {
     fs.writeFileSync(path.join(dir, 'index.html'), html)
   })
 })
