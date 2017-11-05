@@ -1,15 +1,15 @@
 import {create as createJss} from 'jss'
-import {
-  create as createInjectSheet,
-  SheetsRegistryProvider,
-  SheetsRegistry
+import injectSheet, {
+  JssProvider,
+  SheetsRegistry,
+  ThemeProvider,
 } from 'react-jss'
 import preset from 'jss-preset-default'
 import isolate from 'jss-isolate'
 
 import theme from '../theme'
 
-export const jss = createJss(preset()).use(isolate({
+const jss = createJss(preset()).use(isolate({
   reset: {
     'box-sizing': 'border-box',
     'font-family': theme.fontFamily,
@@ -21,8 +21,10 @@ export const jss = createJss(preset()).use(isolate({
 }))
 
 export {
-  SheetsRegistryProvider,
-  SheetsRegistry
+  JssProvider,
+  SheetsRegistry,
+  ThemeProvider,
+  jss
 }
 
-export default createInjectSheet(jss)
+export default injectSheet

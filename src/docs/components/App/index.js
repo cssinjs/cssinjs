@@ -1,12 +1,13 @@
 import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 
-import injectSheet from 'common/utils/jss'
+import injectSheet, {jss, ThemeProvider, JssProvider} from 'common/utils/jss'
 import GlobalStyles from 'common/components/GlobalStyles'
 
 import {isAfter} from '../../utils/navigation'
 import Sidebar from '../Sidebar'
 import styles from './styles'
+import theme from 'common/theme'
 
 let prevLocation
 
@@ -26,26 +27,29 @@ const getTransition = (location) => {
   return transition
 }
 
-const App = (props) => {
-  const {children, location, sheet: {classes}} = props
+const App = ({children, location, classes}) => {
   const transition = getTransition(location)
 
   return (
-    <GlobalStyles>
-      <div className={classes.app}>
-        <Sidebar className={classes.sidebar} />
-        <div className={classes.content}>
-          <RouteTransition
-            className={classes.contentInner}
-            pathname={location.pathname}
-            runOnMount={false}
-            {...transition}
-          >
-            {children}
-          </RouteTransition>
-        </div>
-      </div>
-    </GlobalStyles>
+    <JssProvider jss={jss}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles>
+          <div className={classes.app}>
+            <Sidebar className={classes.sidebar} />
+            <div className={classes.content}>
+              <RouteTransition
+                className={classes.contentInner}
+                pathname={location.pathname}
+                runOnMount={false}
+                {...transition}
+              >
+                {children}
+              </RouteTransition>
+            </div>
+          </div>
+        </GlobalStyles>
+      </ThemeProvider>
+    </JssProvider>
   )
 }
 

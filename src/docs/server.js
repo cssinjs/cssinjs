@@ -4,7 +4,7 @@ import {match, RouterContext} from 'react-router'
 import {stripIndents} from 'common-tags'
 import {minify} from 'html-minifier'
 
-import {SheetsRegistryProvider, SheetsRegistry} from 'common/utils/jss'
+import {JssProvider, SheetsRegistry} from 'common/utils/jss'
 import {docs as config} from 'common/config'
 
 import routes from './routes'
@@ -19,9 +19,9 @@ const renderApp = (renderProps) => {
   const sheets = new SheetsRegistry()
 
   const app = renderToString(
-    <SheetsRegistryProvider registry={sheets}>
+    <JssProvider registry={sheets}>
       <RouterContext {...renderProps} />
-    </SheetsRegistryProvider>
+    </JssProvider>
   )
 
   return {
