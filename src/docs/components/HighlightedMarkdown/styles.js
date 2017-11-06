@@ -1,6 +1,4 @@
-import theme from '../../../common/theme'
-
-export default {
+export default theme => ({
   highlightedMarkdown: {
     '@global': {
       'b, strong': {
@@ -135,4 +133,4 @@ export default {
     },
     opacity: 0
   }
-}
+})

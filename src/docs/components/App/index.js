@@ -1,7 +1,7 @@
 import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 
-import injectSheet, {jss, ThemeProvider, JssProvider} from 'common/utils/jss'
+import injectSheet from 'common/utils/jss'
 import GlobalStyles from 'common/components/GlobalStyles'
 
 import {isAfter} from '../../utils/navigation'
@@ -31,25 +31,21 @@ const App = ({children, location, classes}) => {
   const transition = getTransition(location)
 
   return (
-    <JssProvider jss={jss}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles>
-          <div className={classes.app}>
-            <Sidebar className={classes.sidebar} />
-            <div className={classes.content}>
-              <RouteTransition
-                className={classes.contentInner}
-                pathname={location.pathname}
-                runOnMount={false}
-                {...transition}
-              >
-                {children}
-              </RouteTransition>
-            </div>
-          </div>
-        </GlobalStyles>
-      </ThemeProvider>
-    </JssProvider>
+    <GlobalStyles>
+      <div className={classes.app}>
+        <Sidebar className={classes.sidebar} />
+        <div className={classes.content}>
+          <RouteTransition
+            className={classes.contentInner}
+            pathname={location.pathname}
+            runOnMount={false}
+            {...transition}
+          >
+            {children}
+          </RouteTransition>
+        </div>
+      </div>
+    </GlobalStyles>
   )
 }
 

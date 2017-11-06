@@ -1,6 +1,4 @@
-import theme from '../../../common/theme'
-
-export default {
+export default theme => ({
   menuItem: {
     color: theme.textColorInverse,
     display: 'block',
@@ -19,10 +17,10 @@ export default {
   },
   active: {
     opacity: 1,
-    color: theme.themeColor,
+    color: theme.color,
     '&:hover': {
       isolate: false,
-      color: theme.themeColor,
+      color: theme.color,
     }
   },
 
@@ -38,4 +36,4 @@ export default {
   level2: {
     paddingLeft: 30,
   }
-}
+})

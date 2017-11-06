@@ -1,6 +1,4 @@
-import theme from '../../../common/theme'
-
-export default {
+export default theme => ({
   githubWidget: {
     opacity: 0,
     color: theme.textColorInverse,
@@ -41,10 +39,10 @@ export default {
   },
   iconStar: {
     extend: 'icon',
-    fill: theme.themeColor,
+    fill: theme.color,
   },
   iconGithub: {
     extend: 'icon',
     fill: theme.textColorInverse,
   }
-}
+})

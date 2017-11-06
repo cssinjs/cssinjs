@@ -12,7 +12,7 @@ export default {
   fontSize: 16,
   lineHeight: 1.5,
 
-  themeColor: '#f7df1e', // Main theme color
+  color: '#f7df1e', // Main theme color
 
   pageBackground: '#fff',
 

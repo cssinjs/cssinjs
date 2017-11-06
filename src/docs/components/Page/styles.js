@@ -1,6 +1,4 @@
-import theme from '../../../common/theme'
-
-export default {
+export default theme => ({
   page: {
     minHeight: '100vh',
     background: theme.pageBackground,
@@ -15,4 +13,4 @@ export default {
       padding: [30, 20],
     }
   }
-}
+})

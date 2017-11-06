@@ -1,6 +1,4 @@
-import theme from 'common/theme'
-
-export default {
+export default theme => ({
   versionSelect: {
     display: 'flex',
     alignItems: 'center',
@@ -21,4 +19,4 @@ export default {
       lineHeight: 'normal',
     }
   }
-}
+})

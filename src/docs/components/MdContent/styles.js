@@ -1,6 +1,4 @@
-import theme from '../../../common/theme'
-
-export default {
+export default theme => ({
   mdContent: {},
   content: {
     position: 'relative',
@@ -44,4 +42,4 @@ export default {
       justifyContent: 'center'
     }
   }
-}
+})

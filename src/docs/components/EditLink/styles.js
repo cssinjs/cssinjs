@@ -1,6 +1,4 @@
-import theme from '../../../common/theme'
-
-export default {
+export default theme => ({
   editLink: {
     display: 'flex',
     alignItems: 'center',
@@ -28,4 +26,4 @@ export default {
     verticalAlign: 'middle',
     textTransform: 'uppercase'
   }
-}
+})

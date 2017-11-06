@@ -1,11 +1,9 @@
 import {rotateZ, translateX} from 'css-functions'
 
-import theme from '../../../common/theme'
-
 const size = 22
 const barWeight = 2
 
-export default {
+export default theme => ({
   hamburger: {
     width: size,
     height: size,
@@ -58,4 +56,4 @@ export default {
     composes: '$bar',
     bottom: 0,
   }
-}
+})

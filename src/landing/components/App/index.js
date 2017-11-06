@@ -9,7 +9,7 @@ const styles = {
 }
 
 const App = (props) => {
-  const {children, sheet: {classes}} = props
+  const {children, classes} = props
 
   return (
     <GlobalStyles>

@@ -2,11 +2,11 @@ import React, {PropTypes} from 'react'
 import cn from 'classnames'
 
 import Icon from './Icon'
-import theme from '../../../common/theme'
+import theme from 'common/theme'
 
 const Logo = ({className, strokeColor, backgroundColor, textColor}) => (
   <Icon>
-    {({sheet: {classes}}) => (
+    {({classes}) => (
       <svg
         className={cn(classes.icon, className)}
         xmlns="http://www.w3.org/2000/svg"

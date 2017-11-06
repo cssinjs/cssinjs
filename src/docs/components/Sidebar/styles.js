@@ -1,8 +1,6 @@
 import {translateX} from 'css-functions'
 
-import theme from '../../../common/theme'
-
-export default {
+export default theme => ({
   sidebar: {
     display: 'flex',
     flexDirection: 'column',
@@ -84,4 +82,4 @@ export default {
       background: 'transparent',
     },
   }
-}
+})
