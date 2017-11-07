@@ -3,7 +3,7 @@ import {Motion, spring} from 'react-motion'
 
 import injectSheet from 'common/utils/jss'
 
-import {NotFound as NotFoundIcon} from '../icons'
+import {NotFound as NotFoundIcon} from 'common/components/icons'
 import styles from './styles'
 
 /**

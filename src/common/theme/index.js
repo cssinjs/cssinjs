@@ -14,6 +14,16 @@ export default {
 
   color: '#f7df1e', // Main theme color
 
+  backgroundLight: '#fff',
+  backgroundLightDeep: base.light,
+  backgroundDark: base.dark,
+  backgroundDarkDeep: darken(0.04, base.dark),
+
+  colorLight: base.dark,
+  colorLightDeep: base.dark,
+  colorDark: base.light,
+  colorDarkDeep: base.light,
+
   pageBackground: '#fff',
 
   titleColor: base.dark,

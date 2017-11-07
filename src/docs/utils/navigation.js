@@ -1,7 +1,7 @@
-import {primaryHost as githubHost, org as defaultOrg} from '../constants/github'
-import pages from '../pages'
+import {primaryHost as githubHost, org as defaultOrg} from 'common/constants/github'
+import {pathToMeta, isReadme} from 'common/utils/github'
 import {parse as parseUrl} from './url'
-import {pathToMeta, isReadme} from './github'
+import pages from '../pages'
 
 /**
  * Add to the structure:

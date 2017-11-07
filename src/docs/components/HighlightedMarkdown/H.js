@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes, createElement} from 'react'
 import {Link} from 'react-scroll'
 import {scrollDuration} from 'common/constants/animations'
-import {Link as LinkIcon} from '../icons'
+import {Link as LinkIcon} from 'common/components/icons'
 
 const createId = (data) => {
   if (Array.isArray(data)) {

@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
 import {docs as config} from 'common/config'
+import {getBlobUrl} from 'common/utils/github'
 import {findPage, map} from '../../utils/navigation'
 import {isAbsolute, isHash, resolve, parse} from '../../utils/url'
-import {getBlobUrl} from '../../utils/github'
 
 const rootUrl = config.rootDir ? `/${config.rootDir}` : ''
 

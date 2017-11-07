@@ -1,6 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
+import {loadRawFile, getBlobUrl, org as organization} from 'common/utils/github'
 import MdContent from '../components/MdContent'
-import {loadRawFile, getBlobUrl, org as organization} from '../utils/github'
 
 const loadCachedFile = (() => {
   const cache = {}

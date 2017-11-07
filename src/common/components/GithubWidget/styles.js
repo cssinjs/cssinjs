@@ -1,7 +1,7 @@
 export default theme => ({
   githubWidget: {
     opacity: 0,
-    color: theme.textColorInverse,
+    color: 'inherit',
     display: 'flex',
     alignItems: 'center',
     textDecoration: 'none',
@@ -16,6 +16,7 @@ export default theme => ({
     opacity: 1
   },
   item: {
+    marginLeft: 20,
     textAlign: 'center',
     flexGrow: 1,
     display: 'flex',
@@ -23,13 +24,14 @@ export default theme => ({
     alignItems: 'center',
     // Fix of justify-content for IE10
     MsFlexPack: 'center',
-    width: '50%',
     // Fix for IE10
     maxHeight: 50,
+    '&:first-child': {
+      marginLeft: 0
+    }
   },
   text: {
-    lineHeight: 5,
-    color: theme.textColorInverseActive
+    lineHeight: 5
   },
   icon: {
     margin: {
@@ -43,6 +45,6 @@ export default theme => ({
   },
   iconGithub: {
     extend: 'icon',
-    fill: theme.textColorInverse,
+   fill: 'currentColor',
   }
 })

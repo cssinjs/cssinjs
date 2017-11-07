@@ -1,12 +1,10 @@
 import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
-
-import {Github, Star} from '../icons'
-import {primaryHost} from '../../constants/github'
+import {numberWithCommas} from 'common/utils/string'
+import {Github, Star} from 'common/components/icons'
+import {primaryHost} from 'common/constants/github'
 import styles from './styles'
-
-const formatStars = num => String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 
 /**
  * Component, for displaying link to GitHub repository and stars counter.
@@ -29,7 +27,7 @@ function GithubWidget(props) {
       <span className={classes.item}>
         <Star className={classes.iconStar} />
         <span className={classes.text}>
-          {formatStars(stars)}
+          {numberWithCommas(stars)}
         </span>
       </span>
       <span className={classes.item}>

@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 
 import injectSheet from 'common/utils/jss'
-import {org as organization} from '../../utils/github'
+import {org as organization} from 'common/utils/github'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'

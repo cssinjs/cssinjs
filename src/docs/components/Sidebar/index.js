@@ -2,11 +2,11 @@ import React, {Component, PropTypes} from 'react'
 import Link from 'react-router/lib/Link'
 import cn from 'classnames'
 
-import {docs as config} from 'common/config'
+import {repo, docs as config} from 'common/config'
 import injectSheet from 'common/utils/jss'
 
-import {Logo} from '../icons'
-import GithubWidget from '../../containers/GithubWidget'
+import {Logo} from 'common/components/icons'
+import GithubWidget from 'common/containers/GithubWidget'
 import Hamburger from '../Hamburger'
 import Menu from '../Menu'
 import styles from './styles'
@@ -54,7 +54,7 @@ class Sidebar extends Component {
         <Link to={`/${config.rootDir}`} className={classes.logoContainer}>
           <Logo className={classes.logo} />
         </Link>
-        <GithubWidget className={classes.counter} repo={config.repo} />
+        <GithubWidget className={classes.counter} repo={repo} />
         <button className={classes.toggle} onClick={this.onToggleMenu}>
           <Hamburger active={showMenu} />
         </button>
