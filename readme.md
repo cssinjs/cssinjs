@@ -1,3 +1,5 @@
+# TODO Return back CNAME file. It was removed due to publishing errors
+
 # JSS Landing & documentation site
 
 http://cssinjs.org
