@@ -1,13 +1,10 @@
 import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
-
 import injectSheet from 'common/utils/jss'
 import GlobalStyles from 'common/components/GlobalStyles'
-
+import styles from './styles'
 import {isAfter} from '../../utils/navigation'
 import Sidebar from '../Sidebar'
-import styles from './styles'
-import theme from 'common/theme'
 
 let prevLocation
 
@@ -51,7 +48,7 @@ const App = ({children, location, classes}) => {
 
 App.propTypes = {
   location: React.PropTypes.object.isRequired,
-  sheet: React.PropTypes.object.isRequired,
+  classes: React.PropTypes.object.isRequired,
   children: React.PropTypes.node.isRequired
 }
 

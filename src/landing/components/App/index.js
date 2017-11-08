@@ -2,21 +2,22 @@ import React from 'react'
 import injectSheet from 'common/utils/jss'
 import GlobalStyles from 'common/components/GlobalStyles'
 import Section from '../Section'
+import Home from '../Home'
 
-const styles = theme => ({
+const styles = {
   app: {
     position: 'relative'
   }
-})
+}
 
 const App = (props) => {
-  const {children, classes} = props
+  const {classes} = props
 
   return (
     <GlobalStyles>
       <div className={classes.app}>
         <Section showHeader={false}>
-          {'> Home section'}
+          <Home />
         </Section>
         <Section colorScheme={'dark'}>
           {'> Used by'}
@@ -33,16 +34,13 @@ const App = (props) => {
         <Section colorScheme={'darkDeep'}>
           {'> Animations'}
         </Section>
-
-        {children}
       </div>
     </GlobalStyles>
   )
 }
 
 App.propTypes = {
-  sheet: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired
+  classes: React.PropTypes.object.isRequired
 }
 
 export default injectSheet(styles)(App)

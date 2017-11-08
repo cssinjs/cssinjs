@@ -13,7 +13,7 @@ import styles from './styles'
  */
 class MdContent extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
     content: PropTypes.string.isRequired,
     onChangeVersion: PropTypes.func.isRequired,
     editUrl: PropTypes.string.isRequired,

@@ -4,7 +4,7 @@ import injectSheet from 'common/utils/jss'
 import {content} from '../../constants/size'
 import {lg as mediaLg} from '../../constants/media'
 
-const styles = theme => ({
+const styles = {
   container: {
     maxWidth: content,
     width: '100%',
@@ -17,7 +17,7 @@ const styles = theme => ({
       width: '100%'
     }
   }
-})
+}
 
 const Container = (props) => {
   const {children, className, classes} = props
@@ -30,9 +30,13 @@ const Container = (props) => {
 }
 
 Container.propTypes = {
-  sheet: React.PropTypes.object.isRequired,
+  classes: React.PropTypes.object.isRequired,
   children: React.PropTypes.node.isRequired,
   className: React.PropTypes.string
+}
+
+Container.defaultProps = {
+  className: null
 }
 
 export default injectSheet(styles)(Container)

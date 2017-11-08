@@ -26,15 +26,15 @@ module.exports = {
   landing: {
     rootDir: '',
     head: {
-      title: title,
+      title,
       description: landingDescription,
-      keywords: keywords
+      keywords
     },
     og: {
-      title: title,
+      title,
       description: landingDescription,
       type: 'website',
-      image: absoluteUrl + 'images/logo-og.png', // Can't be relative url, and can't be svg
+      image: `${absoluteUrl}images/logo-og.png`, // Can't be relative url, and can't be svg
       url: absoluteUrl
     }
   },
@@ -42,16 +42,16 @@ module.exports = {
   docs: {
     rootDir: 'docs',
     head: {
-      title: title,
+      title,
       description: docsDescription,
-      keywords: keywords
+      keywords
     },
     og: {
-      title: title,
+      title,
       description: docsDescription,
       type: 'website',
-      image: absoluteUrl + 'images/logo-og.png', // Can't be relative url, and can't be svg
-      url: absoluteUrl + 'docs'
+      image: `${absoluteUrl}images/logo-og.png`, // Can't be relative url, and can't be svg
+      url: `${absoluteUrl}docs`
     }
   }
 }

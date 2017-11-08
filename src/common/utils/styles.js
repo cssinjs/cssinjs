@@ -8,15 +8,22 @@ import theme from 'common/theme'
  */
 export const getColorSchemes = () => {
   const result = {}
-  schemes.forEach(scheme => {
+  schemes.forEach((scheme) => {
     result[scheme] = {
       background: theme[`background${ucfirst(scheme)}`],
-      color: theme[`color${ucfirst(scheme)}`]
+      color: theme[`textColor${ucfirst(scheme)}`]
     }
   })
   return result
 }
 
+/**
+ * @param {string} scheme
+ * @returns {boolean}
+ */
+export const isInverseScheme = scheme => scheme.indexOf('dark') !== -1
+
 export default {
-  getColorSchemes
+  getColorSchemes,
+  isInverseScheme
 }

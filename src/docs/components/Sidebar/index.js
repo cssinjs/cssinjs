@@ -1,10 +1,8 @@
 import React, {Component, PropTypes} from 'react'
 import Link from 'react-router/lib/Link'
 import cn from 'classnames'
-
 import {repo, docs as config} from 'common/config'
 import injectSheet from 'common/utils/jss'
-
 import {Logo} from 'common/components/icons'
 import GithubWidget from 'common/containers/GithubWidget'
 import Hamburger from '../Hamburger'
@@ -13,7 +11,7 @@ import styles from './styles'
 
 class Sidebar extends Component {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
     className: PropTypes.string
   }
 
@@ -52,7 +50,7 @@ class Sidebar extends Component {
     return (
       <aside className={cn(classes.sidebar, className)}>
         <Link to={`/${config.rootDir}`} className={classes.logoContainer}>
-          <Logo className={classes.logo} />
+          <Logo className={classes.logo} inverse />
         </Link>
         <GithubWidget className={classes.counter} repo={repo} />
         <button className={classes.toggle} onClick={this.onToggleMenu}>

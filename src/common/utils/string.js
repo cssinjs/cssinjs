@@ -3,7 +3,7 @@
  * @param {string} text
  * @returns {string}
  */
-export const ucfirst = text => {
+export const ucfirst = (text) => {
   const char = text.charAt(0).toUpperCase()
   return char + text.substr(1, text.length - 1)
 }

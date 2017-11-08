@@ -1,5 +1,4 @@
 import React, {PureComponent, PropTypes} from 'react'
-
 import injectSheet from 'common/utils/jss'
 import styles from './styles'
 
@@ -12,7 +11,7 @@ class VersionSelect extends PureComponent {
     onChange: PropTypes.func.isRequired,
     versions: PropTypes.arrayOf(PropTypes.string).isRequired,
     value: PropTypes.string,
-    sheet: React.PropTypes.object.isRequired
+    classes: React.PropTypes.object.isRequired
   }
 
   static defaultProps = {

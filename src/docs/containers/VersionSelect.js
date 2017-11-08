@@ -1,6 +1,6 @@
 import React, {PureComponent, PropTypes} from 'react'
-import VersionSelect from '../components/VersionSelect'
 import {loadTags, org as organization} from 'common/utils/github'
+import VersionSelect from '../components/VersionSelect'
 
 // Last version used for a certain repository.
 // Once user switches to another page from the same repository, he doesn't

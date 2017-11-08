@@ -45,6 +45,6 @@ export default theme => ({
   },
   iconGithub: {
     extend: 'icon',
-   fill: 'currentColor',
+    fill: 'currentColor',
   }
 })

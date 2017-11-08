@@ -1,16 +1,17 @@
 import React from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
-import {getColorSchemes} from 'common/utils/styles'
+import {getColorSchemes, isInverseScheme} from 'common/utils/styles'
 import {ucfirst} from 'common/utils/string'
 import colorSchemes from 'common/constants/colorScheme'
+import Button from 'common/components/Button'
 import GithubWidget from 'common/containers/GithubWidget'
 import {repo} from 'common/config'
 import theme from 'common/theme'
 import {Logo} from 'common/components/icons'
 import Container from '../Container'
 
-const styles = theme => ({
+const styles = {
   ...getColorSchemes(),
   header: {
     position: 'fixed',
@@ -43,11 +44,11 @@ const styles = theme => ({
     marginRight: 20,
     fontSize: 15
   }
-})
+}
 
 const Header = (props) => {
-  const {children, classes, colorScheme} = props
-  const color = theme[`color${ucfirst(colorScheme)}`]
+  const {classes, colorScheme} = props
+  const color = theme[`textColor${ucfirst(colorScheme)}`]
 
   return (
     <div className={cn(classes.header, classes[colorScheme])}>
@@ -57,10 +58,11 @@ const Header = (props) => {
           strokeColor={color}
           textColor={color}
         />
-        <div class={classes.actions}>
+        <div className={classes.actions}>
           <GithubWidget className={classes.widget} repo={repo} />
-
-          Star + GitHub + Button
+          <Button href={'/docs/setup'} inverse={isInverseScheme(colorScheme)}>
+            Try JSS Now
+          </Button>
         </div>
       </Container>
     </div>
@@ -68,8 +70,8 @@ const Header = (props) => {
 }
 
 Header.propTypes = {
-  sheet: React.PropTypes.object.isRequired,
-  colorScheme: React.PropTypes.oneOf(colorSchemes)
+  classes: React.PropTypes.object.isRequired,
+  colorScheme: React.PropTypes.oneOf(colorSchemes).isRequired
 }
 
 export default injectSheet(styles)(Header)

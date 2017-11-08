@@ -61,7 +61,7 @@ class HighlightedMarkdown extends PureComponent {
   }
 
   render() {
-    const {classes, className, text} = this.props
+    const {sheet: {classes}, className, text} = this.props
 
     // Server side rendering throws erros.
     // So we need to handle situation when text comes undefined

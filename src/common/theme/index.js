@@ -8,21 +8,26 @@ const base = {
 }
 
 export default {
+  dark: base.dark,
+  light: base.light,
+
   fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   fontSize: 16,
   lineHeight: 1.5,
 
   color: '#f7df1e', // Main theme color
 
+  radius: 0,
+
   backgroundLight: '#fff',
   backgroundLightDeep: base.light,
   backgroundDark: base.dark,
   backgroundDarkDeep: darken(0.04, base.dark),
 
-  colorLight: base.dark,
-  colorLightDeep: base.dark,
-  colorDark: base.light,
-  colorDarkDeep: base.light,
+  textColorLight: base.dark,
+  textColorLightDeep: base.dark,
+  textColorDark: base.light,
+  textColorDarkDeep: base.light,
 
   pageBackground: '#fff',
 
@@ -31,6 +36,9 @@ export default {
   textColor: base.dark,
   textColorInverse: base.light,
   textColorInverseActive: '#fff',
+
+  transitionDuration: 300,
+  transitionTimingFunction: 'cubic-bezier(0.77, 0, 0.175, 1)',
 
   borderColor: darken(0.1, base.light),
   cardColor: '#fff',

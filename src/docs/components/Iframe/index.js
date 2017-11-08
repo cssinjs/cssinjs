@@ -10,7 +10,7 @@ Iframe.propTypes = {
   sheet: PropTypes.object.isRequired
 }
 
-const styles = theme => ({
+const styles = {
   iframe: {
     width: '100%',
     height: '100vh',
@@ -18,6 +18,6 @@ const styles = theme => ({
     border: 0,
     display: 'block'
   }
-})
+}
 
 export default injectSheet(styles)(Iframe)

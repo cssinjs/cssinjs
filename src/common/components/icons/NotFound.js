@@ -1,9 +1,7 @@
 import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import {translateZ} from 'css-functions'
-
 import injectSheet from 'common/utils/jss'
-import theme from 'common/theme'
 
 const styles = theme => ({
   logo: {

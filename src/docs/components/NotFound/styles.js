@@ -1,7 +1,7 @@
 import transparentize from 'polished/lib/color/transparentize'
 import {translate, translateZ, rotateZ} from 'css-functions'
 
-export default theme => {
+export default (theme) => {
   const backgroundLineColor = transparentize(0.2, theme.cardColor)
 
   return {

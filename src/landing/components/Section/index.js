@@ -5,7 +5,7 @@ import {getColorSchemes} from 'common/utils/styles'
 import colorSchemes from 'common/constants/colorScheme'
 import Header from '../Header'
 
-const styles = theme => ({
+const styles = {
   ...getColorSchemes(),
   section: {
     position: 'relative',
@@ -24,18 +24,19 @@ const styles = theme => ({
   content: {
     minHeight: 400,
   }
-})
+}
 
 class Section extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
     children: PropTypes.node.isRequired,
     showHeader: PropTypes.bool,
     colorScheme: PropTypes.oneOf(colorSchemes)
   }
 
   static defaultProps = {
-    showHeader: true
+    showHeader: true,
+    colorScheme: null
   }
 
   renderHeader = () => {
