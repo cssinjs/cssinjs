@@ -51,15 +51,15 @@ const renderDoc = ({app, css, analytics}) => (
         <meta property="og:type" content="${config.og.type}" />
         <meta property="og:image" content="${config.og.image}" />
         <meta property="og:url" content="${config.og.url}" />
-        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="./images/favicon.ico" />
         <style id="critical-css" type="text/css">
           ${css}
         </style>
       </head>
       <body>
         ${app}
-        <script src="/bundle.vendor.v${version}.js"></script>
-        <script src="/bundle.landing.v${version}.js"></script>
+        <script src="./bundle.vendor.v${version}.js"></script>
+        <script src="./bundle.landing.v${version}.js"></script>
         ${analytics}
       </body>
     </html>
