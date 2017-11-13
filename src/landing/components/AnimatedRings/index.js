@@ -1,8 +1,9 @@
 import React from 'react'
 import injectSheet from 'common/utils/jss'
+import AnimatedRing from './AnimatedRing'
 
-const styles = theme => ({
-  home: {
+const styles = {
+  container: {
     height: '100%',
     width: '100%'
   },
@@ -16,20 +17,34 @@ const styles = theme => ({
   },
   content: {
     position: 'relative',
-    zIndex: 2
-  },
-  // TODO: Design rings
-  ring: {
-    color: theme.color
+    zIndex: 2,
+    height: '100%'
   }
-})
+}
 
-const AnimatedRings = ({children, classes}) => (
+const renderRings = (count, inverse) => {
+  const rings = []
+  const minSize = 0.6
+  const size = Math.random()
+
+  for (let i = 0; i < count; i++) {
+    // Fully random, between 0 and 1
+    rings.push(
+      <AnimatedRing
+        size={size > minSize ? size : minSize}
+        x={Math.random()}
+        y={Math.random()}
+        inverse={inverse}
+      />
+    )
+  }
+  return rings
+}
+
+const AnimatedRings = ({children, classes, count, inverse}) => (
   <div className={classes.container}>
     <div className={classes.rings}>
-
-      Rings here
-
+      {renderRings(count, inverse)}
     </div>
     <div className={classes.content}>
       {children}
@@ -39,7 +54,14 @@ const AnimatedRings = ({children, classes}) => (
 
 AnimatedRings.propTypes = {
   classes: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
+  count: React.PropTypes.number,
+  inverse: React.PropTypes.bool
+}
+
+AnimatedRings.defaultProps = {
+  count: 3,
+  inverse: false
 }
 
 export default injectSheet(styles)(AnimatedRings)

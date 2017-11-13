@@ -58,7 +58,7 @@ const Home = (props) => {
   return (
     <div className={classes.home}>
       <div className={classes.left}>
-        <AnimatedRings>
+        <AnimatedRings inverse>
           <Center vertical>
 
             Home section content
