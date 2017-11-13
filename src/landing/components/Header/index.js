@@ -46,8 +46,7 @@ const styles = {
   }
 }
 
-const Header = (props) => {
-  const {classes, colorScheme} = props
+const Header = ({classes, colorScheme}) => {
   const color = theme[`textColor${ucfirst(colorScheme)}`]
 
   return (

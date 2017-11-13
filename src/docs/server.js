@@ -4,7 +4,8 @@ import {match, RouterContext} from 'react-router'
 import {stripIndents} from 'common-tags'
 import {minify} from 'html-minifier'
 
-import {jss, JssProvider, SheetsRegistry} from 'common/utils/jss'
+import {JssProvider, ThemeProvider, SheetsRegistry} from 'common/utils/jss'
+import theme from 'common/theme'
 import {docs as config} from 'common/config'
 
 import routes from './routes'
@@ -18,10 +19,14 @@ const minifyOptions = {
 const renderApp = (renderProps) => {
   const sheets = new SheetsRegistry()
 
+  // TODO: SSR not working.
+  // Just compiled empty critical css and no html
   const app = renderToString(
-    <JssProvider registry={sheets} jss={jss}>
-      <RouterContext {...renderProps} />
-    </JssProvider>
+    <ThemeProvider theme={theme}>
+      <JssProvider registry={sheets}>
+        <RouterContext {...renderProps} />
+      </JssProvider>
+    </ThemeProvider>
   )
 
   return {

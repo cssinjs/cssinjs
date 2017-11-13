@@ -47,8 +47,7 @@ const styles = theme => ({
   }
 })
 
-const Button = (props) => {
-  const {children, classes, href, inverse} = props
+const Button = ({children, classes, href, inverse}) => {
   const buttonClasses = cn({
     [classes.button]: true,
     [classes.inverse]: inverse
