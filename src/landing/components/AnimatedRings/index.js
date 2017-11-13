@@ -13,12 +13,24 @@ const styles = {
     right: 0,
     bottom: 0,
     top: 0,
-    zIndex: 1
+    zIndex: 1,
+    // Needed for SSR. Because there are blinking rings animations
+    opacity: 0,
+    animation: {
+      name: 'appear',
+      duration: '500ms',
+      delay: '1000ms',
+      fillMode: 'both'
+    },
   },
   content: {
     position: 'relative',
     zIndex: 2,
     height: '100%'
+  },
+  '@keyframes appear': {
+    from: {opacity: 0},
+    to: {opacity: 1},
   }
 }
 
