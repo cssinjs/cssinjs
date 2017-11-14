@@ -14,11 +14,10 @@ const styles = {
     border: [12, 'solid', '#fff'],
     transformOrigin: '40%',
     transform: translate('-50%', '-50%'),
-    width: ({size}) => `${size * 200}vh`,
-    height: ({size}) => `${size * 200}vh`,
+    width: ({size}) => `${size * 250}vh`,
+    height: ({size}) => `${size * 250}vh`,
     left: ({x}) => `${Math.floor(x * 100)}%`,
     top: ({y}) => `${Math.floor(y * 100)}%`,
-    opacity: ({inverse}) => (inverse ? 0.05 : 0.25),
     animation: {
       name: 'rotate',
       duration: '90s',
@@ -44,14 +43,12 @@ const AnimatedRing = ({classes}) => (
 /* Because default props, that are used only in styles generates eslint error */
 AnimatedRing.propTypes = {
   classes: React.PropTypes.object.isRequired,
-  inverse: React.PropTypes.bool,
   size: React.PropTypes.number,
   x: React.PropTypes.number,
   y: React.PropTypes.number
 }
 
 AnimatedRing.defaultProps = {
-  inverse: false,
   size: 1,
   x: 0.5,
   y: 0.5

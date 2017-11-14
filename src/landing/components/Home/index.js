@@ -1,13 +1,19 @@
 import React, {PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
+import transparentize from 'polished/lib/color/transparentize'
 import {Logo} from 'common/components/icons'
 import AnimatedRings from '../AnimatedRings'
 import Center from '../Center'
+import Title from './Title'
 
 const styles = theme => ({
   home: {
     minHeight: '100vh',
-    display: 'flex'
+    display: 'flex',
+    position: 'relative',
+    overflow: 'hidden',
+    background: theme.backgroundDarkDeep,
+    color: theme.textColorDarkDeep,
   },
   column: {
     display: 'flex',
@@ -17,17 +23,22 @@ const styles = theme => ({
   },
   left: {
     composes: '$column',
-    width: '60%',
-    background: theme.backgroundDarkDeep,
-    color: theme.textColorDarkDeep,
-    padding: 80
+    width: '100%',
+    zIndex: 5,
+    padding: 80,
+    background: transparentize(0.2, theme.backgroundDarkDeep),
+    marginRight: '40%'
   },
   right: {
-    composes: '$column',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
     width: '40%',
+  },
+  overlay: {
+    composes: '$right',
     background: theme.color,
-    color: theme.textColorLight,
-    justifyContent: 'center',
     '&::after': {
       content: '""',
       position: 'absolute',
@@ -44,11 +55,30 @@ const styles = theme => ({
       }
     }
   },
+  holder: {
+    composes: ['$column', '$right'],
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    background: 'transparent',
+    justifyContent: 'center',
+    zIndex: 10
+  },
   logo: {
-    width: '75%',
+    maxWidth: 300,
+    width: '60%',
     height: 'auto',
     position: 'relative',
-    zIndex: 2
+  },
+  rings: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: 5,
+    opacity: 0.25
   }
 })
 
@@ -57,21 +87,15 @@ const Home = (props) => {
 
   return (
     <div className={classes.home}>
+      <AnimatedRings className={classes.rings} />
       <div className={classes.left}>
-        <AnimatedRings inverse>
-          <Center vertical>
-
-            Home section content
-
-          </Center>
-        </AnimatedRings>
+        <Center vertical>
+          <Title />
+        </Center>
       </div>
-      <div className={classes.right}>
-        <AnimatedRings>
-          <Center>
-            <Logo className={classes.logo} />
-          </Center>
-        </AnimatedRings>
+      <div className={classes.overlay} />
+      <div className={classes.holder}>
+        <Logo className={classes.logo} />
       </div>
     </div>
   )

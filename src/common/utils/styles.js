@@ -23,7 +23,20 @@ export const getColorSchemes = () => {
  */
 export const isInverseScheme = scheme => scheme.indexOf('dark') !== -1
 
+/**
+ * @param {string} duration
+ * @param {string} delay
+ * @returns {Object}
+ */
+export const transition = (duration = `${theme.transitionDuration}ms`, delay = '0ms') => ({
+  property: 'all',
+  timingFunction: theme.transitionTimingFunction,
+  duration,
+  delay,
+})
+
 export default {
   getColorSchemes,
-  isInverseScheme
+  isInverseScheme,
+  transition
 }
