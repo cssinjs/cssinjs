@@ -21,7 +21,10 @@ export const getColorSchemes = () => {
  * @param {string} scheme
  * @returns {boolean}
  */
-export const isInverseScheme = scheme => scheme.indexOf('dark') !== -1
+export const isInverseScheme = (scheme) => {
+  if (!scheme) return false
+  return scheme.indexOf('dark') !== -1
+}
 
 /**
  * @param {string} duration

@@ -1,13 +1,24 @@
 {
   "parser": "babel-eslint",
   "extends": "eslint-config-jss",
+  "plugins": [
+    "babel"
+  ],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
   "rules": {
     "react/forbid-prop-types": ["error", {
       "forbid": ["any", "array"]
     }],
     "import/no-unresolved": [2, {
       "ignore": ["react", "react-dom", "common"]
-    }]
+    }],
+    "object-curly-spacing": "off",
+    "babel/object-curly-spacing": 2
   },
   "parserOptions": {
     "ecmaVersion": 6,
