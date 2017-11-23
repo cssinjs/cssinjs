@@ -6,6 +6,7 @@ const styles = theme => ({
     color: theme.textColorLight,
     textAlign: 'center',
     fontWeight: 'normal',
+    fontSize: 24,
     textTransform: 'uppercase',
     letterSpacing: 1,
     margin: [0, 0, 40],
