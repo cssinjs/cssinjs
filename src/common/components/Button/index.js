@@ -13,6 +13,7 @@ const styles = theme => ({
       lineHeight: theme.lineHeight,
       weight: 'normal'
     },
+    letterSpacing: 1,
     cursor: 'pointer',
     userSelect: 'none',
     appearance: 'none',
@@ -33,24 +34,30 @@ const styles = theme => ({
       duration: theme.transitionDuration
     }],
     '&:hover, &:active, &:focus': {
+      isolate: false,
       color: theme.textColorDarkDeep,
       background: theme.backgroundDarkDeep
     }
   },
   inverse: {
+    isolate: false,
     color: theme.textColorLight,
     background: theme.backgroundLight,
     '&:hover, &:active, &:focus': {
       color: theme.textColorLightDeep,
       background: theme.backgroundLightDeep
     }
+  },
+  big: {
+    padding: [12, 30]
   }
 })
 
-const Button = ({children, classes, href, inverse}) => {
+const Button = ({children, classes, href, inverse, big}) => {
   const buttonClasses = cn({
     [classes.button]: true,
-    [classes.inverse]: inverse
+    [classes.inverse]: inverse,
+    [classes.big]: big
   })
 
   return (
@@ -64,11 +71,13 @@ Button.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
-  inverse: PropTypes.bool
+  inverse: PropTypes.bool,
+  big: PropTypes.bool,
 }
 
 Button.defaultProps = {
-  inverse: false
+  inverse: false,
+  big: false,
 }
 
 export default injectSheet(styles)(Button)

@@ -16,6 +16,7 @@ const styles = (theme) => {
       background: darken(0.08, theme.backgroundDark),
     },
     link: {
+      isolate: false,
       padding: [0, 5],
       color: textColor,
       textDecoration: 'underline',

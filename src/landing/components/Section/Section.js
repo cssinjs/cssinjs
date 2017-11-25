@@ -14,7 +14,7 @@ const styles = {
     minHeight: 400,
   },
   spaced: {
-    padding: [80, 0],
+    padding: [60, 0],
   },
   nav: {
     position: 'absolute',

@@ -3,36 +3,33 @@ import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
 
 const styles = theme => ({
-  title: {
+  text: {
     color: theme.textColorLight,
     textAlign: 'center',
-    fontWeight: 'normal',
-    fontSize: 32,
-    textTransform: 'uppercase',
-    letterSpacing: 1,
-    margin: [0, 0, 40]
+    opacity: 0.6,
+    margin: [0, 0, 20]
   },
   inverse: {
     color: theme.textColorDark
   }
 })
 
-const Title = ({children, inverse, className, classes}) => (
-  <h2 className={cn(className, classes.title, {[classes.inverse]: inverse})}>
+const Text = ({children, inverse, className, classes}) => (
+  <div className={cn(className, classes.text, {[classes.inverse]: inverse})}>
     {children}
-  </h2>
+  </div>
 )
 
-Title.propTypes = {
+Text.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   children: PropTypes.node.isRequired,
   inverse: PropTypes.bool,
   className: PropTypes.string
 }
 
-Title.defaultProps = {
+Text.defaultProps = {
   inverse: false,
   className: null
 }
 
-export default injectSheet(styles)(Title)
+export default injectSheet(styles)(Text)

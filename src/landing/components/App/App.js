@@ -3,8 +3,11 @@ import GlobalStyles from 'common/components/GlobalStyles'
 import Section from '../Section'
 import Home from '../Home'
 import UsedBy from '../UsedBy'
+import Demo from '../Demo'
 import Footer from '../Footer'
+
 import companies from '../../companies'
+import {ssr, theming, animations} from '../../demos'
 
 const App = () => (
   <GlobalStyles>
@@ -19,13 +22,13 @@ const App = () => (
         {'> Abstractions'}
       </Section>
       <Section colorScheme={'lightDeep'}>
-        {'> SSR'}
+        <Demo {...ssr} />
       </Section>
       <Section colorScheme={'dark'}>
-        {'> Theming'}
+        <Demo {...theming} />
       </Section>
       <Section colorScheme={'darkDeep'}>
-        {'> Animations'}
+        <Demo {...animations} />
       </Section>
       <Footer />
     </div>

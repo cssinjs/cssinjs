@@ -1,0 +1,20 @@
+{
+  "ssr": {
+    "title": "Server-side rendering",
+    "description": "",
+    "demoUrl": "https://codesandbox.io/s/pwkr0rjzxj",
+    "docsUrl": "http://cssinjs.org"
+  },
+  "theming": {
+    "title": "Theming",
+    "description": "",
+    "demoUrl": "https://codesandbox.io/s/z21lpmvv33",
+    "docsUrl": "http://cssinjs.org"
+  },
+  "animations": {
+    "title": "Non-deterministinc animations",
+    "description": "",
+    "demoUrl": "https://codesandbox.io/s/github/cssinjs/aphrodite-jss/tree/master/",
+    "docsUrl": "http://cssinjs.org"
+  }
+}
