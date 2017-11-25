@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Grape",
+    "logo": "images/companies/logo_grape.png",
+    "url": "https://www.chatgrape.com/"
+  }, {
+    "name": "Material UI",
+    "logo": "images/companies/logo_materialui.png",
+    "url": "http://www.material-ui.com/"
+  }, {
+    "name": "Styleguidist",
+    "logo": "images/companies/logo_styleguidist.png",
+    "url": "https://react-styleguidist.js.org/"
+  }, {
+    "name": "jcore.io",
+    "logo": "images/companies/logo_jcore.png",
+    "url": "http://jcore.io/"
+  }, {
+    "name": "Livejournal",
+    "logo": "images/companies/logo_livejournal.png",
+    "url": "https://www.livejournal.com/"
+  }, {
+    "name": "Xing",
+    "logo": "images/companies/logo_xing.png",
+    "url": "https://www.xing.com/"
+  }, {
+    "name": "Showmax",
+    "logo": "images/companies/logo_showmax.png",
+    "url": "https://www.showmax.com/"
+  }, {
+    "name": "Brandstudio",
+    "logo": "images/companies/logo_brandstudio.png",
+    "url": "http://www.tbrandstudio.com/"
+  }
+]

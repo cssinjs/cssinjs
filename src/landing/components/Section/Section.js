@@ -8,8 +8,10 @@ import Header from '../Header'
 const styles = {
   ...getColorSchemes(),
   section: {
+    boxSizing: 'border-box',
     position: 'relative',
     width: '100%',
+    minHeight: 400,
   },
   spaced: {
     padding: [80, 0],
@@ -25,7 +27,6 @@ const styles = {
     clip: 'rect(auto, auto, auto, auto)',
   },
   content: {
-    minHeight: 400,
     color: 'currentColor'
   }
 }
