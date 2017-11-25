@@ -5,7 +5,7 @@ import Icon from './Icon'
 
 const Mouse = ({className, dotClassName}) => (
   <Icon>
-    {({sheet: {classes}}) => (
+    {({classes}) => (
       <svg
         className={cn(classes.icon, className)}
         xmlns="http://www.w3.org/2000/svg"

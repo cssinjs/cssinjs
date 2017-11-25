@@ -6,6 +6,7 @@ import {lg as mediaLg} from '../../constants/media'
 
 const styles = {
   container: {
+    isolate: false,
     maxWidth: content,
     width: '100%',
     margin: [0, 'auto']

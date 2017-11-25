@@ -38,7 +38,7 @@ const styles = {
   actions: {
     marginLeft: 'auto',
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   widget: {
     marginRight: 20,
@@ -48,6 +48,7 @@ const styles = {
 
 const Header = ({classes, colorScheme}) => {
   const color = theme[`textColor${ucfirst(colorScheme)}`]
+  const inverse = isInverseScheme(colorScheme)
 
   return (
     <div className={cn(classes.header, classes[colorScheme])}>
@@ -58,8 +59,8 @@ const Header = ({classes, colorScheme}) => {
           textColor={color}
         />
         <div className={classes.actions}>
-          <GithubWidget className={classes.widget} repo={repo} />
-          <Button href={'/docs/setup'} inverse={isInverseScheme(colorScheme)}>
+          <GithubWidget className={classes.widget} repo={repo} inverse={inverse} />
+          <Button href={'/docs/setup'} inverse={inverse}>
             Try JSS Now
           </Button>
         </div>

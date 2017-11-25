@@ -10,12 +10,12 @@ import styles from './styles'
  * Component, for displaying link to GitHub repository and stars counter.
  */
 function GithubWidget(props) {
-  const {classes, stars, repo, className} = props
+  const {classes, stars, repo, className, inverse} = props
 
   return (
     <a
       href={`//${primaryHost}/${repo}`}
-      className={cn(classes.githubWidget, stars && classes.loaded, className)}
+      className={cn(classes.githubWidget, stars && classes.loaded, inverse && classes.inverse, className)}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -39,12 +39,14 @@ GithubWidget.propTypes = {
   classes: PropTypes.objectOf(PropTypes.string).isRequired,
   repo: PropTypes.string.isRequired,
   stars: PropTypes.number,
-  className: PropTypes.string
+  className: PropTypes.string,
+  inverse: PropTypes.bool,
 }
 
 GithubWidget.defaultProps = {
   stars: 0,
-  className: ''
+  className: '',
+  inverse: false,
 }
 
 export default injectSheet(styles)(GithubWidget)

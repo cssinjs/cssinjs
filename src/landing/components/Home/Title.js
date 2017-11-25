@@ -5,7 +5,11 @@ import Arrow from 'common/components/icons/Arrow'
 import ScrollDown from 'common/components/ScrollDown'
 
 const styles = theme => ({
+  title: {
+    color: theme.textColorDarkDeep,
+  },
   main: {
+    composes: '$title',
     maxWidth: 500,
     margin: [0, 0, 40],
     font: {
@@ -14,6 +18,7 @@ const styles = theme => ({
     },
   },
   secondary: {
+    composes: '$title',
     maxWidth: 350,
     margin: [0, 0, 40],
     font: {
@@ -22,11 +27,12 @@ const styles = theme => ({
     },
   },
   icon: {
-    fill: 'currentColor',
+    fill: theme.textColorDarkDeep,
     height: 45,
     cursor: 'pointer',
     transition: transition(),
     '&:hover': {
+      cursor: 'inherit',
       opacity: 0.5
     }
   }

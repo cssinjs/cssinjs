@@ -1,5 +1,6 @@
 export default theme => ({
   githubWidget: {
+    color: theme.textColorLight,
     opacity: 0,
     color: 'inherit',
     display: 'flex',
@@ -12,10 +13,14 @@ export default theme => ({
       opacity: 0.7
     }
   },
+  inverse: {
+    color: theme.textColorDark,
+  },
   loaded: {
     opacity: 1
   },
   item: {
+    color: 'currentColor',
     marginLeft: 20,
     textAlign: 'center',
     flexGrow: 1,
@@ -27,13 +32,17 @@ export default theme => ({
     // Fix for IE10
     maxHeight: 50,
     '&:first-child': {
+      isolate: false,
       marginLeft: 0
     }
   },
   text: {
+    color: 'currentColor',
     lineHeight: 5
   },
   icon: {
+    color: 'currentColor',
+    fill: 'currentColor',
     margin: {
       top: -3,
       right: 8
