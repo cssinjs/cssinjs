@@ -33,7 +33,7 @@ const styles = {
 
 class Section extends PureComponent {
   static propTypes = {
-    classes: PropTypes.object.isRequired,
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
     children: PropTypes.node.isRequired,
     showHeader: PropTypes.bool,
     spaced: PropTypes.bool,

@@ -1,21 +1,12 @@
 import React, {PropTypes} from 'react'
 import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
-
 import injectSheet from 'common/utils/jss'
 import {docs as config} from 'common/config'
 import styles from './styles'
 
 function MenuItem(props) {
-  const {
-    external,
-    level,
-    url,
-    home,
-    title,
-    name,
-    sheet: {classes}
-  } = props
+  const {external, level, url, home, title, name, classes} = props
   const className = cn(classes.menuItem, classes[`level${level}`])
 
   if (external) {
@@ -56,7 +47,7 @@ function MenuItem(props) {
 }
 
 MenuItem.propTypes = {
-  sheet: PropTypes.object.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   title: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,

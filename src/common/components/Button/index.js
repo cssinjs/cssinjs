@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
 import cn from 'classnames'
 
@@ -61,10 +61,10 @@ const Button = ({children, classes, href, inverse}) => {
 }
 
 Button.propTypes = {
-  classes: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired,
-  href: React.PropTypes.string.isRequired,
-  inverse: React.PropTypes.bool
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
+  inverse: PropTypes.bool
 }
 
 Button.defaultProps = {

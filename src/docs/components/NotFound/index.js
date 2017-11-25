@@ -1,8 +1,6 @@
 import React, {Component, PropTypes} from 'react'
 import {Motion, spring} from 'react-motion'
-
 import injectSheet from 'common/utils/jss'
-
 import {NotFound as NotFoundIcon} from 'common/components/icons'
 import styles from './styles'
 
@@ -11,7 +9,7 @@ import styles from './styles'
  */
 class NotFound extends Component {
   static propTypes = {
-    sheet: PropTypes.object.isRequired
+    classes: PropTypes.objectOf(PropTypes.string).isRequired
   }
 
   constructor(props) {
@@ -37,7 +35,7 @@ class NotFound extends Component {
   }
 
   render() {
-    const {sheet: {classes}} = this.props
+    const {classes} = this.props
     const {tiltX, tiltY, deg} = this.state
 
     return (

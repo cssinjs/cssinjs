@@ -11,7 +11,7 @@ class VersionSelect extends PureComponent {
     onChange: PropTypes.func.isRequired,
     versions: PropTypes.arrayOf(PropTypes.string).isRequired,
     value: PropTypes.string,
-    classes: React.PropTypes.object.isRequired
+    classes: React.PropTypes.objectOf(PropTypes.string).isRequired
   }
 
   static defaultProps = {

@@ -1,9 +1,7 @@
 import React, {PureComponent, PropTypes, createElement} from 'react'
 import Markdown from 'markdown-react-js'
 import cn from 'classnames'
-
 import injectSheet from 'common/utils/jss'
-
 import ScrollToHash from '../ScrollToHash'
 import Code from './Code'
 import A from './A'
@@ -23,7 +21,7 @@ const headlines = ['h1', 'h2', 'h3', 'h4', 'h5']
 
 class HighlightedMarkdown extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
     text: PropTypes.string.isRequired,
     page: PropTypes.string.isRequired,
     className: PropTypes.string,
@@ -39,7 +37,7 @@ class HighlightedMarkdown extends PureComponent {
     // React throws if children are passed to img.
     if (tag === 'img') return createElement(tag, props)
     if (headlines.indexOf(tag) !== -1) {
-      return <H {...props} tag={tag} sheet={this.props.sheet}>{children}</H>
+      return <H {...props} tag={tag} classes={this.props.classes}>{children}</H>
     }
     // Process top level node to convert possible stringified html to real one
     if (level === 0) children = this.iterateChildren(children, tag)
@@ -61,7 +59,7 @@ class HighlightedMarkdown extends PureComponent {
   }
 
   render() {
-    const {sheet: {classes}, className, text} = this.props
+    const {classes, className, text} = this.props
 
     // Server side rendering throws erros.
     // So we need to handle situation when text comes undefined

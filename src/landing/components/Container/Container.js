@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
 import {content} from '../../constants/size'
@@ -30,9 +30,9 @@ const Container = (props) => {
 }
 
 Container.propTypes = {
-  classes: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired,
-  className: React.PropTypes.string
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string
 }
 
 Container.defaultProps = {

@@ -16,7 +16,7 @@ const loadCachedFile = (() => {
 
 export default class MdContentContainer extends PureComponent {
   static propTypes = {
-    query: PropTypes.object.isRequired,
+    query: PropTypes.object.isRequired, // eslint-disable-line
     repo: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
     org: PropTypes.string,

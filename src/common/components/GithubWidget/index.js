@@ -10,12 +10,7 @@ import styles from './styles'
  * Component, for displaying link to GitHub repository and stars counter.
  */
 function GithubWidget(props) {
-  const {
-    sheet: {classes},
-    stars,
-    repo,
-    className
-  } = props
+  const {classes, stars, repo, className} = props
 
   return (
     <a
@@ -41,7 +36,7 @@ function GithubWidget(props) {
 }
 
 GithubWidget.propTypes = {
-  sheet: PropTypes.object.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   repo: PropTypes.string.isRequired,
   stars: PropTypes.number,
   className: PropTypes.string

@@ -1,5 +1,4 @@
 import React, {PureComponent, PropTypes} from 'react'
-
 import injectSheet from 'common/utils/jss'
 import {org as organization} from 'common/utils/github'
 import VersionSelect from '../../containers/VersionSelect'
@@ -13,7 +12,7 @@ import styles from './styles'
  */
 class MdContent extends PureComponent {
   static propTypes = {
-    classes: PropTypes.object.isRequired,
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
     content: PropTypes.string.isRequired,
     onChangeVersion: PropTypes.func.isRequired,
     editUrl: PropTypes.string.isRequired,

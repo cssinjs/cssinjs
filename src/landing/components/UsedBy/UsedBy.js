@@ -16,14 +16,14 @@ const UsedBy = ({classes, inverse, companies}) => (
       Used by folks at
     </TitleUnderlined>
     <div className={classes.content}>
-      {companies.map((item) => <Item {...item} />)}
+      {companies.map(item => <Item {...item} />)}
     </div>
   </Container>
 )
 
 UsedBy.propTypes = {
-  classes: PropTypes.object.isRequired,
-  companies: PropTypes.array,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  companies: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.string)),
   inverse: PropTypes.bool,
 }
 

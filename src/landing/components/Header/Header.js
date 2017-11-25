@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
 import {getColorSchemes, isInverseScheme} from 'common/utils/styles'
@@ -69,8 +69,8 @@ const Header = ({classes, colorScheme}) => {
 }
 
 Header.propTypes = {
-  classes: React.PropTypes.object.isRequired,
-  colorScheme: React.PropTypes.oneOf(colorSchemes).isRequired
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  colorScheme: PropTypes.oneOf(colorSchemes).isRequired
 }
 
 export default injectSheet(styles)(Header)

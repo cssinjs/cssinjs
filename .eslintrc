@@ -11,9 +11,6 @@
     "mocha": true
   },
   "rules": {
-    "react/forbid-prop-types": ["error", {
-      "forbid": ["any", "array"]
-    }],
     "import/no-unresolved": [2, {
       "ignore": ["react", "react-dom", "common"]
     }],

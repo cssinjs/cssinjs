@@ -18,7 +18,7 @@ const createId = (data) => {
  */
 export default class H extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
     tag: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired
   }
@@ -37,12 +37,7 @@ export default class H extends PureComponent {
   }
 
   render() {
-    const {
-      children,
-      tag,
-      sheet: {classes},
-      ...rest
-    } = this.props
+    const {children, tag, classes, ...rest} = this.props
 
     const content = [
       <Link

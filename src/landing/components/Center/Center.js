@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
 
@@ -36,11 +36,11 @@ const Center = ({children, className, classes, horizontal, vertical}) => {
 }
 
 Center.propTypes = {
-  classes: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired,
-  className: React.PropTypes.string,
-  horizontal: React.PropTypes.bool,
-  vertical: React.PropTypes.bool
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
+  horizontal: PropTypes.bool,
+  vertical: PropTypes.bool
 }
 
 Center.defaultProps = {

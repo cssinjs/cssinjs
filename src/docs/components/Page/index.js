@@ -11,9 +11,9 @@ import styles from './styles'
 
 class Page extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
-    location: PropTypes.object.isRequired,
-    params: PropTypes.object.isRequired
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    location: PropTypes.object.isRequired, // eslint-disable-line
+    params: PropTypes.object.isRequired // eslint-disable-line
   }
 
   onChangeVersion = ({value}) => {
@@ -24,11 +24,7 @@ class Page extends PureComponent {
   }
 
   render() {
-    const {
-      sheet: {classes},
-      params,
-      location: {query}
-    } = this.props
+    const {classes, params, location: {query}} = this.props
 
     const name = params.page || home.name
     const page = navMap[name]

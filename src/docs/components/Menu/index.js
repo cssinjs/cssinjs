@@ -1,13 +1,12 @@
 import React, {PureComponent, PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
-
 import MenuItem from '../MenuItem'
 import {tree} from '../../utils/navigation'
 import styles from './styles'
 
 class Menu extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired
+    classes: PropTypes.objectOf(PropTypes.string).isRequired
   }
 
   renderMenu = (root, level = 0) => {
@@ -37,7 +36,7 @@ class Menu extends PureComponent {
   }
 
   render() {
-    const {classes} = this.props.sheet
+    const {classes} = this.props
 
     return <nav className={classes.menu}>{this.renderMenu(tree)}</nav>
   }

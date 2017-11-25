@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 import injectSheet from 'common/utils/jss'
 import GlobalStyles from 'common/components/GlobalStyles'
@@ -47,9 +47,9 @@ const App = ({children, location, classes}) => {
 }
 
 App.propTypes = {
-  location: React.PropTypes.object.isRequired,
-  classes: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired
+  location: PropTypes.object.isRequired, // eslint-disable-line
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default injectSheet(styles)(App)

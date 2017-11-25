@@ -57,7 +57,7 @@ const AnimatedRings = ({classes, count, className}) => (
 )
 
 AnimatedRings.propTypes = {
-  classes: React.PropTypes.object.isRequired,
+  classes: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
   className: React.PropTypes.string,
   count: React.PropTypes.number
 }

@@ -42,7 +42,7 @@ const AnimatedRing = ({classes}) => (
 /* eslint-disable */
 /* Because default props, that are used only in styles generates eslint error */
 AnimatedRing.propTypes = {
-  classes: React.PropTypes.object.isRequired,
+  classes: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
   size: React.PropTypes.number,
   x: React.PropTypes.number,
   y: React.PropTypes.number

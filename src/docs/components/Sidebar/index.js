@@ -11,7 +11,7 @@ import styles from './styles'
 
 class Sidebar extends Component {
   static propTypes = {
-    classes: PropTypes.object.isRequired,
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
     className: PropTypes.string
   }
 

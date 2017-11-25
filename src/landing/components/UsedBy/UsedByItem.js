@@ -1,5 +1,4 @@
 import React, {PropTypes} from 'react'
-import {scale} from 'css-functions'
 import injectSheet from 'common/utils/jss'
 import {transition} from 'common/utils/styles'
 
@@ -22,13 +21,18 @@ const styles = {
 }
 
 const UsedByItem = ({classes, name, logo, url}) => (
-  <a href={url} target='_blank' className={classes.item}>
+  <a
+    href={url}
+    className={classes.item}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <img src={logo} alt={name} className={classes.img} />
   </a>
 )
 
 UsedByItem.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
   name: PropTypes.string.isRequired,
   logo: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,

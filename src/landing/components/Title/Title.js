@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
 
@@ -20,10 +20,10 @@ const Title = ({children, inverse, className, classes}) => (
 )
 
 Title.propTypes = {
-  classes: React.PropTypes.object.isRequired,
-  children: React.PropTypes.node.isRequired,
-  inverse: React.PropTypes.bool,
-  className: React.PropTypes.string
+  classes: PropTypes.objectOf(PropTypes.string).isRequired,
+  children: PropTypes.node.isRequired,
+  inverse: PropTypes.bool,
+  className: PropTypes.string
 }
 
 Title.defaultProps = {

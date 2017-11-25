@@ -1,11 +1,11 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
+import darken from 'polished/lib/color/darken'
 import injectSheet from 'common/utils/jss'
 import Container from '../Container'
-import darken from 'polished/lib/color/darken'
 
 const coreTeamUrl = 'https://github.com/orgs/cssinjs/people'
 
-const styles = theme => {
+const styles = (theme) => {
   const textColor = darken(0.3, theme.textColorDark)
   return {
     footer: {
@@ -26,21 +26,24 @@ const styles = theme => {
   }
 }
 
-const Footer = ({classes}) => {
-  return (
-    <div className={classes.footer}>
-      <Container>
-        Made with love by
-        <a className={classes.link} href={coreTeamUrl} target='_blank'>
-          JSS Core team
-        </a>
-      </Container>
-    </div>
-  )
-}
+const Footer = ({classes}) => (
+  <div className={classes.footer}>
+    <Container>
+      Made with love by
+      <a
+        className={classes.link}
+        href={coreTeamUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        JSS Core team
+      </a>
+    </Container>
+  </div>
+)
 
 Footer.propTypes = {
-  classes: React.PropTypes.object.isRequired
+  classes: PropTypes.objectOf(PropTypes.string).isRequired
 }
 
 export default injectSheet(styles)(Footer)
