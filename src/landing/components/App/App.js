@@ -3,6 +3,7 @@ import GlobalStyles from 'common/components/GlobalStyles'
 import Section from '../Section'
 import Home from '../Home'
 import UsedBy from '../UsedBy'
+import Footer from '../Footer'
 import companies from '../../companies'
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
       <Section colorScheme={'darkDeep'}>
         {'> Animations'}
       </Section>
+      <Footer />
     </div>
   </GlobalStyles>
 )
