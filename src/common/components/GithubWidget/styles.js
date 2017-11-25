@@ -2,7 +2,6 @@ export default theme => ({
   githubWidget: {
     color: theme.textColorLight,
     opacity: 0,
-    color: 'inherit',
     display: 'flex',
     alignItems: 'center',
     textDecoration: 'none',

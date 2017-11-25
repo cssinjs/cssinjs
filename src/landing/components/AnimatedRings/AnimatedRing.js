@@ -25,6 +25,7 @@ const styles = {
       iterationCount: 'infinite',
     },
     '&:nth-child(even)': {
+      isolate: false,
       animationDirection: 'reverse'
     }
   },

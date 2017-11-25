@@ -15,7 +15,12 @@ function GithubWidget(props) {
   return (
     <a
       href={`//${primaryHost}/${repo}`}
-      className={cn(classes.githubWidget, stars && classes.loaded, inverse && classes.inverse, className)}
+      className={cn(
+        classes.githubWidget,
+        stars && classes.loaded,
+        inverse && classes.inverse,
+        className
+      )}
       target="_blank"
       rel="noopener noreferrer"
     >
