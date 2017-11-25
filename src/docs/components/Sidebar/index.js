@@ -52,7 +52,7 @@ class Sidebar extends Component {
         <Link to={`/${config.rootDir}`} className={classes.logoContainer}>
           <Logo className={classes.logo} inverse />
         </Link>
-        <GithubWidget className={classes.counter} repo={repo} />
+        <GithubWidget className={classes.counter} repo={repo} inverse />
         <button className={classes.toggle} onClick={this.onToggleMenu}>
           <Hamburger active={showMenu} />
         </button>
