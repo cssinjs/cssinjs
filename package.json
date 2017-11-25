@@ -17,7 +17,8 @@
     "lint": "eslint ./src",
     "lint:staged": "lint-staged",
     "clean": "rimraf -fr './docs/!(CNAME)**'",
-    "postversion": "npm run all:prod && git add . && git commit -am 'release build'"
+    "postversion": "npm run all:prod && git add . && git commit -am 'release build'",
+    "precommit": "lint-staged"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -50,7 +51,6 @@
     "json-loader": "^0.5.4",
     "lint-staged": "^3.2.5",
     "module-alias": "^2.0.0",
-    "pre-commit": "^1.2.2",
     "rimraf": "^2.5.4",
     "style-loader": "^0.16.1",
     "webpack": "^2.3.3",
@@ -84,6 +84,5 @@
       "git add"
     ]
   },
-  "pre-commit": "lint:staged",
   "license": "MIT"
 }
