@@ -1,0 +1,16 @@
+{
+  "title": {
+    "homePrimary": "An authoring tool for <b>CSS</b> which uses <b>JavaScript</b> as a host language",
+    "homeSecondary": "It is a high performance JS to CSS compiler which works at runtime and server-side.",
+    "usedBy": "Used by folks at",
+    "abstractions": "Abstractions on top of JSS"
+  },
+  "button": {
+    "try": "Try JSS now",
+    "docs": "See docs"
+  },
+  "footer": {
+    "madeBy": "Made with love by",
+    "team": "JSS Core Team"
+  }
+}

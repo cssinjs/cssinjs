@@ -7,6 +7,15 @@ const base = {
   light: '#eee',
 }
 
+/**
+ * TODO:
+ * 1. Systemaze things
+ *    - Make nested object e.g. text, brand, common etc.
+ * 2. Remove unneded colors because they copy another variables
+ * 3. Move border and transition functions to utils
+ * 4. Move breakpoints to constants, because this is NOT a THEME
+ */
+
 export default {
   dark: base.dark,
   light: base.light,

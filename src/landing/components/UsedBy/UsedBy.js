@@ -3,6 +3,7 @@ import injectSheet from 'common/utils/jss'
 import Item from './UsedByItem'
 import Container from '../Container'
 import {TitleUnderlined} from '../Title'
+import {title} from '../../texts'
 
 const styles = {
   content: {
@@ -13,7 +14,7 @@ const styles = {
 const UsedBy = ({classes, inverse, companies}) => (
   <Container>
     <TitleUnderlined inverse={inverse}>
-      Used by folks at
+      {title.usedBy}
     </TitleUnderlined>
     <div className={classes.content}>
       {companies.map(item => <Item {...item} />)}

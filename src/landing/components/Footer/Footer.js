@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react'
 import darken from 'polished/lib/color/darken'
 import injectSheet from 'common/utils/jss'
 import Container from '../Container'
+import {footer} from '../../texts'
 
 const coreTeamUrl = 'https://github.com/orgs/cssinjs/people'
 
@@ -30,14 +31,14 @@ const styles = (theme) => {
 const Footer = ({classes}) => (
   <div className={classes.footer}>
     <Container>
-      Made with love by
+      {footer.madeBy}
       <a
         className={classes.link}
         href={coreTeamUrl}
         target="_blank"
         rel="noopener noreferrer"
       >
-        JSS Core team
+        {footer.team}
       </a>
     </Container>
   </div>

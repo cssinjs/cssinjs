@@ -10,6 +10,7 @@ import {repo} from 'common/config'
 import theme from 'common/theme'
 import {Logo} from 'common/components/icons'
 import Container from '../Container'
+import {button} from '../../texts'
 
 const styles = {
   ...getColorSchemes(),
@@ -61,7 +62,7 @@ const Header = ({classes, colorScheme}) => {
         <div className={classes.actions}>
           <GithubWidget className={classes.widget} repo={repo} inverse={inverse} />
           <Button href={'/docs/setup'} inverse={inverse}>
-            Try JSS Now
+            {button.try}
           </Button>
         </div>
       </Container>
