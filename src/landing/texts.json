@@ -5,6 +5,9 @@
     "usedBy": "Used by folks at",
     "abstractions": "Abstractions on top of JSS"
   },
+  "text": {
+    "abstractions": "Select your own preferred abstraction or just use pure JSS tool. Bla-bla-bla and some other motivating text... :)"
+  },
   "button": {
     "try": "Try JSS now",
     "docs": "See docs"

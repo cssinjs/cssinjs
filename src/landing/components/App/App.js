@@ -3,6 +3,7 @@ import GlobalStyles from 'common/components/GlobalStyles'
 import Section from '../Section'
 import Home from '../Home'
 import UsedBy from '../UsedBy'
+import Abstractions from '../Abstractions'
 import Demo from '../Demo'
 import Footer from '../Footer'
 
@@ -19,7 +20,7 @@ const App = () => (
         <UsedBy companies={companies} />
       </Section>
       <Section colorScheme={'light'}>
-        {'> Abstractions'}
+        <Abstractions />
       </Section>
       <Section colorScheme={'lightDeep'}>
         <Demo {...ssr} />

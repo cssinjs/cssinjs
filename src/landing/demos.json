@@ -1,19 +1,37 @@
 {
+  "jss": {
+    "title": "JSS",
+    "description": "JSS is a more powerful abstraction over CSS. It uses JavaScript as a language to describe styles in a declarative and maintainable way. It is a high performance JS to CSS compiler which works at runtime and server-side. This core library is low level and framework agnostic. It is about 6KB (minified and gzipped) and is extensible via plugins API.",
+    "demoUrl": "https://codesandbox.io/embed/z21lpmvv33",
+    "docsUrl": "http://cssinjs.org"
+  },
+  "reactJss": {
+    "title": "React-JSS",
+    "description": "React-JSS provides components for JSS as a layer of abstraction. JSS and presets are already built in!",
+    "demoUrl": "https://codesandbox.io/embed/j3l06yyqpw",
+    "docsUrl": "http://cssinjs.org/react-jss"
+  },
+  "styledJss": {
+    "title": "Styled-JSS",
+    "description": "Styled-JSS implements a styled-primitives interface on top of JSS. Its API is similar to styled-components but thanks to the JSS core, it supports all features and plugins JSS does. For e.g. you can use full JSON Syntax inside.",
+    "demoUrl": "https://codesandbox.io/embed/xl89zx8zz4",
+    "docsUrl": "http://cssinjs.org/styled-jss"
+  },
   "ssr": {
     "title": "Server-side rendering",
-    "description": "",
+    "description": "Some description here...",
     "demoUrl": "https://codesandbox.io/embed/pwkr0rjzxj",
     "docsUrl": "http://cssinjs.org"
   },
   "theming": {
     "title": "Theming",
-    "description": "",
+    "description": "Some description here...",
     "demoUrl": "https://codesandbox.io/embed/z21lpmvv33",
     "docsUrl": "http://cssinjs.org"
   },
   "animations": {
     "title": "Non-deterministinc animations",
-    "description": "",
+    "description": "Some description here... Lorem ipsum dolor sit amet ipsum dolor sit ametipsum dolor sit amet ipsum dolor sit amet ipsum dolor sit amet",
     "demoUrl": "https://codesandbox.io/embed/github/cssinjs/aphrodite-jss/tree/master/",
     "docsUrl": "http://cssinjs.org"
   }

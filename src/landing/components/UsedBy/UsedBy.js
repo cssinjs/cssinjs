@@ -7,7 +7,8 @@ import {title} from '../../texts'
 
 const styles = {
   content: {
-    textAlign: 'center'
+    textAlign: 'center',
+    margin: [-20, 0]
   }
 }
 
