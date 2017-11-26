@@ -4,7 +4,6 @@ import {rgba} from 'css-functions'
 import injectSheet from 'common/utils/jss'
 import Iframe from 'common/components/Iframe'
 import Button from 'common/components/Button'
-import Container from '../Container'
 import Title from '../Title'
 import Text from '../Text'
 import {button} from '../../texts'
@@ -89,17 +88,13 @@ const Demo = (props) => {
     )
   }
 
-  /**
-   * TODO: Move CONTAINER to separated component
-   * like ContainerSection (as comonent on top of Section that adds container)
-   */
   return (
-    <Container>
+    <div>
       <Title inverse={inverse} centered>{title}</Title>
       {description && renderDescription(classes, inverse, description, true, true)}
       {renderDemo(classes, demoUrl)}
       {docsUrl && renderLink(classes, inverse, docsUrl, true)}
-    </Container>
+    </div>
   )
 }
 

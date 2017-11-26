@@ -4,6 +4,7 @@ import injectSheet from 'common/utils/jss'
 import {getColorSchemes, isInverseScheme} from 'common/utils/styles'
 import colorSchemes from 'common/constants/colorScheme'
 import Header from '../Header'
+import Container from '../Container'
 
 const styles = {
   ...getColorSchemes(),
@@ -37,12 +38,14 @@ class Section extends PureComponent {
     children: PropTypes.node.isRequired,
     showHeader: PropTypes.bool,
     spaced: PropTypes.bool,
+    contained: PropTypes.bool,
     colorScheme: PropTypes.oneOf(colorSchemes)
   }
 
   static defaultProps = {
     showHeader: true,
     spaced: true,
+    contained: true,
     colorScheme: null
   }
 
@@ -57,12 +60,14 @@ class Section extends PureComponent {
   }
 
   render() {
-    const {children, classes, colorScheme, spaced} = this.props
+    const {children, classes, colorScheme, spaced, contained} = this.props
     const inverse = isInverseScheme(colorScheme)
 
-    const childrenWithProps = React.Children.map(children, child =>
-      React.cloneElement(child, {inverse})
-    )
+    const childrenWithProps = React.Children.map(children, (child) => {
+      const element = React.cloneElement(child, {inverse})
+      if (contained) return <Container>{element}</Container>
+      return element
+    })
 
     return (
       <div className={cn(classes.section, classes[colorScheme], {[classes.spaced]: spaced})}>

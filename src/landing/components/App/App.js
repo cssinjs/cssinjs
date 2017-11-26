@@ -13,7 +13,7 @@ import {ssr, theming, animations} from '../../demos'
 const App = () => (
   <GlobalStyles>
     <div>
-      <Section showHeader={false} spaced={false}>
+      <Section showHeader={false} spaced={false} contained={false}>
         <Home />
       </Section>
       <Section colorScheme={'dark'}>

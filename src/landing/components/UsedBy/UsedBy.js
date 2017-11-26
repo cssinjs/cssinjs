@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
 import Item from './UsedByItem'
-import Container from '../Container'
 import {TitleUnderlined} from '../Title'
 import {title} from '../../texts'
 
@@ -13,14 +12,14 @@ const styles = {
 }
 
 const UsedBy = ({classes, inverse, companies}) => (
-  <Container>
+  <div>
     <TitleUnderlined inverse={inverse}>
       {title.usedBy}
     </TitleUnderlined>
     <div className={classes.content}>
       {companies.map(item => <Item {...item} />)}
     </div>
-  </Container>
+  </div>
 )
 
 UsedBy.propTypes = {

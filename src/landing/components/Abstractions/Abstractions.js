@@ -1,6 +1,5 @@
 import React, {PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
-import Container from '../Container'
 import Title from '../Title'
 import Text from '../Text'
 import {title, text} from '../../texts'
@@ -23,13 +22,13 @@ const renderSingleItem = () => (
 )
 
 const Abstractions = ({classes, inverse}) => (
-  <Container>
+  <div>
     <Title inverse={inverse} centered>{title.abstractions}</Title>
     <Text inverse={inverse} muted narrow centered>{text.abstractions}</Text>
 
     {renderSingleItem()}
 
-  </Container>
+  </div>
 )
 
 Abstractions.propTypes = {
