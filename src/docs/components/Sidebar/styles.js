@@ -1,4 +1,5 @@
 import {translateX} from 'css-functions'
+import {transition} from 'common/utils/styles'
 
 export default theme => ({
   sidebar: {
@@ -23,7 +24,7 @@ export default theme => ({
     background: theme.sidebarBgActive,
   },
   menu: {
-    transition: theme.transition(),
+    transition: transition(),
     background: theme.sidebarBg,
   },
 

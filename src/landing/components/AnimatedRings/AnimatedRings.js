@@ -20,7 +20,7 @@ const styles = {
     animation: {
       name: 'appear',
       duration: '500ms',
-      delay: '1000ms',
+      delay: '500ms',
       fillMode: 'both'
     },
   },

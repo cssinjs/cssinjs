@@ -15,7 +15,8 @@
       "ignore": ["react", "react-dom", "common"]
     }],
     "object-curly-spacing": "off",
-    "babel/object-curly-spacing": 2
+    "babel/object-curly-spacing": 2,
+    "no-confusing-arrow": ["error", {"allowParens": true}]
   },
   "parserOptions": {
     "ecmaVersion": 6,

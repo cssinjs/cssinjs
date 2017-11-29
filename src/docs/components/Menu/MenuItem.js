@@ -3,7 +3,48 @@ import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
 import {docs as config} from 'common/config'
-import styles from './styles'
+import {transition} from 'common/utils/styles'
+
+const styles = theme => ({
+  menuItem: {
+    color: theme.textColorInverse,
+    display: 'block',
+    textDecoration: 'none',
+    transition: transition(),
+    opacity: 0.8,
+    font: {
+      weight: 400,
+      size: 14,
+    },
+    '&:hover': {
+      isolate: false,
+      color: theme.textColorInverseActive,
+      opacity: 1
+    }
+  },
+  // Can't make as function value due to usage in router
+  active: {
+    opacity: 1,
+    color: theme.color,
+    '&:hover': {
+      isolate: false,
+      color: theme.color,
+    }
+  },
+  // Nesting levels
+  level0: {
+    padding: [5, 0],
+    fontSize: 16,
+    opacity: 1,
+  },
+  level1: {
+    paddingLeft: 15,
+  },
+  level2: {
+    paddingLeft: 30,
+  }
+})
+
 
 function MenuItem(props) {
   const {external, level, url, home, title, name, classes} = props

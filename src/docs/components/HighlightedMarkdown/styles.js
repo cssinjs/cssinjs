@@ -1,3 +1,5 @@
+import {transition} from 'common/utils/styles'
+
 export default theme => ({
   highlightedMarkdown: {
     '@global': {
@@ -83,8 +85,8 @@ export default theme => ({
       },
       'th, td': {
         padding: [3, 12],
-        borderBottom: theme.border(theme.borderColor),
-        borderLeft: theme.border(theme.borderColor),
+        borderBottom: [1, 'solid', theme.borderColor],
+        borderLeft: [1, 'solid', theme.borderColor],
         '&:first-child': {
           isolate: false,
           borderLeft: 'none'
@@ -121,7 +123,7 @@ export default theme => ({
     }
   },
   headingAnchor: {
-    transition: theme.transition(),
+    transition: transition(),
     position: 'absolute',
     top: 0,
     bottom: 0,

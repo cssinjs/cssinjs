@@ -48,8 +48,8 @@ export default (theme) => {
       maxWidth: theme.contentWidth,
       width: '100%',
       margin: [0, 'auto'],
-      borderLeft: theme.border(backgroundLineColor),
-      borderRight: theme.border(backgroundLineColor),
+      borderLeft: [1, 'solid', backgroundLineColor],
+      borderRight: [1, 'solid', backgroundLineColor],
       // Vertical line
       '&:after': {
         content: '""',
