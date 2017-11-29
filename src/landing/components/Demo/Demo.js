@@ -36,7 +36,7 @@ const styles = {
   },
   // Use as overlay until iframe will be rendered
   demo: {
-    height: '100vh',
+    height: 600,
     background: rgba(0, 0, 0, 0.2)
   }
 }
