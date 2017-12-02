@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
 import {getColorSchemes, isInverseScheme} from 'common/utils/styles'
-import {ucfirst} from 'common/utils/string'
 import colorSchemes from 'common/constants/colorScheme'
 import Button from 'common/components/Button'
 import GithubWidget from 'common/containers/GithubWidget'
@@ -48,7 +47,7 @@ const styles = {
 }
 
 const Header = ({classes, colorScheme}) => {
-  const color = theme[`textColor${ucfirst(colorScheme)}`]
+  const color = theme.text[colorScheme]
   const inverse = isInverseScheme(colorScheme)
 
   return (

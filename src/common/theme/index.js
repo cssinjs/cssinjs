@@ -1,6 +1,5 @@
 import darken from 'polished/lib/color/darken'
 import lighten from 'polished/lib/color/lighten'
-
 import {transitionDuration} from '../constants/animations'
 
 const base = {
@@ -60,5 +59,4 @@ export default {
     duration: transitionDuration,
     timingFunction: 'cubic-bezier(0.77, 0, 0.175, 1)',
   },
-
 }
