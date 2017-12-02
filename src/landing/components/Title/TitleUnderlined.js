@@ -3,7 +3,7 @@ import Title from './Title'
 
 const styles = theme => ({
   title: {
-    color: theme.textColorLight,
+    color: theme.text.light,
     textAlign: 'center',
     fontWeight: 'normal',
     fontSize: 24,
@@ -11,7 +11,7 @@ const styles = theme => ({
     letterSpacing: 1,
     margin: [0, 0, 40],
     '&::after': {
-      background: theme.textColorLight,
+      background: theme.text.light,
       content: '""',
       display: 'block',
       height: 3,
@@ -21,9 +21,9 @@ const styles = theme => ({
     }
   },
   inverse: {
-    color: theme.textColorDark,
+    color: theme.text.dark,
     '&::after': {
-      background: theme.textColorDark,
+      background: theme.text.dark,
     }
   }
 })

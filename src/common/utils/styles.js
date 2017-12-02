@@ -1,4 +1,3 @@
-import {ucfirst} from 'common/utils/string'
 import schemes from 'common/constants/colorScheme'
 import theme from 'common/theme'
 
@@ -10,8 +9,8 @@ export const getColorSchemes = () => {
   const result = {}
   schemes.forEach((scheme) => {
     result[scheme] = {
-      background: theme[`background${ucfirst(scheme)}`],
-      color: theme[`textColor${ucfirst(scheme)}`]
+      background: theme.background[scheme],
+      color: theme.text[scheme]
     }
   })
   return result
@@ -31,9 +30,9 @@ export const isInverseScheme = (scheme) => {
  * @param {string} delay
  * @returns {Object}
  */
-export const transition = (duration = `${theme.transitionDuration}ms`, delay = '0ms') => ({
+export const transition = (duration = `${theme.transition.duration}ms`, delay = '0ms') => ({
   property: 'all',
-  timingFunction: theme.transitionTimingFunction,
+  timingFunction: theme.transition.timingFunction,
   duration,
   delay,
 })

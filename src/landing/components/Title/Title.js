@@ -4,7 +4,7 @@ import injectSheet from 'common/utils/jss'
 
 const styles = theme => ({
   title: {
-    color: theme.textColorLight,
+    color: theme.text.light,
     fontWeight: 'normal',
     fontSize: 32,
     textTransform: 'uppercase',
@@ -13,7 +13,7 @@ const styles = theme => ({
   },
   inverse: {
     isolate: false,
-    color: theme.textColorDark
+    color: theme.text.dark
   },
   small: {
     isolate: false,

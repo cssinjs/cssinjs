@@ -11,7 +11,7 @@ export default theme => ({
       a: {
         cursor: 'pointer',
         textDecoration: 'underline',
-        color: theme.textColor,
+        color: theme.text.light,
         '&:hover': {
           isolate: false,
           textDecoration: 'none',
@@ -25,7 +25,7 @@ export default theme => ({
 
       // Headings
       'h1, h2, h3, h4': {
-        color: theme.titleColor,
+        color: theme.text.light,
         margin: [24, 0],
         fontWeight: 600,
         lineHeight: 1.25,
@@ -73,7 +73,7 @@ export default theme => ({
       hr: {
         margin: [16, 0],
         border: 'none',
-        background: theme.borderColor,
+        background: theme.common.border,
         height: 1,
         display: 'block',
       },
@@ -85,8 +85,8 @@ export default theme => ({
       },
       'th, td': {
         padding: [3, 12],
-        borderBottom: [1, 'solid', theme.borderColor],
-        borderLeft: [1, 'solid', theme.borderColor],
+        borderBottom: [1, 'solid', theme.common.border],
+        borderLeft: [1, 'solid', theme.common.border],
         '&:first-child': {
           isolate: false,
           borderLeft: 'none'
@@ -94,7 +94,7 @@ export default theme => ({
       },
       th: {
         fontWeight: 'bold',
-        background: theme.cardColor,
+        background: 'transparent',
       },
 
       pre: {
@@ -107,10 +107,10 @@ export default theme => ({
       'code[class*="language-"], pre': {
         font: {
           size: 14,
-          family: theme.codeFontFamily,
+          family: theme.code.fontFamily,
         },
         borderRadius: 0,
-        background: theme.codeBackground,
+        background: theme.code.background,
         isolate: false,
       }
     }

@@ -1,6 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
 import {org as organization} from 'common/utils/github'
+import {md as mediaMd, sm as mediaSm} from 'common/constants/media'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'
@@ -24,7 +25,7 @@ const styles = theme => ({
   action: {
     display: 'flex',
     height: 30,
-    borderRight: [1, 'solid', theme.borderColor],
+    borderRight: [1, 'solid', theme.common.border],
     paddingRight: 20,
     marginLeft: 20,
     '&:last-child': {
@@ -37,14 +38,14 @@ const styles = theme => ({
     }
   },
   // Removes inlining with title.
-  [theme.media.md]: {
+  [mediaMd]: {
     actions: {
       float: 'none',
       justifyContent: 'flex-end',
       marginBottom: 20,
     }
   },
-  [theme.media.sm]: {
+  [mediaSm]: {
     actions: {
       justifyContent: 'center'
     }

@@ -8,9 +8,9 @@ const styles = theme => ({
     position: 'relative',
     padding: [6, 20],
     font: {
-      family: theme.fontFamily,
-      size: theme.fontSize,
-      lineHeight: theme.lineHeight,
+      family: theme.typography.fontFamily,
+      size: theme.typography.fontSize,
+      lineHeight: theme.typography.lineHeight,
       weight: 'normal'
     },
     letterSpacing: 1,
@@ -20,8 +20,8 @@ const styles = theme => ({
     textAlign: 'center',
     textDecoration: 'none',
     textTransform: 'uppercase',
-    color: theme.textColorDark,
-    background: theme.backgroundDark,
+    color: theme.text.dark,
+    background: theme.background.dark,
     borderRadius: theme.radius,
     border: 'none',
     outline: 'none',
@@ -30,23 +30,23 @@ const styles = theme => ({
     boxShadow: 'none',
     transition: [{
       property: 'all',
-      timingFunction: theme.transitionTimingFunction,
-      duration: theme.transitionDuration
+      timingFunction: theme.transition.timingFunction,
+      duration: theme.transition.duration
     }],
     '&:hover, &:active, &:focus': {
       isolate: false,
-      color: theme.textColorDarkDeep,
-      background: theme.backgroundDarkDeep
+      color: theme.text.darkDeep,
+      background: theme.background.darkDeep
     }
   },
   inverse: {
     isolate: false,
-    color: theme.textColorLight,
-    background: theme.backgroundLight,
+    color: theme.text.light,
+    background: theme.background.light,
     '&:hover, &:active, &:focus': {
       isolate: false,
-      color: theme.textColorLightDeep,
-      background: theme.backgroundLightDeep
+      color: theme.text.lightDeep,
+      background: theme.background.lightDeep
     }
   },
   big: {

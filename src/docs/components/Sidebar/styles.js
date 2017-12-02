@@ -1,5 +1,6 @@
 import {translateX} from 'css-functions'
 import {transition} from 'common/utils/styles'
+import {sm as mediaSm} from 'common/constants/media'
 
 export default theme => ({
   sidebar: {
@@ -21,11 +22,11 @@ export default theme => ({
   counter: {
     flexShrink: 0,
     padding: [0, 30],
-    background: theme.sidebarBgActive,
+    background: theme.sidebar.backgroundActive,
   },
   menu: {
     transition: transition(),
-    background: theme.sidebarBg,
+    background: theme.sidebar.background,
   },
 
   // Active state for menu
@@ -44,7 +45,7 @@ export default theme => ({
   },
 
   // For small screens (mobile, portrait mode for iPad) - change completely layout
-  [theme.media.sm]: {
+  [mediaSm]: {
     sidebar: {
       display: 'flex',
       alignItems: 'center',
@@ -61,7 +62,7 @@ export default theme => ({
       height: 50
     },
     menu: {
-      borderTop: [1, 'solid', theme.sidebarBgActive],
+      borderTop: [1, 'solid', theme.sidebar.backgroundActive],
       position: 'fixed',
       overflowY: 'auto',
       overflowX: 'hidden',

@@ -20,7 +20,7 @@ const styles = theme => ({
     position: 'absolute',
     height: barWeight,
     width: '100%',
-    background: theme.textColorInverse,
+    background: theme.text.dark,
     opacity: 1,
     left: 0,
     transition: transition(300),

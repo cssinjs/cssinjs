@@ -17,16 +17,16 @@ const styles = theme => ({
     right: '20%',
     bottom: '10%',
     zIndex: 1,
-    border: [2, 'solid', theme.titleColorDark],
-    backgroundColor: theme.color
+    border: [2, 'solid', '#000'],
+    backgroundColor: theme.brand
   },
   text: {
     position: 'absolute',
     top: 0,
     left: 0,
     zIndex: 2,
-    fill: theme.titleColorDark,
-    color: theme.titleColorDark,
+    fill: '#000',
+    color: '#000',
     transform: translateZ(30)
   },
   textUnder: {

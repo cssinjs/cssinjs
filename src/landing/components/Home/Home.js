@@ -12,8 +12,8 @@ const styles = theme => ({
     display: 'flex',
     position: 'relative',
     overflow: 'hidden',
-    background: theme.backgroundDarkDeep,
-    color: theme.textColorDarkDeep,
+    background: theme.background.darkDeep,
+    color: theme.text.darkDeep,
   },
   column: {
     display: 'flex',
@@ -26,7 +26,7 @@ const styles = theme => ({
     width: '100%',
     zIndex: 5,
     padding: 80,
-    background: transparentize(0.2, theme.backgroundDarkDeep),
+    background: transparentize(0.2, theme.background.darkDeep),
     marginRight: '40%'
   },
   right: {
@@ -38,7 +38,7 @@ const styles = theme => ({
   },
   overlay: {
     composes: '$right',
-    background: theme.color,
+    background: theme.brand,
     '&::after': {
       content: '""',
       position: 'absolute',

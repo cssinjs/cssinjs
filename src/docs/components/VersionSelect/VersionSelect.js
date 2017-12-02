@@ -10,14 +10,14 @@ const styles = theme => ({
     cursor: 'pointer',
     background: 'transparent',
     outline: 'none',
-    border: [1, 'solid', theme.borderColor],
-    color: theme.textColor,
+    border: [1, 'solid', theme.common.border],
+    color: theme.text.light,
     padding: [0, 6],
     width: 70,
     height: '100%',
     boxSizing: 'content-box',
     font: {
-      family: theme.fontFamily,
+      family: theme.typography.fontFamily,
       size: 14,
       lineHeight: 'normal',
     }

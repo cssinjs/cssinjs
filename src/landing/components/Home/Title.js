@@ -7,14 +7,14 @@ import {title} from '../../texts'
 
 const styles = theme => ({
   title: {
-    color: theme.textColorDarkDeep,
+    color: theme.text.darkDeep,
   },
   main: {
     composes: '$title',
     maxWidth: 500,
     margin: [0, 0, 40],
     font: {
-      size: theme.fontSize * 2.5,
+      size: theme.typography.fontSize * 2.5,
       weight: 'normal'
     },
   },
@@ -23,12 +23,12 @@ const styles = theme => ({
     maxWidth: 350,
     margin: [0, 0, 40],
     font: {
-      size: theme.fontSize * 1.2,
+      size: theme.typography.fontSize * 1.2,
       weight: 'normal'
     },
   },
   icon: {
-    fill: theme.textColorDarkDeep,
+    fill: theme.text.darkDeep,
     height: 45,
     cursor: 'pointer',
     transition: transition(),

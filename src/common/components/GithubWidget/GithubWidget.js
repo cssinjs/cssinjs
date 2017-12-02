@@ -8,7 +8,7 @@ import {primaryHost} from 'common/constants/github'
 
 const styles = theme => ({
   githubWidget: {
-    color: ({inverse}) => (inverse ? theme.textColorDark : theme.textColorLight),
+    color: ({inverse}) => (inverse ? theme.text.dark : theme.text.light),
     opacity: ({stars}) => (stars ? 1 : 0),
     display: 'flex',
     alignItems: 'center',
@@ -49,7 +49,7 @@ const styles = theme => ({
   },
   iconStar: {
     extend: 'icon',
-    fill: theme.color,
+    fill: '#f7df1e', // Just a yellow star
   },
   iconGithub: {
     extend: 'icon',

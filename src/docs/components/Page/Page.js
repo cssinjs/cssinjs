@@ -2,6 +2,7 @@ import React, {PureComponent, PropTypes} from 'react'
 import {browserHistory as history} from 'react-router'
 import injectSheet from 'common/utils/jss'
 import Iframe from 'common/components/Iframe'
+import {sm as mediaSm} from 'common/constants/media'
 import Content from '../../containers/MdContent'
 import {map as navMap, home} from '../../utils/navigation'
 import NotFound from '../NotFound'
@@ -9,7 +10,7 @@ import NotFound from '../NotFound'
 const styles = theme => ({
   page: {
     minHeight: '100vh',
-    background: theme.pageBackground,
+    background: theme.common.page,
   },
   frame: {
     height: '100vh',
@@ -19,7 +20,7 @@ const styles = theme => ({
     margin: [0, 'auto'],
     padding: 50,
   },
-  [theme.media.sm]: {
+  [mediaSm]: {
     content: {
       padding: [30, 20],
     }

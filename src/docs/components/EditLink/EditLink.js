@@ -9,8 +9,8 @@ const styles = theme => ({
     alignItems: 'center',
     background: 'none',
     transition: transition(),
-    color: theme.textColor,
-    fill: theme.textColor,
+    color: theme.text.light,
+    fill: theme.text.light,
     opacity: 0.7,
     textDecoration: 'none',
     font: {

@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 import injectSheet from 'common/utils/jss'
 import GlobalStyles from 'common/components/GlobalStyles'
+import {md as mediaMd, sm as mediaSm} from 'common/constants/media'
 import {isAfter} from '../../utils/navigation'
 import Sidebar from '../Sidebar'
 
@@ -9,17 +10,17 @@ let prevLocation
 
 const styles = theme => ({
   app: {
-    background: theme.pageBackground,
-    color: theme.textColor,
-    fontFamily: theme.fontFamily,
-    fontSize: theme.fontSize,
+    background: theme.common.page,
+    color: theme.text.light,
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.fontSize,
     fontWeight: 400,
-    lineHeight: theme.lineHeight,
+    lineHeight: theme.typography.lineHeight,
     overflow: 'hidden'
   },
   sidebar: {
-    background: theme.sidebarBg,
-    color: theme.sidebarColor,
+    background: theme.sidebar.background,
+    color: theme.sidebar.color,
     position: 'fixed',
     top: 0,
     left: 0,
@@ -46,7 +47,7 @@ const styles = theme => ({
       position: 'static',
     },
   },
-  [theme.media.md]: {
+  [mediaMd]: {
     sidebar: {
       width: 260
     },
@@ -54,7 +55,7 @@ const styles = theme => ({
       marginLeft: 260
     },
   },
-  [theme.media.sm]: {
+  [mediaSm]: {
     sidebar: {
       width: '100%',
       bottom: 'auto',

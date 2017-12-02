@@ -7,7 +7,7 @@ import {transition} from 'common/utils/styles'
 
 const styles = theme => ({
   menuItem: {
-    color: theme.textColorInverse,
+    color: theme.text.dark,
     display: 'block',
     textDecoration: 'none',
     transition: transition(),
@@ -18,17 +18,17 @@ const styles = theme => ({
     },
     '&:hover': {
       isolate: false,
-      color: theme.textColorInverseActive,
+      color: theme.text.darkActive,
       opacity: 1
     }
   },
   // Can't make as function value due to usage in router
   active: {
     opacity: 1,
-    color: theme.color,
+    color: theme.brand,
     '&:hover': {
       isolate: false,
-      color: theme.color,
+      color: theme.brand,
     }
   },
   // Nesting levels

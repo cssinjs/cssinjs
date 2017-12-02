@@ -2,7 +2,7 @@ import transparentize from 'polished/lib/color/transparentize'
 import {translate, translateZ, rotateZ} from 'css-functions'
 
 export default (theme) => {
-  const backgroundLineColor = transparentize(0.2, theme.cardColor)
+  const backgroundLineColor = transparentize(0.2, '#fff')
 
   return {
     notFound: {
@@ -13,8 +13,8 @@ export default (theme) => {
       bottom: 0,
       height: '100vh',
       overflow: 'hidden',
-      color: theme.textColorInverse,
-      background: theme.color,
+      color: theme.text.dark,
+      background: theme.brand,
       userSelect: 'none',
       zIndex: 10,
 
@@ -45,7 +45,7 @@ export default (theme) => {
     inner: {
       height: '100%',
       position: 'relative',
-      maxWidth: theme.contentWidth,
+      maxWidth: 1000,
       width: '100%',
       margin: [0, 'auto'],
       borderLeft: [1, 'solid', backgroundLineColor],
@@ -85,7 +85,7 @@ export default (theme) => {
       border: {
         width: 15,
         style: 'solid',
-        color: theme.cardColor
+        color: '#fff',
       },
       animation: {
         name: 'parallaxRotate',

@@ -1,8 +1,8 @@
 import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
-import {content} from '../../constants/size'
-import {lg as mediaLg} from '../../constants/media'
+import {lg as mediaLg} from 'common/constants/media'
+import {content} from 'common/constants/size'
 
 const styles = {
   container: {

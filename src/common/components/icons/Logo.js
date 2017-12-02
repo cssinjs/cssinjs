@@ -12,15 +12,15 @@ const defaultColors = {
 const standartColors = {
   ...defaultColors,
   strokeColor: '#000',
-  backgroundColor: theme.color,
+  backgroundColor: theme.brand,
   textColor: '#000'
 }
 
 const inverseColors = {
   ...defaultColors,
-  strokeColor: theme.textColorInverse,
+  strokeColor: theme.text.dark,
   backgroundColor: 'transparent',
-  textColor: theme.textColorInverseActive
+  textColor: theme.text.darkActive
 }
 
 const Logo = ({className, strokeColor, backgroundColor, textColor, inverse}) => {

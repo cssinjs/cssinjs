@@ -4,12 +4,12 @@ import injectSheet from 'common/utils/jss'
 
 const styles = theme => ({
   text: {
-    color: theme.textColorLight,
+    color: theme.text.light,
     margin: [0, 0, 20]
   },
   inverse: {
     isolate: false,
-    color: theme.textColorDark
+    color: theme.text.dark
   },
   muted: {
     isolate: false,

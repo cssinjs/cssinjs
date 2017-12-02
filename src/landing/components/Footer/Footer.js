@@ -7,14 +7,15 @@ import {footer} from '../../texts'
 const coreTeamUrl = 'https://github.com/orgs/cssinjs/people'
 
 const styles = (theme) => {
-  const textColor = darken(0.3, theme.textColorDark)
+  const textColor = darken(0.3, theme.text.dark)
+
   return {
     footer: {
       padding: [20, 0],
       fontSize: 14,
       textAlign: 'center',
       color: textColor,
-      background: darken(0.08, theme.backgroundDark),
+      background: darken(0.08, theme.background.dark),
     },
     link: {
       isolate: false,
