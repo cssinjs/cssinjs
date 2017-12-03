@@ -6,10 +6,12 @@ const styles = {
   item: {
     display: 'inline-block',
     verticalAlign: 'middle',
+    textAlign: 'center',
     padding: [20, 0],
     margin: [0, -20],
     transition: transition(),
     '&:hover': {
+      isolate: false,
       opacity: 0.5,
       filter: 'grayscale(100)',
     }

@@ -8,6 +8,7 @@ import GithubWidget from 'common/containers/GithubWidget'
 import {repo} from 'common/config'
 import theme from 'common/theme'
 import {Logo} from 'common/components/icons'
+import {mediaXs} from 'common/constants/media'
 import Container from '../Container'
 import {button} from '../../texts'
 
@@ -41,8 +42,15 @@ const styles = {
     alignItems: 'center',
   },
   widget: {
-    marginRight: 20,
-    fontSize: 15
+    fontSize: 15,
+  },
+  button: {
+    marginLeft: 20,
+  },
+  [mediaXs]: {
+    button: {
+      display: 'none',
+    }
   }
 }
 
@@ -60,9 +68,11 @@ const Header = ({classes, colorScheme}) => {
         />
         <div className={classes.actions}>
           <GithubWidget className={classes.widget} repo={repo} inverse={inverse} />
-          <Button href={'/docs/setup'} inverse={inverse}>
-            {button.try}
-          </Button>
+          <div className={classes.button}>
+            <Button href={'/docs/setup'} inverse={inverse}>
+              {button.try}
+            </Button>
+          </div>
         </div>
       </Container>
     </div>

@@ -4,6 +4,7 @@ import {rgba} from 'css-functions'
 import injectSheet from 'common/utils/jss'
 import Iframe from 'common/components/Iframe'
 import Button from 'common/components/Button'
+import {mediaSm} from 'common/constants/media'
 import Title from '../Title'
 import Text from '../Text'
 import {button} from '../../texts'
@@ -38,6 +39,30 @@ const styles = {
   demo: {
     height: 600,
     background: rgba(0, 0, 0, 0.2)
+  },
+  [mediaSm]: {
+    layout: {
+      display: 'block',
+    },
+    left: {
+      width: '100%',
+      textAlign: 'center',
+      marginBottom: 40,
+      // TODO: Just a workaround to avoid detecting screen size and render another
+      // component instead of this. Need to add tracking of screen size change
+      // and render component like it will be "this.props.columnLayout === false"
+      '& > *': {
+        textAlign: 'center',
+      }
+    },
+    description: {
+      '& > *': {
+        textAlign: 'center',
+      }
+    },
+    action: {
+      justifyContent: 'center',
+    }
   }
 }
 
@@ -53,9 +78,7 @@ const renderDemo = (classes, demoUrl) => (
   <div className={classes.demo}>
     <VisibilitySensor>
       {({isVisible}) => {
-        if (isVisible) {
-          return <Iframe src={demoUrl} />
-        }
+        if (isVisible) return <Iframe src={demoUrl} />
         return <div />
       }}
     </VisibilitySensor>

@@ -3,6 +3,7 @@ import injectSheet from 'common/utils/jss'
 import {transition} from 'common/utils/styles'
 import Arrow from 'common/components/icons/Arrow'
 import ScrollDown from 'common/components/ScrollDown'
+import {mediaSm} from 'common/constants/media'
 import {title} from '../../texts'
 
 const styles = theme => ({
@@ -35,6 +36,21 @@ const styles = theme => ({
     '&:hover': {
       cursor: 'inherit',
       opacity: 0.5
+    }
+  },
+  [mediaSm]: {
+    main: {
+      textAlign: 'center',
+      maxWidth: '100%',
+      fontSize: theme.typography.fontSize * 2,
+    },
+    secondary: {
+      textAlign: 'center',
+      maxWidth: '100%',
+      margin: 0,
+    },
+    icon: {
+      display: 'none',
     }
   }
 })

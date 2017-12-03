@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
 import transparentize from 'polished/lib/color/transparentize'
 import {Logo} from 'common/components/icons'
+import {mediaMd, mediaSm} from 'common/constants/media'
 import Rings from '../AnimatedRings'
 import Center from '../Center'
 import Title from './Title'
@@ -21,7 +22,7 @@ const styles = theme => ({
     position: 'relative',
     overflow: 'hidden'
   },
-  left: {
+  content: {
     composes: '$column',
     width: '100%',
     zIndex: 5,
@@ -29,7 +30,7 @@ const styles = theme => ({
     background: transparentize(0.2, theme.background.darkDeep),
     marginRight: '40%'
   },
-  right: {
+  sceneHolder: {
     position: 'absolute',
     top: 0,
     right: 0,
@@ -37,7 +38,7 @@ const styles = theme => ({
     width: '40%',
   },
   overlay: {
-    composes: '$right',
+    composes: '$sceneHolder',
     background: theme.brand,
     '&::after': {
       content: '""',
@@ -56,7 +57,7 @@ const styles = theme => ({
     }
   },
   holder: {
-    composes: ['$column', '$right'],
+    composes: ['$column', '$sceneHolder'],
     position: 'absolute',
     top: 0,
     right: 0,
@@ -79,6 +80,28 @@ const styles = theme => ({
     bottom: 0,
     zIndex: 5,
     opacity: 0.25
+  },
+  [mediaMd]: {
+    home: {
+      flexDirection: 'column',
+      minHeight: 0,
+    },
+    scene: {
+      position: 'relative',
+      height: 400,
+    },
+    sceneHolder: {
+      left: 0,
+      width: '100%',
+    },
+    content: {
+      margin: 0,
+    },
+  },
+  [mediaSm]: {
+    content: {
+      padding: [40, 20],
+    },
   }
 })
 
@@ -88,14 +111,16 @@ const Home = (props) => {
   return (
     <div className={classes.home}>
       <Rings className={classes.rings} />
-      <div className={classes.left}>
+      <div className={classes.scene}>
+        <div className={classes.overlay} />
+        <div className={classes.holder}>
+          <Logo className={classes.logo} />
+        </div>
+      </div>
+      <div className={classes.content}>
         <Center vertical>
           <Title />
         </Center>
-      </div>
-      <div className={classes.overlay} />
-      <div className={classes.holder}>
-        <Logo className={classes.logo} />
       </div>
     </div>
   )
