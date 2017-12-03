@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
 import injectSheet from 'common/utils/jss'
 import GlobalStyles from 'common/components/GlobalStyles'
-import {md as mediaMd, sm as mediaSm} from 'common/constants/media'
+import {mediaMd, mediaSm} from 'common/constants/media'
 import {isAfter} from '../../utils/navigation'
 import Sidebar from '../Sidebar'
 

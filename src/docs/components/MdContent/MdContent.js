@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 import injectSheet from 'common/utils/jss'
 import {org as organization} from 'common/utils/github'
-import {md as mediaMd, sm as mediaSm} from 'common/constants/media'
+import {mediaMd, mediaSm} from 'common/constants/media'
 import VersionSelect from '../../containers/VersionSelect'
 import EditLink from '../EditLink'
 import NotFound from '../NotFound'

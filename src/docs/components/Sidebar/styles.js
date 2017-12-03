@@ -1,6 +1,6 @@
 import {translateX} from 'css-functions'
 import {transition} from 'common/utils/styles'
-import {sm as mediaSm} from 'common/constants/media'
+import {mediaSm} from 'common/constants/media'
 
 export default theme => ({
   sidebar: {

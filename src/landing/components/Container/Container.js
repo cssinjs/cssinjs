@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
-import {lg as mediaLg} from 'common/constants/media'
+import {mediaLg} from 'common/constants/media'
 import {content} from 'common/constants/size'
 
 const styles = {
@@ -9,13 +9,13 @@ const styles = {
     isolate: false,
     maxWidth: content,
     width: '100%',
-    margin: [0, 'auto']
+    margin: [0, 'auto'],
+    boxSizing: 'border-box',
   },
   [mediaLg]: {
     container: {
-      boxSizing: 'border-box',
       padding: [0, 20],
-      width: '100%'
+      width: '100%',
     }
   }
 }
