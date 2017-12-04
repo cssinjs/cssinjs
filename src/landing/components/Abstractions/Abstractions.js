@@ -65,7 +65,7 @@ class Abstractions extends PureComponent {
         <SwipeableViews
           enableMouseEvents
           animateTransitions
-          springConfig={{duration: '300ms', easeFunction: 'ease'}}
+          springConfig={{duration: '1500ms', easeFunction: 'ease'}}
           animateHeight
           resistance
           index={index}
