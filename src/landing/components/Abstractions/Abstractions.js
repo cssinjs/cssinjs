@@ -57,17 +57,13 @@ class Abstractions extends PureComponent {
       <div>
         <Title inverse={inverse} centered>{title.abstractions}</Title>
         <Text inverse={inverse} muted narrow centered>{text.abstractions}</Text>
-        <div className={classes.tabs}>
-          <Tabs active={index} onChange={this.handleChange}>
-            {this.renderTabs()}
-          </Tabs>
-        </div>
+        <Tabs className={classes.tabs} active={index} onChange={this.handleChange}>
+          {this.renderTabs()}
+        </Tabs>
         <SwipeableViews
           enableMouseEvents
           animateTransitions
-          springConfig={{duration: '1500ms', easeFunction: 'ease'}}
           animateHeight
-          resistance
           index={index}
           onChangeIndex={this.handleChangeIndex}
         >
