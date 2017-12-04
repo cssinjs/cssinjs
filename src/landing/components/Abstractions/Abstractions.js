@@ -1,43 +1,88 @@
-import React, {PropTypes} from 'react'
+import React, {PureComponent, PropTypes} from 'react'
+import SwipeableViews from 'react-swipeable-views'
+import Tabs, {Tab} from 'common/components/Tabs'
 import injectSheet from 'common/utils/jss'
+import {transition} from 'common/utils/styles'
 import Title from '../Title'
 import Text from '../Text'
-import {title, text} from '../../texts'
-
-// TODO: Move to inner container
 import Demo from '../Demo'
-import {jss} from '../../demos'
-// import {jss, reactJss, styledJss} from '../../demos'
+import {title, text} from '../../texts'
+import {jss, reactJss, styledJss} from '../../demos'
 
-// TODO: If styles are not needed - remove them.
-// Move block to containers
-// And remove injectSheet
-const styles = {
+class Abstractions extends PureComponent {
 
+  static propTypes = {
+    classes: PropTypes.objectOf(PropTypes.string).isRequired,
+    inverse: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    inverse: false,
+  }
+
+  constructor(props) {
+    super(props)
+    this.demos = [jss, reactJss, styledJss]
+    this.state = {
+      index: 0,
+    }
+  }
+
+  handleChange = (event, index) => {
+    this.setState({index})
+  }
+
+  handleChangeIndex = (index) => {
+    this.setState({index})
+  }
+
+  renderTabs() {
+    return this.demos.map(demo => <Tab>{demo.title}</Tab>)
+  }
+
+  renderTabsContent() {
+    const {classes} = this.props
+    return this.demos.map(demo => (
+      <div className={classes.item}>
+        <Demo {...demo} columnLayout />
+      </div>
+    ))
+  }
+
+  render() {
+    const {inverse, classes} = this.props
+    const {index} = this.state
+
+    return (
+      <div>
+        <Title inverse={inverse} centered>{title.abstractions}</Title>
+        <Text inverse={inverse} muted narrow centered>{text.abstractions}</Text>
+        <div className={classes.tabs}>
+          <Tabs active={index} onChange={this.handleChange}>
+            {this.renderTabs()}
+          </Tabs>
+        </div>
+        <SwipeableViews
+          enableMouseEvents
+          animateTransitions
+          springConfig={{duration: '300ms', easeFunction: 'ease'}}
+          animateHeight
+          resistance
+          index={index}
+          onChangeIndex={this.handleChangeIndex}
+        >
+          {this.renderTabsContent()}
+        </SwipeableViews>
+      </div>
+    )
+  }
 }
 
-// TODO: Move this inside tabs
-const renderSingleItem = () => (
-  <Demo {...jss} columnLayout />
-)
-
-const Abstractions = ({classes, inverse}) => (
-  <div>
-    <Title inverse={inverse} centered>{title.abstractions}</Title>
-    <Text inverse={inverse} muted narrow centered>{text.abstractions}</Text>
-
-    {renderSingleItem()}
-
-  </div>
-)
-
-Abstractions.propTypes = {
-  classes: PropTypes.objectOf(PropTypes.string).isRequired,
-  inverse: PropTypes.bool
-}
-
-Abstractions.defaultProps = {
-  inverse: false
-}
-
-export default injectSheet(styles)(Abstractions)
+export default injectSheet({
+  tabs: {
+    marginBottom: 40,
+  },
+  item: {
+    padding: [0, 10],
+  }
+})(Abstractions)
