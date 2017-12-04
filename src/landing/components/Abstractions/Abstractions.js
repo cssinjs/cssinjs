@@ -42,8 +42,9 @@ class Abstractions extends PureComponent {
 
   renderTabsContent() {
     const {classes} = this.props
+    let key = 0 // Needed to make swipeable views animating
     return this.demos.map(demo => (
-      <div className={classes.item}>
+      <div className={classes.item} key={key++}>
         <Demo {...demo} columnLayout />
       </div>
     ))
