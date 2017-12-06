@@ -6,7 +6,6 @@ import injectSheet, {
 } from 'react-jss'
 import preset from 'jss-preset-default'
 import isolate from 'jss-isolate'
-
 import theme from '../theme'
 
 const jss = createJss(preset()).use(isolate({
