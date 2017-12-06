@@ -12,6 +12,14 @@
     "logo": "images/companies/logo_styleguidist.png",
     "url": "https://react-styleguidist.js.org/"
   }, {
+    "name": "Rambler",
+    "logo": "images/companies/logo_rambler.png",
+    "url": "http://rambler.ru/"
+  }, {
+    "name": "Nordnet Bank",
+    "logo": "images/companies/logo_nordnet.png",
+    "url": "http://www.nordnet.se/"
+  }, {
     "name": "jcore.io",
     "logo": "images/companies/logo_jcore.png",
     "url": "http://jcore.io/"

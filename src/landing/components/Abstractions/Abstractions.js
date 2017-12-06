@@ -62,7 +62,6 @@ class Abstractions extends PureComponent {
           {this.renderTabs()}
         </Tabs>
         <SwipeableViews
-          enableMouseEvents
           animateTransitions
           animateHeight
           index={index}

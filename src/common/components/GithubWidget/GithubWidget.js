@@ -16,8 +16,8 @@ const styles = theme => ({
     fontWeight: 400,
     transition: transition(),
     '&:hover': {
-      isoalte: false,
-      opacity: 0.7
+      isolate: false,
+      opacity: 0.7,
     }
   },
   item: {
@@ -32,7 +32,7 @@ const styles = theme => ({
     maxHeight: 50, // Fix for IE10
     '&:first-child': {
       isolate: false,
-      marginLeft: 0
+      marginLeft: 0,
     }
   },
   text: {
