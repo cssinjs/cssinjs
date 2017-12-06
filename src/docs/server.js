@@ -96,6 +96,9 @@ const renderDoc = ({app, css, analytics, sidecar}) => (
 
 export default (location, callback) => {
   match({routes, location}, (error, redirectLocation, renderProps) => {
+
+    // console.log(routes)
+
     const html = renderDoc({
       ...renderApp(renderProps),
       analytics: renderAnalytics(),
