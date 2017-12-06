@@ -4,7 +4,7 @@ import {match, RouterContext} from 'react-router'
 import {stripIndents} from 'common-tags'
 import {minify} from 'html-minifier'
 
-import {JssProvider, ThemeProvider, SheetsRegistry} from 'common/utils/jss'
+import {JssProvider, ThemeProvider, SheetsRegistry, jss} from 'common/utils/jss'
 import theme from 'common/theme'
 import {docs as config} from 'common/config'
 
@@ -23,7 +23,7 @@ const renderApp = (renderProps) => {
   // Just compiled empty critical css and no html
   const app = renderToString(
     <ThemeProvider theme={theme}>
-      <JssProvider registry={sheets}>
+      <JssProvider registry={sheets} jss={jss}>
         <RouterContext {...renderProps} />
       </JssProvider>
     </ThemeProvider>
