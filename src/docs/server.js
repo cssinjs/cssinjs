@@ -6,7 +6,7 @@ import {minify} from 'html-minifier'
 
 import {JssProvider, ThemeProvider, SheetsRegistry, jss} from 'common/utils/jss'
 import theme from 'common/theme'
-import {docs as config} from 'common/config'
+import {gitter, docs as config} from 'common/config'
 
 import routes from './routes'
 import {version} from '../../package.json'
@@ -53,7 +53,7 @@ const renderSidecar = () => (
   stripIndents`
     <script>
       ((window.gitter = {}).chat = {}).options = {
-        room: '${config.gitter}'
+        room: '${gitter}'
       };
     </script>
     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
