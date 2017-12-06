@@ -3,7 +3,7 @@ import {renderToString} from 'react-dom/server'
 import {stripIndents} from 'common-tags'
 import {minify} from 'html-minifier'
 
-import {JssProvider, ThemeProvider, SheetsRegistry} from 'common/utils/jss'
+import {JssProvider, ThemeProvider, SheetsRegistry, jss} from 'common/utils/jss'
 import theme from 'common/theme'
 import {landing as config} from 'common/config'
 import App from './components/App'
@@ -18,7 +18,7 @@ const renderApp = () => {
   const sheets = new SheetsRegistry()
   const app = renderToString(
     <ThemeProvider theme={theme}>
-      <JssProvider registry={sheets}>
+      <JssProvider registry={sheets} jss={jss}>
         <App />
       </JssProvider>
     </ThemeProvider>
