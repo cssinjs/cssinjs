@@ -1,3 +1,8 @@
+/**
+ * Global site config
+ * Holds all common data for landing and docs site
+ */
+
 const title = 'JSS'
 const absoluteUrl = 'http://cssinjs.org/'
 const landingDescription = 'An authoring tool for CSS which uses JavaScript as a host language'
