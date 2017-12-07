@@ -5,11 +5,10 @@ import {useBasename} from 'history'
 import {jss, ThemeProvider, JssProvider} from 'common/utils/jss'
 import theme from 'common/theme'
 import 'whatwg-fetch'
-import {getCurrentPath} from './utils/url'
 import routes from './routes'
 
 const history = useBasename(() => browserHistory)({
-  basename: process.browser ? getCurrentPath() : ''
+  basename: process.browser ? '/docs' : ''
 })
 
 render(

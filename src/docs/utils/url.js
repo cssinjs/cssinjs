@@ -23,11 +23,6 @@ export const isRelative = path => path[0] === '.'
 
 export const isHash = slug => slug[0] === '#'
 
-export const getCurrentPath = () => {
-  const {pathname} = window.location
-  return pathname.substring(0, pathname.lastIndexOf('/'))
-}
-
 export {
   resolve,
   isAbsolute
