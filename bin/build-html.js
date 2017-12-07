@@ -32,13 +32,10 @@ if (dups.length) {
 }
 
 // Generate html files for docs site
-const getDir = (slug) => {
-  const dir = siteConfig.docs.rootDir;
-  return path.join(__dirname, '..', dir ? `/docs/${dir}/${slug}` : `/docs/${slug}`)
-}
+const getDir = (slug) => path.join(__dirname, '..', `/docs/docs/${slug}`)
 
 // Create docs
-const docsDir = path.join(__dirname, '..', 'docs', siteConfig.docs.rootDir)
+const docsDir = path.join(__dirname, '..', 'docs', 'docs')
 if (!fs.existsSync(docsDir)) {
   fs.mkdirSync(docsDir)
 }
@@ -57,7 +54,7 @@ Object.keys(nav.map).forEach((name) => {
 // Create landing
 renderLanding(html => {
   fs.writeFileSync(
-    path.join(__dirname, '..', 'docs', siteConfig.landing.rootDir, 'index.html'),
+    path.join(__dirname, '..', 'docs', 'index.html'),
     html
   )
 })

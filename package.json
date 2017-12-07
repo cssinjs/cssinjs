@@ -60,6 +60,7 @@
     "babel-polyfill": "^6.20.0",
     "classnames": "^2.2.5",
     "css-functions": "^1.0.5",
+    "history": "^3.0.0",
     "is-absolute-url": "^2.1.0",
     "jss": "^9.3.3",
     "jss-isolate": "^5.0.0",

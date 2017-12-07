@@ -24,7 +24,6 @@ module.exports = {
   gitter: 'cssinjs/Lobby',
 
   landing: {
-    rootDir: '',
     head: {
       title,
       description: landingDescription,
@@ -40,7 +39,6 @@ module.exports = {
   },
 
   docs: {
-    rootDir: 'docs',
     head: {
       title,
       description: docsDescription,

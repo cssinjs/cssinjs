@@ -1,7 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import Link from 'react-router/lib/Link'
 import cn from 'classnames'
-import {repo, docs as config} from 'common/config'
+import {repo} from 'common/config'
 import injectSheet from 'common/utils/jss'
 import {Logo} from 'common/components/icons'
 import GithubWidget from 'common/containers/GithubWidget'
@@ -49,7 +49,7 @@ class Sidebar extends Component {
 
     return (
       <aside className={cn(classes.sidebar, className)}>
-        <Link to={`/${config.rootDir}`} className={classes.logoContainer}>
+        <Link to="/" className={classes.logoContainer}>
           <Logo className={classes.logo} inverse />
         </Link>
         <GithubWidget className={classes.counter} repo={repo} inverse />

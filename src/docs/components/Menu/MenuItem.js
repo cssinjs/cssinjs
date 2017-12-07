@@ -2,7 +2,6 @@ import React, {PropTypes} from 'react'
 import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
 import injectSheet from 'common/utils/jss'
-import {docs as config} from 'common/config'
 import {transition} from 'common/utils/styles'
 
 const styles = theme => ({
@@ -69,7 +68,7 @@ function MenuItem(props) {
       <IndexLink
         className={className}
         activeClassName={classes.active}
-        to={`/${config.rootDir}`}
+        to="/"
       >
         {title}
       </IndexLink>
@@ -80,7 +79,7 @@ function MenuItem(props) {
     <Link
       className={className}
       activeClassName={classes.active}
-      to={config.rootDir ? `/${config.rootDir}/${name}` : `/${name}`}
+      to={`/${name}`}
     >
       {title}
     </Link>

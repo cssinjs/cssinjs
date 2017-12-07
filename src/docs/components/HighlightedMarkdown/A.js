@@ -1,11 +1,8 @@
 import React, {PropTypes} from 'react'
 import {Link} from 'react-router'
-import {docs as config} from 'common/config'
 import {getBlobUrl} from 'common/utils/github'
 import {findPage, map} from '../../utils/navigation'
 import {isAbsolute, isHash, resolve, parse} from '../../utils/url'
-
-const rootUrl = config.rootDir ? `/${config.rootDir}` : ''
 
 const absUrl = (url, currPageName) => {
   if (isAbsolute(url)) return url
@@ -26,7 +23,7 @@ const formatProps = (props) => {
     href = absUrl(href, pageName)
     const page = findPage(href)
     if (page && !page.external) {
-      to = `${rootUrl}/${page.name}${parse(href).hash}`
+      to = `/${page.name}${parse(href).hash}`
     }
     else target = '_blank'
   }

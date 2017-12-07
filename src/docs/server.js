@@ -19,8 +19,6 @@ const minifyOptions = {
 const renderApp = (renderProps) => {
   const sheets = new SheetsRegistry()
 
-  // TODO: SSR not working.
-  // Just compiled empty critical css and no html
   const app = renderToString(
     <ThemeProvider theme={theme}>
       <JssProvider registry={sheets} jss={jss}>
@@ -96,8 +94,6 @@ const renderDoc = ({app, css, analytics, sidecar}) => (
 
 export default (location, callback) => {
   match({routes, location}, (error, redirectLocation, renderProps) => {
-
-    // console.log(routes)
 
     const html = renderDoc({
       ...renderApp(renderProps),
