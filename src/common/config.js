@@ -4,22 +4,8 @@
  */
 
 const title = 'JSS'
+const description = 'An authoring tool for CSS which uses JavaScript as a host language'
 const absoluteUrl = 'http://cssinjs.org/'
-const landingDescription = 'An authoring tool for CSS which uses JavaScript as a host language'
-const docsDescription = 'A lib for generating CSS from JavaScript'
-const keywords = [
-  'jss',
-  'style',
-  'sheet',
-  'stylesheet',
-  'css',
-  'cssinjs',
-  'css in js',
-  'css-in-js',
-  'components',
-  'composable',
-  'react',
-]
 
 module.exports = {
   host: process.env.HOST || 'localhost',
@@ -28,33 +14,28 @@ module.exports = {
   repo: 'cssinjs/jss',
   gitter: 'cssinjs/Lobby',
 
-  landing: {
-    head: {
-      title,
-      description: landingDescription,
-      keywords
-    },
-    og: {
-      title,
-      description: landingDescription,
-      type: 'website',
-      image: `${absoluteUrl}images/logo-og.png`, // Can't be relative url, and can't be svg
-      url: absoluteUrl
-    }
+  head: {
+    title,
+    description,
+    keywords: [
+      'jss',
+      'style',
+      'sheet',
+      'stylesheet',
+      'css',
+      'cssinjs',
+      'css in js',
+      'css-in-js',
+      'components',
+      'composable',
+      'react',
+    ]
   },
-
-  docs: {
-    head: {
-      title,
-      description: docsDescription,
-      keywords
-    },
-    og: {
-      title,
-      description: docsDescription,
-      type: 'website',
-      image: `${absoluteUrl}images/logo-og.png`, // Can't be relative url, and can't be svg
-      url: `${absoluteUrl}docs`
-    }
+  og: {
+    title,
+    description,
+    type: 'website',
+    image: `${absoluteUrl}images/logo-og.png`, // Can't be relative url, and can't be svg
+    url: absoluteUrl
   }
 }

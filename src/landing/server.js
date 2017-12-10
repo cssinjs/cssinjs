@@ -5,7 +5,7 @@ import {minify} from 'html-minifier'
 
 import {JssProvider, ThemeProvider, SheetsRegistry, jss} from 'common/utils/jss'
 import theme from 'common/theme'
-import {landing as config} from 'common/config'
+import config from 'common/config'
 import App from './components/App'
 import {version} from '../../package.json'
 
