@@ -2,6 +2,7 @@ import theme from '../../theme'
 
 export default {
   menuItem: {
+    cursor: 'pointer',
     color: theme.textColorInverse,
     display: 'block',
     textDecoration: 'none',
