@@ -28,23 +28,29 @@ export default {
     width: '50%',
     // Fix for IE10
     maxHeight: 50,
+    cursor: 'pointer',
+    padding: {
+      top: 15,
+      bottom: 15
+    }
   },
   text: {
-    lineHeight: 5,
-    color: theme.textColorInverseActive
+    color: theme.textColorInverseActive,
+    cursor: 'inherit'
   },
   icon: {
     margin: {
       top: -3,
       right: 8
-    }
+    },
+    cursor: 'inherit'
   },
   iconStar: {
-    extend: 'icon',
+    composes: '$icon',
     fill: theme.themeColor,
   },
   iconGithub: {
-    extend: 'icon',
+    composes: '$icon',
     fill: theme.textColorInverse,
   }
 }

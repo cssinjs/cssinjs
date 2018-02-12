@@ -17,15 +17,18 @@ export default {
     '&:hover': {
       isolate: false,
       opacity: 1,
+      cursor: 'pointer'
     }
   },
   icon: {
     paddingRight: 8,
-    marginTop: -1
+    marginTop: -1,
+    cursor: 'inherit'
   },
   text: {
     lineHeight: 1,
     verticalAlign: 'middle',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    cursor: 'inherit'
   }
 }

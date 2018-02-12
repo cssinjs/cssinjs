@@ -123,6 +123,8 @@ export default {
     }
   },
   headingAnchor: {
+    display: 'flex',
+    alignItems: 'center',
     transition: theme.transition(),
     position: 'absolute',
     top: 0,
@@ -133,6 +135,10 @@ export default {
       right: 5,
       top: 0
     },
-    opacity: 0
+    opacity: 0,
+    '& > svg': {
+      isolat: false,
+      cursor: 'pointer'
+    }
   }
 }

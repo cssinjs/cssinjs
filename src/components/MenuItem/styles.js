@@ -12,6 +12,7 @@ export default {
       size: 14,
     },
     '&:hover': {
+      cursor: 'pointer',
       isolate: false,
       color: theme.textColorInverseActive,
       opacity: 1

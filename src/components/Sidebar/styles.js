@@ -19,6 +19,7 @@ export default {
     height: 100,
     width: 100,
     verticalAlign: 'middle',
+    cursor: 'pointer'
   },
   counter: {
     flexShrink: 0,
