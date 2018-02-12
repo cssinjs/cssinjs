@@ -6,7 +6,7 @@ import theme from '../../theme'
 
 const Logo = ({className, strokeColor, backgroundColor, textColor}) => (
   <Icon>
-    {({sheet: {classes}}) => (
+    {({classes}) => (
       <svg
         className={cn(classes.icon, className)}
         xmlns="http://www.w3.org/2000/svg"

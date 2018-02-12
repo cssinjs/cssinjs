@@ -1,4 +1,4 @@
-import injectSheet from '../../utils/jss'
+import injectSheet from 'react-jss'
 
 const styles = {
   icon: {

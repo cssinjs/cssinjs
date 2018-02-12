@@ -3,12 +3,11 @@ import {renderToString} from 'react-dom/server'
 import {match, RouterContext} from 'react-router'
 import {stripIndents} from 'common-tags'
 import {minify} from 'html-minifier'
+import {SheetsRegistryProvider, SheetsRegistry} from 'react-jss'
 
-import routes from './routes'
-import {SheetsRegistryProvider, SheetsRegistry} from './utils/jss'
-
-import config from './config'
 import {version} from '../package.json'
+import routes from './routes'
+import config from './config'
 
 const minifyOptions = {
   minifyCSS: true,

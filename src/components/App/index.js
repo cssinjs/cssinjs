@@ -1,8 +1,9 @@
 import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
+import injectSheet, {JssProvider} from 'react-jss'
 
-import injectSheet from '../../utils/jss'
 import {isAfter} from '../../utils/navigation'
+import {jss} from '../../utils/jss'
 import GlobalStyles from '../GlobalStyles'
 import Sidebar from '../Sidebar'
 import styles from './styles'
@@ -26,31 +27,33 @@ const getTransition = (location) => {
 }
 
 const App = (props) => {
-  const {children, location, sheet: {classes}} = props
+  const {children, location, classes} = props
   const transition = getTransition(location)
 
   return (
-    <GlobalStyles>
-      <div className={classes.app}>
-        <Sidebar className={classes.sidebar} />
-        <div className={classes.content}>
-          <RouteTransition
-            className={classes.contentInner}
-            pathname={location.pathname}
-            runOnMount={false}
-            {...transition}
-          >
-            {children}
-          </RouteTransition>
+    <JssProvider jss={jss}>
+      <GlobalStyles>
+        <div className={classes.app}>
+          <Sidebar className={classes.sidebar} />
+          <div className={classes.content}>
+            <RouteTransition
+              className={classes.contentInner}
+              pathname={location.pathname}
+              runOnMount={false}
+              {...transition}
+            >
+              {children}
+            </RouteTransition>
+          </div>
         </div>
-      </div>
-    </GlobalStyles>
+      </GlobalStyles>
+    </JssProvider>
   )
 }
 
 App.propTypes = {
   location: React.PropTypes.object.isRequired,
-  sheet: React.PropTypes.object.isRequired,
+  classes: React.PropTypes.object.isRequired,
   children: React.PropTypes.node.isRequired
 }
 

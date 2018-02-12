@@ -1,7 +1,7 @@
 import React, {PureComponent, PropTypes} from 'react'
 import {browserHistory as history} from 'react-router'
 
-import injectSheet from '../../utils/jss'
+import injectSheet from 'react-jss'
 import Content from '../../containers/MdContent'
 import {map as navMap, home} from '../../utils/navigation'
 import NotFound from '../NotFound'
@@ -10,7 +10,7 @@ import styles from './styles'
 
 class Page extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
     params: PropTypes.object.isRequired
   }
@@ -24,7 +24,7 @@ class Page extends PureComponent {
 
   render() {
     const {
-      sheet: {classes},
+      classes,
       params,
       location: {query}
     } = this.props

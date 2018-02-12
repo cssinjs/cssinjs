@@ -5,7 +5,7 @@ import Icon from './Icon'
 
 const Link = ({className}) => (
   <Icon>
-    {({sheet: {classes}}) => (
+    {({classes}) => (
       <svg
         className={cn(classes.icon, className)}
         viewBox="0 0 16 16"

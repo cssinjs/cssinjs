@@ -19,7 +19,7 @@ const createId = (data) => {
  */
 export default class H extends PureComponent {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
     tag: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired
   }
@@ -41,7 +41,7 @@ export default class H extends PureComponent {
     const {
       children,
       tag,
-      sheet: {classes},
+      classes,
       ...rest
     } = this.props
 

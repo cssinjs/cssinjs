@@ -1,13 +1,13 @@
 import React, {PropTypes} from 'react'
-import injectSheet from '../../utils/jss'
+import injectSheet from 'react-jss'
 
-function Iframe({src, sheet: {classes}}) {
+function Iframe({src, classes}) {
   return <iframe src={src} className={classes.iframe} />
 }
 
 Iframe.propTypes = {
   src: PropTypes.string.isRequired,
-  sheet: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired
 }
 
 const styles = {

@@ -8,12 +8,12 @@ import Hamburger from '../Hamburger'
 import Menu from '../Menu'
 
 import config from '../../config'
-import injectSheet from '../../utils/jss'
+import injectSheet from 'react-jss'
 import styles from './styles'
 
 class Sidebar extends Component {
   static propTypes = {
-    sheet: PropTypes.object.isRequired,
+    classes: PropTypes.object.isRequired,
     className: PropTypes.string
   }
 
@@ -47,7 +47,7 @@ class Sidebar extends Component {
 
   render() {
     const {
-      sheet: {classes},
+      classes,
       className
     } = this.props
     const {showMenu} = this.state

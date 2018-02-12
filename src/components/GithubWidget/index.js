@@ -3,7 +3,7 @@ import cn from 'classnames'
 import {Github, Star} from '../icons'
 
 import {primaryHost} from '../../constants/github'
-import injectSheet from '../../utils/jss'
+import injectSheet from 'react-jss'
 import styles from './styles'
 
 const formatStars = num => String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
@@ -13,7 +13,7 @@ const formatStars = num => String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',')
  */
 function GithubWidget(props) {
   const {
-    sheet: {classes},
+    classes,
     stars,
     repo,
     className
@@ -43,7 +43,7 @@ function GithubWidget(props) {
 }
 
 GithubWidget.propTypes = {
-  sheet: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
   repo: PropTypes.string.isRequired,
   stars: PropTypes.number,
   className: PropTypes.string

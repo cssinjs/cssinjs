@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import {Link, IndexLink} from 'react-router'
 import cn from 'classnames'
 
-import injectSheet from '../../utils/jss'
+import injectSheet from 'react-jss'
 import styles from './styles'
 
 function MenuItem(props) {
@@ -13,7 +13,7 @@ function MenuItem(props) {
     home,
     title,
     name,
-    sheet: {classes}
+    classes
   } = props
   const className = cn(classes.menuItem, classes[`level${level}`])
 
@@ -55,7 +55,7 @@ function MenuItem(props) {
 }
 
 MenuItem.propTypes = {
-  sheet: PropTypes.object.isRequired,
+  classes: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
