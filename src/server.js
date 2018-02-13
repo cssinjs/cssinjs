@@ -3,30 +3,16 @@ import {renderToString} from 'react-dom/server'
 import {match, RouterContext} from 'react-router'
 import {stripIndents} from 'common-tags'
 import {minify} from 'html-minifier'
-import {SheetsRegistryProvider, SheetsRegistry} from 'react-jss'
+import {JssProvider, SheetsRegistry} from 'react-jss'
 
 import {version} from '../package.json'
+import {jss} from './utils/jss'
 import routes from './routes'
 import config from './config'
 
 const minifyOptions = {
   minifyCSS: true,
   minifyJS: true
-}
-
-const renderApp = (renderProps) => {
-  const sheets = new SheetsRegistry()
-
-  const app = renderToString(
-    <SheetsRegistryProvider registry={sheets}>
-      <RouterContext {...renderProps} />
-    </SheetsRegistryProvider>
-  )
-
-  return {
-    app,
-    css: sheets.toString()
-  }
 }
 
 const renderAnalytics = () => (
@@ -89,9 +75,11 @@ const renderDoc = ({app, css, analytics, sidecar}) => (
 )
 
 export default (location, callback) => {
-  match({routes, location}, (error, redirectLocation, renderProps) => {
+  const registry = new SheetsRegistry()
+  match({routes: routes({registry}), location}, (error, redirectLocation, renderProps) => {
     const html = renderDoc({
-      ...renderApp(renderProps),
+      app: renderToString(<RouterContext {...renderProps} />),
+      css: registry.toString(),
       analytics: renderAnalytics(),
       sidecar: renderSidecar()
     })

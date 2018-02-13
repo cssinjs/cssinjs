@@ -1,10 +1,10 @@
 var fs = require('fs')
 var path = require('path')
 
-var configPath = path.join(process.cwd(), '.babelrc')
-var config = JSON.parse(fs.readFileSync(configPath))
+var babelConfigPath = path.join(process.cwd(), '.babelrc')
+var babelConfig = JSON.parse(fs.readFileSync(babelConfigPath))
 
-require('babel-register')(config)
+require('babel-register')(babelConfig)
 require('ignore-styles')
 require('module-alias').addAliases(require('../webpack.config.base').resolve.alias)
 
@@ -40,4 +40,3 @@ Object.keys(nav.map).forEach((name) => {
     fs.writeFileSync(path.join(dir, 'index.html'), html)
   })
 })
-
