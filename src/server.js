@@ -40,7 +40,13 @@ const renderSidecar = () => (
   `
 )
 
-const renderDoc = ({app, css, analytics, sidecar}) => (
+const renderCodeFund = () => (
+  stripIndents`
+    <script src="https://codefund.io/scripts/0c702cf1-8730-4cb2-bb1b-0a36c437e46d/embed.js?theme=codesandbox&template=default"></script>
+  `
+)
+
+const renderDoc = ({app, css, analytics, sidecar, codeFund}) => (
   stripIndents`
     <!doctype html>
     <html lang="en">
@@ -67,6 +73,7 @@ const renderDoc = ({app, css, analytics, sidecar}) => (
         ${app}
         <script src="/vendor.bundle.v${version}.js"></script>
         <script src="/bundle.v${version}.js"></script>
+        ${codeFund}
         ${analytics}
         ${sidecar}
       </body>
@@ -81,7 +88,8 @@ export default (location, callback) => {
       app: renderToString(<RouterContext {...renderProps} />),
       css: registry.toString(),
       analytics: renderAnalytics(),
-      sidecar: renderSidecar()
+      sidecar: renderSidecar(),
+      codeFund: renderCodeFund()
     })
     callback(minify(html, minifyOptions))
   })
