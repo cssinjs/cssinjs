@@ -1,9 +1,8 @@
 import React, {PureComponent, PropTypes} from 'react'
-import MenuItem from '../MenuItem'
-
-import {tree} from '../../utils/navigation'
-
 import injectSheet from 'react-jss'
+
+import MenuItem from '../MenuItem'
+import {tree} from '../../utils/navigation'
 import styles from './styles'
 
 class Menu extends PureComponent {

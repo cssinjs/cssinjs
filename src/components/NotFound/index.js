@@ -1,9 +1,8 @@
 import React, {Component, PropTypes} from 'react'
 import {Motion, spring} from 'react-motion'
+import injectSheet from 'react-jss'
 
 import {NotFound as NotFoundIcon} from '../icons'
-
-import injectSheet from 'react-jss'
 import styles from './styles'
 
 /**

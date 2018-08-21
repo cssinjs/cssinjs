@@ -1,7 +1,7 @@
 import React from 'react'
-import {Pencil} from '../icons'
-
 import injectSheet from 'react-jss'
+
+import {Pencil} from '../icons'
 import styles from './styles'
 
 const EditLink = ({url, classes}) => (

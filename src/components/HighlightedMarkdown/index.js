@@ -1,9 +1,9 @@
 import React, {PureComponent, PropTypes, createElement} from 'react'
 import Markdown from 'markdown-react-js'
 import cn from 'classnames'
+import injectSheet from 'react-jss'
 
 import ScrollToHash from '../ScrollToHash'
-import injectSheet from 'react-jss'
 import Code from './Code'
 import A from './A'
 import H from './H'

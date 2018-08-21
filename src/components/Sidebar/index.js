@@ -1,6 +1,7 @@
 import React, {Component, PropTypes} from 'react'
 import Link from 'react-router/lib/Link'
 import cn from 'classnames'
+import injectSheet from 'react-jss'
 
 import {Logo} from '../icons'
 import GithubWidget from '../../containers/GithubWidget'
@@ -9,7 +10,6 @@ import Hamburger from '../Hamburger'
 import Menu from '../Menu'
 
 import config from '../../config'
-import injectSheet from 'react-jss'
 import styles from './styles'
 
 class Sidebar extends Component {

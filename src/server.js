@@ -3,10 +3,9 @@ import {renderToString} from 'react-dom/server'
 import {match, RouterContext} from 'react-router'
 import {stripIndents} from 'common-tags'
 import {minify} from 'html-minifier'
-import {JssProvider, SheetsRegistry} from 'react-jss'
+import {SheetsRegistry} from 'react-jss'
 
 import {version} from '../package.json'
-import {jss} from './utils/jss'
 import routes from './routes'
 import config from './config'
 

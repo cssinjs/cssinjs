@@ -1,6 +1,6 @@
 import React from 'react'
 import {RouteTransition, presets} from 'react-router-transition'
-import injectSheet, {JssProvider} from 'react-jss'
+import injectSheet from 'react-jss'
 
 import {isAfter} from '../../utils/navigation'
 import GlobalStyles from '../GlobalStyles'

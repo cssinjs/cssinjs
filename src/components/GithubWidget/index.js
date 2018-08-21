@@ -1,9 +1,9 @@
 import React, {PropTypes} from 'react'
 import cn from 'classnames'
-import {Github, Star} from '../icons'
+import injectSheet from 'react-jss'
 
 import {primaryHost} from '../../constants/github'
-import injectSheet from 'react-jss'
+import {Github, Star} from '../icons'
 import styles from './styles'
 
 const formatStars = num => String(num).replace(/\B(?=(\d{3})+(?!\d))/g, ',')

@@ -20,7 +20,7 @@ const styles = {
 
 class CodeFundWidget extends Component {
   static propTypes = {
-    classes: React.PropTypes.object
+    classes: React.PropTypes.object.isRequired
   }
 
   componentDidMount() {

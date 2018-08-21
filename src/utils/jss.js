@@ -4,7 +4,7 @@ import isolate from 'jss-isolate'
 
 import theme from '../theme'
 
-export const jss = createJss(preset()).use(isolate({
+export default createJss(preset()).use(isolate({
   reset: {
     boxSizing: 'border-box',
     fontFamily: theme.fontFamily,
