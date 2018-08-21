@@ -5,10 +5,16 @@
 import React, {Component} from 'react'
 import {browserHistory} from 'react-router'
 import injectSheet from 'react-jss'
+import theme from '../../theme'
 
 const styles = {
   container: {
-    minHeight: 145
+    minHeight: 145,
+  },
+  [theme.media.sm]: {
+    container: {
+      display: 'none'
+    }
   }
 }
 
