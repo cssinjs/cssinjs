@@ -48,78 +48,78 @@
     "path": "/docs/plugins.md",
     "children": {
       "jss-template": {
-        "title": "jss-template",
-        "repo": "jss-template",
-        "path": "/readme.md"
+        "title": "jss-plugin-syntax-template",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-template/readme.md"
       },
       "jss-cache": {
-        "title": "jss-cache",
-        "repo": "jss-cache",
-        "path": "/readme.md"
+        "title": "jss-plugin-cache",
+        "repo": "jss",
+        "path": "packages/jss-plugin-cache/readme.md"
       },
       "jss-global": {
-        "title": "jss-global",
-        "repo": "jss-global",
-        "path": "/readme.md"
+        "title": "jss-plugin-syntax-global",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-global/readme.md"
       },
       "jss-extend": {
-        "title": "jss-extend",
-        "repo": "jss-extend",
-        "path": "/readme.md"
+        "title": "jss-plugin-syntax-extend",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-extend/readme.md"
       },
       "jss-nested": {
-        "title": "jss-nested",
-        "repo": "jss-nested",
-        "path": "/readme.md"
+        "title": "jss-plugin-syntax-nested",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-nested/readme.md"
       },
       "jss-compose": {
-        "title": "jss-compose",
-        "repo": "jss-compose",
-        "path": "/readme.md"
+        "title": "jss-plugin-syntax-compose",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-compose/readme.md"
       },
       "jss-camel-case": {
-        "title": "jss-camel-case",
-        "repo": "jss-camel-case",
-        "path": "/readme.md"
+        "title": "jss-plugin-syntax-camel-case",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-camel-case/readme.md"
       },
       "jss-default-unit": {
-        "title": "jss-default-unit",
-        "repo": "jss-default-unit",
-        "path": "/readme.md"
+        "title": "jss-plugin-syntax-default-unit",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-default-unit/readme.md"
       },
       "jss-expand": {
-        "title": "jss-expand",
-        "repo": "jss-expand",
-        "path": "/readme.md",
+        "title": "jss-plugin-syntax-expand",
+        "repo": "jss",
+        "path": "packages/jss-plugin-syntax-expand/readme.md",
         "children": {
           "jss-expand-full": {
             "title": "Full syntax",
-            "repo": "jss-expand",
-            "path": "/docs/index.md"
+            "repo": "jss",
+            "path": "packages/jss-plugin-syntax-expand/docs/index.md"
           }
         }
       },
       "jss-vendor-prefixer": {
-        "title": "jss-vendor-prefixer",
-        "repo": "jss-vendor-prefixer",
-        "path": "/readme.md"
+        "title": "jss-plugin-vendor-prefixer",
+        "repo": "jss",
+        "path": "packages/jss-plugin-vendor-prefixer/readme.md"
       },
       "jss-props-sort": {
-        "title": "jss-props-sort",
-        "repo": "jss-props-sort",
-        "path": "/readme.md"
+        "title": "jss-plugin-props-sort",
+        "repo": "jss",
+        "path": "packages/jss-plugin-props-sort/readme.md"
       },
       "jss-isolate": {
-        "title": "jss-isolate",
-        "repo": "jss-isolate",
-        "path": "/readme.md"
+        "title": "jss-plugin-isolate",
+        "repo": "jss",
+        "path": "packages/jss-plugin-isolate/readme.md"
       }
     }
   },
   "jss-preset-default": {
     "title": "Default preset",
-    "repo": "jss-preset-default",
-    "path": "/readme.md"
+    "repo": "jss",
+    "path": "packages/jss-preset-default/readme.md"
   },
   "abstractions": {
     "title": "Abstractions on top of JSS",
@@ -128,8 +128,8 @@
     "children": {
       "react-jss": {
         "title": "react-jss",
-        "repo": "react-jss",
-        "path": "/readme.md"
+        "repo": "jss",
+        "path": "packages/react-jss/readme.md"
       },
       "styled-jss": {
         "title": "styled-jss",
