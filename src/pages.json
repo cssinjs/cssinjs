@@ -47,47 +47,47 @@
     "repo": "jss",
     "path": "/docs/plugins.md",
     "children": {
-      "jss-template": {
+      "jss-plugin-syntax-template": {
         "title": "jss-plugin-syntax-template",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-template/readme.md"
       },
-      "jss-cache": {
+      "jss-plugin-cache": {
         "title": "jss-plugin-cache",
         "repo": "jss",
         "path": "packages/jss-plugin-cache/readme.md"
       },
-      "jss-global": {
+      "jss-plugin-syntax-global": {
         "title": "jss-plugin-syntax-global",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-global/readme.md"
       },
-      "jss-extend": {
+      "jss-plugin-syntax-extend": {
         "title": "jss-plugin-syntax-extend",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-extend/readme.md"
       },
-      "jss-nested": {
+      "jss-plugin-syntax-nested": {
         "title": "jss-plugin-syntax-nested",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-nested/readme.md"
       },
-      "jss-compose": {
+      "jss-plugin-syntax-compose": {
         "title": "jss-plugin-syntax-compose",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-compose/readme.md"
       },
-      "jss-camel-case": {
+      "jss-plugin-syntax-camel-case": {
         "title": "jss-plugin-syntax-camel-case",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-camel-case/readme.md"
       },
-      "jss-default-unit": {
+      "jss-plugin-syntax-default-unit": {
         "title": "jss-plugin-syntax-default-unit",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-default-unit/readme.md"
       },
-      "jss-expand": {
+      "jss-plugin-syntax-expand": {
         "title": "jss-plugin-syntax-expand",
         "repo": "jss",
         "path": "packages/jss-plugin-syntax-expand/readme.md",
@@ -99,17 +99,17 @@
           }
         }
       },
-      "jss-vendor-prefixer": {
+      "jss-plugin-vendor-prefixer": {
         "title": "jss-plugin-vendor-prefixer",
         "repo": "jss",
         "path": "packages/jss-plugin-vendor-prefixer/readme.md"
       },
-      "jss-props-sort": {
+      "jss-plugin-props-sort": {
         "title": "jss-plugin-props-sort",
         "repo": "jss",
         "path": "packages/jss-plugin-props-sort/readme.md"
       },
-      "jss-isolate": {
+      "jss-plugin-isolate": {
         "title": "jss-plugin-isolate",
         "repo": "jss",
         "path": "packages/jss-plugin-isolate/readme.md"
