@@ -50,76 +50,76 @@
       "jss-plugin-syntax-template": {
         "title": "jss-plugin-syntax-template",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-template/readme.md"
+        "path": "/packages/jss-plugin-syntax-template/readme.md"
       },
       "jss-plugin-cache": {
         "title": "jss-plugin-cache",
         "repo": "jss",
-        "path": "packages/jss-plugin-cache/readme.md"
+        "path": "/packages/jss-plugin-cache/readme.md"
       },
       "jss-plugin-syntax-global": {
         "title": "jss-plugin-syntax-global",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-global/readme.md"
+        "path": "/packages/jss-plugin-syntax-global/readme.md"
       },
       "jss-plugin-syntax-extend": {
         "title": "jss-plugin-syntax-extend",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-extend/readme.md"
+        "path": "/packages/jss-plugin-syntax-extend/readme.md"
       },
       "jss-plugin-syntax-nested": {
         "title": "jss-plugin-syntax-nested",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-nested/readme.md"
+        "path": "/packages/jss-plugin-syntax-nested/readme.md"
       },
       "jss-plugin-syntax-compose": {
         "title": "jss-plugin-syntax-compose",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-compose/readme.md"
+        "path": "/packages/jss-plugin-syntax-compose/readme.md"
       },
       "jss-plugin-syntax-camel-case": {
         "title": "jss-plugin-syntax-camel-case",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-camel-case/readme.md"
+        "path": "/packages/jss-plugin-syntax-camel-case/readme.md"
       },
       "jss-plugin-syntax-default-unit": {
         "title": "jss-plugin-syntax-default-unit",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-default-unit/readme.md"
+        "path": "/packages/jss-plugin-syntax-default-unit/readme.md"
       },
       "jss-plugin-syntax-expand": {
         "title": "jss-plugin-syntax-expand",
         "repo": "jss",
-        "path": "packages/jss-plugin-syntax-expand/readme.md",
+        "path": "/packages/jss-plugin-syntax-expand/readme.md",
         "children": {
           "jss-expand-full": {
             "title": "Full syntax",
             "repo": "jss",
-            "path": "packages/jss-plugin-syntax-expand/docs/index.md"
+            "path": "/packages/jss-plugin-syntax-expand/docs/index.md"
           }
         }
       },
       "jss-plugin-vendor-prefixer": {
         "title": "jss-plugin-vendor-prefixer",
         "repo": "jss",
-        "path": "packages/jss-plugin-vendor-prefixer/readme.md"
+        "path": "/packages/jss-plugin-vendor-prefixer/readme.md"
       },
       "jss-plugin-props-sort": {
         "title": "jss-plugin-props-sort",
         "repo": "jss",
-        "path": "packages/jss-plugin-props-sort/readme.md"
+        "path": "/packages/jss-plugin-props-sort/readme.md"
       },
       "jss-plugin-isolate": {
         "title": "jss-plugin-isolate",
         "repo": "jss",
-        "path": "packages/jss-plugin-isolate/readme.md"
+        "path": "/packages/jss-plugin-isolate/readme.md"
       }
     }
   },
   "jss-preset-default": {
     "title": "Default preset",
     "repo": "jss",
-    "path": "packages/jss-preset-default/readme.md"
+    "path": "/packages/jss-preset-default/readme.md"
   },
   "abstractions": {
     "title": "Abstractions on top of JSS",
@@ -129,7 +129,7 @@
       "react-jss": {
         "title": "react-jss",
         "repo": "jss",
-        "path": "packages/react-jss/readme.md"
+        "path": "/packages/react-jss/readme.md"
       },
       "styled-jss": {
         "title": "styled-jss",
