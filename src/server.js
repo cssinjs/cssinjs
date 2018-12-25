@@ -39,7 +39,7 @@ const renderSidecar = () =>
 
 const renderCodeFund = () =>
   stripIndents`
-    <script src="https://codefund.io/scripts/0c702cf1-8730-4cb2-bb1b-0a36c437e46d/embed.js?theme=codesandbox&template=default" async defer></script>
+    <script src="https://codefund.app/properties/102/funder.js" async="async"></script>  
   `;
 
 // If removing this, also remove the class from CodeFundWidget.
