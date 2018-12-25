@@ -9,8 +9,7 @@ import theme from "../../theme";
 
 const styles = {
   container: {
-    minHeight: 150,
-    background: "white"
+    minHeight: 150
   },
   [theme.media.sm]: {
     container: {
@@ -24,7 +23,7 @@ const injectScript = () => {
   script.onload = () => {
     document.head.removeChild(script);
   };
-  script.src = "https://codefund.app/properties/102/funder.js";
+  script.src = "https://codefund.app/properties/102/funder.js?theme=dark";
   document.head.appendChild(script);
 };
 
