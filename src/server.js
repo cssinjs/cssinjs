@@ -37,12 +37,7 @@ const renderSidecar = () =>
     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
   `;
 
-const renderCodeFund = () =>
-  stripIndents`
-    <script src="https://codefund.app/properties/102/funder.js" async="async"></script>  
-  `;
-
-const renderDoc = ({ app, css, analytics, sidecar, codeFund }) =>
+const renderDoc = ({ app, css, analytics, sidecar }) =>
   stripIndents`
     <!doctype html>
     <html lang="en">
@@ -73,7 +68,6 @@ const renderDoc = ({ app, css, analytics, sidecar, codeFund }) =>
         ${app}
         <script src="/vendor.bundle.v${version}.js"></script>
         <script src="/bundle.v${version}.js"></script>
-        ${codeFund}
         ${analytics}
         ${sidecar}
       </body>
@@ -89,8 +83,7 @@ export default (location, callback) => {
         app: renderToString(<RouterContext {...renderProps} />),
         css: registry.toString(),
         analytics: renderAnalytics(),
-        sidecar: renderSidecar(),
-        codeFund: renderCodeFund()
+        sidecar: renderSidecar()
       });
       callback(minify(html, minifyOptions));
     }

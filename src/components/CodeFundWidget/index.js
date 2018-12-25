@@ -9,6 +9,7 @@ import theme from "../../theme";
 
 const styles = {
   container: {
+    minHeight: 150,
     background: "white"
   },
   [theme.media.sm]: {
@@ -16,6 +17,15 @@ const styles = {
       display: "none"
     }
   }
+};
+
+const injectScript = () => {
+  const script = document.createElement("script");
+  script.onload = () => {
+    document.head.removeChild(script);
+  };
+  script.src = "https://codefund.app/properties/102/funder.js";
+  document.head.appendChild(script);
 };
 
 class CodeFundWidget extends Component {
@@ -26,24 +36,19 @@ class CodeFundWidget extends Component {
   componentDidMount() {
     this.unlisten = browserHistory.listen(location => {
       if (location.action === "PUSH") {
-        this.node.innerHTML = "";
-        // eslint-disable-next-line no-underscore-dangle
-        window._codefund.serve();
+        injectScript();
       }
     });
+    injectScript();
   }
 
   componentWillUnmount() {
     this.unlisten();
   }
 
-  onRef = node => {
-    this.node = node;
-  };
-
   render() {
     const { classes } = this.props;
-    return <div ref={this.onRef} id="codefund" className={classes.container} />;
+    return <div id="codefund" className={classes.container} />;
   }
 }
 
