@@ -42,28 +42,7 @@ const renderCodeFund = () =>
     <script src="https://codefund.app/properties/102/funder.js" async="async"></script>  
   `;
 
-// If removing this, also remove the class from CodeFundWidget.
-const renderSeedAndDev = () => stripIndents`
-  <script>
-    var SeedAndDewConfig = {};
-    (function() {
-      SeedAndDewConfig['adClass'] = "snd-ad";
-      /* * * DON'T EDIT BELOW THIS LINE * * */
-      SeedAndDewConfig['projectId'] = 'db61e071-7302-4021-a7ac-45171be0bd7b';
-      SeedAndDewConfig['loadStartTime'] = performance.now();
-      SeedAndDewConfig['apiVersion'] = '2018-05-28'
-      SeedAndDewConfig['sessionId'] = Math.random().toString(36).substring(2, 15);
-      var snd = document.createElement('script');
-      snd.type = 'text/javascript';
-      snd.async = true;
-      snd.src = 'https://www.seedanddew.com/static/embed.min.js';
-      (document.getElementsByTagName('head')[0] ||
-      document.getElementsByTagName('body')[0]).appendChild(snd);
-    })();
-  </script>
-`;
-
-const renderDoc = ({ app, css, analytics, sidecar, codeFund, seedAndDew }) =>
+const renderDoc = ({ app, css, analytics, sidecar, codeFund }) =>
   stripIndents`
     <!doctype html>
     <html lang="en">
@@ -97,7 +76,6 @@ const renderDoc = ({ app, css, analytics, sidecar, codeFund, seedAndDew }) =>
         ${codeFund}
         ${analytics}
         ${sidecar}
-        ${seedAndDew}
       </body>
     </html>
   `;
@@ -112,8 +90,7 @@ export default (location, callback) => {
         css: registry.toString(),
         analytics: renderAnalytics(),
         sidecar: renderSidecar(),
-        codeFund: renderCodeFund(),
-        seedAndDew: renderSeedAndDev()
+        codeFund: renderCodeFund()
       });
       callback(minify(html, minifyOptions));
     }

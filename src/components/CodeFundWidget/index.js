@@ -43,15 +43,7 @@ class CodeFundWidget extends Component {
 
   render() {
     const { classes } = this.props;
-    return (
-      <div
-        ref={this.onRef}
-        id="codefund"
-        // SeedAndDew class
-        // "Since our subscribers provide revenue, we require that projects provide an ad-free experience for them"
-        className={`snd-ad ${classes.container}`}
-      />
-    );
+    return <div ref={this.onRef} id="codefund" className={classes.container} />;
   }
 }
 
