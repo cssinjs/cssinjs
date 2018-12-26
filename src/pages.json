@@ -61,7 +61,7 @@
         "repo": "cli",
         "path": "/readme.md"
       },
-      "cli": {
+      "migrations": {
         "title": "Migrations",
         "repo": "jss",
         "path": "/docs/migrations.md"
