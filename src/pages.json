@@ -60,6 +60,11 @@
         "title": "CLI Tool",
         "repo": "cli",
         "path": "/readme.md"
+      },
+      "cli": {
+        "title": "Migrations",
+        "repo": "jss",
+        "path": "/docs/migrations.md"
       }
     }
   },
