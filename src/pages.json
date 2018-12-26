@@ -5,6 +5,11 @@
     "path": "/readme.md",
     "home": true,
     "children": {
+      "from-sass-to-cssinjs": {
+        "title": "From Sass to CSS-in-JS",
+        "url": "https://egghead.io/courses/convert-scss-sass-to-css-in-js",
+        "iframe": true
+      },
       "benefits": {
         "title": "Benefits",
         "repo": "jss",
