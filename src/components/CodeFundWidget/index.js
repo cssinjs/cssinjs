@@ -2,49 +2,53 @@
  * Ethical ad from CodeFund.
  */
 
-import React, { Component } from "react";
-import { browserHistory } from "react-router";
-import injectSheet from "react-jss";
-import theme from "../../theme";
+import React, {Component} from 'react'
+import {browserHistory} from 'react-router'
+import injectSheet from 'react-jss'
+import theme from '../../theme'
 
 const styles = {
   container: {
-    background: "white"
+    minHeight: 150
   },
   [theme.media.sm]: {
     container: {
-      display: "none"
+      display: 'none'
     }
   }
-};
+}
+
+const injectScript = () => {
+  const script = document.createElement('script')
+  script.onload = () => {
+    document.head.removeChild(script)
+  }
+  script.src = 'https://codefund.app/properties/102/funder.js?theme=dark'
+  document.head.appendChild(script)
+}
 
 class CodeFundWidget extends Component {
   static propTypes = {
     classes: React.PropTypes.object.isRequired
-  };
+  }
 
   componentDidMount() {
     this.unlisten = browserHistory.listen(location => {
-      if (location.action === "PUSH") {
-        this.node.innerHTML = "";
-        // eslint-disable-next-line no-underscore-dangle
-        window._codefund.serve();
+      if (location.action === 'PUSH') {
+        injectScript()
       }
-    });
+    })
+    injectScript()
   }
 
   componentWillUnmount() {
-    this.unlisten();
+    this.unlisten()
   }
 
-  onRef = node => {
-    this.node = node;
-  };
-
   render() {
-    const { classes } = this.props;
-    return <div ref={this.onRef} id="codefund" className={classes.container} />;
+    const {classes} = this.props
+    return <div id="codefund" className={classes.container} />
   }
 }
 
-export default injectSheet(styles)(CodeFundWidget);
+export default injectSheet(styles)(CodeFundWidget)
