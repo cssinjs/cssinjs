@@ -210,11 +210,17 @@
   },
   "community": {
     "title": "Community",
+    "redirect": "community-projects",
     "children": {
       "community-projects": {
         "title": "Projects",
         "repo": "jss",
         "path": "/docs/projects.md"
+      },
+      "chat": {
+        "title": "Chat",
+        "url": "https://gitter.im/cssinjs/Lobby",
+        "external": true
       }
     }
   },
