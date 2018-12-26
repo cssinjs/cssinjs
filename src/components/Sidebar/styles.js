@@ -9,11 +9,12 @@ export default {
     flexDirection: 'column',
     overflowY: 'auto',
     overflowX: 'hidden',
+    paddingBottom: 100
   },
   logoContainer: {
     textAlign: 'center',
     flexShrink: 0,
-    margin: 30,
+    margin: 30
   },
   logo: {
     height: 100,
@@ -24,11 +25,11 @@ export default {
   counter: {
     flexShrink: 0,
     padding: [0, 30],
-    background: theme.sidebarBgActive,
+    background: theme.sidebarBgActive
   },
   menu: {
     transition: theme.transition(),
-    background: theme.sidebarBg,
+    background: theme.sidebarBg
   },
 
   // Active state for menu
@@ -54,7 +55,7 @@ export default {
       justifyContent: 'space-between',
       flexDirection: 'row',
       padding: [10, 20],
-      overflow: 'visible',
+      overflow: 'visible'
     },
     logoContainer: {
       margin: 0
@@ -75,15 +76,15 @@ export default {
       transform: translateX('100%')
     },
     active: {
-      transform: translateX(0),
+      transform: translateX(0)
     },
     toggle: {
-      display: 'block',
+      display: 'block'
     },
     counter: {
       padding: [0, 30],
       flexGrow: 1,
-      background: 'transparent',
-    },
+      background: 'transparent'
+    }
   }
 }

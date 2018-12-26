@@ -6,25 +6,12 @@ import injectSheet from 'react-jss'
 import styles from './styles'
 
 function MenuItem(props) {
-  const {
-    external,
-    level,
-    url,
-    home,
-    title,
-    name,
-    classes
-  } = props
+  const {external, level, url, home, title, name, redirect, classes} = props
   const className = cn(classes.menuItem, classes[`level${level}`])
 
   if (external) {
     return (
-      <a
-        className={className}
-        href={url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a className={className} href={url} target="_blank" rel="noopener noreferrer">
         {title}
       </a>
     )
@@ -33,11 +20,7 @@ function MenuItem(props) {
   // Need to use IndexLink due to situation, when 2 links are active at same time
   if (home) {
     return (
-      <IndexLink
-        className={className}
-        activeClassName={classes.active}
-        to="/"
-      >
+      <IndexLink className={className} activeClassName={classes.active} to="/">
         {title}
       </IndexLink>
     )
@@ -46,8 +29,8 @@ function MenuItem(props) {
   return (
     <Link
       className={className}
-      activeClassName={classes.active}
-      to={`/${name}`}
+      activeClassName={redirect ? undefined : classes.active}
+      to={`/${redirect || name}`}
     >
       {title}
     </Link>

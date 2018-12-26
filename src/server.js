@@ -1,18 +1,18 @@
-import React from "react";
-import { renderToString } from "react-dom/server";
-import { match, RouterContext } from "react-router";
-import { stripIndents } from "common-tags";
-import { minify } from "html-minifier";
-import { SheetsRegistry } from "react-jss";
+import React from 'react'
+import {renderToString} from 'react-dom/server'
+import {match, RouterContext} from 'react-router'
+import {stripIndents} from 'common-tags'
+import {minify} from 'html-minifier'
+import {SheetsRegistry} from 'react-jss'
 
-import { version } from "../package.json";
-import routes from "./routes";
-import config from "./config";
+import {version} from '../package.json'
+import routes from './routes'
+import config from './config'
 
 const minifyOptions = {
   minifyCSS: true,
   minifyJS: true
-};
+}
 
 const renderAnalytics = () =>
   stripIndents`
@@ -25,7 +25,7 @@ const renderAnalytics = () =>
       ga('create', 'UA-89548578-1', 'auto');
       ga('send', 'pageview');
     </script>
-  `;
+  `
 
 const renderSidecar = () =>
   stripIndents`
@@ -35,26 +35,22 @@ const renderSidecar = () =>
       };
     </script>
     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-  `;
+  `
 
-const renderDoc = ({ app, css, analytics, sidecar }) =>
+const renderDoc = ({app, css, analytics, sidecar}) =>
   stripIndents`
     <!doctype html>
     <html lang="en">
       <head>
         <title>${config.site.head.title}</title>
         <meta name="description" content="${config.site.head.description}" />
-        <meta name="keywords" content="${config.site.head.keywords.join(
-          " "
-        )}" />
+        <meta name="keywords" content="${config.site.head.keywords.join(' ')}" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="Content-Language" content="en" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="${config.site.og.title}" />
-        <meta property="og:description" content="${
-          config.site.og.description
-        }" />
+        <meta property="og:description" content="${config.site.og.description}" />
         <meta property="og:type" content="${config.site.og.type}" />
         <meta property="og:image" content="${config.site.og.image}" />
         <meta property="og:url" content="${config.site.og.url}" />
@@ -72,20 +68,17 @@ const renderDoc = ({ app, css, analytics, sidecar }) =>
         ${sidecar}
       </body>
     </html>
-  `;
+  `
 
 export default (location, callback) => {
-  const registry = new SheetsRegistry();
-  match(
-    { routes: routes({ registry }), location },
-    (error, redirectLocation, renderProps) => {
-      const html = renderDoc({
-        app: renderToString(<RouterContext {...renderProps} />),
-        css: registry.toString(),
-        analytics: renderAnalytics(),
-        sidecar: renderSidecar()
-      });
-      callback(minify(html, minifyOptions));
-    }
-  );
-};
+  const registry = new SheetsRegistry()
+  match({routes: routes({registry}), location}, (error, redirectLocation, renderProps) => {
+    const html = renderDoc({
+      app: renderToString(<RouterContext {...renderProps} />),
+      css: registry.toString(),
+      analytics: renderAnalytics(),
+      sidecar: renderSidecar()
+    })
+    callback(minify(html, minifyOptions))
+  })
+}
