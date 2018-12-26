@@ -15,131 +15,154 @@
         "repo": "jss",
         "path": "/docs/setup.md"
       },
-      "performance": {
-        "title": "Performance",
-        "repo": "jss",
-        "path": "/docs/performance.md"
-      },
-      "contributing": {
-        "title": "Contributing",
-        "repo": "jss",
-        "path": "/contributing.md"
+      "repl": {
+        "title": "Try it out",
+        "url": "//cssinjs.github.io/repl/",
+        "iframe": true
       },
       "who-is-using": {
         "title": "Who is using",
         "repo": "jss",
         "path": "/docs/users.md"
+      },
+      "contributing": {
+        "title": "Contributing",
+        "repo": "jss",
+        "path": "/contributing.md"
       }
     }
   },
-  "js-api": {
-    "title": "JavaScript API",
-    "repo": "jss",
-    "path": "/docs/js-api.md"
-  },
-  "json-api": {
-    "title": "Core JSON syntax",
-    "repo": "jss",
-    "path": "/docs/json-api.md"
-  },
-  "plugins": {
-    "title": "Official Plugins",
-    "repo": "jss",
-    "path": "/docs/plugins.md",
+  "advanced": {
+    "title": "Advanced Guides",
+    "redirect": "server-side-rendering",
     "children": {
-      "jss-template": {
-        "title": "jss-template",
-        "repo": "jss-template",
-        "path": "/readme.md"
+      "server-side-rendering": {
+        "title": "Server-side rendering",
+        "repo": "jss",
+        "path": "/docs/ssr.md"
       },
-      "jss-cache": {
-        "title": "jss-cache",
-        "repo": "jss-cache",
-        "path": "/readme.md"
+      "csp": {
+        "title": "Content Security Policy",
+        "repo": "jss",
+        "path": "/docs/csp.md"
       },
-      "jss-global": {
-        "title": "jss-global",
-        "repo": "jss-global",
-        "path": "/readme.md"
+      "performance": {
+        "title": "Performance",
+        "repo": "jss",
+        "path": "/docs/performance.md"
       },
-      "jss-extend": {
-        "title": "jss-extend",
-        "repo": "jss-extend",
-        "path": "/readme.md"
-      },
-      "jss-nested": {
-        "title": "jss-nested",
-        "repo": "jss-nested",
-        "path": "/readme.md"
-      },
-      "jss-compose": {
-        "title": "jss-compose",
-        "repo": "jss-compose",
-        "path": "/readme.md"
-      },
-      "jss-camel-case": {
-        "title": "jss-camel-case",
-        "repo": "jss-camel-case",
-        "path": "/readme.md"
-      },
-      "jss-default-unit": {
-        "title": "jss-default-unit",
-        "repo": "jss-default-unit",
-        "path": "/readme.md"
-      },
-      "jss-expand": {
-        "title": "jss-expand",
-        "repo": "jss-expand",
-        "path": "/readme.md",
-        "children": {
-          "jss-expand-full": {
-            "title": "Full syntax",
-            "repo": "jss-expand",
-            "path": "/docs/index.md"
-          }
-        }
-      },
-      "jss-vendor-prefixer": {
-        "title": "jss-vendor-prefixer",
-        "repo": "jss-vendor-prefixer",
-        "path": "/readme.md"
-      },
-      "jss-props-sort": {
-        "title": "jss-props-sort",
-        "repo": "jss-props-sort",
-        "path": "/readme.md"
-      },
-      "jss-isolate": {
-        "title": "jss-isolate",
-        "repo": "jss-isolate",
+      "cli": {
+        "title": "CLI Tool",
+        "repo": "cli",
         "path": "/readme.md"
       }
     }
   },
-  "jss-preset-default": {
-    "title": "Default preset",
-    "repo": "jss-preset-default",
-    "path": "/readme.md"
-  },
-  "abstractions": {
-    "title": "Abstractions on top of JSS",
-    "repo": "jss",
-    "path": "/docs/abstractions.md",
+  "api": {
+    "title": "API Reference",
+    "redirect": "jss-api",
     "children": {
+      "jss-api": {
+        "title": "JSS Core API",
+        "repo": "jss",
+        "path": "/docs/jss-api.md"
+      },
+      "jss-syntax": {
+        "title": "JSS Corer Styles Syntax",
+        "repo": "jss",
+        "path": "/docs/jss-syntax.md"
+      },
       "react-jss": {
-        "title": "react-jss",
-        "repo": "react-jss",
-        "path": "/readme.md"
+        "title": "React-JSS",
+        "repo": "jss",
+        "path": "/docs/react-jss.md"
       },
       "styled-jss": {
-        "title": "styled-jss",
+        "title": "Styled-JSS",
         "repo": "styled-jss",
         "path": "/README.md"
       },
-      "aphrodite-jss": {
-        "title": "aphrodite-jss",
-        "repo": "aphrodite-jss",
-        "path": "/readme.md"
+      "jss-preset-default": {
+        "title": "Default Preset API",
+        "repo": "jss",
+        "path": "/docs/jss-preset-default.md"
+      },
+      "plugins": {
+        "title": "Plugins",
+        "repo": "jss",
+        "path": "/docs/plugins.md",
+        "children": {
+          "jss-plugin-rule-value-function": {
+            "title": "jss-plugin-rule-value-function",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-rule-value-function.md"
+          },
+          "jss-plugin-rule-value-observable": {
+            "title": "jss-plugin-rule-value-observable",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-rule-value-observable.md"
+          },
+          "jss-plugin-template": {
+            "title": "jss-plugin-template",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-template.md"
+          },
+          "jss-plugin-cache": {
+            "title": "jss-plugin-cache",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-cache.md"
+          },
+          "jss-plugin-global": {
+            "title": "jss-plugin-global",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-global.md"
+          },
+          "jss-plugin-extend": {
+            "title": "jss-plugin-extend",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-extend.md"
+          },
+          "jss-plugin-nested": {
+            "title": "jss-plugin-nested",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-nested.md"
+          },
+          "jss-plugin-compose": {
+            "title": "jss-plugin-compose",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-compose.md"
+          },
+          "jss-plugin-camel-case": {
+            "title": "jss-plugin-camel-case",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-camel-case.md"
+          },
+          "jss-plugin-default-unit": {
+            "title": "jss-plugin-default-unit",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-default-unit.md"
+          },
+          "jss-plugin-expand": {
+            "title": "jss-plugin-expand",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-expand.md"
+          },
+          "jss-plugin-vendor-prefixer": {
+            "title": "jss-plugin-vendor-prefixer",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-vendor-prefixer.md"
+          },
+          "jss-plugin-props-sort": {
+            "title": "jss-plugin-props-sort",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-props-sort.md"
+          },
+          "jss-plugin-isolate": {
+            "title": "jss-plugin-isolate",
+            "repo": "jss",
+            "path": "/docs/jss-plugin-isolate.md"
+          }
+        }
       }
     }
   },
@@ -180,25 +203,15 @@
       }
     }
   },
-  "repl": {
-    "title": "JSS Playground",
-    "url": "//cssinjs.github.io/repl/",
-    "iframe": true
-  },
-  "server-side-rendering": {
-    "title": "Server-side rendering",
-    "repo": "jss",
-    "path": "/docs/ssr.md"
-  },
-  "projects": {
-    "title": "Projects",
-    "repo": "jss",
-    "path": "/docs/projects.md"
-  },
-  "cli": {
-    "title": "CLI Tool",
-    "repo": "cli",
-    "path": "/readme.md"
+  "community": {
+    "title": "Community",
+    "children": {
+      "community-projects": {
+        "title": "Projects",
+        "repo": "jss",
+        "path": "/docs/projects.md"
+      }
+    }
   },
   "404": {
     "hidden": true
