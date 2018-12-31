@@ -2,7 +2,7 @@
   "introduction": {
     "title": "Introduction",
     "repo": "jss",
-    "path": "/readme.md",
+    "path": "/docs/intro.md",
     "home": true,
     "children": {
       "from-sass-to-cssinjs": {
@@ -10,15 +10,20 @@
         "url": "https://egghead.io/courses/convert-scss-sass-to-css-in-js",
         "iframe": true
       },
-      "benefits": {
-        "title": "Benefits",
+      "features": {
+        "title": "Features",
         "repo": "jss",
-        "path": "/docs/benefits.md"
+        "path": "/docs/features.md"
       },
       "setup": {
         "title": "Setup",
         "repo": "jss",
         "path": "/docs/setup.md"
+      },
+      "cdn": {
+        "title": "CDN Links",
+        "repo": "jss",
+        "path": "/docs/cdn.md"
       },
       "repl": {
         "title": "Try it out",
@@ -34,6 +39,16 @@
         "title": "Contributing",
         "repo": "jss",
         "path": "/contributing.md"
+      },
+      "articles": {
+        "title": "Articles",
+        "repo": "jss",
+        "path": "/docs/articles.md"
+      },
+      "faq": {
+        "title": "FAQ",
+        "repo": "jss",
+        "path": "/docs/faq.md"
       }
     }
   },
