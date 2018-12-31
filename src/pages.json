@@ -40,11 +40,6 @@
         "repo": "jss",
         "path": "/contributing.md"
       },
-      "articles": {
-        "title": "Articles",
-        "repo": "jss",
-        "path": "/docs/articles.md"
-      },
       "faq": {
         "title": "FAQ",
         "repo": "jss",
@@ -236,6 +231,11 @@
         "title": "Projects",
         "repo": "jss",
         "path": "/docs/projects.md"
+      },
+      "articles": {
+        "title": "Articles",
+        "repo": "jss",
+        "path": "/docs/articles.md"
       },
       "chat": {
         "title": "Chat",
