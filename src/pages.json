@@ -47,6 +47,32 @@
       }
     }
   },
+  "community": {
+    "title": "Community",
+    "redirect": "sponsors",
+    "children": {
+      "sponsors": {
+        "title": "Sponsors",
+        "repo": "jss",
+        "path": "/sponsors.md"
+      },
+      "community-projects": {
+        "title": "Projects",
+        "repo": "jss",
+        "path": "/docs/projects.md"
+      },
+      "articles": {
+        "title": "Articles",
+        "repo": "jss",
+        "path": "/docs/articles.md"
+      },
+      "chat": {
+        "title": "Chat",
+        "url": "https://gitter.im/cssinjs/Lobby",
+        "external": true
+      }
+    }
+  },
   "advanced": {
     "title": "Advanced Guides",
     "redirect": "server-side-rendering",
@@ -79,18 +105,23 @@
     }
   },
   "api": {
-    "title": "API Reference",
+    "title": "Packages",
     "redirect": "jss-api",
     "children": {
-      "jss-api": {
-        "title": "JSS Core API",
-        "repo": "jss",
-        "path": "/docs/jss-api.md"
-      },
-      "jss-syntax": {
-        "title": "JSS Core Styles Syntax",
-        "repo": "jss",
-        "path": "/docs/jss-syntax.md"
+      "jss": {
+        "title": "JSS Core",
+        "children": {
+          "jss-api": {
+            "title": "API",
+            "repo": "jss",
+            "path": "/docs/jss-api.md"
+          },
+          "jss-syntax": {
+            "title": "Styles Syntax",
+            "repo": "jss",
+            "path": "/docs/jss-syntax.md"
+          }
+        }
       },
       "react-jss": {
         "title": "React-JSS",
@@ -103,12 +134,12 @@
         "path": "/README.md"
       },
       "jss-preset-default": {
-        "title": "Default Preset API",
+        "title": "Default Preset",
         "repo": "jss",
         "path": "/docs/jss-preset-default.md"
       },
       "plugins": {
-        "title": "Plugins",
+        "title": "Official Plugins",
         "repo": "jss",
         "path": "/docs/plugins.md",
         "children": {
@@ -220,27 +251,6 @@
         "title": "Swinging cat",
         "iframe": true,
         "url": "//cssinjs.github.io/examples/swinging-cat-rx/"
-      }
-    }
-  },
-  "community": {
-    "title": "Community",
-    "redirect": "community-projects",
-    "children": {
-      "community-projects": {
-        "title": "Projects",
-        "repo": "jss",
-        "path": "/docs/projects.md"
-      },
-      "articles": {
-        "title": "Articles",
-        "repo": "jss",
-        "path": "/docs/articles.md"
-      },
-      "chat": {
-        "title": "Chat",
-        "url": "https://gitter.im/cssinjs/Lobby",
-        "external": true
       }
     }
   },
