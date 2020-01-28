@@ -219,8 +219,8 @@
   },
   "examples": {
     "title": "Examples",
-    "repo": "examples",
-    "path": "/readme.md",
+    "repo": "jss",
+    "path": "/docs/examples.md",
     "children": {
       "react-todo-mvc": {
         "title": "React TodoMVC",
@@ -230,27 +230,32 @@
       "calendar-example": {
         "title": "Calendar",
         "iframe": true,
-        "url": "//cssinjs.github.io/examples/calendar/"
+        "github": "//github.com/cssinjs/jss/tree/master/examples/calendar",
+        "url": "//codesandbox.io/embed/github/cssinjs/jss/tree/master/examples/calendar?fontsize=14"
       },
       "perdido-example": {
         "title": "Perdido Grid System",
         "iframe": true,
-        "url": "//cssinjs.github.io/examples/perdido/"
+        "github": "//github.com/cssinjs/jss/tree/master/examples/perdido",
+        "url": "//codesandbox.io/embed/github/cssinjs/jss/tree/master/examples/perdido?fontsize=14"
       },
       "function-values": {
         "title": "Function values",
         "iframe": true,
-        "url": "//cssinjs.github.io/examples/function-values/"
+        "github": "//github.com/cssinjs/jss/tree/master/examples/function-values",
+        "url": "//codesandbox.io/embed/github/cssinjs/jss/tree/master/examples/function-values?fontsize=14"
       },
       "observables": {
         "title": "Observable values",
         "iframe": true,
-        "url": "//cssinjs.github.io/examples/observables/"
+        "github": "//github.com/cssinjs/jss/tree/master/examples/observables",
+        "url": "//codesandbox.io/embed/github/cssinjs/jss/tree/master/examples/observables?fontsize=14"
       },
       "swinging-cat-rx": {
         "title": "Swinging cat",
         "iframe": true,
-        "url": "//cssinjs.github.io/examples/swinging-cat-rx/"
+        "github": "//github.com/cssinjs/jss/tree/master/examples/swinging-cat-rx",
+        "url": "//codesandbox.io/embed/github/cssinjs/jss/tree/master/examples/swinging-cat-rx?fontsize=14"
       }
     }
   },
