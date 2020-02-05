@@ -3,11 +3,10 @@ import {primaryHost, cdnHost, apiHost, org as defaultOrg, token} from '../consta
 /**
  * Get a URL to the file on github.
  */
-export const getBlobUrl = (repo, path, tag = 'master', org = defaultOrg) => (
+export const getBlobUrl = (repo, path, tag = 'master', org = defaultOrg) =>
   `https://${primaryHost}/${org}/${repo}/blob/${tag}${path}`
-)
 
-const checkResponse = (response) => {
+const checkResponse = response => {
   if (response.status >= 200 && response.status < 300) {
     return response
   }
@@ -21,39 +20,42 @@ const getText = response => response.text()
 
 const getJson = response => response.json()
 
+const options = {
+  headers: {
+    Authorization: `token ${token}`
+  }
+}
+
 /**
  * Load tags list.
  */
-export const loadTags = (repo, org = defaultOrg) => (
-  fetch(`https://${apiHost}/repos/${org}/${repo}/tags?access_token=${token}`)
+export const loadTags = (repo, org = defaultOrg) =>
+  fetch(`https://${apiHost}/repos/${org}/${repo}/tags`, options)
     .then(checkResponse)
     .then(getJson)
     .then(tags => tags.map(tag => tag.name))
-)
 
 /**
  * Load raw file from the CDN.
  */
-export const loadRawFile = (repo, path, tag = 'master', org = defaultOrg) => (
+export const loadRawFile = (repo, path, tag = 'master', org = defaultOrg) =>
   fetch(`https://${cdnHost}/${org}/${repo}/${tag}${path}`)
     .then(checkResponse)
     .then(getText)
-)
 
 /**
  * Load stars counter.
  */
-export const loadStars = repo => (
-  fetch(`https://${apiHost}/repos/${repo}?access_token=${token}`)
+export const loadStars = repo =>
+  fetch(`https://${apiHost}/repos/${repo}`, options)
     .then(checkResponse)
     .then(getJson)
     .then(data => data.stargazers_count)
-)
 
 /**
  * Parses a github file path and returns meta data.
  */
-export const pathToMeta = (path) => {
+export const pathToMeta = path => {
   const parts = path.split('/')
 
   return {
@@ -68,6 +70,4 @@ export const pathToMeta = (path) => {
 /**
  * Returns `true` if github would show a readme page from a given path.
  */
-export const isReadme = path => (
-  !path || path === '/' || /readme\.md$/i.test(path)
-)
+export const isReadme = path => !path || path === '/' || /readme\.md$/i.test(path)
