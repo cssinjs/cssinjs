@@ -110,6 +110,7 @@
     "children": {
       "jss": {
         "title": "JSS Core",
+        "redirect": "jss-api",
         "children": {
           "jss-api": {
             "title": "API",
