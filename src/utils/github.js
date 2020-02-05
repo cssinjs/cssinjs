@@ -30,7 +30,7 @@ const options = {
  * Load tags list.
  */
 export const loadTags = (repo, org = defaultOrg) =>
-  fetch(`https://${apiHost}/repos/${org}/${repo}/tags`, options)
+  fetch(`https://${apiHost}/repos/${org}/${repo}/tags?per_page=200`, options)
     .then(checkResponse)
     .then(getJson)
     .then(tags => tags.map(tag => tag.name))
