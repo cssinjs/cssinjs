@@ -5,7 +5,7 @@ import injectSheet from 'react-jss'
 
 import {Logo} from '../icons'
 import GithubWidget from '../../containers/GithubWidget'
-import CodeFundWidget from '../../components/CodeFundWidget'
+import CarbonAdsWidget from '../../components/CarbonAdsWidget'
 import Hamburger from '../Hamburger'
 import Menu from '../Menu'
 
@@ -47,10 +47,7 @@ class Sidebar extends Component {
   }
 
   render() {
-    const {
-      classes,
-      className
-    } = this.props
+    const {classes, className} = this.props
     const {showMenu} = this.state
 
     return (
@@ -59,7 +56,7 @@ class Sidebar extends Component {
           <Logo className={classes.logo} />
         </Link>
         <GithubWidget className={classes.counter} repo={config.site.repo} />
-        <CodeFundWidget />
+        <CarbonAdsWidget />
         <button className={classes.toggle} onClick={this.onToggleMenu}>
           <Hamburger active={showMenu} />
         </button>
