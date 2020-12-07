@@ -54,7 +54,7 @@ const styles = {
         display: 'block',
         position: 'absolute',
         bottom: '0',
-        left: 146,
+        left: 140,
 
         fontSize: 10,
         lineHeight: 1,
