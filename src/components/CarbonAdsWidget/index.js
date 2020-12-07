@@ -60,7 +60,8 @@ const styles = {
         lineHeight: 1,
         letterSpacing: 1,
         textTransform: 'uppercase',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        color: '#eee'
       }
     }
   }
