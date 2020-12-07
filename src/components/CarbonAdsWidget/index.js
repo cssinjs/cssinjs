@@ -9,7 +9,6 @@ import theme from '../../theme'
 
 const styles = {
   container: {
-    padding: 5,
     minHeight: 120,
     flexShrink: 0
   },
