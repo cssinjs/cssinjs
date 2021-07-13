@@ -67,8 +67,8 @@
         "path": "/docs/articles.md"
       },
       "chat": {
-        "title": "Chat",
-        "url": "https://gitter.im/cssinjs/Lobby",
+        "title": "Discussions",
+        "url": "https://github.com/cssinjs/jss/discussions",
         "external": true
       }
     }
